@@ -3,10 +3,11 @@
 ## 1. Schritt für Schritt
 ### 1.1. Einloggen in eScriptorium
 Sie loggen sich bei eScriptorium mit einem individuellen Konto ein, das aus einem Login, einem Passwort und einer E-Mail-Adresse besteht. Ein Konto wird vom Benutzer nach Erhalt einer Einladung oder vom Administrator der Website erstellt:   
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161035980-383e1833-4a9b-458c-b9ff-c378c9e087b3.png)
+
 
 Sobald Sie eingeloggt sind, sehen Sie das Dashboard, welches Ihnen alle Dokumente, die Sie selbst erstellt haben und die mit ihnen geteilt wurden, anzeigt. Beim ersten Login ist das Dashboard leer.  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036239-ee2d7b36-1ec1-400b-97a2-23abc7fa96a3.png)
 
 ### 1.2. Ein neues Dokument anlegen
 #### 1.2.1. Terminologie
@@ -15,11 +16,11 @@ Sobald Sie eingeloggt sind, sehen Sie das Dashboard, welches Ihnen alle Dokument
 
 #### 1.2.2.Instruktionen
 Um ein Dokument zu erstellen, klicken Sie auf den Button „Create new“, dadurch öffnet sich eine neue Seite sowie ein Eingabeformular:  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036295-5a7bdfa4-46f1-4389-a04f-0bff0562cca0.png)
 
 Das Feld „Name“ muss ausgefüllt werden. Alle anderen Felder sind optional und können später ergänzt werden.  
 Nach der Eingabe der Informationen, klicken Sie auf „Create“, um das Dokument zu erstellen. Anschließend wird die Meldung „Document created successfully!“ angezeigt. Die eingegebenen Daten können später immer noch angepasst werden: der „Create“-Button wird durch einen „Update“-Button ersetzt.  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036379-1fa3671e-c8df-4798-935c-b7926e4a7aa3.png)
 
 Um vom Dashboard wieder auf das Eingabeformular zu kommen, müssen Sie auf das „Edit“-Icon klicken, welches sich neben dem Dokument befindet.
 
@@ -27,13 +28,13 @@ Um vom Dashboard wieder auf das Eingabeformular zu kommen, müssen Sie auf das �
 #### 1.3.1. Zugriff auf das Interface
 Unter der Schnittstelle „Bilder“ werden alle Anwendungen hinsichtlich der automatischen Bildverarbeitung sowie der Importe und Exporte verwaltet.  
 Um auf diese Schnittstelle zuzugreifen, klicken Sie innerhalb eines Dokumentes einfach auf den Tab „Images“. 
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036469-eec9a3de-7311-4e49-a04e-21988456f226.png)
 
 Es gibt mehrere Möglichkeiten Bilder auf die Plattform hochzuladen, die im Folgenden erläutert werden.
 
 #### 1.3.2. Lokale Dateien importieren
 Die Bilder können einfach per „Drag and Drop“ hochgeladen werden oder durch Auswählen der Bilder im File Explorer, mittels eines Klicks in die Box.  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036523-ddb15628-a350-4b84-a951-3ba9002ddb12.png)
 
 **Hinweis**: Bevor die Seite neugeladen werden kann, muss der Import aller Bilder abgeschlossen sein. eScriptorium bietet momentan keine Möglichkeit Bilder automatisch zu sortieren, daher sollte beim Upload darauf geachtet werden, alle Bilder in der richtigen Reihenfolge auszuwählen sowie auf eine entsprechende Benennung zu achten.
 
@@ -47,13 +48,13 @@ Klicken Sie auf den „Import“-Button, dann auf die Option „Images (IIIF)“
 #### 1.4.1. Zugriff auf das Interface
 Manuelle Annotationen sind nötig, um Ground-Truth-Daten zu generieren und damit Modelle zu trainieren oder um Ergebnisse dieser Operationen zu korrigieren. Es kann auch als Teil einer Annotation Campaign (gemeinsames Bearbeiten eines Dokumentes innerhalb einer Gruppe) verwendet werden, die nicht auf Kraken-Modelle zurückgreift (eScriptorium ist nur eine Input-Umgebung).
 Unter dem Tab „Edit“ können Sie Annotationen manuell erstellen und modifizieren. Diesen Button finden Sie am Seitenanfang sowie auf jedem einzelnen Bild in der Übersicht des Tabs „Images“. Es gibt mehrere Bearbeitungsbereiche in diesem Tab passend zu den möglichen Editierungsoptionen.  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036566-5f0dbf9e-6d40-496a-88d3-4fed3c41ef4c.png)
 
 - **„Image Source“** erlaubt es Ihnen das Quellbild anzusehen  
 - **„Segmentation“** zeigt den Segmentationsbearbeitungsbereich an  
 - **„Transcription“** zeigt den Bearbeitungsbereich der Transkription in der diplomatischen Ansicht an  
 - **„Text Annotation“** zeigt den Bearbeitungsbereich der Transkription im Textmodus an, um die Lesereihenfolge zu ändern oder um Transkriptionen zu erstellen  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036601-3f3a1a4d-dcbd-4fb9-87a6-573b0937ae94.png)
 
 #### 1.4.2. Segmente und Bereiche auf dem Bild mit Annotationen versehen
 Im Segmentbearbeitungsfenster können Sie mehrere wesentliche Operationen durchführen:  
@@ -101,14 +102,14 @@ All diese Operationen, die in diesem Bereich genutzt werden können, finden Sie 
 Nur wenn Segmente und Masken auf dem Bild festgelegt sind, gibt es die Möglichkeit die Funktionalitäten der Buttons „Transcription“ and „Text“ zu nutzen.  
 Um eine einer Zeile zugeordnete Transkription hinzuzufügen oder zu ändern, klicken Sie im Bereich "Transcription" auf die entsprechende Zeile. Ein Eingabefenster wird angezeigt. Um eine Transkription aufzunehmen, drücken Sie „Enter“: die Transkriptions-Schnittstelle zeigt automatisch das Eingabefeld für das nächste Segment an.
 Während Sie im Fenster "Transcription" tippen, werden die mit Zeilen versehenen Bereiche durch Text ersetzt und der Inhalt des Fensters "Text" ändert sich. Es ist also möglich den Text im Textfenster zu modifizieren, zu kopieren und mehrere Zeilen auf einmal einzufügen.  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036678-ba7f2b3a-26b1-4597-ba76-204beab7c636.png)
 
 #### 1.4.4. Eine Anmerkung zur Gliederung von Baselines, Polygonen und Transkriptionen
 Die „Baseline“ ist ein zentrales Element, um Informationen in der eScriptorium Database zu speichern. Also:  
 - Es ist möglich eine Baseline zu modifizieren (bewegen, Punkte hinzufügen) ohne, dass die Transkription beeinflusst wird  
 - Das Polygon wird immer von der Baseline aus berechnet, auch während des Trainings  
 - Es ist möglich das Polygon händisch zu ändern (nicht empfohlen), ohne dass dies Auswirkungen auf die Transkription hat  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036730-f3a5e30d-8245-4ff7-adf4-8225aae4cf1f.png)
 
 Während des Trainings der Kraken-Modelle, kann die Berechnung der Polygone zurückgesetzt werden: Für den User ist es daher von Vorteil, nicht in die Polygone einzugreifen und im Gegenteil dafür zu sorgen, dass die Baselines so gezeichnet werden, dass die automatisch erzeugten Polygone korrekt sind. Falls manuell Ground-Truth-Daten eingegeben werden, sollte darauf geachtet werden nur zu transkribieren was innerhalb des Polygons steht.  
 
@@ -117,19 +118,19 @@ Die Wiedergabereihenfolge der Zeilen erfolgt automatisch. Sie können sich die O
 Es ist möglich die Reihenfolge im „Text“-Fenster durch das Klicken von “Toggle sorting mode” zu ändern. Durch einfaches „Drag and Drop“ der Zeilen kann die Änderung durchgeführt werden.  
 
 **Hinweis:** Es ist empfehlenswert, die Qualität der Segmentierung sicherzustellen, bevor die Reihenfolge der Zeilen geändert wird, weil das Hinzufügen und Entfernen von Zeilen die Berechnung dieser Reihenfolge systematisch neustartet und dabei manuelle Modifikationen überschreibt.   
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036793-c5c40158-363c-4770-917c-1ba11ca517ea.png)
 
 #### 1.4.6. Semantische Annotationen
 Es ist möglich, den Zeilen und Bereichen Etiketten (oder Tags) zuzuordnen, indem man einer vom User auf der Registerkarte „Description“ vordefinierten Ontologie folgt. Es gibt Standard-Tags, aber es ist auch möglich welche über das Eingabefeld hinzuzufügen (Klicken Sie auf „+“ , dann „Update“ und anschließend fügen Sie den neuen Tag zur Liste hinzu) oder zu löschen (entfernen sie Die Haken von den Boxen vor dem Tag und klicken Sie anschließend auf „Update“).  
 Wählen Sie im Bereich „Segmentation“ einen Bereich oder eine Zeile aus, klicken Sie auf „Set the type on all selected lines / regions (T)” und wählen Sie das entsprechende Tag aus. Die Farben des Bereichs oder Zeile ändern sich. Es ist möglich ein Tag auf mehrere Bereiche oder Zeilen auf einmal anzuwenden: dafür wählen Sie alle gewünschten Bereiche aus (STRG+ Klick und Ziehen oder STRG gedrückt halten und die gewünschten Zeilen/Bereiche anklicken).
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036820-82db3f93-98ff-4338-85dd-932c1549eade.png)
 
 ### 1.5. Annotationen Importieren
 #### 1.5.1. Strukturierte Annotationen als XML importieren
 Es gibt die Möglichkeit Segmentierungen oder Transkriptionen, die außerhalb von eScriptorium erstellt wurden zu importieren. Dafür klicken Sie unter dem Tab „Images“ auf „Import“ und wählen dann die Option „Transcription (XML)“ aus.
 Anschließend öffnet sich ein Formular und Sie können einen Namen für die importierte Version festlegen, und eine Datei für den Import hochladen. Dies kann eine ALTO XML Datei, eine PAGE XML Datei oder eine ZIP-Datei, die ALTO oder PAGE Dateien beinhaltet, sein.
 Es ist nicht notwendig vorher auszuwählen, welche Teile des Dokuments vom Import betroffen sind: die Verbindung wird automatisch hergestellt durch die Informationen aus den XML Dateien. 
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036860-281185c8-d93f-4642-8972-eb0646ad9ad7.png)
 
 Bitte beachten Sie, nachdem Segmentierungen importiert wurden, die nicht mit Kraken/eScriptorium erzeugt wurden, ist es wichtig die Polygone (Masken) zurückzusetzen bevor mit diesen Dokumenten Modelle trainiert werden.
 
@@ -150,7 +151,7 @@ Automatische Dokumentannotationen werden über den Tab „Images“ verwaltet.
 - Bei der Option **„Only Line Masks“** ist es nicht erforderlich, ein Modell zu laden; mit dieser Option können Sie die Berechnung der Polygone, die mit den bereits auf den Bildern vorhandenen Baselines verbunden sind, spontan zurücksetzen.  
 - **„Regions“** ermöglichen es Baselines und Polygone, die schon auf den Bildern existieren zu erhalten und nur neue Bereiche zu generieren  
 - **„Text direction“** indiziert die Leserichtung der Zeilen  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161036930-329c47b7-94fa-48d7-bbdb-526fc9bf0708.png)
 
 #### 1.6.3. Vergleich verschiedener Transkriptionen
 - Laden Sie das Bild eines Dokumentes in eScriptorium hoch
@@ -158,7 +159,7 @@ Automatische Dokumentannotationen werden über den Tab „Images“ verwaltet.
 - Nun wählen Sie die Transkription aus, die angezeigt werden soll  
 - anschließend klicken Sie das Zahnrad daneben an und wählen die Transkription mit der Sie die andere Transkription vergleichen möchten und schließen das Fenster wieder  
 - Nun schalten Sie die Transkriptionsansicht ein und klicken auf die entsprechende Zeile. Sie sehen nun markierten Text in rot und grün: Grüne Zeichen sind in der aktuellen (bearbeitbaren) Transkription nicht vorhanden, rote Zeichen sind in der verglichenen Transkription nicht vorhanden  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161037014-43d55afd-b9ff-4722-8bb2-21669d4267a7.png)
 
 ### 1.7. Modelle trainieren
 #### 1.7.1. Ein Training starten  
@@ -196,7 +197,7 @@ Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenige
 - Klicken Sie auf den Button „Share“  
 - Geben Sie den Namen des Users ein, mit dem Sie Ihr Dokument teilen möchten oder setzen Sie einen Haken bei seinem Namen in der Liste  
 - Um zu bestätigen, klicken Sie auf „Share“  
-[Bild]
+![grafik](https://user-images.githubusercontent.com/91966243/161037072-2644a074-8d44-404e-ad20-81b4b4de1319.png)
 
 ### 2.3. Eine Vorlage mit einem anderen User oder einer Gruppe teilen
 Ein Template ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Modell mit anderen Usern zu teilen, gibt es zwei Möglichkeiten:  
