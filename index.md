@@ -74,8 +74,6 @@ Unter dem Tab „Bearbeiten“ können Sie Annotationen manuell erstellen und mo
 - **„Transcription“** zeigt den Bearbeitungsbereich der Transkription in der diplomatischen Ansicht an  
 - **„Text Annotation“** zeigt den Bearbeitungsbereich der Transkription im Textmodus an, um die Lesereihenfolge zu ändern oder um Transkriptionen zu erstellen  
 
-![grafik](https://user-images.githubusercontent.com/91966243/161036601-3f3a1a4d-dcbd-4fb9-87a6-573b0937ae94.png)
-
 #### 1.5.2. Segmente und Bereiche auf dem Bild mit Annotationen versehen
 Im Segmentbearbeitungsfenster können Sie mehrere wesentliche Operationen durchführen: 
 
