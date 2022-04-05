@@ -6,7 +6,6 @@ Sie loggen sich bei eScriptorium mit einem individuellen Konto ein, das aus eine
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161732328-353cc85b-8f58-48b9-ac44-3930e6d3baba.png)
 
-
 Sobald Sie eingeloggt sind, sehen Sie das Dashboard, welches Ihnen alle Dokumente, die Sie selbst erstellt haben und die mit ihnen geteilt wurden, anzeigt. Beim ersten Login ist das Dashboard leer.  
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161732444-11b8bf74-464b-4054-a7ac-99685a24907a.png)
@@ -32,8 +31,7 @@ Um ein Dokument zu erstellen, klicken Sie innerhalb eines Projektes auf den Butt
 
 Das Feld „Name“ muss ausgefüllt werden. Alle anderen Felder sind optional und können später ergänzt werden.  
 
-Nach der Eingabe der Informationen, klicken Sie auf „Erzeugen“, um das Dokument zu erstellen. Anschließend wird die Meldung „Document created successfully!“ angezeigt. Die eingegebenen Daten können später immer noch angepasst werden: der „Erzeugen“-Button wird durch einen „Aktualisieren“-Button ersetzt.
- 
+Nach der Eingabe der Informationen, klicken Sie auf „Erzeugen“, um das Dokument zu erstellen. Anschließend wird die Meldung „Document created successfully!“ angezeigt. Die eingegebenen Daten können später immer noch angepasst werden: der „Erzeugen“-Button wird durch einen „Aktualisieren“-Button ersetzt.  
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161733341-1cb92089-5929-409e-9046-6186a747357e.png)
 
@@ -79,7 +77,7 @@ Im Segmentbearbeitungsfenster können Sie mehrere wesentliche Operationen durchf
 
 **Baselines:**  
 - Das Zeichnen von „Baselines“, die den Positionen des Textes auf dem Bild entsprechen, kann auf **zwei unterschiedliche Arten erfolgen**:  
-  - Freies Zeichnen (nicht empfohlen): linke Maustaste gedrückt halten und gewünschte Zeile ziehen  
+  - **Freies Zeichnen** (nicht empfohlen): linke Maustaste gedrückt halten und gewünschte Zeile ziehen  
   - **Punkt-für-Punkt-Darstellung**: Linksklick an die entsprechende Stelle, durch einen Rechtsklick können Punkte hinzugefügt werden und durch einen erneuten Linksklick die Zeile beendet werden  
 - **Zeilen Verschieben**: Zeilen auswählen und mit STRG + Ziehen an der gewünschten Stelle platzieren  
 - **Zeilen auswählen**: SHIFT + Klick auf entsprechende Zeilen  
@@ -137,10 +135,8 @@ Während des Trainings der Kraken-Modelle, kann die Berechnung der Polygone zur�
 Die Wiedergabereihenfolge der Zeilen erfolgt automatisch. Sie können sich die Ordnungsnummer jeder Zeile im Fenster „Segmentation“ anzeigen lassen, indem sie auf “Toggle ordering display (L)” klicken, oder im Fenster „Text“, wo die Zeilen in der folgenden Reihenfolge angezeigt werden.  
 Es ist möglich die Reihenfolge im „Text“-Fenster durch das Klicken von “Toggle sorting mode” zu ändern. Durch einfaches „Drag and Drop“ der Zeilen kann die Änderung durchgeführt werden.  
 
-
 **Hinweis:** Es ist empfehlenswert, die Qualität der Segmentierung sicherzustellen, bevor die Reihenfolge der Zeilen geändert wird, weil das Hinzufügen und Entfernen von Zeilen die Berechnung dieser Reihenfolge systematisch neustartet und dabei manuelle Modifikationen überschreibt.  
   
-
 ![grafik](https://user-images.githubusercontent.com/91966243/161736467-d38109e0-9ecb-44ce-ac12-1ea390e382a4.png)
 
 #### 1.5.6. Semantische Annotationen
@@ -219,25 +215,28 @@ Das Exportieren von Annotationen funktioniert über den Tab „Bilder“.
 
 ## 2. Verwalten einer kollaborativen Annotation Campaign  
 ### 2.1. Erstellen einer Usergruppe (Admin)  
-Es ist möglich eine Nutzergruppe im Administrator-Dashboard (Vorausgesetzt Sie haben die erforderlichen Rechte) zu erstellen. Diese Gruppen dienen dazu Arbeitsgruppen zu definieren oder um ausgewählten Usern bestimmte Rechte zu erteilen.
-Es wird zudem bald möglich sein für User mit ausreichend Rechten, Teams zu erstellen und andere User dazu einzuladen.
+Es ist möglich eine Nutzergruppe im Administrator-Dashboard (Vorausgesetzt Sie haben die erforderlichen Rechte) zu erstellen. Diese Gruppen dienen dazu Arbeitsgruppen zu definieren oder um ausgewählten Usern bestimmte Rechte zu erteilen.  
+Auch unter „Profil“ -> „Teams“ können Gruppen erstellt werden. Zudem werden hier auch die eigenen Gruppenzugehörigkeiten aufgelistet.  
+
+![grafik](https://user-images.githubusercontent.com/91966243/161777507-28a16f61-00b7-43d3-b699-04fa582e45b7.png)
 
 ### 2.2. Teilen eines Dokumentes mit einem anderen User oder einer Gruppe
-Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenigen, die nicht Teil der Gruppe sind, welcher das Dokument angehört. Dies geht über den Tab „Description“:  
-- Klicken Sie auf den Button „Share“  
+Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenigen, die nicht Teil der Gruppe sind, welcher das Dokument angehört. Dies geht über den Tab „Beschreibung“:    
+- Klicken Sie auf den Button „Teile dieses Dokument“
 - Geben Sie den Namen des Users ein, mit dem Sie Ihr Dokument teilen möchten oder setzen Sie einen Haken bei seinem Namen in der Liste  
-- Um zu bestätigen, klicken Sie auf „Share“  
+- Um zu bestätigen, klicken Sie auf „Teilen“  
 
-![grafik](https://user-images.githubusercontent.com/91966243/161037072-2644a074-8d44-404e-ad20-81b4b4de1319.png)
+![grafik](https://user-images.githubusercontent.com/91966243/161777458-a1d52e31-bd80-4059-b675-a725212623a8.png)
 
-### 2.3. Eine Vorlage mit einem anderen User oder einer Gruppe teilen
-Ein Template ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Modell mit anderen Usern zu teilen, gibt es zwei Möglichkeiten:  
-- Downloaden Sie das Modell im Tab „Models“ und versenden Sie es mit einem anderen Austauschsystem (z.B. E-Mail)  
-- Teilen Sie mit dem User das Dokument, dem die Vorlage zugeordnet ist. Nun kann der andere User das Modell herunterladen und es in das Dokument laden, in dem er es anwenden möchte.  
+### 2.3. Ein Modell mit einem anderen User oder einer Gruppe teilen
+Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Modell mit anderen Usern zu teilen, gibt es zwei Möglichkeiten:  
+- Downloaden Sie das Modell im Tab „Modelle“ und versenden Sie es über einen anderen Kanal (z.B. per E-Mail)  
+- Teilen Sie mit dem User das Dokument, dem das Modell zugeordnet ist. Nun kann der andere User es herunterladen und es in das Dokument laden, in dem er es anwenden möchte.  
 
 ## 3. Sonstiges
-- **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten bevor Transkription erfolgt ist, da diese sonst an dieser Stelle gelöscht werden können.  
-- **Binarisierung**: Dies ist meist nicht nötig, nach dem Hochladen der Bilder können diese i.d.R. direkt segmentiert werden.  
-- **Keine Reaktion mehr bei der Bearbeitung des Dokuments**: Seite erneut laden (tauchte bei Firefox bisher öfters auf, ist aber noch unklar wann genau und woran es liegt)  
+- **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten bevor Transkription erfolgt ist, da diese sonst an dieser Stelle gelöscht werden können.    
+- **Binarisierung**: Dies ist meist nicht nötig, nach dem Hochladen der Bilder können diese i.d.R. direkt segmentiert werden. In den meisten Fällen verschlechtert die Binarisierung das Ergebnis.    
+- **Keine Reaktion mehr bei der Bearbeitung des Dokuments**: Seite erneut laden (tauchte bei Firefox bisher öfters auf, ist aber noch unklar wann genau es vorkommt und woran es liegt)   
 - **Kein Warten im Fenster auf Segmentierung, Binarisierung und Transkription**: Während dieser Prozesse, die mitunter länger dauern können, kann das Fenster verlassen werden. Der Prozess wird nicht abgebrochen.  
 - **Kein Speichern nötig**: Alle Vorgänge, werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.  
+- Sollte es Probleme mit der Internetverbindung geben, kann dies zum Verlust von Arbeitsschritten führen.
