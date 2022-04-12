@@ -76,12 +76,6 @@ Falls hierbei eine Fehlermeldung angezeigt wird, öffnen Sie bitte die Einstellu
 
 Anschließend müssen Sie den vorherigen Befehl noch einmal ausführen.  
 
-Unter Ubuntu geben Sie nun diesen Befehl ein:  
-`$ pip install "click<8.1.0`  
-
-Und unter Debian diesen:  
-`$ pip install numpy`
-
 Nun geben Sie folgenden Befehl ein:  
 
 `$ pip install -r app/requirements-dev.txt`  
