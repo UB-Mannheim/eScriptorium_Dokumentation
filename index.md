@@ -240,3 +240,5 @@ Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Mo
 - **Kein Warten im Fenster auf Segmentierung, Binarisierung und Transkription**: Während dieser Prozesse, die mitunter länger dauern können, kann das Fenster verlassen werden. Der Prozess wird nicht abgebrochen.  
 - **Kein Speichern nötig**: Alle Vorgänge, werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.  
 - Sollte es Probleme mit der Internetverbindung geben, kann dies zum Verlust von Arbeitsschritten führen.
+
+[Lokale Installation eScriptorium](docs/Lokale_Installation_eScriptorium.md) 
