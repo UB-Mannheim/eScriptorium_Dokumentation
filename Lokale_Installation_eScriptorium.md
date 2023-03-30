@@ -103,33 +103,10 @@ cp app/escriptorium/local_settings.py.example app/escriptorium/local_settings.py
 edit app/escriptorium/local_settings.py
 ```
 
-### 10. Eingabe
+### 10. NPM installieren
+Anschließend wechseln Sie in das Verzeichnis `front` und installieren NPM:
 ```
-export DJANGO_SETTINGS_MODULE=escriptorium.local_settings
-```
-
-### 11. Wechseln in Arbeitsverzeichnis
-```
-cd app
-```
-### 12. Installation überprüfen
-Führen Sie dafür folgenden Befehl aus:
-```
-python manage.py check
-```
-
-### 13. Celery Worker
-Öffnen Sie ein neues Terminal und führen Sie einen einfachen Celery Worker aus:
-```
-celery -A escriptorium worker -l INFO &
-```
-
-Bestätigen Sie mit Enter. Mittels dieses Befehls läuft Celery direkt im Hintergrund und Sie können fortfahren.
-
-### 14. NPM installieren
-Anschließend verlassen Sie das Arbeitsverzeichnis und wechseln in das Verzeichnis „Front“ und installieren NPM:
-```
-cd ../front
+cd front
 npm install
 ```
 
@@ -143,17 +120,38 @@ und dann erneut:
 npm install
 ```
 
-### 15. Produktive Nutzung
+### 11. Produktive Nutzung
 Um eScriptorium produktiv zu nutzen (Entwickler:innen wählen besser andere Optionen) führen Sie folgende Befehle aus:
 ```
-cd front # falls Sie sich nicht bereits in diesem Ordner befinden
 npm run production
 ```
+
+### 12. Eingabe
+```
+export DJANGO_SETTINGS_MODULE=escriptorium.local_settings
+```
+
+### 13. Wechseln in Arbeitsverzeichnis
+```
+cd ../app
+```
+### 14. Installation überprüfen
+Führen Sie dafür folgenden Befehl aus:
+```
+python manage.py check
+```
+
+### 15. Celery Worker
+Öffnen Sie ein neues Terminal und führen Sie einen einfachen Celery Worker aus:
+```
+celery -A escriptorium worker -l INFO &
+```
+
+Bestätigen Sie mit Enter. Mittels dieses Befehls läuft Celery direkt im Hintergrund und Sie können fortfahren.
 
 ### 16. SQL-Tabelle
 Jetzt erstellen Sie eine SQL-Tabelle im Ordner *app*:
 ```
-cd ../app
 python manage.py migrate
 ```
 
