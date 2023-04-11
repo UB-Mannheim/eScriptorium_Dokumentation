@@ -178,7 +178,19 @@ Dies sollten Sie wissen, da auf diese Weise Unbefugte in Ihr System eindringen k
 vor allem wenn Sie Ihre eScriptorium-Installation später auch als Webdienst verfügbar machen.
 Ändern Sie das Password oder entfernen Sie diesen Benutzer in diesem Fall.
 
-### 17. Erneute Nutzung
+### 17. Optionale Einstellungen
+
+In der Datei `~/escriptorium/app/local_settings.py` können optional lokale Einstellungen vorgenommen werden.
+
+Mit `DEBUG = False` schaltet man die Anzeige der Debug-Tools (im Webinterface rechts oben) aus.
+
+Die Exportformate OpenITI Markdown und TEI XML lassen sich mit `EXPORT_OPENITI_MARKDOWN_ENABLED = True` bzw. `EXPORT_TEI_XML_ENABLED = True` aktivieren.
+
+Mit `TEXT_ALIGNMENT_ENABLED = True` kann die Textalignierung als zusätzliche Funktionalität aktiviert werden.
+
+`DISABLE_ELASTICSEARCH = False` schaltet die Volltextsuche ein. Dafür sind zusätzliche Einstellungen und die Installation von Elasticsearch erforderlich.
+
+### 18. Erneute Nutzung
 Sobald Sie Ihren PC bzw. die virtuelle Maschine neugestartet haben, müssen Sie eScriptorium erneut aktivieren über das Terminal.
 ```
 cd ~/escriptorium
