@@ -175,8 +175,13 @@ python manage.py runserver
 ```
 
 ### 16. Nutzung von eScriptorium
-Nun können Sie eScriptorium nutzen, geben Sie dafür einfach in Ihren Browser folgenden Link ein: http://localhost:8000/
+Nun können Sie eScriptorium nutzen, geben Sie dafür einfach in Ihren Browser folgenden Link ein: [http://localhost:8000/](http://localhost:8000/)
 (Hinweis: Sollten Sie eScriptorium in einer virtuellen Maschine installiert haben, nutzen Sie den Browser darin.)
+
+**Achtung:** eScriptorium erstellt automatisch einen Nutzer mit dem Namen „admin“ und dem Passwort „admin“.
+Dies sollten Sie wissen, da auf diese Weise Unbefugte in Ihr System eindringen können,
+vor allem wenn Sie Ihre eScriptorium-Installation später auch als Webdienst verfügbar machen.
+Ändern Sie das Password oder entfernen Sie diesen Benutzer in diesem Fall.
 
 ### 17. Erneute Nutzung
 Sobald Sie Ihren PC bzw. die virtuelle Maschine neugestartet haben, müssen Sie eScriptorium erneut aktivieren über das Terminal.
@@ -189,9 +194,7 @@ sudo service redis-server start
 celery -A escriptorium worker -l INFO &
 python manage.py runserver
 ```
-Browser: http://localhost:8000
-
-**Achtung:** eScriptorium erstellt automatisch einen Nutzer mit dem Namen „admin“ und dem Passwort „admin“. Dies sollten Sie wissen, da auf diese Weise Unbefugte in Ihr System eindringen können, vor allem wenn Sie Ihre eScriptorium-Installation später auch als Webdienst verfügbar machen.
+Browser: [http://localhost:8000/](http://localhost:8000/)
 
 Die Anleitung basiert auf der [GitLab-Dokumentation von Robin Tissot](https://gitlab.com/scripta/escriptorium/-/wikis/full-install).
 Jedoch wurden hier einige Veränderungen vorgenommen, um die Installation möglichst einfach zu gestalten und einige Fehler zu beheben.
