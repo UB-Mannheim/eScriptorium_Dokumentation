@@ -59,13 +59,13 @@ createdb escriptorium
 ### 5. Repository klonen
 Sie klonen nun das Repository von GitLab.
 ```
-git clone https://gitlab.com/scripta/escriptorium.git
+git clone https://gitlab.com/scripta/escriptorium.git ~/escriptorium
 ```
 
 ### 6. Verzeichnis wechseln
 Nun wechseln Sie in das neu angelegte Verzeichnis *escriptorium*:
 ```
-cd escriptorium
+cd ~/escriptorium
 ```
 
 ### 7. Virtuelle Umgebung
@@ -136,29 +136,24 @@ Um eScriptorium produktiv zu nutzen (Entwickler:innen wählen besser andere Opti
 npm run production
 ```
 
-### 10. Eingabe
-```
-export DJANGO_SETTINGS_MODULE=escriptorium.local_settings
-```
-
 ### 11. Installation überprüfen
 Führen Sie dafür folgenden Befehl aus:
 ```
 cd ../app
-python manage.py check
+python manage.py check --settings escriptorium.local_settings
 ```
 
 ### 12. SQL-Tabelle
 Jetzt erstellen Sie eine SQL-Tabelle im Ordner *app*:
 ```
-python manage.py migrate
+python manage.py migrate --settings escriptorium.local_settings
 ```
 Bei aktuellen Versionen von eScriptorium wird dabei eine Fehlermeldung angezeigt, die man ignoriert.
 
 ### 13. OPTIONAL
 Nun können Sie noch einen Superuser kreieren
 ```
-python manage.py createsuperuser
+python manage.py createsuperuser --settings escriptorium.local_settings
 ```
 
 ### 14. Celery Worker
@@ -171,7 +166,7 @@ Bestätigen Sie mit Enter. Mittels dieses Befehls läuft Celery direkt im Hinter
 
 ### 15. Start des Servers
 ```
-python manage.py runserver
+python manage.py runserver --settings escriptorium.local_settings
 ```
 
 ### 16. Nutzung von eScriptorium
@@ -186,13 +181,13 @@ vor allem wenn Sie Ihre eScriptorium-Installation später auch als Webdienst ver
 ### 17. Erneute Nutzung
 Sobald Sie Ihren PC bzw. die virtuelle Maschine neugestartet haben, müssen Sie eScriptorium erneut aktivieren über das Terminal.
 ```
-cd escriptorium
+cd ~/escriptorium
 source env/bin/activate
 cd app
 sudo service postgresql start
 sudo service redis-server start
 celery -A escriptorium worker -l INFO &
-python manage.py runserver
+python manage.py runserver --settings escriptorium.local_settings
 ```
 Browser: [http://localhost:8000/](http://localhost:8000/)
 
