@@ -41,9 +41,8 @@ service postgresql status
 ### 3. Benutzernamen anlegen
 Mit diesem Befehl wird Ihr Linux-Benutzername als eScriptorium-Benutzername gesetzt:
 ```
-sudo -u postgres createuser --superuser $USER
+(cd /tmp && sudo -u postgres createuser --superuser $(whoami))
 ```
-Eventuell wird dabei eine Fehlermeldung angezeigt, die Sie aber ignorieren können.
 
 Wenn Sie einen anderen Namen als Ihren Linux-Nutzernamen wählen möchten, geben Sie ein:
 ```
