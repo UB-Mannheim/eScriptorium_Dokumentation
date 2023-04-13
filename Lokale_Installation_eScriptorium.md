@@ -1,11 +1,18 @@
 # Anleitung zur lokalen Installation von eScriptorium unter Linux bzw. Windows (WSL/Virtual Box)
 
-Die folgende Installationsanleitung basiert auf einer Installation unter Windows über **[Windows Subsystem for Linux](https://docs.microsoft.com/de-de/windows/wsl/install)** (WSL) mit den Distributionen **Ubuntu 20.04.3** und **Debian 11** oder der Installation über **[Virtual Box](https://www.virtualbox.org/wiki/Downloads)** mit Ubuntu 20.04.3. Wenn Sie weitere Informationen oder Hilfe bei der Installation dieser Anwendungen brauchen, wenden Sie sich gerne an Larissa Will (larissa.will(at)uni-mannheim.de).
-Nachdem die Virtual Box bzw. die Debian- oder Ubuntu-Umgebung auf dem PC installiert und gestartet wurde,
+Die folgende Installationsanleitung basiert auf einer Installation unter Linux
+mit den Linux-Distributionen **Ubuntu 20.04.3** oder **Debian 11**.
+
+Unter Windows 10 und 11 stellt das **[Windows Subsystem for Linux](https://docs.microsoft.com/de-de/windows/wsl/install)** (WSL) eine geeignete Linux-Umgebung bereit.
+Alternativ kann auch eine Virtualisierungssoftware wie beispielsweise **[Virtual Box](https://www.virtualbox.org/wiki/Downloads)** mit Ubuntu 20.04.3 als Basis genommen werden.
+
+Wenn Sie weitere Informationen oder Hilfe bei der Installation von eScriptorium brauchen, wenden Sie sich gerne an Larissa Will (larissa.will(at)uni-mannheim.de).
+
+Nachdem VirtualBox bzw. die Debian- oder Ubuntu-Umgebung auf dem PC installiert und gestartet wurde,
 öffnen Sie mittels eines Rechtsklicks auf den Desktop das **Terminal**.
 Wenn Sie WSL nutzen, dann öffnen Sie einfach die installierte Distribution.
 
-Aktualisieren Sie zunächst ihr Linux mit folgenden Befehlen, damit können Sie im Folgenden Fehlermeldungen vorbeugen:
+Aktualisieren Sie zunächst Ihr Linux mit folgenden Befehlen:
 ```
 sudo apt-get update
 sudo apt-get upgrade
