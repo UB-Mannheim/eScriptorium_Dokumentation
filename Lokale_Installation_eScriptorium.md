@@ -22,7 +22,7 @@ sudo apt-get upgrade
 Zunächst installieren Sie alle Programme, die Sie für die Nutzung bzw. Installation von eScriptorium benötigen.
 Dazu gehören Git, NPM, Postgresql-Installationen, der Redis-Server, Werkzeuge von Drittanbietern sowie Python und die virtuelle Umgebung:
 ```
-sudo apt install git postgresql postgresql-contrib libpq-dev redis-server netcat-traditional jpegoptim pngcrush libvips build-essential python3 python3-dev python3-venv npm
+sudo apt install git postgresql postgresql-contrib libpq-dev redis-server gettext netcat-traditional jpegoptim pngcrush libvips build-essential python3 python3-dev python3-venv npm
 ```
 
 **Hinweis:** Nach dem ersten sudo-Befehl (sudo wird benutzt, um Prozesse mit den Rechten eines anderen Benutzers (z. B. des Superusers root) zu starten, fordert Sie die Linux-Distribution immer dazu auf, Ihr Passwort einzugeben. Es fragt Sie dann, ob Sie den entsprechenden Speicherplatz für die Installation freigeben möchten.
