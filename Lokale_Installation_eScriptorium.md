@@ -156,13 +156,20 @@ python manage.py migrate --settings escriptorium.local_settings
 ```
 Bei aktuellen Versionen von eScriptorium wird dabei eine Fehlermeldung angezeigt, die man ignoriert.
 
-### 13. OPTIONAL
+### 13. Übersetzungen aktualisieren
+Unter Umständen müssen noch die Übersetzungen der Benutzeroberfläche (neben den englischen gibt es weitgehend übersetzte deutsche Texte) aktualisiert werden:
+```
+python manage.py makemessages --all --settings escriptorium.local_settings
+python manage.py compilemessages --settings escriptorium.local_settings
+```
+
+### 14. OPTIONAL
 Nun können Sie noch einen Superuser kreieren
 ```
 python manage.py createsuperuser --settings escriptorium.local_settings
 ```
 
-### 14. Celery Worker
+### 15. Celery Worker
 Öffnen Sie ein neues Terminal und führen Sie einen einfachen Celery Worker aus:
 ```
 celery -A escriptorium worker -l INFO &
@@ -170,12 +177,12 @@ celery -A escriptorium worker -l INFO &
 
 Bestätigen Sie mit Enter. Mittels dieses Befehls läuft Celery direkt im Hintergrund und Sie können fortfahren.
 
-### 15. Start des Servers
+### 16. Start des Servers
 ```
 python manage.py runserver --settings escriptorium.local_settings
 ```
 
-### 16. Nutzung von eScriptorium
+### 17. Nutzung von eScriptorium
 Nun können Sie eScriptorium nutzen, geben Sie dafür einfach in Ihren Browser folgenden Link ein: [http://localhost:8000/](http://localhost:8000/)
 (Hinweis: Sollten Sie eScriptorium in einer virtuellen Maschine installiert haben, nutzen Sie den Browser darin.)
 
@@ -184,7 +191,7 @@ Dies sollten Sie wissen, da auf diese Weise Unbefugte in Ihr System eindringen k
 vor allem wenn Sie Ihre eScriptorium-Installation später auch als Webdienst verfügbar machen.
 Ändern Sie das Password oder entfernen Sie diesen Benutzer in diesem Fall.
 
-### 17. Optionale Einstellungen
+### 18. Optionale Einstellungen
 
 In der Datei `~/escriptorium/app/local_settings.py` können optional lokale Einstellungen vorgenommen werden.
 
@@ -196,7 +203,7 @@ Mit `TEXT_ALIGNMENT_ENABLED = True` kann die Textalignierung als zusätzliche Fu
 
 `DISABLE_ELASTICSEARCH = False` schaltet die Volltextsuche ein. Dafür sind zusätzliche Einstellungen und die Installation von Elasticsearch erforderlich.
 
-### 18. Erneute Nutzung
+### 19. Erneute Nutzung
 Sobald Sie Ihren PC bzw. die virtuelle Maschine neugestartet haben, müssen Sie eScriptorium erneut aktivieren über das Terminal.
 ```
 cd ~/escriptorium
