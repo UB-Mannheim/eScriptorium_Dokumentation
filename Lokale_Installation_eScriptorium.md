@@ -172,7 +172,7 @@ python manage.py createsuperuser --settings escriptorium.local_settings
 ### 15. Celery Worker
 Öffnen Sie ein neues Terminal und führen Sie einen einfachen Celery Worker aus:
 ```
-celery -A escriptorium worker -l INFO &
+DJANGO_SETTINGS_MODULE=escriptorium.local_settings celery -A escriptorium worker -l INFO &
 ```
 
 Bestätigen Sie mit Enter. Mittels dieses Befehls läuft Celery direkt im Hintergrund und Sie können fortfahren.
@@ -211,7 +211,7 @@ source env/bin/activate
 cd app
 sudo service postgresql start
 sudo service redis-server start
-celery -A escriptorium worker -l INFO &
+DJANGO_SETTINGS_MODULE=escriptorium.local_settings celery -A escriptorium worker -l INFO &
 python manage.py runserver --settings escriptorium.local_settings
 ```
 Browser: [http://localhost:8000/](http://localhost:8000/)
