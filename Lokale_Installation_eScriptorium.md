@@ -82,23 +82,10 @@ source env/bin/activate
 pip install -U pip setuptools wheel
 ```
 Damit aktualisieren Sie die heruntergeladenen Versionen, dadurch können Fehler später vermieden werden.
-```
-pip install -r app/requirements.txt
-```
-OPTIONAL: Falls hierbei eine Fehlermeldung angezeigt wird, öffnen Sie bitte die Einstellungen und ändern folgende Angaben:
-```
-vi app/requirements.txt
-```
 
-- Ändern Sie bei **psycopg** die Versionsangabe zu `psycopg2-binary~=2.8.6` (Bei neueren Versionen würde folgende Fehlermeldung erscheinen: „Database section isn’t set to UTC“)
-- bei **scikit-image**, **scipy** sowie bei **scikit-learn** löschen Sie die Versionsangaben
-- **Hinweis:** Innerhalb des VI-Editors aktivieren Sie mit der Taste `i` Sie den „Insert-Mode“ mit der Taste, danach können Sie wie gewohnt schreiben. Um den Eingabemodus wieder zu verlassen, drücken Sie die Escape-Taste. Wenn Ihre Eingabe beendet ist, verlassen Sie die Settings mittels `:x`, insofern Sie die Änderungen speichern möchten. Möchten Sie eine Änderung nicht speichern, geben Sie `:q` ein.
-
-Anschließend müssen Sie den vorherigen Befehl noch einmal ausführen.
-
-Nun geben Sie folgenden Befehl ein:
+Installieren Sie alle notwendigen Python-Pakete:
 ```
-pip install -r app/requirements-dev.txt
+pip install -r app/requirements.txt -r app/requirements-dev.txt
 ```
 
 ### 8. Lokale Einstellungen anlegen
