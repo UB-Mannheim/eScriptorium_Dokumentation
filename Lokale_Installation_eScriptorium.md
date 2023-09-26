@@ -42,7 +42,7 @@ sudo service redis-server start
 ```
 OPTIONAL: Der derzeitige Status von Postgresql kann jederzeit mit folgendem Befehl abgefragt werden:
 ```
-service postgresql status
+sudo service postgresql status
 ```
 
 ### 3. Benutzernamen anlegen
@@ -79,8 +79,7 @@ Jetzt erstellen und aktivieren Sie eine virtuelle Umgebung:
 ```
 python3 -m venv env
 source env/bin/activate
-# setuptools-67.6.1 funktioniert nicht mit oitei~=1.0.0.
-pip install -U pip "setuptools<67" wheel
+pip install -U pip setuptools wheel
 ```
 Damit aktualisieren Sie die heruntergeladenen Versionen, dadurch können Fehler später vermieden werden.
 ```
