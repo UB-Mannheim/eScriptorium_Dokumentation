@@ -1,4 +1,7 @@
 # Nutzung von eScriptorium
+>Die Anleitung basiert auf dem Blogbeitrag von Lectaurep: https://lectaurep.hypotheses.org/documentation/escriptorium-tutorial-en
+
+>Eine ausführlichere und aktualisierte Dokumentation zu eScriptorium in englischer Sprache finden Sie unter: https://escriptorium.readthedocs.io/
 
 ## 1. Schritt für Schritt
 ### 1.1. Einloggen in eScriptorium
@@ -128,6 +131,7 @@ Die „Baseline“ ist ein zentrales Element, um Informationen in der eScriptori
 - Es ist möglich das Polygon händisch zu ändern (nicht empfohlen), ohne dass dies Auswirkungen auf die Transkription hat  
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161036730-f3a5e30d-8245-4ff7-adf4-8225aae4cf1f.png)
+>Bildquelle: https://lectaurep.hypotheses.org/documentation/prendre-en-main-escriptorium
 
 Während des Trainings der Kraken-Modelle, kann die Berechnung der Polygone zurückgesetzt werden: Für den User ist es daher von Vorteil, nicht in die Polygone einzugreifen und im Gegenteil dafür zu sorgen, dass die Baselines so gezeichnet werden, dass die automatisch erzeugten Polygone korrekt sind. Falls manuell Ground-Truth-Daten eingegeben werden, sollte darauf geachtet werden nur zu transkribieren was innerhalb des Polygons steht.    
 
