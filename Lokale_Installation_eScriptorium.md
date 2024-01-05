@@ -135,12 +135,11 @@ cd ../app
 python manage.py check --settings escriptorium.local_settings
 ```
 
-### 12. SQL-Tabelle
-Jetzt erstellen Sie eine SQL-Tabelle im Ordner *app*:
+### 12. SQL-Tabellen
+Jetzt erstellen Sie die benötigten SQL-Tabellen in der Datenbank:
 ```
 python manage.py migrate --settings escriptorium.local_settings
 ```
-Bei aktuellen Versionen von eScriptorium wird dabei eine Fehlermeldung angezeigt, die man ignoriert.
 
 ### 13. Übersetzungen aktualisieren
 Unter Umständen müssen noch die Übersetzungen der Benutzeroberfläche (neben den englischen gibt es weitgehend übersetzte deutsche Texte) aktualisiert werden:
