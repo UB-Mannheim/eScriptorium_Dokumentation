@@ -137,7 +137,7 @@ As soon as all images have been uploaded, they will appear as a preview at the b
 
 #### Step 3: Run layout segmentation on your data
 
-> **Note:** Step 3 involves automatic layout segmentation. The aim here is to find a model that already works well for the uploaded images in order to improve this model afterwards in the fine-tuning step (and make them perform even better on the available data). Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching for layout segmentation and text recognition models.
+> **Note:** Step 3 involves automatic layout segmentation. The aim here is to find a model that already works well for the uploaded images in order to improve this model afterwards in the fine-tuning step (and make it perform even better on the available data). Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching for layout segmentation and text recognition models.
 
 Select all images by clicking on the **"Select all"** button. All images in the current document should now be highlighted. 
 
@@ -291,7 +291,7 @@ After the first text line has been corrected, press the `Enter ↲` key to check
 After you have finished correcting the current page, proceed with the next one. *Be sure to follow all instructions of `step 10` (i.e. using the "manual" transcription workflow).*
 
 #### Addendum 1: How much training data (ground truth) do I need?
-> Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model. With regard to fine-tuning, an **iterative approach** should be followed: 
+> Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model that already works somewhat well on your data. With regard to fine-tuning, an **iterative approach** should be followed: 
 > 1. Create 2 to 3 pages of training data by correcting the automatically generated transcriptions as shown in step 10. 
 > 2. [Fine-tune the text recognition model](#step-11-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth . 
 > 3. [Test and evaluate](#step-12-re-run-text-recognition-and-evaluate-your-fine-tuned-model) if the fine-tuned model yields better transcriptions on your data than before.
@@ -345,6 +345,27 @@ If you want to view the training progress, click on **"My models"**:
 <img src="./images/training-eS-38.png" width="80%" height="80%"><br/>
 
 The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified as soon as the training has finished.
+
+#### Optional: Fine-tuning Tesseract and Calamari models in eScriptorium
+> **Note:** This section is only relevant for versions of eScriptorium in which the training environment has been extended for the OCR engines **Tesseract** and **Calamari**.
+
+To use an OCR engine other than `kraken` (the eScriptorium default engine) for fine-tuning, `step 11` can be adapted as follows:
+
+After you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#how-much-training-data-ground-truth-do-i-need-for-fine-tuning)), start the fine-tuning process like this:
+
+1. Click on the **"Images"** tab.
+2. Click on the **"Select all"** button.
+3. Click on the blue **"Train"** button.
+4. Click on **"Recognizer"**.
+
+<img src="./images/training-eS-35.png" width="80%" height="80%"><br/>
+
+A pop-up should open, that looks like this:
+
+
+Choose 
+
+
 
 #### Step 12: Re-run text recognition and evaluate your fine-tuned model
 After the training has finished your fine-tuned text recognition model becomes available for testing. This step helps identifiying if the fine-tuned model produces better results than the previously used base model in `step 8`.
@@ -401,11 +422,64 @@ If the evaluation of `step 12` produced unsatisfactory results, try iterating `s
 Check [Addendum 1: How much training data (ground truth) do I need?](#addendum-1-how-much-training-data-ground-truth-do-i-need) for more details.
 
 ### 3.2. How to fine-tune a layout segmentation model 
+> **Note:** The aim of fine-tuning a layout segmentation model is to improve the automatic segmentation of text regions, baselines and line masks. In order to fine-tune an existing layout segmentation model, the existing model (*base model*) should already work *reasonably* well on your data. For example, a base model that has been trained on a writing system such as Arabic (reading direction right to left) will most likely not be improved by fine-tuning with training data that has a reading direction from left to right. Similarly, a base model that has been trained primarily on rather uniform book pages (e.g. English novels from the 18th century with a homogeneous paragraph-by-paragraph layout) will have problems with the segmentation of complex tables, as these layout structures were underrepresented in the training data or played no role at all. Experience has shown that fine-tuning such a base model with a few pages of training data does not lead to useful results. Hence we recommend finding a layout segmentation model that works reasonably well on your data in the first place.
+
+As with fine-tuning a text recognition model, we recommend using an **iterative approach** for creating training data (*ground truth*):
+
+#### Step 1: Create training data 
+Create 5 to 10 pages of training data by correcting the automatically generated layout segmentation as shown in `steps 3 to 7` of chapter [3.1. How to fine-tune a text recognition model](#31-how-to-fine-tune-a-text-recognition-model).
+
+#### Step 2: Fine-tune your layout segmentation model
+2. Click on the **"Images"** tab.
+3. Select **all pages with your corrected training data** (select one page, hold `Shift` key and then select the other pages with your training data).
+4. Click on the blue **"Train"** button and choose **"Segmenter"**.
+
+<img src="./images/training-eS-51.png" width="80%" height="80%"><br/>
+
+A pop-up should open, that looks like this:
+
+<img src="./images/training-eS-52.png" width="80%" height="80%"><br/>
+
+- **1st drop-down**: Choose a name for your fine-tuned model
+   - *We recommend using descriptive names, that should capture the following information (as this helps later when identifying a model in a large number of other models)*:
+      - `Name of parent model`: name of the model you fine-tune. In our example `ubma_segmentation`.
+      - `Name of the documents you train with`: a descriptive name for identifying the data you used for fine-tuning. In our example we use the abbreviation `Maschinenindustrie` as we are training with pages from this respective collection.
+      - `Model number`: Record the number or generation of the new model. `M1`, as in the example, means: the first fine-tuned model.
+- **2nd drop-down**: Select the layout segmentation model you want to fine-tune. This should be the model you worked with in `step 3`, i.e. the layout segmentation model that already worked quite well on your data.
+
+Finally, click on the blue **"Train"** button and start the fine-tuning.
+
+A running training is shown as below:
+
+<img src="./images/training-eS-37.png" width="100%" height="100%"><br/>
+
+You will be notified once the training has finished.
+
+#### Step 3: Re-run layout segmentation evaluate your fine-tuned model
+After the training has finished your fine-tuned layout segmentaton model becomes available for testing. This step helps identifiying if the fine-tuned model produces better results than the previously used base model.
+
+1. Switch back to your document and click on the **"Images"** tab.
+2. Click on the **"Select all"** button to select all available images.
+3. Click on the blue **"Segment"** button.
+
+<img src="./images/training-eS-11.png" width="80%" height="80%">
+
+A pop-up should appear that lets you choose a layout segmentation model:
+
+
+
+- **Select a model**: Choose a the model you have fine-tuned in `step 11`
+
+
+
+
+
+
+
 
 ## 4. Training from scratch in eScriptorium
 
 ## 5. Additional tips
-
 ### 5.1. Using the virtual keyboard in eScriptorium
 #### What are virtual keyboards?
 Virtual keyboards are especially helpful when transcribing historical documents, as a lot of characters in those documents are not available on standard modern day keyboards.
@@ -433,9 +507,21 @@ With the **Keyboards manager** you are able to import existing keyboards or crea
 
 #### Importing a virtual keyboard
 1. Click on the blue **"Import a keyboard"** icon.
+2. A new pop up should appear. Click on the grey **"Choose a file"** button.
 
+<img src="./images/training-eS-48.png" width="80%" height="80%"><br/>
 
+3. Download the `escriptorium-keyboard-German-Fraktur.json` from the `virtual-keyboards` folder of this GitHub repository to your computer.
+4. In eScriptorium, choose the file you just downloaded in your file browser and open it.
+5. Next, click on the blue **"Import"** button. A message should appear, if you successfully imported the keyboard.
 
+<img src="./images/training-eS-49.png" width="80%" height="80%"><br/>
+
+You are now able to choose the imported virtual keyboard in the drop down menu. Clicking on one of the glyphs inside the virtual keyboard will paste it into the transcription.
+
+<img src="./images/training-eS-50.png" width="80%" height="80%"><br/>
+
+> **Note:** More information about virtual keyboards can be found in the eScriptorium documentation: [escriptorium-tutorial.readthedocs.io/en/latest/virtual_keyboard/](https://escriptorium-tutorial.readthedocs.io/en/latest/virtual_keyboard/)
 
 ### 5.2. Ground truth guidelines for transcriptions
 #### What are transcription guidelines?
