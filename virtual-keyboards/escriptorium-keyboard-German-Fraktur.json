@@ -1,0 +1,187 @@
+{
+    "version": "0.1",
+    "name": "German Fraktur",
+    "author": "Thomas Schmidt (thomas.schmidt@uni-mannheim.de)",
+    "characters": [
+        {
+            "row": 0,
+            "column": 0,
+            "character": "ſ"
+        },
+        {
+            "row": 0,
+            "column": 1,
+            "character": "⸗"
+        },
+        {
+            "row": 0,
+            "column": 2,
+            "character": "Æ"
+        },
+        {
+            "row": 0,
+            "column": 3,
+            "character": "æ"
+        },
+        {
+            "row": 0,
+            "column": 4,
+            "character": "Œ"
+        },
+        {
+            "row": 0,
+            "column": 5,
+            "character": "œ"
+        },
+        {
+            "row": 0,
+            "column": 6,
+            "character": "ͤ"
+        },
+        {
+            "row": 0,
+            "column": 7,
+            "character": "ꝛ"
+        },
+        {
+            "row": 0,
+            "column": 8,
+            "character": "₰"
+        },
+        {
+            "row": 0,
+            "column": 9,
+            "character": "ℛ"
+        },
+        {
+            "row": 1,
+            "column": 0,
+            "character": "ℳ"
+        },
+        {
+            "row": 1,
+            "column": 1,
+            "character": "†"
+        },
+        {
+            "row": 1,
+            "column": 2,
+            "character": "—"
+        },
+        {
+            "row": 1,
+            "column": 3,
+            "character": "„"
+        },
+        {
+            "row": 1,
+            "column": 4,
+            "character": "“"
+        },
+        {
+            "row": 1,
+            "column": 5,
+            "character": "½"
+        },
+        {
+            "row": 1,
+            "column": 6,
+            "character": "⅓"
+        },
+        {
+            "row": 1,
+            "column": 7,
+            "character": "⅔"
+        },
+        {
+            "row": 1,
+            "column": 8,
+            "character": "¼"
+        },
+        {
+            "row": 1,
+            "column": 9,
+            "character": "¾"
+        },
+        {
+            "row": 2,
+            "column": 0,
+            "character": "¾"
+        },
+        {
+            "row": 2,
+            "column": 1,
+            "character": "⅐"
+        },
+        {
+            "row": 2,
+            "column": 2,
+            "character": "⅑"
+        },
+        {
+            "row": 2,
+            "column": 3,
+            "character": "⅒"
+        },
+        {
+            "row": 2,
+            "column": 4,
+            "character": "⅕"
+        },
+        {
+            "row": 2,
+            "column": 5,
+            "character": "⅖"
+        },
+        {
+            "row": 2,
+            "column": 6,
+            "character": "⅗"
+        },
+        {
+            "row": 2,
+            "column": 7,
+            "character": "⅙"
+        },
+        {
+            "row": 2,
+            "column": 8,
+            "character": "⅚"
+        },
+        {
+            "row": 2,
+            "column": 9,
+            "character": "⅛"
+        },
+        {
+            "row": 3,
+            "column": 0,
+            "character": "⅜"
+        },
+        {
+            "row": 3,
+            "column": 1,
+            "character": "⅝"
+        },
+        {
+            "row": 3,
+            "column": 2,
+            "character": "⅞"
+        },
+        {
+            "row": 3,
+            "column": 3,
+            "character": "̄"
+        },
+        {
+            "row": 3,
+            "column": 4,
+            "character": "»"
+        },
+        {
+            "row": 3,
+            "column": 5,
+            "character": "«"
+        }
+    ]
+}
