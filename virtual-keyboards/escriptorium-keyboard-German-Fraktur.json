@@ -1,6 +1,6 @@
 {
     "version": "0.1",
-    "name": "German Fraktur",
+    "name": "German Fraktur (UB Mannheim)",
     "author": "Thomas Schmidt (thomas.schmidt@uni-mannheim.de)",
     "characters": [
         {
@@ -182,6 +182,26 @@
             "row": 3,
             "column": 5,
             "character": "«"
+        },
+        {
+            "row": 3,
+            "column": 6,
+            "character": "✤"
+        },
+        {
+            "row": 3,
+            "column": 7,
+            "character": "✽"
+        },
+        {
+            "row": 3,
+            "column": 8,
+            "character": "▲"
+        },
+        {
+            "row": 3,
+            "column": 9,
+            "character": "■"
         }
     ]
 }
