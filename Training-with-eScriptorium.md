@@ -611,4 +611,4 @@ As you can see, a transcription of the image produces different results when tra
 > **Note:** In every project, decisions need to be made regarding the **transcription of print-specific features** (in the example above, *the representation of the long 's'* that regularly appears in German works printed in Fraktur). The OCR-D guidelines are a valuable resource for providing initial guidance in this regard. Furthermore, they collect real world examples, that might help in creating your own guidelines.
 
 ## 6. License
-This guide is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+This guide is licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
