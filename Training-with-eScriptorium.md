@@ -29,7 +29,8 @@ This guide is for *intermediate* eScriptorium users with a basic understanding o
 
 Although an attempt was made to keep the guide as accessible as possible, certain technical terms could not be avoided. Where these are to be found in the guide, we try to explain them as clearly as possible. 
 
-This guide was created during the 3rd [OCR-D](https://ocr-d.de/en/) funding phase in the module project *Workflow for work-specific training based on generic models with OCR-D as well as ground truth enhancement* at the [University Library Mannheim](https://www.bib.uni-mannheim.de/en/about/projects-of-the-university-library/). The module project was funded by the German Research Foundation (DFG) between 2021-2023.
+This guide was created during the 3rd [OCR-D](https://ocr-d.de/en/) funding phase in the module project [*Workflow for work-specific training based on generic models with OCR-D as well as ground truth enhancement*](https://www.bib.uni-mannheim.de/en/about/projects-of-the-university-library/ocr-d-modelltraining/) (2021–2023) at [Mannheim University Library](https://www.bib.uni-mannheim.de/en/).
+The module project was funded by the German Research Foundation (DFG).
 
 **Feedback is always welcome!**
 - [Jan Kamlah](https://orcid.org/0000-0002-0417-7562): `jan.kamlah[at]uni-mannheim[dot]de`
