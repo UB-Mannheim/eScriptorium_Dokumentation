@@ -139,7 +139,7 @@ As soon as all images have been uploaded, they will appear as a preview at the b
 #### Step 3: Run layout segmentation on your data
 
 > **Note 1:** Step 3 involves automatic layout segmentation. The aim here is to find a model that already works well for the uploaded images in order to improve this model afterwards in the fine-tuning step (and make it perform even better on the available data). Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching models.
-> **Note 2:** We recommend working with either *RGB* or *grayscale* images as binarization can lead to losses in image detail. Thats why we omit the **binarize** feature of eScriptorium in the following steps.
+> **Note 2:** We recommend working with either *RGB* or *grayscale* images as binarization can lead to losses in image detail. That's why we omit the **binarize** feature of eScriptorium in the following steps.
 
 Select all images by clicking on the **"Select all"** button. All images in the current document should now be highlighted. 
 
@@ -174,7 +174,7 @@ On the left side of the editing view you find a preview of the image with a the 
 
 <img src="./images/training-eS-16.png" width="80%" height="80%"><br/>
 
-1. **Text regions**: A text region usually contains several lines of text. Examples of a text region are: a paragraph, a column of text or a complete page of text. The structre of one or more text regions should correspond to the reading order and layout structure of the respective page.
+1. **Text regions**: A text region usually contains several lines of text. Examples of a text region are: a paragraph, a column of text or a complete page of text. The structure of one or more text regions should correspond to the reading order and layout structure of the respective page.
 2. **Line masks** (sometimes called *text lines*): A polygon mask representing a single text lines that covers all characters of the text line. eScriptorium automatically generates line masks from baselines. Therefore: while correcting the results of the automatic layout segmentation, concentrate on text regions and baselines first, as line masks will be automatically recalculated after you adjusted a baseline.
 3. **Baselines**: The baseline is the line upon which most letters of a single text line sit. It's especially noticeable in handwritten or printed text, where letters without descending elements (like the lower part of "g" or "p") align along this line.
 
@@ -213,7 +213,7 @@ Adjust the baselines in such a way that:
 #### Step 7: Correct the layout segmentation for all pages
 Repeat steps 5 and 6 for all available pages. Ensuring correct layout segmentation on all pages helps to improve the text recognition quality.
 
-> **Note:** If it is neccessary to correct a large amount of data, it is possible to fine-tune a layout segmentation model by repeating steps 5 and 6 for a small amount of pages, thus creating a set of training data (*ground truth*). After creating the training data, you can fine-tune a layout segmentation model and re-run the automatic layout segmentation (i.e., repeat [Step 3: Run layout segmentation on your data](#step-3-run-layout-segmentation-on-your-data)) with this fine-tuned model, in order to improve the segmentation results. Check [chapter 3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) for further details.
+> **Note:** If it is necessary to correct a large amount of data, it is possible to fine-tune a layout segmentation model by repeating steps 5 and 6 for a small amount of pages, thus creating a set of training data (*ground truth*). After creating the training data, you can fine-tune a layout segmentation model and re-run the automatic layout segmentation (i.e., repeat [Step 3: Run layout segmentation on your data](#step-3-run-layout-segmentation-on-your-data)) with this fine-tuned model, in order to improve the segmentation results. Check [chapter 3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) for further details.
 
 #### Step 8: Run text recognition on your data
 > **Note:** Step 8 involves automatic text recognition. The aim here is to find a model that already works well for your data in order to improve this model further through fine-tuning it . Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching for layout segmentation and text recognition models.
@@ -370,7 +370,7 @@ Choose
 
 
 #### Step 12: Re-run text recognition and evaluate your fine-tuned model
-After the training has finished your fine-tuned text recognition model becomes available for testing. This step helps identifiying if the fine-tuned model produces better results than the previously used base model in `step 8`.
+After the training has finished your fine-tuned text recognition model becomes available for testing. This step helps identifying if the fine-tuned model produces better results than the previously used base model in `step 8`.
 
 1. Switch back to your document and click on the **"Images"** tab.
 2. Select one or more pages.
@@ -465,7 +465,7 @@ If you want to view the training progress, click on **"My models"**:
 The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified once the training has finished.
 
 #### Step 3: Re-run layout segmentation evaluate your fine-tuned model
-After the training has finished your fine-tuned layout segmentaton model becomes available for testing. This step helps identifiying if the fine-tuned model produces better results than the previously used base model.
+After the training has finished your fine-tuned layout segmentaton model becomes available for testing. This step helps identifying if the fine-tuned model produces better results than the previously used base model.
 
 1. Switch back to your document and click on the **"Images"** tab.
 2. Select one or more pages to test your fine-tuned model on.
@@ -535,7 +535,7 @@ After the training has finished your model becomes available for testing. Depend
 
 <img src="./images/training-eS-59.png" width="80%" height="80%">
 
-**Select** your model and start the **Layout segmentation** / **Text recognition** by clicking on the blue **"Transcribe"** / **"Segement"** button.
+**Select** your model and start the **Layout segmentation** / **Text recognition** by clicking on the blue **"Transcribe"** / **"Segment"** button.
 
 Once the **Layout segmentation** / **Text recognition** has finished for the selected page, check the results for quality.
 
