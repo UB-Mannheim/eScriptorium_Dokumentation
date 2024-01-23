@@ -9,20 +9,23 @@ The following step-by-step guide provides an introduction to the installation an
 
 # Contents
 0. [Who is this guide for?](#0-who-is-this-guide-for)<br/>
-1. [How does training work?](#1-how-does-training-work)<br/>
-2. [How to train in eScriptorium?](#2-how-to-train-in-escriptorium)<br/>
-2.1. [Provide or create training data (ground truth)](#21-provide-or-create-training-data-ground-truth)<br/>
-2.2. [Where to find models](#22-where-to-find-models)<br/>
-2.3. [How to choose a model for a specific use case](#23-how-to-choose-a-model-for-a-specific-use-case) <br/>
-3. [Fine-tuning in eScriptorium](#3-fine-tuning-in-escriptorium) <br/>
-3.1. [How to fine-tune a text recognition model](#31-how-to-fine-tune-a-text-recognition-model)<br/>
-3.2. [How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model)<br/>
-4. [Training from scratch in eScriptorium](#4-training-from-scratch-in-escriptorium)<br/>
-5. [Additional tips](#5-additional-tips)<br/>
-5.1. [Using the virtual keyboard in eScriptorium](#51-using-the-virtual-keyboard-in-escriptorium) <br/>
-5.2. [Ground truth guidelines for transcriptions](#52-ground-truth-guidelines-for-transcriptions) <br/>
-6. [License](#6-license) 
-
+1. [How to install and set up eScriptorium and the Tesseract extension?](#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension)<br/>
+   1.1 [Installation of Tesseract](#11-installation-of-tesseract)<br/>
+   1.2 [Installation of eScriptorium with Tesseract extensions](#12-installation-of-escriptorium-with-tesseract-extensions)<br/>
+2. [How to use eScriptorium with Tesseract extension](#2-how-to-use-escriptorium-with-tesseract-extension)<br/>
+   2.1 [What to consider applying Tesseract models to Kraken segmented data?](#21-what-to-consider-applying-tesseract-models-to-kraken-segmented-data)<br/>
+3. [How to fetch and upload a Tesseract transcription model](#3-how-to-fetch-and-upload-a-tesseract-transcription-model)<br/>
+   3.1 [Where to find Tesseract models](#31-where-to-find-tesseract-models)<br/>
+   3.2 [How to choose a model for a specific use case](#32-how-to-choose-a-model-for-a-specific-use-case)<br/>
+   3.3 [How to upload Tesseract models to eScriptorium](#33-how-to-upload-tesseract-models-to-escriptorium)<br/>
+4. [How to apply a Tesseract transcription model to your dataset](#4-how-to-apply-a-tesseract-transcription-model-to-your-dataset)<br/>
+5. [How to train a Tesseract transcription model](#5-how-to-train-a-tesseract-transcription-model)<br/>
+   5.1 [Provide or create training data (ground truth)](#51-provide-or-create-training-data-ground-truth)<br/>
+       - [Addendum 1: How much training data (ground truth) do I need?](#addendum-1-how-much-training-data-ground-truth-do-i-need)<br/>
+       - [Addendum 2: Always follow transcription guidelines!](#addendum-2-always-follow-transcription-guidelines)<br/>
+   5.2 [Fine-tune a text recognition model](#52-fine-tune-a-text-recognition-model)<br/>
+6. [License](#6-license)<br/>
+7. 
 ## 0. Who is this guide for?
 This guide is for eScriptorium users which want to set up, use and train Tesseract models in eScriptorium. 
 
