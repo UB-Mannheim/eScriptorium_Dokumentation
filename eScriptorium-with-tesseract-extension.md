@@ -197,11 +197,11 @@ These steps are the same as for the [kraken](Training-with-eScriptorium.md#3-fin
 3. [Run layout segmentation on your data](Training-with-eScriptorium.md#step-3-run-layout-segmentation-on-your-data) 
 4. [Check the layout segmentation](Training-with-eScriptorium.md#step-4-check-the-layout-segmentation) 
 5. [Correct the text regions](Training-with-eScriptorium.md#step-5-correct-the-text-regions) 
-6. [Correct the baselines and line masks](Training-with-eScriptorium.md#step-6-correct-the-baselines-and-line masks)
+6. [Correct the baselines and line masks](Training-with-eScriptorium.md#step-6-correct-the-baselines-and-line-masks)
 7. [Correct the layout segmentation for all pages](Training-with-eScriptorium.md#step-7-correct-the-layout-segmentation-for-all-pages)
 8. [Run text recognition on your data](Training-with-eScriptorium.md#step-8-run-text-recognition-on-your-data)
 9. [Check the transcriptions](Training-with-eScriptorium.md#step-9-check-the-transcriptions)
-10. [Improve the transcriptions and create ground truths](Training-with-eScriptorium.md#step-10-improve-the-transcriptions-and-create-ground-truths) 
+10. [Improve the transcriptions and create ground truths](Training-with-eScriptorium.md#step-10-improve-the-transcriptions-and-create-ground-truth) 
 
 > **Note:**
 > If no base model is available for steps 3 and 8, these steps can also be carried out manually. However, experience shows that working with a model is usually much quicker.
@@ -251,11 +251,11 @@ A pop-up should open, that looks like this:
 - **2nd drop-down**: Select the text recognition model you want to fine-tune. This should be the model you worked with in [step 8](#step-8-run-text-recognition-on-your-data), i.e. the text recognition model that already worked quite well on your data. In our example this model is `german_newspapers`.
 
 The model selection can be filtered by:
-1. OCR-Engine
+1. OCR-Engine<br/>
 <img src="./images/tesseract-extension-02.png" width="80%" height="80%"><br/>
 <img src="./images/tesseract-extension-03.png" width="80%" height="80%"><br/>
 
-2. Modelname
+2. Modelname<br/>
 <img src="./images/tesseract-extension-04.png" width="80%" height="80%"><br/>
 <img src="./images/tesseract-extension-05.png" width="80%" height="80%"><br/>
 
