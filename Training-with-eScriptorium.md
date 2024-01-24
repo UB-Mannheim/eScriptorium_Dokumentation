@@ -41,12 +41,12 @@ For all automated layout segmentation and text recognition tasks, eScriptorium u
 
 It is necessary to understand the area of application of the two training variants mentioned: 
 
-- **`Training from scratch`**: The training of a completely new model (that is not based on an already existing model) is called *training from scratch*. So-called *ground truth* is used for training, e.g. images of book pages with corresponding transcriptions that capture the text content of the pages. In order to generate robust OCR models with a training from scratch, a large amount of data is usually required (sometimes several hundred thousand lines of text). This amount can lead to problems with eScriptorium. For example, an eScriptorium project that is to be used for training from scratch with several thousand digitised documents and transcriptions can reach memory and usability limits. In such cases, training from scratch outside of eScriptorium via command line is recommended. 
+- **`Training from scratch`**: The training of a completely new model (that is not based on an already existing model) is called *training from scratch*. So-called *ground truth* is used for training, e.g. images of book pages with corresponding transcriptions that capture the text content of the pages. In order to generate robust OCR models with a training from scratch, a large amount of data is usually required (sometimes several hundred thousand lines of text). This amount can lead to problems with eScriptorium. For example, an eScriptorium document that is to be used for training from scratch with several thousand digitised documents and transcriptions can reach memory and usability limits. In such cases, training from scratch outside of eScriptorium via command line is recommended. 
 - **`Fine-tuning`**: Fine-tuning, or work-specific fine-tuning, involves taking an existing model and specifically adapting it to a new use case or domain (*work-specific* in this context means that the fine-tuning is undertaken with a specific work (e.g. a historical document, manuscript or book) or group of similar works in mind). For example, a basic OCR model trained to recognize standard alphanumeric Latin characters can be unable to identify currency symbols like the Euro (€), Pound (£), or Yen (¥). To fine-tune this model for a financial domain, additional training is done using a dataset that includes these specific currency symbols. This process adjusts the model's parameters to become more sensitive to these new symbols, enabling it to accurately recognize and interpret them in financial documents where they frequently appear.
 
 ## 2. How to train in eScriptorium
 ### 2.1. Provide or create training data (ground truth)
-In order to `train from scratch` or to `fine-tune` an existing model you must provide training data (*ground truth*). In eScriptorium this training data is provided inside a project. Training data consists of **images** (digitised pages of books, manuscripts, documents etc.) and corresponding **transcriptions** or **layout segmentations**. 
+In order to `train from scratch` or to `fine-tune` an existing model you must provide training data (*ground truth*). In eScriptorium this training data is provided inside a document. Training data consists of **images** (digitised pages of books, manuscripts, documents etc.) and corresponding **transcriptions** or **layout segmentations**. 
 
 #### Ground truth for text recognition models
 
@@ -54,7 +54,7 @@ As the name suggests, text recognition models are used to automatically recognis
 
 <img src="./images/training-eS-03.png" width="80%" height="80%"><br/>
 
-The transcriptions attempt to capture the text content of the images as accurately as possible. If you don't have any ground truth to train with you can create it inside eScriptorium (i.e. create transcriptions for images you upload to an eScriptorium project). 
+The transcriptions attempt to capture the text content of the images as accurately as possible. If you don't have any ground truth to train with you can create it inside eScriptorium (i.e. create transcriptions for images you upload to an eScriptorium document). 
 
 #### Ground truth for layout segmentation models
 
@@ -346,12 +346,12 @@ If you want to view the training progress, click on **"My models"**:
 
 <img src="./images/training-eS-38.png" width="80%" height="80%"><br/>
 
-The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified as soon as the training has finished.
+The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified as soon as the training has finished. 
 
-#### Optional: Fine-tuning Tesseract and Calamari models in eScriptorium
-> **Note:** This section is only relevant for versions of eScriptorium in which the training environment has been extended for the OCR engines **Tesseract** and **Calamari**.
+#### Fine-tuning Tesseract models in eScriptorium
+> **Note:** This section is only relevant for versions of eScriptorium in which the training environment has been extended for the OCR engine **Tesseract**. A step-by-step guide to install the corresponding eScriptorium version can be found here: [How to install and set up eScriptorium with Tesseract](https://github.com/UB-Mannheim/eScriptorium_Dokumentation/blob/main/eScriptorium-with-tesseract-extension.md#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension).
 
-To use an OCR engine other than `kraken` (the eScriptorium default engine) for fine-tuning, `step 11` can be adapted as follows:
+To use `Tesseract` instead of `kraken` (the eScriptorium default engine) for fine-tuning, `step 11` can be adapted as follows:
 
 After you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#how-much-training-data-ground-truth-do-i-need-for-fine-tuning)), start the fine-tuning process like this:
 
@@ -364,10 +364,21 @@ After you have created a sufficient amount of training data (refer to section [H
 
 A pop-up should open, that looks like this:
 
+<img src="./images/tesseract-extension-01.png" width="80%" height="80%"><br/>
 
-Choose 
+- **1st drop-down**: Choose the "manual" transcription where you saved the corrected ground truth
+- **Field `New model`**: Choose a name for your fine-tuned model
+   - *We recommend using descriptive names, that should capture the following information (as this helps later when identifying a model in a large number of other models)*:
+      - `Name of parent model`: name of the model you fine-tune. In our example `german_print`.
+      - `Name of the documents you train with`: a descriptive name for identifying the data you used for fine-tuning. In our example we use the abbreviation `CharlAmtsschriftum` as we are training with pages from this respective collection.
+      - `Model number`: Record the number or generation of the new model. `M1`, as in the example, means: the first fine-tuned model.
+- **2nd drop-down**: Select the `Tesseract` model you want to fine-tune.
 
+Lastly, click on the blue **"Train"** button to start the fine-tuning. 
 
+A running training is shown as below:
+
+<img src="./images/training-eS-37.png" width="100%" height="100%"><br/>
 
 #### Step 12: Re-run text recognition and evaluate your fine-tuned model
 After the training has finished your fine-tuned text recognition model becomes available for testing. This step helps identifying if the fine-tuned model produces better results than the previously used base model in `step 8`.
