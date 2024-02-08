@@ -52,7 +52,7 @@ In order to `train from scratch` or to `fine-tune` an existing model you must pr
 
 As the name suggests, text recognition models are used to automatically recognise the text content of an image. If you want to train or fine-tune a text recognition model you need **images** and **transcriptions**. Here is an example in eScriptorium:
 
-<img src="./images/training-eS-03.png" width="80%" height="80%"><br/>
+<img src="./images/training-eS-03.png" width="100%"><br/>
 
 The transcriptions attempt to capture the text content of the images as accurately as possible. If you don't have any ground truth to train with you can create it inside eScriptorium (i.e. create transcriptions for images you upload to an eScriptorium document). 
 
@@ -60,7 +60,7 @@ The transcriptions attempt to capture the text content of the images as accurate
 
 Layout segmentation models are used to automatically recognise all text regions and text lines on an image and are a preliminary stage to text recognition itself. If you want to train or fine-tune a layout segmentation model you need **images** and **layout segmentation data**. Here is an example in eScriptorium:
 
-<img src="./images/training-eS-24.png" width="80%" height="80%"><br/>
+<img src="./images/training-eS-24.png" width="100%"><br/>
 
 > **Note:** Chapters [3.1. How to fine-tune a text recognition model](#3-how-to-fine-tune-a-model) and [3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) provide a detailed introduction to the creation of ground truth for text recognition and layout segmentation training.
 
@@ -71,7 +71,7 @@ Especially for fine-tuning already existing layout segmentation or text recognit
 
 All downloaded models can be uploaded to eScriptorium by clicking on **"My Models"** on the upper right corner of the screen. Click on **"Upload a model"** in the next screen and choose the model you want to upload.
 
-<img src="./images/training-eS-10.png" width="80%" height="80%">
+<img src="./images/training-eS-10.png" width="100%">
 
 ### 2.3. How to choose a model for a specific use case
 The performance of a model depends on various factors and must be tested for each use case. For example a model trained only on traditional Chinese characters might not perform well on German documents printed in the typeface Fraktur.
@@ -100,11 +100,11 @@ The following steps describe this workflow in detail.
 #### Step 1: Create a new project and document
 Start with creating a new eScriptorium project by browsing to the eScriptorium start page and clicking on **"My Projects"** in the upper right corner of the screen.
 
-<img src="./images/training-eS-00.png" width="40%" height="40%">
+<img src="./images/training-eS-00.png" width="40%">
 
 Next, click on the green **"Create new Project"** button.
 
-<img src="./images/training-eS-01.png" width="40%" height="40%">
+<img src="./images/training-eS-01.png" width="40%">
 
 Name your project on the next screen and click on **"Create"**.
 

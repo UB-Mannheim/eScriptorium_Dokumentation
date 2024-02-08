@@ -299,7 +299,7 @@ Nachdem Sie die Korrektur für die aktuelle Seite abgeschlossen haben, fahren Si
 #### Exkurs 1: Wie viele Trainingsdaten (Ground Truth) brauche ich?
 > Erfahrungswerte zeigen, dass bereits eine **geringe Menge an Trainingsdaten** ausreicht, um mit dem Finetuning eines bestehenden Texterkennungsmodells zu beginnen, das bereits hinreichend gut auf den vorliegenden Daten funktioniert. Beim Nachtraining sollte ein **iterativer Ansatz** verfolgt werden: 
 > 1. Erstellen Sie 2 bis 3 Seiten mit Trainingsdaten, indem Sie die automatisch generierten Transkriptionen wie in Schritt 10 korrigieren. 
-> 2. Folgen Sie [Schritt 11: Nachtraining (Finetuning) enes Texterkennungsmodells](#schritt-11-nachtraining-finetuning-enes-texterkennungsmodells) und trainieren Sie das Modell, das Sie in Schritt 8 zur automatischen Erzeugung der Transkriptionen verwendet haben, mit der korrigierten Ground Truth (Schritt 10) nach. 
+> 2. Folgen Sie [Schritt 11: Nachtraining (Finetuning) enes Texterkennungsmodells](#schritt-11-nachtraining-finetuning-eines-texterkennungsmodells) und trainieren Sie das Modell, das Sie in Schritt 8 zur automatischen Erzeugung der Transkriptionen verwendet haben, mit der korrigierten Ground Truth (Schritt 10) nach. 
 > 3. [Testen und evaluieren Sie](#schritt-12-wiederholung-der-automatischen-texterkennung-und-evaluation-des-nachtrainierten-modells), ob das nachtrainierte Modell bessere Transkriptionen für Ihre Daten liefert.
 > 4. Falls dies nicht zutrifft, wiederholen Sie die Punkt 1 bis 3, um weitere Trainingsdaten zu erzeugen. Führen Sie ein weiteres Nachtraining mit allen Trainingsdaten durch und evaluieren Sie die Ergebnisse.
 > 
