@@ -99,8 +99,8 @@ you can find help in the [official Tesseract compiling documentation](https://te
 At this point, a modified version of eScriptorium must be installed.
 
 There are several guides how to install eScriptorium:
-- [eScriptorium's full install instructions (english)](https://gitlab.com/scripta/escriptorium/-/wikis/full-install)
-- [Full install instructions (german) ](./Lokale_Installation_eScriptorium.md)
+- [eScriptorium's full install instructions (English)](https://gitlab.com/scripta/escriptorium/-/wikis/full-install)
+- [Full install instructions (German) ](./Lokale_Installation_eScriptorium.md)
 
 Since further improvements are still being made to these installation instructions, 
 it is recommend using one of the above guides for the installation and only instead of cloning the current eScriptorium repository,
