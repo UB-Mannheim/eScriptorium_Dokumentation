@@ -1,10 +1,10 @@
 # Anleitung zur lokalen Installation von eScriptorium unter Linux bzw. Windows (WSL/Virtual Box)
 
 Die folgende Installationsanleitung basiert auf einer Installation unter Linux
-mit den Linux-Distributionen **Ubuntu 20.04.3** oder **Debian 11**.
+mit den Linux-Distributionen **Ubuntu 22.04.3** oder **Debian 11**.
 
 Unter Windows 10 und 11 stellt das **[Windows Subsystem for Linux](https://docs.microsoft.com/de-de/windows/wsl/install)** (WSL) eine geeignete Linux-Umgebung bereit.
-Alternativ kann auch eine Virtualisierungssoftware wie beispielsweise **[Virtual Box](https://www.virtualbox.org/wiki/Downloads)** mit Ubuntu 20.04.3 als Basis genommen werden.
+Alternativ kann auch eine Virtualisierungssoftware wie beispielsweise **[Virtual Box](https://www.virtualbox.org/wiki/Downloads)** mit Ubuntu 22.04.3 als Basis genommen werden.
 
 Wenn Sie weitere Informationen oder Hilfe bei der Installation von eScriptorium brauchen, wenden Sie sich gerne an Larissa Will (larissa.will(at)uni-mannheim.de).
 
