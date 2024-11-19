@@ -150,7 +150,7 @@ python manage.py createsuperuser --settings escriptorium.local_settings
 ```
 
 ### 15. Celery Worker
-Starten Sie einen einfachen Celery Worker im Hintergrund aus:
+Starten Sie einen einfachen Celery Worker im Hintergrund:
 ```
 DJANGO_SETTINGS_MODULE=escriptorium.local_settings celery -A escriptorium worker -l INFO &
 ```
