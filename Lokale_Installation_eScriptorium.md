@@ -105,11 +105,6 @@ vi app/escriptorium/local_settings.py
 Anschließend wechseln Sie in das Verzeichnis `front` und installieren mit NPM:
 ```
 cd front
-# Aktualisiere npm (vorinstallierte Version ist meist veraltet).
-sudo npm install -g n
-sudo n latest
-# Vergiss das alte npm, damit das neue npm verwendet wird.
-hash -r
 # Installiere die Pakete für eScriptorium.
 npm install
 ```
