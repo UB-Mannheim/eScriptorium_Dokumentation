@@ -150,12 +150,10 @@ python manage.py createsuperuser --settings escriptorium.local_settings
 ```
 
 ### 15. Celery Worker
-Öffnen Sie ein neues Terminal und führen Sie einen einfachen Celery Worker aus:
+Starten Sie einen einfachen Celery Worker im Hintergrund aus:
 ```
 DJANGO_SETTINGS_MODULE=escriptorium.local_settings celery -A escriptorium worker -l INFO &
 ```
-
-Bestätigen Sie mit Enter. Mittels dieses Befehls läuft Celery direkt im Hintergrund und Sie können fortfahren.
 
 ### 16. Start des Servers
 ```
