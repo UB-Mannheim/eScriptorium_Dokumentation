@@ -52,7 +52,7 @@ Es gibt mehrere Möglichkeiten Bilder auf die Plattform hochzuladen, die im Folg
 #### 1.4.2. Lokale Dateien importieren
 Die Bilder können einfach per „Drag and Drop“ hochgeladen werden oder durch Auswählen der Bilder im File Explorer, mittels eines Klicks in die Box.  
 
-<img src="(https://github.com/anniwherebuthere/eScriptorium_Dokumentation/blob/tutorial_new_interface/images_new_interface/07.png" style="width:50%; height:auto;">
+<img src="https://github.com/anniwherebuthere/eScriptorium_Dokumentation/blob/tutorial_new_interface/images_new_interface/07.png" style="width:70%; height:auto;">
 
 **Hinweis**: Bevor die Seite neugeladen werden kann, muss der Import aller Bilder abgeschlossen sein. eScriptorium bietet momentan keine Möglichkeit Bilder automatisch zu sortieren, daher sollte beim Upload darauf geachtet werden, alle Bilder in der richtigen Reihenfolge auszuwählen sowie auf eine entsprechende Benennung zu achten ansonsten müssen die Bilder händisch sortiert werden.
 
