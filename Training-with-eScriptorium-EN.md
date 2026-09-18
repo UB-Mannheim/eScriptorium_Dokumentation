@@ -64,10 +64,10 @@ Layout segmentation models are used to automatically recognise all text regions 
 
 <img src="./images/legacy/training-eS-24.png" width="100%"><br/>
 
-> **Note:** Chapters [3.1. How to fine-tune a text recognition model](#3-how-to-fine-tune-a-model) and [3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) provide a detailed introduction to the creation of ground truth for text recognition and layout segmentation training.
+> **Note:** Chapters [3.1. How to fine-tune a text recognition model](#31-how-to-fine-tune-a-text-recognition-model) and [3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) provide a detailed introduction to the creation of ground truth for text recognition and layout segmentation training.
 
 ### 2.2. Where to find models 
-Especially for fine-tuning already existing layout segmentation or text recognition models are needed. Here is a list of places where `kraken` models (the OCR/HTR engine eScriptorium uses in the background) can be found:
+Especially for fine-tuning, already existing layout segmentation or text recognition models are needed. Here is a list of places where `kraken` models (the OCR/HTR engine eScriptorium uses in the background) can be found:
 
 - **Zenodo**: [zenodo.org/communities/ocr_models](https://zenodo.org/communities/ocr_models)
 
@@ -177,7 +177,7 @@ On the left side of the editing view you find a preview of the image with the au
 <img src="./images/legacy/training-eS-16.png" width="100%"><br/>
 
 1. **Text regions**: A text region usually contains several lines of text. Examples of a text region are: a paragraph, a column of text or a complete page of text. The structure of one or more text regions should correspond to the reading order and layout structure of the respective page.
-2. **Line masks** (sometimes called *text lines*): A polygon mask representing a single text lines that covers all characters of the text line. eScriptorium automatically generates line masks from baselines. Therefore: while correcting the results of the automatic layout segmentation, concentrate on text regions and baselines first, as line masks will be automatically recalculated after you adjusted a baseline.
+2. **Line masks** (sometimes called *text lines*): A polygon mask representing a single text line that covers all characters of the text line. eScriptorium automatically generates line masks from baselines. Therefore: while correcting the results of the automatic layout segmentation, concentrate on text regions and baselines first, as line masks will be automatically recalculated after you adjusted a baseline.
 3. **Baselines**: The baseline is the line upon which most letters of a single text line sit. It's especially noticeable in handwritten or printed text, where letters without descending elements (like the lower part of "g" or "p") align along this line.
 
 > **Note**: If the layout segmentation is correct continue with [Step 8: Run text recognition on your data](#step-8-run-text-recognition-on-your-data).
@@ -219,7 +219,7 @@ Repeat steps 5 and 6 for all available pages. Ensuring correct layout segmentati
 > **Note:** If it is necessary to correct a large amount of data, it is possible to fine-tune a layout segmentation model by repeating steps 5 and 6 for a small amount of pages, thus creating a set of training data (*ground truth*). After creating the training data, you can fine-tune a layout segmentation model and re-run the automatic layout segmentation (i.e., repeat [Step 3: Run layout segmentation on your data](#step-3-run-layout-segmentation-on-your-data)) with this fine-tuned model, in order to improve the segmentation results. Check [chapter 3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) for further details.
 
 #### Step 8: Run text recognition on your data
-> **Note:** Step 8 involves automatic text recognition. The aim here is to find a model that already works well for your data in order to improve this model further through fine-tuning it . Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching for layout segmentation and text recognition models.
+> **Note:** Step 8 involves automatic text recognition. The aim here is to find a model that already works well for your data in order to improve this model further through fine-tuning it. Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching for layout segmentation and text recognition models.
 
 After completing steps 3 - 6, switch back to **"Images"** tab and click on the **"Select all"** button. 
 
@@ -302,7 +302,7 @@ After you have finished correcting the current page, proceed with the next one. 
 #### Addendum 1: How much training data (ground truth) do I need?
 > Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model that already works somewhat well on your data. With regard to fine-tuning, an **iterative approach** should be followed: 
 > 1. Create 2 to 3 pages of training data by correcting the automatically generated transcriptions as shown in step 10. 
-> 2. [Fine-tune the text recognition model](#step-11-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth . 
+> 2. [Fine-tune the text recognition model](#step-11-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth. 
 > 3. [Test and evaluate](#step-12-re-run-text-recognition-and-evaluate-your-fine-tuned-model) if the fine-tuned model yields better transcriptions on your data than before.
 > 4. If not, repeat 1 to 3 to create more training data. Fine-tune new models and evaluate them on your data until the results are satisfactory. 
 >
@@ -322,7 +322,7 @@ After you have finished correcting the current page, proceed with the next one. 
 
 #### Step 11: Fine-tune a text recognition model
 
-If you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#how-much-training-data-ground-truth-do-i-need-for-fine-tuning)), the fine-tuning process itself is simple.
+If you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#addendum-1-how-much-training-data-ground-truth-do-i-need)), the fine-tuning process itself is simple.
 
 1. Click on the **"Images"** tab.
 2. Click on the **"Select all"** button.
@@ -331,7 +331,7 @@ If you have created a sufficient amount of training data (refer to section [How 
 
 <img src="./images/legacy/training-eS-35.png" width="100%"><br/>
 
-A pop-up should open, that looks like this:
+A pop-up should open, which looks like this:
 
 <img src="./images/legacy/training-eS-36.png" width="100%"><br/>
 
@@ -360,7 +360,7 @@ The model you are currently training will appear in this overview. By clicking o
 
 To use `Tesseract` instead of `kraken` (the eScriptorium default engine) for fine-tuning, `step 11` can be adapted as follows:
 
-After you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#how-much-training-data-ground-truth-do-i-need-for-fine-tuning)), start the fine-tuning process like this:
+After you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#addendum-1-how-much-training-data-ground-truth-do-i-need)), start the fine-tuning process like this:
 
 1. Click on the **"Images"** tab.
 2. Click on the **"Select all"** button.
@@ -369,7 +369,7 @@ After you have created a sufficient amount of training data (refer to section [H
 
 <img src="./images/legacy/training-eS-35.png" width="100%"><br/>
 
-A pop-up should open, that looks like this:
+A pop-up should open, which looks like this:
 
 <img src="./images/legacy/tesseract-extension-01.png" width="100%"><br/>
 
@@ -459,7 +459,7 @@ Create 5 to 10 pages of training data by correcting the automatically generated 
 
 <img src="./images/legacy/training-eS-51.png" width="100%"><br/>
 
-A pop-up should open, that looks like this:
+A pop-up should open, which looks like this:
 
 <img src="./images/legacy/training-eS-52.png" width="100%"><br/>
 
@@ -482,8 +482,8 @@ If you want to view the training progress, click on **"My models"**:
 
 The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified once the training has finished.
 
-#### Step 3: Re-run layout segmentation evaluate your fine-tuned model
-After the training has finished your fine-tuned layout segmentaton model becomes available for testing. This step helps identifying if the fine-tuned model produces better results than the previously used base model.
+#### Step 3: Re-run layout segmentation and evaluate your fine-tuned model
+After the training has finished your fine-tuned layout segmentation model becomes available for testing. This step helps identifying if the fine-tuned model produces better results than the previously used base model.
 
 1. Switch back to your document and click on the **"Images"** tab.
 2. Select one or more pages to test your fine-tuned model on.
@@ -500,7 +500,7 @@ A pop-up should appear that lets you choose a layout segmentation model:
 Once the layout segmentation has finished, check the results.
 
 #### Step 4: Iterate
-If the evaluation of `step 3` produced unsatisfactory results, try iterating `steps 1-3`, i.e. create more training data fine-tune another segmentation model with this data.
+If the evaluation of `step 3` produced unsatisfactory results, try iterating `steps 1-3`, i.e. create more training data and fine-tune another segmentation model with this data.
 
 ## 4. Training from scratch in eScriptorium
 > **Note:** When training from scratch, you typically need a substantial amount of  training data to achieve acceptable accuracy. The more diverse the training data is, the better your model will generalize to a wide range of documents and typefonts. eScriptorium can reach its limits with such training, as usability and speed can suffer greatly when several thousand pages of training data have to be loaded into a single document. For training from scratch with a large amount of data, the training should therefore be carried out outside of eScriptorium via the CLI (an example can be found here: [Training German Handwriting](https://github.com/UB-Mannheim/kraken/wiki/Training-German-Handwriting#training-2023-05-12)). 
@@ -568,7 +568,7 @@ The original text line shows a historical glyph, namely the `long s` which is a 
 
 The **virtual keyboard** is a helpful aid in such cases. Every eScriptorium user can create their own virtual keyboards or import existing ones. The Unicode symbols stored in the respective virtual keyboard can be freely assigned.
 
-Whenever you are editing text lines in the transcriptrion view, you able to toggle the **"virtual keyboard"** on or off.
+Whenever you are editing text lines in the transcription view, you are able to toggle the **"virtual keyboard"** on or off.
 
 1. With the text line editor open, click on the blue **keyboard icon** in the top left corner.
 2. Next, click inside the editor.
@@ -593,7 +593,7 @@ With the **Keyboards manager** you are able to import existing keyboards or crea
 
 <img src="./images/legacy/training-eS-49.png" width="100%"><br/>
 
-6. Lastly, click on the **"Use"** button to activate the virtual keyboard you just importet.
+6. Lastly, click on the **"Use"** button to activate the virtual keyboard you just imported.
 
 <img src="./images/legacy/training-eS-53.png" width="100%"><br/>
 
