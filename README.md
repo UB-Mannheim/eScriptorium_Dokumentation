@@ -14,3 +14,6 @@ Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur
 - [Modellübertragung von Transkribus nach eScriptorium](Modellübertragung_Transkribus_nach_eScriptorium.md)
 - [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (deutsch)](Training-with-eScriptorium-DE.md)
 - [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (englisch)](Training-with-eScriptorium-EN.md)
+
+## Administration
+- [Administration (Schriftarten, Web-Statistik)](./administration.md)

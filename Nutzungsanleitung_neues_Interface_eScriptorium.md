@@ -264,3 +264,37 @@ Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Mo
 - **Kein Warten im Fenster auf Segmentierung, Binarisierung und Transkription**: Während dieser Prozesse, die mitunter länger dauern können, kann das Fenster verlassen werden. Der Prozess wird nicht abgebrochen.
 - **Kein Speichern nötig**: Alle Vorgänge werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.
 - Sollte es Probleme mit der Internetverbindung geben, kann dies zum Verlust von Arbeitsschritten führen.
+
+## 4. Zusätzliche Funktionen der Mannheim-Instanz
+Neben den Standardfunktionen bietet die von der Universitätsbibliothek Mannheim betriebene Instanz einige zusätzliche Funktionen, die in den vorangehenden Abschnitten nicht beschrieben sind:
+- [Zeilenbasislinien in der Transkriptionsansicht bearbeiten](#41-zeilenbasislinien-in-der-transkriptionsansicht-bearbeiten)
+- [Schriftart für die Transkription wählen](#42-schriftart-für-die-transkription-wählen)
+- [Anzeigesprache wechseln](#43-anzeigesprache-wechseln)
+
+### 4.1. Zeilenbasislinien in der Transkriptionsansicht bearbeiten
+Neben der Segmentierungsansicht (siehe Abschnitt 1.5.2) können die Baselines einer Zeile auch direkt im Eingabefenster der Transkription korrigiert werden. Öffnen Sie dafür im Bearbeitungsbereich „Transcribe“ eine Zeile. In der Kopfzeile des Fensters befindet sich rechts neben dem Button für die virtuelle Tastatur ein Button mit einem Bleistift-Symbol:
+
+<img src="./images/current/baseline-editing.png" style="width:75%; height:auto;">
+
+- **Basislinienbearbeitung aktivieren:** Der Bleistift-Button blendet die Maske (gelbes Polygon) und die Baseline (blaue Linie) der Zeile auf der Vorschau ein. Die einzelnen Punkte der Baseline werden als blaue Kreise dargestellt und können per **Drag and Drop** an die gewünschte Stelle gezogen werden. Die Anpassung wird live angezeigt; beim Loslassen wird die Zeile gespeichert und die Maske wird automatisch neu berechnet.
+- **Basislinie ausschneiden oder teilen:** Ist die Basislinienbearbeitung aktiviert, kann über den Button mit dem Scheren-Symbol zusätzlich der **Ausschneidemodus** für die Baseline eingeschaltet werden. Die Punkte werden dabei ausgeblendet; mit einer rechteckigen Auswahl, die per Ziehen direkt auf der Baseline gezogen wird, kann ein Teilstück entfernt werden. Zieht die Auswahl über einen mittleren Abschnitt, wird die Baseline an dieser Stelle durchtrennt (die Zeile wird geteilt); zieht sie über ein Ende, wird dieses abgeschnitten.
+
+<img src="./images/current/baseline-cut-mode.png" style="width:75%; height:auto;">
+
+Dieses Verfahren eignet sich gut für gezielte Korrekturen einzelner Zeilen, während größere Eingriffe (viele Zeilen, neue Baselines) weiterhin in der Segmentierungsansicht erfolgen.
+
+### 4.2. Schriftart für die Transkription wählen
+Über das Menü rechts neben dem Dokumenttitel (Symbol mit dem Bleistift) und die Option „Bearbeiten“ öffnen Sie das Dokumentformular. Neben den üblichen Feldern (Name, Sprache, Leserichtung, Position der Zeilen) gibt es dort das Feld **„Transkriptionsschriftart“**:
+
+<img src="./images/current/transcription-font.png" style="width:70%; height:auto;">
+
+- Hier wählen Sie aus, in welcher Schrift die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden. Die Auswahl „Standard“ bedeutet, dass die Schrift des Projekts bzw. des Benutzerkontos bzw. die eingebaute Standardschrift (Noto Sans) verwendet wird.
+- Verfügbare Schriftarten richtet der Administrator der Instanz ein (siehe [Administration](./administration.md#1-transkriptionsschriftarten-einrichten)); die Instanz der UB Mannheim stellt unter anderem *Gentium Plus*, *Noto Sans*, *Noto Sans Hebrew* und *OpenDyslexic* bereit.
+- Dieselbe Einstellung existiert auch auf Projektebene (Projekt bearbeiten) und pro Benutzer, sodass Dokumente eine projektspezifische oder persönliche Schrift verwenden können, ohne sie an jedem Dokument neu zu wählen.
+
+### 4.3. Anzeigesprache wechseln
+Die Benutzeroberfläche von eScriptorium kann in mehreren Sprachen angezeigt werden. In der globalen Navigation (oben rechts) befindet sich ein Button mit einem Globus-Symbol und dem Code der aktuellen Sprache (z. B. „DE“). Ein Klick öffnet die Liste der verfügbaren Sprachen:
+
+<img src="./images/current/language-selector.png" style="width:50%; height:auto;">
+
+Nach der Auswahl wird die Oberfläche in der gewählten Sprache neu geladen. Welche Sprachen zur Auswahl stehen, richtet der Administrator der Instanz ein; die Instanz der UB Mannheim bietet Deutsch, Englisch, Französisch, Spanisch und Hebräisch.
