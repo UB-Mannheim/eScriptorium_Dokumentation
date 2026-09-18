@@ -1,4 +1,6 @@
 # Nutzung von eScriptorium
+
+> **Hinweis:** Diese Anleitung beschreibt die **neue Oberfläche** von eScriptorium (ab Version 1.0). Die ältere Legacy-Oberfläche (Versionen vor 1.0) wird in der [Nutzungsanleitung eScriptorium](./Nutzungsanleitung_eScriptorium.md) beschrieben.
 >Die Anleitung basiert auf dem Blogbeitrag von Lectaurep: https://lectaurep.hypotheses.org/documentation/escriptorium-tutorial-en
 
 >Eine ausführlichere und aktualisierte Dokumentation zu eScriptorium in englischer Sprache finden Sie unter: https://escriptorium.readthedocs.io/
@@ -47,26 +49,26 @@ Um auf diese Schnittstelle zuzugreifen, klicken Sie innerhalb eines Dokumentes e
 
 <img src="./images/current/06.png" style="width:60%; height:auto;">
 
-Es gibt mehrere Möglichkeiten Bilder auf die Plattform hochzuladen, die im Folgenden erläutert werden.
+Es gibt mehrere Möglichkeiten, Bilder auf die Plattform hochzuladen, die im Folgenden erläutert werden.
 
 #### 1.4.2. Lokale Dateien importieren
 Die Bilder können einfach per „Drag and Drop“ hochgeladen werden oder durch Auswählen der Bilder im File Explorer, mittels eines Klicks in die Box.
 
 <img src="./images/current/07.png" style="width:70%; height:auto;">
 
-**Hinweis**: Bevor die Seite neugeladen werden kann, muss der Import aller Bilder abgeschlossen sein. eScriptorium bietet momentan keine Möglichkeit Bilder automatisch zu sortieren, daher sollte beim Upload darauf geachtet werden, alle Bilder in der richtigen Reihenfolge auszuwählen sowie auf eine entsprechende Benennung zu achten ansonsten müssen die Bilder händisch sortiert werden.
+**Hinweis**: Bevor die Seite neugeladen werden kann, muss der Import aller Bilder abgeschlossen sein. eScriptorium bietet momentan keine Möglichkeit Bilder automatisch zu sortieren, daher sollte beim Upload darauf geachtet werden, alle Bilder in der richtigen Reihenfolge auszuwählen sowie auf eine entsprechende Benennung zu achten, ansonsten müssen die Bilder händisch sortiert werden.
 
-#### 1.4.3. Bilder aus einer PDF Datei importieren
-Klicken Sie auf den "Import"-Button und dann auf „PDF“ nun können sie eine PDF-Datei hochladen. Aus dieser werden automatisch Bilder extrahiert. Bitte beachten Sie, dass ausschließlich Bilder importiert werden. Sollte das PDF eine Textebene enthalten entsprechend der Transkription, wird diese nicht importiert.
+#### 1.4.3. Bilder aus einer PDF-Datei importieren
+Klicken Sie auf den "Import"-Button und dann auf „PDF“, nun können Sie eine PDF-Datei hochladen. Aus dieser werden automatisch Bilder extrahiert. Bitte beachten Sie, dass ausschließlich Bilder importiert werden. Sollte das PDF eine Textebene enthalten entsprechend der Transkription, wird diese nicht importiert.
 
 #### 1.4.4. Verwendung eines IIIF-Manifests
-Klicken Sie auf den „Import“-Button, dann auf die Option „IIIF“ und geben anschließend die URL des IIIF-Manifests ein. Alle Bilder werden lokal kopiert, so wie auch deren Metadaten (falls vorhanden), welche im Tab „Beschreibung“ sichtbar sind. Beispiel-Link: https://gallica.bnf.fr/iiif/ark:/12148/btv1b53026595r/manifest.json
+Klicken Sie auf den „Import“-Button, dann auf die Option „IIIF“ und geben Sie anschließend die URL des IIIF-Manifests ein. Alle Bilder werden lokal kopiert, so wie auch deren Metadaten (falls vorhanden), welche im Tab „Beschreibung“ sichtbar sind. Beispiel-Link: https://gallica.bnf.fr/iiif/ark:/12148/btv1b53026595r/manifest.json
 
 #### 1.4.5 Upload aus einer METS Datei
-Klicken Sie auf den "Import"-Button, dann auf die Option "METS" und geben anschließend die URL der METS Datei ein oder laden Sie eine METS Datei hoch.
+Klicken Sie auf den "Import"-Button, dann auf die Option "METS" und geben Sie anschließend die URL der METS-Datei ein oder laden Sie eine METS-Datei hoch.
 
 #### 1.4.6 Bilder aus einer XML oder ZIP Datei importieren
-Klicken Sie auf den "Import"-Button, dann auf die Option "XML/ZIP" und laden eine XML oder ZIP Datei hoch.
+Klicken Sie auf den "Import"-Button, dann auf die Option "XML/ZIP" und laden Sie eine XML- oder ZIP-Datei hoch.
 
 Unter "Tasks" wird der Fortschritt des Upload-Prozesses angezeigt.
 
@@ -76,7 +78,7 @@ Unter "Tasks" wird der Fortschritt des Upload-Prozesses angezeigt.
 #### 1.5.1. Zugriff auf das Interface
 Manuelle Annotationen sind nötig, um Ground-Truth-Daten zu generieren und damit Modelle zu trainieren oder um Ergebnisse dieser Operationen zu korrigieren. Es kann auch als Teil einer Annotation Campaign (gemeinsames Bearbeiten eines Dokumentes innerhalb einer Gruppe) verwendet werden, die nicht auf Kraken-Modelle zurückgreift (eScriptorium ist nur eine Input-Umgebung).
 
-Um Annotationen manuell zu erstellen und zu modifizieren, klicken Sie innerhalb Ihres Dokuments bei "Your Recent Images" auf "View All". Wählen Sie die "Edit"-Optionen auf den jeweiligen Bildern aus, um mehrere Bearbeitungsbereiche passend zu den möglichen Editierungsoptionen auswählen (v.l.n.r.).
+Um Annotationen manuell zu erstellen und zu modifizieren, klicken Sie innerhalb Ihres Dokuments bei "Your Recent Images" auf "View All". Wählen Sie die "Edit"-Optionen auf den jeweiligen Bildern aus, um mehrere Bearbeitungsbereiche passend zu den möglichen Bearbeitungsoptionen auszuwählen (v.l.n.r.).
 
 <p style="display:flex; gap:1em; align-items:center;">
  <img src="./images/current/09.png" style="width:22.2%; height:auto;">
@@ -131,14 +133,14 @@ In diesem Fenster können Bereiche (oder Zonen) erstellt werden und Segmente/Zei
 Sie können jederzeit mit Strg + Z (Rückgängig machen) und Strg + Y (Wiederherstellen) Aktionen rückgängig machen bzw. wiederherstellen oder mit den entsprechenden Schaltflächen durch Ihren Änderungsverlauf gehen.
 
 #### 1.5.3. Annotieren der Transkription
-Nur wenn Baselines und Masken auf dem Bild festgelegt sind, gibt es die Möglichkeit die Funktionalitäten der Buttons „Transcription“ and „Text/Line Ordering“ zu nutzen.
+Nur wenn Baselines und Masken auf dem Bild festgelegt sind, gibt es die Möglichkeit, die Funktionalitäten der Buttons „Transcription“ und „Text/Line Ordering“ zu nutzen.
 Um eine einer Zeile zugeordnete Transkription hinzuzufügen oder zu ändern, klicken Sie im Bereich "Transcription" auf die entsprechende Zeile. Ein Eingabefenster wird angezeigt. Um eine Transkription aufzunehmen, drücken Sie „Enter“: es wird automatisch das Eingabefeld für die nächste Zeile angezeigt.
 Während Sie im Fenster "Transcription" tippen, werden die mit Zeilen versehenen Bereiche durch Text ersetzt und der Inhalt des Fensters "Text" ändert sich. Es ist also möglich den Text im Textfenster zu modifizieren, zu kopieren und mehrere Zeilen auf einmal einzufügen.
 
 ![grafik](./images/current/11.png)
 
 #### 1.5.4. Eine Anmerkung zur Gliederung von Baselines, Polygonen und Transkriptionen
-Die „Baseline“ ist ein zentrales Element, um Informationen in der eScriptorium Database zu speichern. Also:
+Die „Baseline“ ist ein zentrales Element, um Informationen in der Datenbank von eScriptorium zu speichern. Also:
 - Es ist möglich eine Baseline zu modifizieren (bewegen, Punkte hinzufügen) ohne, dass die Transkription beeinflusst wird
 - Das Polygon wird immer von der Baseline aus berechnet, auch während des Trainings
 - Es ist möglich das Polygon händisch zu ändern (nicht empfohlen), ohne dass dies Auswirkungen auf die Transkription hat
@@ -149,7 +151,7 @@ Die „Baseline“ ist ein zentrales Element, um Informationen in der eScriptori
 Während des Trainings der Kraken-Modelle, kann die Berechnung der Polygone zurückgesetzt werden: Für den User ist es daher von Vorteil, nicht in die Polygone einzugreifen und im Gegenteil dafür zu sorgen, dass die Baselines so gezeichnet werden, dass die automatisch erzeugten Polygone korrekt sind. Falls manuell Ground-Truth-Daten eingegeben werden, sollte darauf geachtet werden nur zu transkribieren was innerhalb des Polygons steht.
 
 #### 1.5.5. Die Reihenfolge der Zeilen ändern
-Die Wiedergabereihenfolge der Zeilen erfolgt automatisch. Sie können sich die Ordnungsnummer jeder Zeile im Fenster „Segmentation“ anzeigen lassen, indem sie auf “Line numbering (N)” klicken, oder im Fenster „Text/Line Ordering“, wo die Zeilen in der folgenden Reihenfolge angezeigt werden.
+Die Wiedergabereihenfolge der Zeilen erfolgt automatisch. Sie können sich die Ordnungsnummer jeder Zeile im Fenster „Segmentation“ anzeigen lassen, indem Sie auf “Line numbering (N)” klicken, oder im Fenster „Text/Line Ordering“, wo die Zeilen in der folgenden Reihenfolge angezeigt werden.
 Es ist möglich die Reihenfolge im „Text/Line Ordering“-Fenster durch das Klicken von “Line ordering mode” zu ändern. Durch einfaches „Drag and Drop“ der Zeilen kann die Änderung durchgeführt werden.
 
 **Hinweis:** Es ist empfehlenswert, die Qualität der Segmentierung sicherzustellen, bevor die Reihenfolge der Zeilen geändert wird, weil das Hinzufügen und Entfernen von Zeilen die Berechnung dieser Reihenfolge systematisch neustartet und dabei manuelle Modifikationen überschreibt.
@@ -159,7 +161,7 @@ Es ist möglich die Reihenfolge im „Text/Line Ordering“-Fenster durch das Kl
 #### 1.5.6. Semantische Annotationen
 Es ist möglich, den Zeilen und Bereichen Etiketten (oder Tags) zuzuordnen, indem man einer vom User vordefinierten Ontologie folgt. Es gibt Standard-Tags, aber es ist auch möglich, diese über das Eingabefeld hinzuzufügen (Klicken Sie rechts oben auf das Symbol mit dem Viereck, dem Kreis, dem Dreieck und dem Pluszeichen, dann „Add New“ und anschließend fügen Sie den neuen Tag zur Liste hinzu und bestätigen Sie mit "Save") oder zu löschen (entfernen Sie die Haken von den Boxen vor dem Tag und klicken Sie anschließend auf „Save“).
 
-Wählen Sie im Bereich „Segmentation“ einen Bereich oder eine Zeile aus, klicken Sie auf „Set the type of selected lines (T)” (Das Symbol mit dem Viereck, dem Kreis und dem Dreieck) und wählen Sie das entsprechende Tag aus. Die Farben des Bereichs oder Zeile ändern sich. Es ist möglich ein Tag auf mehrere Bereiche oder Zeilen auf einmal anzuwenden: dafür wählen Sie alle gewünschten Bereiche aus (STRG+ Klick und Ziehen oder STRG gedrückt halten und die gewünschten Zeilen/Bereiche anklicken).
+Wählen Sie im Bereich „Segmentation“ einen Bereich oder eine Zeile aus, klicken Sie auf „Set the type of selected lines (T)” (Das Symbol mit dem Viereck, dem Kreis und dem Dreieck) und wählen Sie das entsprechende Tag aus. Die Farben des Bereichs oder der Zeile ändern sich. Es ist möglich, ein Tag auf mehrere Bereiche oder Zeilen auf einmal anzuwenden: dafür wählen Sie alle gewünschten Bereiche aus (STRG+ Klick und Ziehen oder STRG gedrückt halten und die gewünschten Zeilen/Bereiche anklicken).
 
 ![grafik](./images/current/13.png)
 
@@ -181,11 +183,11 @@ Es ist möglich, im Bearbeitungsmodus (Bei einem Bild auf "Edit" klicken) unter 
 Automatische Dokumentannotationen werden über den Tab „Images“ verwaltet.
 - Wählen Sie die Bilder aus, die Sie mit Annotationen versehen wollen
 - Klicken Sie auf „Segment“ (für die Erkennung von Baselines, Polygonen und/oder Bereichen) oder auf „Transcribe“ (für Transkriptionen)
-- Ein Formular wird angezeigt: es erlaubt Ihnen ein Kraken-Modell hochzuladen oder ein Modell zu nutzen, das schon in eScriptorium existiert und für die Segmentierung, die Annotation zu konfigurieren
+- Ein Formular wird angezeigt: Es erlaubt Ihnen, ein Kraken-Modell hochzuladen oder ein Modell zu nutzen, das schon in eScriptorium existiert, und anschließend die Segmentierung bzw. Annotation zu konfigurieren
 
 #### 1.7.2. Einrichten der Segmentierung
 - **„Include“** erlaubt es Ihnen, festzulegen, auf welcher Ebene die Segmentierung durchgeführt werden soll
-- Die Auswahl von **„Lines“** und **„Regions“** erzeugt Bereiche (sofern das verwendete Modell dafür trainiert wurde), Baselines und zugehörigen Polygonen
+- Die Auswahl von **„Lines“** und **„Regions“** erzeugt Bereiche (sofern das verwendete Modell dafür trainiert wurde), Baselines und zugehörige Polygone
 - **„Lines“** führt zur Erzeugung von Baselines und den damit verbundenen Polygonen
 - **„Regions“** ermöglichen es, Baselines und Polygone, die schon auf den Bildern existieren, zu erhalten und nur neue Bereiche zu generieren
 - **„Text Direction“** indiziert die Leserichtung der Zeilen
@@ -216,7 +218,7 @@ Um ein Modell zu trainieren müssen sich alle Bilder/Annotationen im gleichen Do
 Das Formular für die Trainingskonfiguration ermöglicht Ihnen folgende Auswahl:
 - **ob Sie von Grund auf neu beginnen möchten** (geben Sie hierfür einfach einen Namen für das zu erstellende Modell an)
 - **oder ob Sie ein Modell verfeinern möchten** (es kann über den File Manager hochgeladen werden oder sich schon in der Modellliste des zugehörigen Dokuments befinden)
-**Achtung:** In Version 0.6.9 ist das Bearbeiten der Namen von Modellen nur möglich, wenn man ein ganz neues Modell trainiert. Um zu vermeiden, dass ein bereits existierendes Modell überschrieben wird, sollten Sie das Modell lokal auf ihrem Rechner downloaden und umbenennen in den gewünschten Namen, dann können Sie es über das Formular erneut in eScriptorium hochladen.
+**Achtung:** In Version 0.6.9 ist das Bearbeiten der Namen von Modellen nur möglich, wenn man ein ganz neues Modell trainiert. Um zu vermeiden, dass ein bereits existierendes Modell überschrieben wird, sollten Sie das Modell lokal auf Ihrem Rechner downloaden und in den gewünschten Namen umbenennen, dann können Sie es über das Formular erneut in eScriptorium hochladen.
 
 ### 1.9. Annotationen exportieren
 Das Exportieren von Annotationen funktioniert über den Tab „Images“.
@@ -225,19 +227,19 @@ Das Exportieren von Annotationen funktioniert über den Tab „Images“.
   - Spezifizieren Sie die **Version der Transkription (Transcription)**, die Sie exportieren möchten
   - Spezifizieren Sie das **Export-Format (File Format)**: „ALTO“ für XML ALTO, „PageXML“ für XML PAGE oder „Text“ für einfachen Text
   - Setzen Sie einen Haken bei „Include Images“, wenn Sie zusätzlich die **Bilder exportieren** möchten
-  - Klicken Sie auf „Export“ und speichern sie die **generierte ZIP-Datei**
+  - Klicken Sie auf „Export“ und speichern Sie die **generierte ZIP-Datei**
 
 <img src="./images/current/17.png" style="width:40%; height:auto;">
 
 ## 2. Verwalten einer kollaborativen Annotation Campaign
 ### 2.1. Erstellen einer Usergruppe (Admin)
-Es ist möglich eine Nutzergruppe (Vorausgesetzt Sie haben die erforderlichen Rechte) zu erstellen. Diese Gruppen dienen dazu Arbeitsgruppen zu definieren oder um ausgewählten Usern bestimmte Rechte zu erteilen.
-Klicken Sie hierfür innerhalb eines Projekts rechts oben auf "Groups & Users", hier können Gruppen erstellt werden. Zudem werden hier auch die eigenen Gruppenzugehörigkeiten aufgelistet.
+Es ist möglich, eine Nutzergruppe zu erstellen (vorausgesetzt, Sie haben die erforderlichen Rechte). Diese Gruppen dienen dazu, Arbeitsgruppen zu definieren oder ausgewählten Usern bestimmte Rechte zu erteilen.
+Klicken Sie hierfür innerhalb eines Projekts rechts oben auf "Groups & Users"; hier können Gruppen erstellt werden. Zudem werden hier auch die eigenen Gruppenzugehörigkeiten aufgelistet.
 
 ![grafik](./images/current/18.png)
 
 ### 2.2. Teilen eines Dokumentes mit einem anderen User oder einer Gruppe
-Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenigen, die nicht Teil der Gruppe sind, welcher das Dokument angehört. Dies ist innerhalb eines Dokuments über den Button "Groups & Users" und über den Tab „Beschreibung“ möglich:
+Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenigen, die nicht Teil der Gruppe sind, der das Dokument angehört. Dies ist innerhalb eines Dokuments über den Button "Groups & Users" und über den Tab „Beschreibung“ möglich:
 - Geben Sie den Namen des Users ein, mit dem Sie Ihr Dokument teilen möchten oder setzen Sie einen Haken bei seinem Namen in der Liste
 - Um zu bestätigen, klicken Sie auf „Submit“
 
@@ -249,9 +251,9 @@ Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Mo
 - Teilen Sie mit dem User das Dokument, dem das Modell zugeordnet ist. Nun kann der andere User es herunterladen und es in das Dokument laden, in dem er es anwenden möchte.
 
 ## 3. Sonstiges
-- **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten bevor Transkription erfolgt ist, da diese sonst an dieser Stelle gelöscht werden können.
+- **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten, bevor transkribiert wurde, da diese sonst an dieser Stelle gelöscht werden können.
 - **Binarisierung**: Dies ist meist nicht nötig, nach dem Hochladen der Bilder können diese i.d.R. direkt segmentiert werden. In den meisten Fällen verschlechtert die Binarisierung das Ergebnis.
 - **Keine Reaktion mehr bei der Bearbeitung des Dokuments**: Seite erneut laden (tauchte bei Firefox bisher öfters auf, ist aber noch unklar wann genau es vorkommt und woran es liegt)
 - **Kein Warten im Fenster auf Segmentierung, Binarisierung und Transkription**: Während dieser Prozesse, die mitunter länger dauern können, kann das Fenster verlassen werden. Der Prozess wird nicht abgebrochen.
-- **Kein Speichern nötig**: Alle Vorgänge, werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.
+- **Kein Speichern nötig**: Alle Vorgänge werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.
 - Sollte es Probleme mit der Internetverbindung geben, kann dies zum Verlust von Arbeitsschritten führen.
