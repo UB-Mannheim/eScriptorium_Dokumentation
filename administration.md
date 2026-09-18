@@ -4,7 +4,7 @@ title: Administration
 nav_order: 3
 ---
 
-Diese Seite beschreibt instanzspezifische Funktionen und deren Einrichtung durch den Administrator von eScriptorium.
+Diese Seite beschreibt Funktionen, die von einem Administrator von eScriptorium eingerichtet werden: Standardmerkmale, die pro Instanz konfiguriert werden, sowie eine Erweiterung, die die Instanz der UB Mannheim über das Standard-Release hinaus bietet.
 
 ## 1. Transkriptionsschriftarten einrichten
 
@@ -36,7 +36,7 @@ Die Instanz der UB Mannheim stellt die Transkriptionsschriftarten **Gentium Plus
 
 ## 2. Web-Statistik (Matomo)
 
-eScriptorium kann – auf Wunsch – eine Web-Statistik auf Basis von [Matomo](https://matomo.org/) ausführen. Die Auswertung ist optional, wird auf Instanzebene konfiguriert und betrifft die gesamte Oberfläche (also auch Seiten ohne Login); die Einbindung respektiert dabei die ortsbezogene Datenschutzkonfiguration.
+Die Instanz der UB Mannheim bietet – als Erweiterung gegenüber dem Standard-Release, die derzeit als Pull Request für die Standardversion vorgeschlagen ist – eine optionale Web-Statistik auf Basis von [Matomo](https://matomo.org/). Die Auswertung wird auf Instanzebene konfiguriert und betrifft die gesamte Oberfläche (also auch Seiten ohne Login); die Einbindung respektiert dabei die ortsbezogene Datenschutzkonfiguration.
 
 - Die Statistik wird durch die Variablen `MATOMO_URL` (URL der Matomo-Instanz, z. B. `https://ub-monitor.bib.uni-mannheim.de/matomo/`) und `MATOMO_SITE_ID` (die Kennung des betroffenen Matomo-Projekts) aktiviert.
 - Sind beide Werte gesetzt, fügt eScriptorium das Matomo-Skript in jede Seite ein; bleiben sie leer, wird keine Statistik geladen.
