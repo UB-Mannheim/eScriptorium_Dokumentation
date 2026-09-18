@@ -1,3 +1,10 @@
+---
+layout: default
+title: Installation mit Tesseract-Erweiterung (englisch)
+parent: Legacy-Oberfläche (Versionen vor eScriptorium 1.0)
+nav_order: 2
+---
+
 # eScriptorium with Tesseract extension (*a step-by-step guide*)
 **version 1.0 | January 2024**
 

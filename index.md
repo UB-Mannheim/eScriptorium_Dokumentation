@@ -1,3 +1,9 @@
+---
+layout: default
+title: Start
+nav_exclude: true
+---
+
 Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur Texterkennungs- und Transkriptionsplattform [eScriptorium](https://gitlab.com/scripta/escriptorium/), die als Teil des französischen Scripta-Projekts entwickelt wurde und technisch unter anderem auf der OCR-Software [Kraken](https://kraken.re/) basiert. eScriptorium ist eine **kostenfreie Open-Source-Alternative zu Transkribus** und lässt sich auch lokal auf dem eigenen Rechner installieren. Die Dokumentation wurde im Rahmen des vom [Ministerium für Wissenschaft, Forschung und Kunst Baden-Württemberg](https://mwk.baden-wuerttemberg.de/) geförderten Projekts [OCR-BW](https://ocr-bw.bib.uni-mannheim.de/) erstellt. Über Hinweise und Verbesserungen in Form von Pull-Requests freuen wir uns stets.
 
 > **Hinweis zu den beiden Oberflächen:** eScriptorium hatte vor Version 1.0 eine ältere (Legacy-)Oberfläche. Mit Version 1.0 wurde eine neu gestaltete Oberfläche eingeführt, die seither weiter ausgebaut wird; in den aktuellen Versionen von eScriptorium stehen sowohl die Legacy-Oberfläche als auch die neue Oberfläche zur Verfügung. Die Anleitungen sind daher nach der jeweils beschriebenen Oberfläche aufgeteilt: „Neue Oberfläche" (ab Version 1.0) und „Legacy-Oberfläche" (Versionen vor 1.0).
@@ -9,7 +15,7 @@ Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur
 
 ## Legacy-Oberfläche (Versionen vor eScriptorium 1.0)
 - [Nutzungsanleitung eScriptorium (Legacy-Oberfläche)](./Nutzungsanleitung_eScriptorium.md)
-- [Anleitung zur Installation von eScriptorium mit Tesseract (*English*)](eScriptorium-with-tesseract-extension.md)
+- [Anleitung zur Installation von eScriptorium mit Tesseract (englisch)](eScriptorium-with-tesseract-extension.md)
 - [Modellübertragung von Transkribus nach eScriptorium](Modellübertragung_Transkribus_nach_eScriptorium.md)
-- [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (*Deutsch*)](Training-with-eScriptorium-DE.md)
-- [Training with eScriptorium (a step-by-step guide) (*English*)](Training-with-eScriptorium-EN.md)
+- [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (deutsch)](Training-with-eScriptorium-DE.md)
+- [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (englisch)](Training-with-eScriptorium-EN.md)

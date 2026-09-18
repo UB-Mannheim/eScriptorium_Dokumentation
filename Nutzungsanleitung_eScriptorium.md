@@ -1,3 +1,10 @@
+---
+layout: default
+title: Nutzungsanleitung eScriptorium
+parent: Legacy-Oberfläche (Versionen vor eScriptorium 1.0)
+nav_order: 1
+---
+
 # Nutzung von eScriptorium
 
 > **Hinweis:** Diese Anleitung beschreibt die **Legacy-Oberfläche** von eScriptorium (Versionen vor 1.0). Die aktuelle Oberfläche (ab Version 1.0) wird in der [Nutzung von eScriptorium – neues Interface](./Nutzungsanleitung_neues_Interface_eScriptorium.md) beschrieben.

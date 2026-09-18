@@ -1,3 +1,10 @@
+---
+layout: default
+title: Training mit eScriptorium (englisch)
+parent: Legacy-Oberfläche (Versionen vor eScriptorium 1.0)
+nav_order: 5
+---
+
 # Training with eScriptorium (*a step-by-step guide*)
 **version 1.0 | January 2024**
 
@@ -356,7 +363,7 @@ If you want to view the training progress, click on **"My models"**:
 The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified as soon as the training has finished. 
 
 #### Fine-tuning Tesseract models in eScriptorium
-> **Note:** This section is only relevant for versions of eScriptorium in which the training environment has been extended for the OCR engine **Tesseract**. A step-by-step guide to install the corresponding eScriptorium version can be found here: [How to install and set up eScriptorium with Tesseract](https://github.com/UB-Mannheim/eScriptorium_Dokumentation/blob/main/eScriptorium-with-tesseract-extension.md#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension).
+> **Note:** This section is only relevant for versions of eScriptorium in which the training environment has been extended for the OCR engine **Tesseract**. A step-by-step guide to install the corresponding eScriptorium version can be found here: [How to install and set up eScriptorium with Tesseract](./eScriptorium-with-tesseract-extension.md#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension).
 
 To use `Tesseract` instead of `kraken` (the eScriptorium default engine) for fine-tuning, `step 11` can be adapted as follows:
 

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Anleitung zur lokalen Installation (Windows/Linux)
+parent: Neue Oberfläche (ab eScriptorium 1.0)
+nav_order: 2
+---
+
 # Anleitung zur lokalen Installation von eScriptorium unter Linux bzw. Windows (WSL/Virtual Box)
 
 Die folgende Installationsanleitung basiert auf einer Installation unter Linux

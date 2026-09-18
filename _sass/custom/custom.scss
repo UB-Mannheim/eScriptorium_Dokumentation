@@ -1,0 +1,41 @@
+// Site-specific style overrides for the Just the Docs theme (v0.12.0).
+// This file is appended after all theme styles, so it can override them.
+
+// On wide screens the theme stretches the sidebar to absorb the left page
+// margin (keeping the content column centered), which leaves large empty
+// bands beside the menu items. Keep the sidebar at its base width instead;
+// the content column stays centered because .main is horizontally centered.
+.side-bar {
+  @media (min-width: 66.5rem) {
+    width: $nav-width !important;
+  }
+
+  & + .main {
+    margin-left: $nav-width;
+    margin-right: auto;
+  }
+}
+
+// The theme's font-size rules use !important, so the overrides need it too.
+
+// Content block: the theme's base font size is 16px on <html>; the whole
+// theme is rem-based, so raising the root font size scales the content text
+// and headings proportionally (16px -> 18px, i.e. a 12.5% zoom).
+html {
+  font-size: 1.125rem !important;
+}
+
+// Nav links: 12px -> 16px (base text size), category headers: 11px -> 14px
+// (both in rem, so they follow the root font size above).
+.nav-list .nav-list-item {
+  font-size: 1rem !important;
+}
+
+.nav-list .nav-category {
+  font-size: 0.875rem !important;
+}
+
+// Keep the sidebar footer links (contributors, license) on one line each.
+.site-footer a {
+  white-space: nowrap;
+}

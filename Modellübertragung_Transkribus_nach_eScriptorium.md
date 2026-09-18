@@ -1,3 +1,10 @@
+---
+layout: default
+title: Modellübertragung von Transkribus nach eScriptorium
+parent: Legacy-Oberfläche (Versionen vor eScriptorium 1.0)
+nav_order: 3
+---
+
 # Modellübertragung von Transkribus nach eScriptorium
 
 Die Modellübertragung ist an sich nicht direkt möglich. Es ist jedoch möglich, die Ground Truth, also die in Transkribus erstellte Transkription und die dazugehörigen Bilder, in eScriptorium zu importieren. Anschließend kann das Modell in eScriptorium erneut trainiert werden.
@@ -38,7 +45,7 @@ Die Modellübertragung ist an sich nicht direkt möglich. Es ist jedoch möglich
 - Nach diesen Schritten kann ein Kraken-Modell in eScriptorium trainiert werden und die Leistung mit Transkribus verglichen werden
 - Hinweise für die richtige Zusammenstellung von Trainings- und Auswertungssets in Transkribus: konsultieren Sie den Bereich "Details" und die Abschnitte "Show Train Set" und "Show Validation Set". Dieser Bereich ist über die Registerkarte "Tools/Text/Recognition Models" von Transkribus zugänglich.
 
-Weitere Informationen zum Training von Modellen in eScriptorium finden Sie [hier](https://github.com/UB-Mannheim/eScriptorium_Dokumentation/blob/gh-pages/Nutzungsanleitung_eScriptorium.md#18-modelle-trainieren).
+Weitere Informationen zum Training von Modellen in eScriptorium finden Sie [hier](./Nutzungsanleitung_eScriptorium.md#18-modelle-trainieren).
 
 ## Bekannte Probleme
 	

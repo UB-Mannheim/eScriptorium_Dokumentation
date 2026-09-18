@@ -1,1 +1,20 @@
-theme: jekyll-theme-cayman
+theme: just-the-docs
+title: eScriptorium Dokumentation
+description: >-
+  Nutzungs- und Installationshinweise zur Texterkennungs-
+  und Transkriptionsplattform eScriptorium
+search:
+  enabled: true
+  button: true
+  heading_level: 3
+aux_links:
+  GitHub Repository: https://github.com/UB-Mannheim/eScriptorium_Dokumentation
+exclude:
+  - README.md
+  - AGENTS.md
+  - .git
+  - .github
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true

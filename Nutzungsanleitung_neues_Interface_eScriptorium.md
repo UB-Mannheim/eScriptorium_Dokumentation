@@ -1,3 +1,10 @@
+---
+layout: default
+title: Nutzung von eScriptorium – neues Interface
+parent: Neue Oberfläche (ab eScriptorium 1.0)
+nav_order: 1
+---
+
 # Nutzung von eScriptorium
 
 > **Hinweis:** Diese Anleitung beschreibt die **neue Oberfläche** von eScriptorium (ab Version 1.0). Die ältere Legacy-Oberfläche (Versionen vor 1.0) wird in der [Nutzungsanleitung eScriptorium](./Nutzungsanleitung_eScriptorium.md) beschrieben.

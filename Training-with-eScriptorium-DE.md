@@ -1,3 +1,10 @@
+---
+layout: default
+title: Training mit eScriptorium (deutsch)
+parent: Legacy-Oberfläche (Versionen vor eScriptorium 1.0)
+nav_order: 4
+---
+
 # Training mit eScriptorium (*eine Schritt-für-Schritt-Anleitung*)
 **version 1.0 | Februar 2024**
 
@@ -354,7 +361,7 @@ Wenn Sie den Trainingsfortschritt sehen möchten, klicken Sie auf **"Meine Model
 Das Modell, das Sie gerade trainieren, wird in dieser Übersicht angezeigt. Mit einem Klick auf die Schaltfläche **"Versionen wechseln"** können Sie alle bereits abgeschlossenen Trainingsepochen anzeigen. Eine Benachrichtigung erscheint, sobald das Training beendet ist.
 
 #### Tesseract-Modelle in eScriptorium nachtrainieren
-> **Hinweis:** Dieser Abschnitt ist nur für Versionen von eScriptorium relevant, in denen die Trainingsumgebung für die OCR-Engine **Tesseract** erweitert wurde. Eine Schritt-für-Schritt-Anleitung zur Installation der entsprechenden eScriptorium-Version finden Sie hier: [How to install and set up eScriptorium with Tesseract](https://github.com/UB-Mannheim/eScriptorium_Dokumentation/blob/main/eScriptorium-with-tesseract-extension.md#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension).
+> **Hinweis:** Dieser Abschnitt ist nur für Versionen von eScriptorium relevant, in denen die Trainingsumgebung für die OCR-Engine **Tesseract** erweitert wurde. Eine Schritt-für-Schritt-Anleitung zur Installation der entsprechenden eScriptorium-Version finden Sie hier: [How to install and set up eScriptorium with Tesseract](./eScriptorium-with-tesseract-extension.md#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension).
 
 Um `Tesseract` anstelle von `kraken` (die Standard-OCR-Engine von eScriptorium) für das Nachtraining zu verwenden, kann `Schritt 11` wie folgt angepasst werden:
 
