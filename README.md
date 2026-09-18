@@ -1,9 +1,9 @@
 # eScriptorium Dokumentation (→ [github-pages](https://ub-mannheim.github.io/eScriptorium_Dokumentation/))
 Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur Texterkennungs- und Transkriptionsplattform [eScriptorium](https://gitlab.com/scripta/escriptorium/), die als Teil des französischen Scripta-Projekts entwickelt wurde und technisch unter anderem auf der OCR-Software [Kraken](https://kraken.re/) basiert. eScriptorium ist eine **kostenfreie Open-Source-Alternative zu Transkribus** und lässt sich auch lokal auf dem eigenen Rechner installieren. Die Dokumentation wurde im Rahmen des vom [Ministerium für Wissenschaft, Forschung und Kunst Baden-Württemberg](https://mwk.baden-wuerttemberg.de/) geförderten Projekts [OCR-BW](https://ocr-bw.bib.uni-mannheim.de/) erstellt. Über Hinweise und Verbesserungen in Form von Pull-Requests freuen wir uns stets.
 
-> **Hinweis zu den beiden Oberflächen:** eScriptorium hatte vor Version 1.0 eine ältere (Legacy-)Oberfläche, die ab Version 1.0 durch eine neu gestaltete Oberfläche ersetzt wurde und seither weiter ausgebaut wird. Die Anleitungen sind daher nach der jeweils beschriebenen Interface-Generation aufgeteilt: „Aktuelle Oberfläche" (ab Version 1.0) und „Legacy-Oberfläche" (Versionen vor 1.0).
+> **Hinweis zu den beiden Oberflächen:** eScriptorium hatte vor Version 1.0 eine ältere (Legacy-)Oberfläche. Mit Version 1.0 wurde eine neu gestaltete Oberfläche eingeführt, die seither weiter ausgebaut wird; in den aktuellen Versionen von eScriptorium stehen sowohl die Legacy-Oberfläche als auch die neue Oberfläche zur Verfügung. Die Anleitungen sind daher nach der jeweils beschriebenen Oberfläche aufgeteilt: „Neue Oberfläche" (ab Version 1.0) und „Legacy-Oberfläche" (Versionen vor 1.0).
 
-## Aktuelle Oberfläche (ab eScriptorium 1.0)
+## Neue Oberfläche (ab eScriptorium 1.0)
 - [Nutzung von eScriptorium – neues Interface (Schritt-für-Schritt-Anleitung)](./Nutzungsanleitung_neues_Interface_eScriptorium.md)
 - [Anleitung zur lokalen Installation (Windows/Linux)](./Lokale_Installation_eScriptorium.md)
 - [Anleitung zur lokalen Installation (MacOS)](https://github.com/UB-Mannheim/escriptorium/wiki/Installation-on-MacOS)
