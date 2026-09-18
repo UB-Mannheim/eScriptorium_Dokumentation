@@ -23,7 +23,7 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl /eScriptorium_Dokumentation
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
