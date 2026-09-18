@@ -289,7 +289,7 @@ Dieses Verfahren eignet sich gut für gezielte Korrekturen einzelner Zeilen, wä
 <img src="./images/current/transcription-font.png" style="width:70%; height:auto;">
 
 - Hier wählen Sie aus, in welcher Schrift die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden. Die Auswahl „Standard“ bedeutet, dass die Schrift des Projekts bzw. des Benutzerkontos bzw. die eingebaute Standardschrift (Noto Sans) verwendet wird.
-- Verfügbare Schriftarten richtet der Administrator der Instanz ein (siehe [Administration](./administration.md#1-transkriptionsschriftarten-einrichten)); die Instanz der UB Mannheim stellt unter anderem *Gentium Plus*, *Noto Sans*, *Noto Sans Hebrew* und *OpenDyslexic* bereit.
+- Verfügbare Schriftarten richtet der Administrator der Instanz ein (siehe [Administration](./administration.md#1-transkriptionsschriftarten-einrichten)); die Instanz der UB Mannheim stellt unter anderem *Gentium Plus*, *Noto Sans*, *Noto Sans Hebrew*, *OpenDyslexic* und *Abyssinica* (für äthiopische Schriften) bereit.
 - Dieselbe Einstellung existiert auch auf Projektebene (Projekt bearbeiten) und pro Benutzer, sodass Dokumente eine projektspezifische oder persönliche Schrift verwenden können, ohne sie an jedem Dokument neu zu wählen.
 
 ### 4.3. Anzeigesprache wechseln
