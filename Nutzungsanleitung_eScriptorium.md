@@ -16,7 +16,7 @@ Sobald Sie eingeloggt sind, sehen Sie das Dashboard, welches Ihnen alle Dokument
 ![grafik](https://user-images.githubusercontent.com/91966243/161732444-11b8bf74-464b-4054-a7ac-99685a24907a.png)
 
 ### 1.2. Ein neues Projekt anlegen
-##### 1.2.1. Terminologie
+#### 1.2.1. Terminologie
 - Ein **„Projekt“** umfasst ein oder mehrere Dokumente, die Sie diesem Projekt zugeordnet haben.
 
 #### 1.2.2. Instruktionen
@@ -29,7 +29,7 @@ Um ein neues Projekt zu erstellen, klicken Sie auf den Button „Erzeuge neues P
 - Ein **„Dokument“** ist eine Kollektion von Bildern, die eine Einheit bilden.
 - Ein **„Teil-Dokument“**  ist ein Bild bzw. eine Seite, die Teil eines Dokumentes ist.
 
-#### 1.3.2.Instruktionen
+#### 1.3.2. Instruktionen
 Um ein Dokument zu erstellen, klicken Sie innerhalb eines Projektes auf den Button „Neues Dokument anlegen“, dadurch öffnet sich eine neue Seite sowie ein Eingabeformular: 
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161733221-f571088e-54b8-430b-bed2-8116c18eb03e.png)
@@ -56,19 +56,19 @@ Die Bilder können einfach per „Drag and Drop“ hochgeladen werden oder durch
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161733533-f4729acd-c319-45b7-abb3-158f7f9ed9ce.png)
 
-**Hinweis**: Bevor die Seite neugeladen werden kann, muss der Import aller Bilder abgeschlossen sein. eScriptorium bietet momentan keine Möglichkeit Bilder automatisch zu sortieren, daher sollte beim Upload darauf geachtet werden, alle Bilder in der richtigen Reihenfolge auszuwählen sowie auf eine entsprechende Benennung zu achten ansonsten müssen die Bilder händisch sortiert werden.
+**Hinweis**: Bevor die Seite neugeladen werden kann, muss der Import aller Bilder abgeschlossen sein. eScriptorium bietet momentan keine Möglichkeit Bilder automatisch zu sortieren, daher sollte beim Upload darauf geachtet werden, alle Bilder in der richtigen Reihenfolge auszuwählen sowie auf eine entsprechende Benennung zu achten, ansonsten müssen die Bilder händisch sortiert werden.
 
 #### 1.4.3. Bilder aus einer PDF Datei importieren
-Klicken Sie auf den „Import“-Button und dann auf „Images (PDF)“ nun können sie eine PDF-Datei hochladen. Aus dieser werden automatisch Bilder extrahiert. Bitte beachten Sie, dass ausschließlich Bilder importiert werden. Sollte das PDF eine Textebene enthalten entsprechend der Transkription, wird diese nicht importiert.  
+Klicken Sie auf den „Import“-Button und dann auf „Images (PDF)“, nun können Sie eine PDF-Datei hochladen. Aus dieser werden automatisch Bilder extrahiert. Bitte beachten Sie, dass ausschließlich Bilder importiert werden. Sollte das PDF eine Textebene enthalten entsprechend der Transkription, wird diese nicht importiert.  
 
 #### 1.4.4. Verwendung eines IIIF-Manifests
-Klicken Sie auf den „Import“-Button, dann auf die Option „Images (IIIF)“und geben anschließend die URL des IIIF-Manifests ein. Alle Bilder werden lokal kopiert, so wie auch deren Metadaten (falls vorhanden), welche im Tab „Beschreibung“ sichtbar sind. Beispiel-Link: https://gallica.bnf.fr/iiif/ark:/12148/btv1b53026595r/manifest.json
+Klicken Sie auf den „Import“-Button, dann auf die Option „Images (IIIF)“ und geben Sie anschließend die URL des IIIF-Manifests ein. Alle Bilder werden lokal kopiert, so wie auch deren Metadaten (falls vorhanden), welche im Tab „Beschreibung“ sichtbar sind. Beispiel-Link: https://gallica.bnf.fr/iiif/ark:/12148/btv1b53026595r/manifest.json
 
 ### 1.5. Dokumente manuell mit Annotationen versehen
 #### 1.5.1. Zugriff auf das Interface
 Manuelle Annotationen sind nötig, um Ground-Truth-Daten zu generieren und damit Modelle zu trainieren oder um Ergebnisse dieser Operationen zu korrigieren. Es kann auch als Teil einer Annotation Campaign (gemeinsames Bearbeiten eines Dokumentes innerhalb einer Gruppe) verwendet werden, die nicht auf Kraken-Modelle zurückgreift (eScriptorium ist nur eine Input-Umgebung).  
 
-Unter dem Tab „Bearbeiten“ können Sie Annotationen manuell erstellen und modifizieren. Diesen Button finden Sie am Seitenanfang sowie auf jedem einzelnen Bild in der Übersicht des Tabs „Bilder“. Es gibt mehrere Bearbeitungsbereiche in diesem Tab passend zu den möglichen Editierungsoptionen (v.l.n.r.).
+Unter dem Tab „Bearbeiten“ können Sie Annotationen manuell erstellen und modifizieren. Diesen Button finden Sie am Seitenanfang sowie auf jedem einzelnen Bild in der Übersicht des Tabs „Bilder“. Es gibt mehrere Bearbeitungsbereiche in diesem Tab passend zu den möglichen Bearbeitungsoptionen (v.l.n.r.).
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161733823-95769254-0bea-4de6-95c0-c9c1539befb9.png)
 
@@ -110,8 +110,8 @@ Im Segmentbearbeitungsfenster können Sie mehrere wesentliche Operationen durchf
 In diesem Fenster können Bereiche (oder Zonen) erstellt werden und Segmente/Zeilen mit diesen verbunden werden. Ein Segment, das sich innerhalb eines Bereichs befindet, ist daher nicht automatisch mit diesem verbunden.   
 - **Von Zeilenansicht in Bereichsansicht wechseln**: „R“-Taste auf der Tastatur drücken  
 - **Bereich erstellen**: In der Segmentierungsansicht können Sie durch einen Linksklick einen neuen Bereich anlegen und durch einen erneuten Linksklick den ausgewählten Bereich anlegen/fertigstellen.  
-- **Bereiche verändern**: BIn der Bereichsansicht können Sie durch einen Linksklick einen neuen Bereich anlegen und durch einen erneuten Linksklick den ausgewählten Bereich anlegen/fertigstellen.  
-- •	Zeilen, die innerhalb eines Bereichs gezeichnet werden, werden automatisch an diesen gebunden.   
+- **Bereiche verändern**: In der Bereichsansicht können Sie durch einen Linksklick einen neuen Bereich anlegen und durch einen erneuten Linksklick den ausgewählten Bereich anlegen/fertigstellen.  
+- Zeilen, die innerhalb eines Bereichs gezeichnet werden, werden automatisch an diesen gebunden.   
 - **Zeilen mit Bereichen verbinden bzw. davon trennen**: Ausgewählte Zeilen können mit den entsprechenden Schaltflächen mit Bereichen verknüpft (Y-Taste) oder von ihnen getrennt (U-Taste) werden.  
 - **Bereiche löschen**: Durch anklicken des Bereichs in der Bereichsansicht und anschließendem anklicken des roten Papierkorbs, können Bereiche gelöscht werden.  
 
@@ -120,14 +120,14 @@ Sie können jederzeit mit Strg + Z (Rückgängig machen) und Strg + Y (Wiederher
 All diese Operationen, die in diesem Bereich genutzt werden können, finden Sie in einem Hilfsfenster, welches sich hinter dem ?-Button befindet.  
 
 #### 1.5.3. Annotieren der Transkription
-Nur wenn Baselines und Masken auf dem Bild festgelegt sind, gibt es die Möglichkeit die Funktionalitäten der Buttons „Transcription“ and „Text“ zu nutzen.  
+Nur wenn Baselines und Masken auf dem Bild festgelegt sind, gibt es die Möglichkeit, die Funktionalitäten der Buttons „Transcription“ und „Text“ zu nutzen.  
 Um eine einer Zeile zugeordnete Transkription hinzuzufügen oder zu ändern, klicken Sie im Bereich "Transcription" auf die entsprechende Zeile. Ein Eingabefenster wird angezeigt. Um eine Transkription aufzunehmen, drücken Sie „Enter“: es wird automatisch das Eingabefeld für die nächste Zeile angezeigt.  
 Während Sie im Fenster "Transcription" tippen, werden die mit Zeilen versehenen Bereiche durch Text ersetzt und der Inhalt des Fensters "Text" ändert sich. Es ist also möglich den Text im Textfenster zu modifizieren, zu kopieren und mehrere Zeilen auf einmal einzufügen.  
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161735830-4b5c9331-3525-4c3e-8087-28de542e19b1.png)
 
 #### 1.5.4. Eine Anmerkung zur Gliederung von Baselines, Polygonen und Transkriptionen
-Die „Baseline“ ist ein zentrales Element, um Informationen in der eScriptorium Database zu speichern. Also:    
+Die „Baseline“ ist ein zentrales Element, um Informationen in der Datenbank von eScriptorium zu speichern. Also:    
 - Es ist möglich eine Baseline zu modifizieren (bewegen, Punkte hinzufügen) ohne, dass die Transkription beeinflusst wird    
 - Das Polygon wird immer von der Baseline aus berechnet, auch während des Trainings  
 - Es ist möglich das Polygon händisch zu ändern (nicht empfohlen), ohne dass dies Auswirkungen auf die Transkription hat  
@@ -138,7 +138,7 @@ Die „Baseline“ ist ein zentrales Element, um Informationen in der eScriptori
 Während des Trainings der Kraken-Modelle, kann die Berechnung der Polygone zurückgesetzt werden: Für den User ist es daher von Vorteil, nicht in die Polygone einzugreifen und im Gegenteil dafür zu sorgen, dass die Baselines so gezeichnet werden, dass die automatisch erzeugten Polygone korrekt sind. Falls manuell Ground-Truth-Daten eingegeben werden, sollte darauf geachtet werden nur zu transkribieren was innerhalb des Polygons steht.    
 
 #### 1.5.5. Die Reihenfolge der Zeilen ändern
-Die Wiedergabereihenfolge der Zeilen erfolgt automatisch. Sie können sich die Ordnungsnummer jeder Zeile im Fenster „Segmentation“ anzeigen lassen, indem sie auf “Toggle ordering display (L)” klicken, oder im Fenster „Text“, wo die Zeilen in der folgenden Reihenfolge angezeigt werden.  
+Die Wiedergabereihenfolge der Zeilen erfolgt automatisch. Sie können sich die Ordnungsnummer jeder Zeile im Fenster „Segmentation“ anzeigen lassen, indem Sie auf “Toggle ordering display (L)” klicken, oder im Fenster „Text“, wo die Zeilen in der folgenden Reihenfolge angezeigt werden.  
 Es ist möglich die Reihenfolge im „Text“-Fenster durch das Klicken von “Toggle sorting mode” zu ändern. Durch einfaches „Drag and Drop“ der Zeilen kann die Änderung durchgeführt werden.  
 
 **Hinweis:** Es ist empfehlenswert, die Qualität der Segmentierung sicherzustellen, bevor die Reihenfolge der Zeilen geändert wird, weil das Hinzufügen und Entfernen von Zeilen die Berechnung dieser Reihenfolge systematisch neustartet und dabei manuelle Modifikationen überschreibt.  
@@ -146,7 +146,7 @@ Es ist möglich die Reihenfolge im „Text“-Fenster durch das Klicken von “T
 ![grafik](https://user-images.githubusercontent.com/91966243/161736467-d38109e0-9ecb-44ce-ac12-1ea390e382a4.png)
 
 #### 1.5.6. Semantische Annotationen
-Es ist möglich, den Zeilen und Bereichen Etiketten (oder Tags) zuzuordnen, indem man einer vom User auf der Registerkarte „Beschreibung“ vordefinierten Ontologie folgt. Es gibt Standard-Tags, aber es ist auch möglich welche über das Eingabefeld hinzuzufügen (Klicken Sie auf „+“ , dann „Aktualisieren“ und anschließend fügen Sie den neuen Tag zur Liste hinzu) oder zu löschen (entfernen sie Die Haken von den Boxen vor dem Tag und klicken Sie anschließend auf „Aktualisieren“).  
+Es ist möglich, den Zeilen und Bereichen Etiketten (oder Tags) zuzuordnen, indem man einer vom User auf der Registerkarte „Beschreibung“ vordefinierten Ontologie folgt. Es gibt Standard-Tags, aber es ist auch möglich welche über das Eingabefeld hinzuzufügen (Klicken Sie auf „+“ , dann „Aktualisieren“ und anschließend fügen Sie den neuen Tag zur Liste hinzu) oder zu löschen (entfernen Sie die Haken von den Boxen vor dem Tag und klicken Sie anschließend auf „Aktualisieren“).  
 
 Wählen Sie im Bereich „Segmentation“ einen Bereich oder eine Zeile aus, klicken Sie auf „Set the type on all selected lines / regions (T)” und wählen Sie das entsprechende Tag aus. Die Farben des Bereichs oder Zeile ändern sich. Es ist möglich ein Tag auf mehrere Bereiche oder Zeilen auf einmal anzuwenden: dafür wählen Sie alle gewünschten Bereiche aus (STRG+ Klick und Ziehen oder STRG gedrückt halten und die gewünschten Zeilen/Bereiche anklicken).  
 
@@ -196,7 +196,7 @@ Automatische Dokumentannotationen werden über den Tab „Bilder“ verwaltet.
 Das Training von Kraken-Modellen startet man innerhalb des Tabs „Bilder“. Es wird über den Tab „Modelle“ verfolgt (inaktiv solange noch kein anderes Modell als das Standardmodell mit dem Dokument verknüpft ist).  
 Der Zugang zu den Trainingsfunktionen hängt von der Autorisierung ab. Dies kann über die Administrationsschnittstelle verwaltet werden.  
 Um ein Modell zu trainieren müssen sich alle Bilder/Annotationen im gleichen Dokument befinden.    
-- Wählen Sie die Dokumente aus, die die Ground-Truth-Daten enthalten  
+- Wählen Sie die Bilder aus, die die Ground-Truth-Daten enthalten  
 - Gehen Sie auf „Trainieren“ und wählen Sie die Art des Trainingsmodells aus: „Segment“ für ein Segmentierungsmodell, „Recognizer“ für ein Transkriptionsmodell
 - Füllen Sie das Formular aus und klicken Sie anschließend auf „Trainieren“  
 - Das Training wird gestartet, manchmal müssen Sie einen Augenblick warten bis dies angezeigt wird  
@@ -206,7 +206,7 @@ Um ein Modell zu trainieren müssen sich alle Bilder/Annotationen im gleichen Do
 Das Formular für die Trainingskonfiguration ermöglicht Ihnen folgende Auswahl:   
 - **ob Sie von Grund auf neu beginnen möchten** (geben Sie hierfür einfach einen Namen für das zu erstellende Modell an)  
 - **oder ob Sie ein Modell verfeinern möchten** (es kann über den File Manager hochgeladen werden oder sich schon in der Modellliste des zugehörigen Dokuments befinden)  
-**Achtung:** In Version 0.6.9 ist das Bearbeiten der Namen von Modellen nur möglich, wenn man ein ganz neues Modell trainiert. Um zu vermeiden, dass ein bereits existierendes Modell überschrieben wird, sollten Sie das Modell lokal auf ihrem Rechner downloaden und umbenennen in den gewünschten Namen, dann können Sie es über das Formular erneut in eScriptorium hochladen.
+**Achtung:** In Version 0.6.9 ist das Bearbeiten der Namen von Modellen nur möglich, wenn man ein ganz neues Modell trainiert. Um zu vermeiden, dass ein bereits existierendes Modell überschrieben wird, sollten Sie das Modell lokal auf Ihrem Rechner downloaden und in den gewünschten Namen umbenennen, dann können Sie es über das Formular erneut in eScriptorium hochladen.
 
 ### 1.9. Annotationen exportieren
 Das Exportieren von Annotationen funktioniert über den Tab „Bilder“.    
@@ -215,19 +215,19 @@ Das Exportieren von Annotationen funktioniert über den Tab „Bilder“.
   - Spezifizieren Sie die **Version der Transkription**, die Sie exportieren möchten  
   - Spezifizieren Sie das **Export-Format** („Alto“ für XML ALTO, „Pagexml“ für XML PAGE oder „Text“ für einfachen Text)  
   - Setzen Sie einen Haken bei „Include Images“, wenn Sie zusätzlich die **Bilder exportieren** möchten  
-  - Klicken Sie auf „Export“ und speichern sie die **generierte ZIP-Datei**  
+  - Klicken Sie auf „Export“ und speichern Sie die **generierte ZIP-Datei**  
   
   ![grafik](https://user-images.githubusercontent.com/91966243/161738455-cb5660e2-e820-41eb-8bd3-ce76d6bb2aa7.png)
 
 ## 2. Verwalten einer kollaborativen Annotation Campaign  
 ### 2.1. Erstellen einer Usergruppe (Admin)  
-Es ist möglich eine Nutzergruppe im Administrator-Dashboard (Vorausgesetzt Sie haben die erforderlichen Rechte) zu erstellen. Diese Gruppen dienen dazu Arbeitsgruppen zu definieren oder um ausgewählten Usern bestimmte Rechte zu erteilen.  
+Es ist möglich eine Nutzergruppe im Administrator-Dashboard zu erstellen (vorausgesetzt, Sie haben die erforderlichen Rechte). Diese Gruppen dienen dazu, Arbeitsgruppen zu definieren oder ausgewählten Usern bestimmte Rechte zu erteilen.  
 Auch unter „Profil“ -> „Teams“ können Gruppen erstellt werden. Zudem werden hier auch die eigenen Gruppenzugehörigkeiten aufgelistet.  
 
 ![grafik](https://user-images.githubusercontent.com/91966243/161777507-28a16f61-00b7-43d3-b699-04fa582e45b7.png)
 
 ### 2.2. Teilen eines Dokumentes mit einem anderen User oder einer Gruppe
-Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenigen, die nicht Teil der Gruppe sind, welcher das Dokument angehört. Dies geht über den Tab „Beschreibung“:    
+Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenigen, die nicht Teil der Gruppe sind, der das Dokument angehört. Dies geht über den Tab „Beschreibung“:    
 - Klicken Sie auf den Button „Teile dieses Dokument“
 - Geben Sie den Namen des Users ein, mit dem Sie Ihr Dokument teilen möchten oder setzen Sie einen Haken bei seinem Namen in der Liste  
 - Um zu bestätigen, klicken Sie auf „Teilen“  
@@ -240,9 +240,9 @@ Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Mo
 - Teilen Sie mit dem User das Dokument, dem das Modell zugeordnet ist. Nun kann der andere User es herunterladen und es in das Dokument laden, in dem er es anwenden möchte.  
 
 ## 3. Sonstiges
-- **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten bevor Transkription erfolgt ist, da diese sonst an dieser Stelle gelöscht werden können.    
+- **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten, bevor transkribiert wurde, da diese sonst an dieser Stelle gelöscht werden können.    
 - **Binarisierung**: Dies ist meist nicht nötig, nach dem Hochladen der Bilder können diese i.d.R. direkt segmentiert werden. In den meisten Fällen verschlechtert die Binarisierung das Ergebnis.    
 - **Keine Reaktion mehr bei der Bearbeitung des Dokuments**: Seite erneut laden (tauchte bei Firefox bisher öfters auf, ist aber noch unklar wann genau es vorkommt und woran es liegt)   
 - **Kein Warten im Fenster auf Segmentierung, Binarisierung und Transkription**: Während dieser Prozesse, die mitunter länger dauern können, kann das Fenster verlassen werden. Der Prozess wird nicht abgebrochen.  
-- **Kein Speichern nötig**: Alle Vorgänge, werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.  
+- **Kein Speichern nötig**: Alle Vorgänge werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.  
 - Sollte es Probleme mit der Internetverbindung geben, kann dies zum Verlust von Arbeitsschritten führen.
