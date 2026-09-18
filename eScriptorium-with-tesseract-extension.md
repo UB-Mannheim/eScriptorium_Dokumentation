@@ -27,13 +27,10 @@ The following step-by-step guide provides an introduction to the installation an
        - [Addendum 2: Always follow transcription guidelines!](#addendum-2-always-follow-transcription-guidelines)<br/>
    5.2 [Fine-tune a text recognition model](#52-fine-tune-a-text-recognition-model)<br/>
 6. [License](#6-license)<br/>
-7. 
 ## 0. Who is this guide for?
-This guide is for eScriptorium users which want to set up, use and train Tesseract models in eScriptorium. 
+This guide is for eScriptorium users who want to set up, use and train Tesseract models in eScriptorium.
 
-> **Note:**
-This guide does not provide a basic understanding of the graphical interface and functionality of the platform. 
-Here are some resources to get you started:
+> **Note:** This guide does not provide a basic understanding of the graphical interface and functionality of the platform; it assumes that you are already familiar with eScriptorium. Here are some resources to get you started:
 > - [eScriptorium Quick Start Guide](https://escriptorium.readthedocs.io/en/latest/quick-start/)
 > - **Video tutorial** that introduces the main functions and tools can be found on YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) (automatically generated subtitles in English are available). 
 
@@ -52,7 +49,7 @@ There are only a few deviations from the installation process of the pure eScrip
 Before you can start the eScriptorium installation, you need to first install the Tesseract software, and then initiate the installation of eScriptorium.
 
 > **Note:** For now, only the full install path is available. 
-> A docker image is planned if the extension is not merged.
+> A docker image is planned once it is merged.
 
 ### 1.1. Installation of Tesseract
 Until the changes of Tesseract aren't merged into the official version, you need to compile a modified tesseract version.
@@ -97,15 +94,15 @@ sudo make training-install
 If you have any problems in the installation process, 
 you can find help in the [official Tesseract compiling documentation](https://tesseract-ocr.github.io/tessdoc/Compiling).
 
-### 1.1. Installation of eScriptorium with Tesseract extensions
+### 1.2. Installation of eScriptorium with Tesseract extensions
 At this point, a modified version of eScriptorium must be installed.
 
 There are several guides how to install eScriptorium:
 - [eScriptorium's full install instructions (English)](https://gitlab.com/scripta/escriptorium/-/wikis/full-install)
 - [Full install instructions (German) ](./Lokale_Installation_eScriptorium.md)
 
-Since further improvements are still being made to these installation instructions, 
-it is recommend using one of the above guides for the installation and only instead of cloning the current eScriptorium repository,
+Since further improvements are still being made to these installation instructions,
+it is recommended to use one of the above guides for the installation and, instead of cloning the current eScriptorium repository,
 simply run the following command:
 ```
 git clone https://github.com/JKamlah/eScriptorium/ -b extension-tesseract --single-branch 
@@ -117,7 +114,7 @@ All functions are still available, but the user is now able to upload, apply, tr
 The uploading of images, the initiation of processes, and the transcription functionality remain the same.
 The Tesseract extension does not add additional functionality for layout recognition.
 
-### 2.1 What to consider applying Tesseract models to Kraken segmented data?
+### 2.1. What to consider applying Tesseract models to Kraken segmented data?
 Since Tesseract's text recognition models heavily rely on the appropriate text line masks, 
 it is sometimes necessary to modify the corresponding text lines.
 This can be done manually, by training a new layout recognition model
@@ -130,7 +127,7 @@ However, these optimizations of the documents are not only advantageous or neces
 ## 3. How to fetch and upload a Tesseract transcription model
 
 ### 3.1. Where to find Tesseract models 
-Especially for fine-tuning already existing text recognition models are needed. 
+Especially for fine-tuning, already existing text recognition models are needed. 
 
 > **Note:** Tesseract provides two kinds of text recognition models: **best** and **fast**.
 > While only the best models can be fine-tuned, 
@@ -163,7 +160,7 @@ All downloaded models can be uploaded to eScriptorium by clicking on **"My Model
 
 ## 4. How to apply a tesseract transcription model to your dataset
 
-To apply a the `tesseract` transcription model:
+To apply a `tesseract` transcription model:
 
 1. Click on the **"Images"** tab.
 2. Click on the **"Select all"** button.
@@ -195,18 +192,18 @@ which is adapted to the new use case during the fine-tuning training process.
 The first steps in the training process are the same as by the `kraken` models:
 
 ### 5.1 Provide or create training data (ground truth)
-These steps are the same as for the [kraken](Training-with-eScriptorium.md#3-fine-tuning-in-escriptorium) models:
+These steps are the same as for the [kraken](Training-with-eScriptorium-EN.md#3-fine-tuning-in-escriptorium) models:
 
-1. [Create a new project and document](Training-with-eScriptorium.md#step-1-create-a-new-project-and-document)
-2. [Import your images](Training-with-eScriptorium.md#step-2-import-your-images) 
-3. [Run layout segmentation on your data](Training-with-eScriptorium.md#step-3-run-layout-segmentation-on-your-data) 
-4. [Check the layout segmentation](Training-with-eScriptorium.md#step-4-check-the-layout-segmentation) 
-5. [Correct the text regions](Training-with-eScriptorium.md#step-5-correct-the-text-regions) 
-6. [Correct the baselines and line masks](Training-with-eScriptorium.md#step-6-correct-the-baselines-and-line-masks)
-7. [Correct the layout segmentation for all pages](Training-with-eScriptorium.md#step-7-correct-the-layout-segmentation-for-all-pages)
-8. [Run text recognition on your data](Training-with-eScriptorium.md#step-8-run-text-recognition-on-your-data)
-9. [Check the transcriptions](Training-with-eScriptorium.md#step-9-check-the-transcriptions)
-10. [Improve the transcriptions and create ground truths](Training-with-eScriptorium.md#step-10-improve-the-transcriptions-and-create-ground-truth) 
+1. [Create a new project and document](Training-with-eScriptorium-EN.md#step-1-create-a-new-project-and-document)
+2. [Import your images](Training-with-eScriptorium-EN.md#step-2-import-your-images) 
+3. [Run layout segmentation on your data](Training-with-eScriptorium-EN.md#step-3-run-layout-segmentation-on-your-data) 
+4. [Check the layout segmentation](Training-with-eScriptorium-EN.md#step-4-check-the-layout-segmentation) 
+5. [Correct the text regions](Training-with-eScriptorium-EN.md#step-5-correct-the-text-regions) 
+6. [Correct the baselines and line masks](Training-with-eScriptorium-EN.md#step-6-correct-the-baselines-and-line-masks)
+7. [Correct the layout segmentation for all pages](Training-with-eScriptorium-EN.md#step-7-correct-the-layout-segmentation-for-all-pages)
+8. [Run text recognition on your data](Training-with-eScriptorium-EN.md#step-8-run-text-recognition-on-your-data)
+9. [Check the transcriptions](Training-with-eScriptorium-EN.md#step-9-check-the-transcriptions)
+10. [Improve the transcriptions and create ground truths](Training-with-eScriptorium-EN.md#step-10-improve-the-transcriptions-and-create-ground-truth) 
 
 > **Note:**
 > If no base model is available for steps 3 and 8, these steps can also be carried out manually. However, experience shows that working with a model is usually much quicker.
@@ -214,7 +211,7 @@ These steps are the same as for the [kraken](Training-with-eScriptorium.md#3-fin
 #### Addendum 1: How much training data (ground truth) do I need?
 > Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model that already works somewhat well on your data. With regard to fine-tuning, an **iterative approach** should be followed: 
 > 1. Create 2 to 3 pages of training data by correcting the automatically generated transcriptions as shown in step 10. 
-> 2. [Fine-tune the text recognition model](#step-11-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth . 
+> 2. [Fine-tune the text recognition model](#52-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth. 
 > 3. Test and evaluate if the fine-tuned model yields better transcriptions on your data than before.
 > 4. If not, repeat 1 to 3 to create more training data. Fine-tune new models and evaluate them on your data until the results are satisfactory. 
 >
@@ -230,16 +227,16 @@ These steps are the same as for the [kraken](Training-with-eScriptorium.md#3-fin
 > **Note:** At first glance this process looks time consuming, as you have to repeat certain steps – creating of training data, training itself, evaluation – again. Although this is true, iteration can ultimately lead to a rapid improvement of the generated transcripts, as the fine-tuned models get better with each training and thus generate fewer transcription errors that need to be improved.
 
 #### Addendum 2: Always follow transcription guidelines!
-> Transcription guidelines are a set of rules and instructions provided to individuals who are manually transcribing or annotating text from various sources. These guidelines serve to standardize the transcription process, ensuring consistency, accuracy, and clarity in the resulting transcribed data. Guidelines should be used for both the creation and correction of transcriptions. Refer to the chapter [Ground truth guidelines for transcriptions](#52-ground-truth-guidelines-for-transcriptions) to learn more.
+> Transcription guidelines are a set of rules and instructions provided to individuals who are manually transcribing or annotating text from various sources. These guidelines serve to standardize the transcription process, ensuring consistency, accuracy, and clarity in the resulting transcribed data. Guidelines should be used for both the creation and correction of transcriptions. Refer to the chapter [Ground truth guidelines for transcriptions](Training-with-eScriptorium-EN.md#52-ground-truth-guidelines-for-transcriptions) to learn more.
 
-#### Step 11: Fine-tune a text recognition model
+### 5.2 Fine-tune a text recognition model
 
-If you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#how-much-training-data-ground-truth-do-i-need-for-fine-tuning)), the fine-tuning process itself is simple.
+If you have created a sufficient amount of training data (refer to section [How much training data (ground truth) do I need for fine-tuning?](#addendum-1-how-much-training-data-ground-truth-do-i-need)), the fine-tuning process itself is simple.
 
 1. Click on the **"Images"** tab.
 2. Click on the **"Select all"** button.
 3. Click on the blue **"Train"** button.
-4. Click on **"Recognizer" button.
+4. Click on **"Recognizer"**.
 
 <img src="./images/legacy/training-eS-35.png" width="80%" height="80%"><br/>
 
@@ -253,7 +250,7 @@ A pop-up should open, that looks like this:
       - `Name of parent model`: name of the model you fine-tune.
       - `Name of the documents you train with`: a descriptive name for identifying the data you used for fine-tuning.
       - `Model number`: Record the number or generation of the new model. `M1`, as in the example, means: the first fine-tuned model.
-- **2nd drop-down**: Select the text recognition model you want to fine-tune. This should be the model you worked with in [step 8](#step-8-run-text-recognition-on-your-data), i.e. the text recognition model that already worked quite well on your data. In our example this model is `german_newspapers`.
+- **2nd drop-down**: Select the text recognition model you want to fine-tune. This should be the model you worked with in [step 8](Training-with-eScriptorium-EN.md#step-8-run-text-recognition-on-your-data), i.e. the text recognition model that already worked quite well on your data. In our example this model is `german_newspapers`.
 
 The model selection can be filtered by:
 1. OCR-Engine<br/>
