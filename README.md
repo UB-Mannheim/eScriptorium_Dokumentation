@@ -3,6 +3,7 @@ Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur
 
 ## Allgemeine Anleitungen
 - [Nutzungsanleitung eScriptorium](./Nutzungsanleitung_eScriptorium.md)
+- [Nutzung von eScriptorium – neues Interface (Step-by-Step)](./Nutzungsanleitung_neues_Interface_eScriptorium.md)
 
 ## Installation
 - [Anleitung zur lokalen Installation (Windows/Linux)](./Lokale_Installation_eScriptorium.md)
@@ -13,4 +14,3 @@ Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur
 - [Modellübertragung von Transkribus nach eScriptorium](Modellübertragung_Transkribus_nach_eScriptorium.md)
 - [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (*Deutsch*)](Training-with-eScriptorium-DE.md)
 - [Training with eScriptorium (a step-by-step guide) (*English*)](Training-with-eScriptorium-EN.md)
-
