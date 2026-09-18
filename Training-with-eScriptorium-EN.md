@@ -1,6 +1,8 @@
 # Training with eScriptorium (*a step-by-step guide*)
 **version 1.0 | January 2024**
 
+> **Note:** This guide describes the **legacy interface** of eScriptorium (versions before 1.0). The current interface (1.0 and later) is covered in the [Nutzung von eScriptorium – neues Interface](./Nutzungsanleitung_neues_Interface_eScriptorium.md) guide.
+
 "eScriptorium is a platform for manual or automated segmentation and text recognition of historical manuscripts and prints" [[Wikipedia](https://de.wikipedia.org/wiki/EScriptorium)]. In addition, the platform enables user-friendly training and (work-specific) fine-tuning of own layout segmentation and text recognition models directly in the browser. eScriptorium is open-source and free of charge. The trained models can be downloaded and used without restrictions.
 
 The following step-by-step guide provides an introduction to the use of eScriptorium for training own OCR or HTR models.
@@ -52,7 +54,7 @@ In order to `train from scratch` or to `fine-tune` an existing model you must pr
 
 As the name suggests, text recognition models are used to automatically recognise the text content of an image. If you want to train or fine-tune a text recognition model you need **images** and **transcriptions**. Here is an example in eScriptorium:
 
-<img src="./images/training-eS-03.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-03.png" width="100%"><br/>
 
 The transcriptions attempt to capture the text content of the images as accurately as possible. If you don't have any ground truth to train with you can create it inside eScriptorium (i.e. create transcriptions for images you upload to an eScriptorium document). 
 
@@ -60,7 +62,7 @@ The transcriptions attempt to capture the text content of the images as accurate
 
 Layout segmentation models are used to automatically recognise all text regions and text lines on an image and are a preliminary stage to text recognition itself. If you want to train or fine-tune a layout segmentation model you need **images** and **layout segmentation data**. Here is an example in eScriptorium:
 
-<img src="./images/training-eS-24.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-24.png" width="100%"><br/>
 
 > **Note:** Chapters [3.1. How to fine-tune a text recognition model](#3-how-to-fine-tune-a-model) and [3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) provide a detailed introduction to the creation of ground truth for text recognition and layout segmentation training.
 
@@ -71,7 +73,7 @@ Especially for fine-tuning already existing layout segmentation or text recognit
 
 All downloaded models can be uploaded to eScriptorium by clicking on **"My Models"** on the upper right corner of the screen. Click on **"Upload a model"** in the next screen and choose the model you want to upload.
 
-<img src="./images/training-eS-10.png" width="100%">
+<img src="./images/legacy/training-eS-10.png" width="100%">
 
 ### 2.3. How to choose a model for a specific use case
 The performance of a model depends on various factors and must be tested for each use case. For example a model trained only on traditional Chinese characters might not perform well on German documents printed in the typeface Fraktur.
@@ -100,27 +102,27 @@ The following steps describe this workflow in detail.
 #### Step 1: Create a new project and document
 Start with creating a new eScriptorium project by browsing to the eScriptorium start page and clicking on **"My Projects"** in the upper right corner of the screen.
 
-<img src="./images/training-eS-00.png" width="40%">
+<img src="./images/legacy/training-eS-00.png" width="40%">
 
 Next, click on the green **"Create new Project"** button.
 
-<img src="./images/training-eS-01.png" width="40%">
+<img src="./images/legacy/training-eS-01.png" width="40%">
 
 Name your project on the next screen and click on **"Create"**.
 
-<img src="./images/training-eS-04.png" width="100%">
+<img src="./images/legacy/training-eS-04.png" width="100%">
 
 Once the project has been created, the project overview is displayed. The project you have just created should be displayed here. Click on it.
 
-<img src="./images/training-eS-05.png" width="100%">
+<img src="./images/legacy/training-eS-05.png" width="100%">
 
 Create a new document inside your project by clicking on the green **"Create new Document"** button.
 
-<img src="./images/training-eS-06.png" width="100%">
+<img src="./images/legacy/training-eS-06.png" width="100%">
 
 On the next screen, give the document a name and click on **"Create"** (or **"Update"**). A message should appear in the upper right corner that the document has been created successfully.
 
-<img src="./images/training-eS-07.png" width="100%">
+<img src="./images/legacy/training-eS-07.png" width="100%">
 
 #### Step 2: Import your images
 
@@ -130,11 +132,11 @@ Here are the differences of both options:
 - `Drop images here or click to upload`: Upload images from your hard drive in different file formats (`PNG`, `JPG`, `TIFF` etc.)
 - `Import` button: Import images via `IIIF` protocol or upload `PDF` documents.
 
-<img src="./images/training-eS-08.png" width="100%">
+<img src="./images/legacy/training-eS-08.png" width="100%">
 
 As soon as all images have been uploaded, they will appear as a preview at the bottom of the screen.
 
-<img src="./images/training-eS-09.png" width="100%">
+<img src="./images/legacy/training-eS-09.png" width="100%">
 
 #### Step 3: Run layout segmentation on your data
 
@@ -145,11 +147,11 @@ Select all images by clicking on the **"Select all"** button. All images in the 
 
 Next, click on the **"Segment"** button.
 
-<img src="./images/training-eS-11.png" width="100%">
+<img src="./images/legacy/training-eS-11.png" width="100%">
 
 A pop-up (*"Select a model"*) should appear in which the layout segmentation can be set:
 
-<img src="./images/training-eS-12.png" width="100%">
+<img src="./images/legacy/training-eS-12.png" width="100%">
 
 - **1st drop-down**: Choose a layout segmentation model
 - **2nd drop-down**: Choose the layout parts that you want to segment (*If no layout segmentation has been carried out so far, the "Lines and regions" setting should be selected.*)
@@ -159,20 +161,20 @@ Next, click on the blue **"Segment"** button to start the layout segmentation.
 
 An orange-coloured button in the image preview shows the running layout segmentation. As soon as the segmentation for a page is complete, a message (*"Segmentation done!"*) appears in the top right-hand corner of the screen.
 
-<img src="./images/training-eS-13.png" width="100%">
+<img src="./images/legacy/training-eS-13.png" width="100%">
 
 #### Step 4: Check the layout segmentation
 Once the layout segmentation has been completed, the pages must be checked. Click on the **blue button** of the first image to activate eScriptorium's editing view.
 
-<img src="./images/training-eS-14.png" width="100%">
+<img src="./images/legacy/training-eS-14.png" width="100%">
 
 Your screen should look like this:
 
-<img src="./images/training-eS-15.png" width="100%">
+<img src="./images/legacy/training-eS-15.png" width="100%">
 
 On the left side of the editing view you find a preview of the image with the automatically generated layout segments in different colors. eScriptorium differentiates *3 layout regions* or *segments*:
 
-<img src="./images/training-eS-16.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-16.png" width="100%"><br/>
 
 1. **Text regions**: A text region usually contains several lines of text. Examples of a text region are: a paragraph, a column of text or a complete page of text. The structure of one or more text regions should correspond to the reading order and layout structure of the respective page.
 2. **Line masks** (sometimes called *text lines*): A polygon mask representing a single text lines that covers all characters of the text line. eScriptorium automatically generates line masks from baselines. Therefore: while correcting the results of the automatic layout segmentation, concentrate on text regions and baselines first, as line masks will be automatically recalculated after you adjusted a baseline.
@@ -183,20 +185,20 @@ On the left side of the editing view you find a preview of the image with the au
 #### Step 5: Correct the text regions
 Start by correcting the text regions first. Click on the **blue region icon** to toggle the "region mode":
 
-<img src="./images/training-eS-17.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-17.png" width="100%"><br/>
 
 Make sure that the text regions include all text content in a meaningful way. Adjust the text regions accordingly. 
 
 **Example:** On the following page two text columns were segmented as one single text region. The adjustment reflects the actual page layout. 
 
-<img src="./images/training-eS-18.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-18.png" width="100%"><br/>
 
-<img src="./images/training-eS-19.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-19.png" width="100%"><br/>
 
 #### Step 6: Correct the baselines and line masks
 Continue by correcting the baselines. Deactivate region mode by clicking on the **blue region icon** again. Toggle the line mask mode by clicking on the **mask icon** till your preview looks like this:
 
-<img src="./images/training-eS-20.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-20.png" width="100%"><br/>
 
 Adjust the baselines in such a way that:
 - one single baseline corresponds to one single line of text
@@ -205,9 +207,9 @@ Adjust the baselines in such a way that:
 
 **Example:** The following screenshots show incorrect baselines and their correction. For example, individual baselines extend beyond the text column boundary so that two separate lines of text are segmented as one. In addition, individual baselines do not run along the baseline of the text line.
 
-<img src="./images/training-eS-21.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-21.png" width="100%"><br/>
 
-<img src="./images/training-eS-22.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-22.png" width="100%"><br/>
 
 > **Note:** After adjusting a baseline, eScriptorium automatically recalculates the corresponding line masks. Toggle those line masks by clicking on the **blue mask icon** again until the masks are shown. If a line mask should be calculated incorrectly you can adjust it by clicking on it and changing the polygon.
 
@@ -223,11 +225,11 @@ After completing steps 3 - 6, switch back to **"Images"** tab and click on the *
 
 Next, click on the blue **"Transcribe"** button.
 
-<img src="./images/training-eS-23.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-23.png" width="100%"><br/>
 
 A pop-up should appear that lets you choose a text recognition model:
 
-<img src="./images/training-eS-25.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-25.png" width="100%"><br/>
 
 - **Select a model**: Choose a text recognition model
 - **Select a transcription**: Select `--New--`
@@ -236,7 +238,7 @@ Click on the blue **"Transcribe"** button to start the automatic text recognitio
 
 An orange-coloured button in the image preview shows the running text recognition. As soon as the text recognition for a page is complete, a message (*"Transcription done!"*) appears in the top right-hand corner of the screen.
 
-<img src="./images/training-eS-26.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-26.png" width="100%"><br/>
 
 #### Step 9: Check the transcriptions
 Once text recognition has been completed, the automatically generated transcriptions must be checked.
@@ -246,15 +248,15 @@ Once text recognition has been completed, the automatically generated transcript
 3. Click on the **"Transcription view"** button afterwards to activate the transcription view.
 4. Choose the transcription you created during `step 8` in the drop-down menu. The name of the transcription follows this structure: `OCR-engine-name:OCR-model-name`. Example: In `step 8` we chose the model `german_print` for the engine `kraken`. Hence the corresponding name of the transcription is: `kraken:german_print`.
 
-<img src="./images/training-eS-33.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-33.png" width="100%"><br/>
 
 If you hover your mouse cursor over one of the text lines in the transcription view on the right side of your screen, the corresponding text line of the image will be highlighted. 
 
-<img src="./images/training-eS-28.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-28.png" width="100%"><br/>
 
 Clicking on a text line in the transcription view will open a pop-up:
 
-<img src="./images/training-eS-29.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-29.png" width="100%"><br/>
 
 The automatically generated transcriptions can be checked for errors in this window. The original line of text is shown in the upper part of the pop-up. The lower part displays the transcription of the text line. The cursor keys on the keyboard (`↑` and `↓`) can be used to scroll through all available text lines.
 
@@ -269,29 +271,29 @@ The automatically generated transcriptions can be checked for errors in this win
 3. Click on the **"Text view"** button afterwards to enable the plain text view.
 4. Choose the transcription you created during `step 8` in the drop-down menu.
 
-<img src="./images/training-eS-27.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-27.png" width="100%"><br/>
 
 Select **all text lines** (`STRG + A` on Windows or `⌘ + A` on Mac) in the text view and **copy** them (`STRG + C` on Windows or `⌘ + C` on Mac):
 
-<img src="./images/training-eS-31.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-31.png" width="100%"><br/>
 
 Choose **"manual"** in the transcription drop-down and **paste** (`STRG + V` on Windows or `⌘ + V` on Mac) the transcription you just copied into the text view:
 
-<img src="./images/training-eS-32.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-32.png" width="100%"><br/>
 
 > **Note:** This copying process has the following purpose: In the "manual" transcription, we record the **correct transcription** (= *ground truth*) of the text content of the respective page, which will later be used for training. The automatically generated transcription (created in step 8), which still contains errors, serves as the basis for the correction. The corrections are made in the "manual" transcription, as this ensures that there is only one transcription in our document in which checked and corrected training data can be found, namely the "manual" transcription.
 
 Next, deactivate the **"text view"** and activate the **"transcription view"**:
 
-<img src="./images/training-eS-34.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-34.png" width="100%"><br/>
 
 Click on the first text line in the **"transcription view"**. The example below shows an error in the generated transcription: 
 
-<img src="./images/training-eS-30a.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-30a.png" width="100%"><br/>
 
 We fix it so that the transcription matches the original text line:
 
-<img src="./images/training-eS-30.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-30.png" width="100%"><br/>
 
 After the first text line has been corrected, press the `Enter ↲` key to check and correct the next text line. The cursor keys on the keyboard (`↑` and `↓`) can also be used to scroll through all available text lines of the current page. 
 
@@ -327,11 +329,11 @@ If you have created a sufficient amount of training data (refer to section [How 
 3. Click on the blue **"Train"** button.
 4. Click on **"Recognizer"**.
 
-<img src="./images/training-eS-35.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-35.png" width="100%"><br/>
 
 A pop-up should open, that looks like this:
 
-<img src="./images/training-eS-36.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-36.png" width="100%"><br/>
 
 - **1st drop-down**: Choose the "manual" transcription where you saved the corrected ground truth
 - **Field `New model`**: Choose a name for your fine-tuned model
@@ -345,11 +347,11 @@ Lastly, click on the blue **"Train"** button to start the fine-tuning.
 
 A running training is shown as below:
 
-<img src="./images/training-eS-37.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37.png" width="100%"><br/>
 
 If you want to view the training progress, click on **"My models"**:
 
-<img src="./images/training-eS-38.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-38.png" width="100%"><br/>
 
 The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified as soon as the training has finished. 
 
@@ -365,11 +367,11 @@ After you have created a sufficient amount of training data (refer to section [H
 3. Click on the blue **"Train"** button.
 4. Click on **"Recognizer"**.
 
-<img src="./images/training-eS-35.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-35.png" width="100%"><br/>
 
 A pop-up should open, that looks like this:
 
-<img src="./images/tesseract-extension-01.png" width="100%"><br/>
+<img src="./images/legacy/tesseract-extension-01.png" width="100%"><br/>
 
 - **1st drop-down**: Choose the "manual" transcription where you saved the corrected ground truth
 - **Field `New model`**: Choose a name for your fine-tuned model
@@ -383,7 +385,7 @@ Lastly, click on the blue **"Train"** button to start the fine-tuning.
 
 A running training is shown as below:
 
-<img src="./images/training-eS-37.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37.png" width="100%"><br/>
 
 #### Step 12: Re-run text recognition and evaluate your fine-tuned model
 After the training has finished your fine-tuned text recognition model becomes available for testing. This step helps identifying if the fine-tuned model produces better results than the previously used base model in `step 8`.
@@ -393,11 +395,11 @@ After the training has finished your fine-tuned text recognition model becomes a
    - *Select a page / pages that were not part of the training itself, in order to assure optimal evaluation results*.
 3. Click on the blue **"Transcribe"** button.
 
-<img src="./images/training-eS-23.png" width="100%">
+<img src="./images/legacy/training-eS-23.png" width="100%">
 
 A pop-up should appear that lets you choose a text recognition model:
 
-<img src="./images/training-eS-40.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-40.png" width="100%"><br/>
 
 - **Select a model**: Choose the model you have fine-tuned in `step 11`
 - **Select a transcription**: Select `--New--`
@@ -406,7 +408,7 @@ Click on the blue **"Transcribe"** button to start the automatic text recognitio
 
 An orange-coloured button in the image preview shows the running text recognition. As soon as the text recognition for a page is complete, a message (*"Transcription done!"*) appears in the top right-hand corner of the screen.
 
-<img src="./images/training-eS-26.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-26.png" width="100%"><br/>
 
 Once text recognition has been completed, check the generated transcriptions.
 
@@ -415,23 +417,23 @@ Once text recognition has been completed, check the generated transcriptions.
 3. Click on the **"Transcription view"** button afterwards to activate the transcription view.
 4. Choose the transcription you created with your fine-tuned model in the drop-down menu. 
 
-<img src="./images/training-eS-41.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-41.png" width="100%"><br/>
 
 Evaluate the accuracy of your fine-tuned model by comparing the transcriptions of the base model you have used in `step 8` versus the transcriptions you just generated with your fine-tuned model.
 
 To do this, click on the blue **"cogwheel icon"** next to the drop-down for the transcription selection:
 
-<img src="./images/training-eS-42.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-42.png" width="100%"><br/>
 
 Select the transcription you created in `step 8` (the transcription of your base model) and the transcription you have just created using your fine-tuned model:
 
-<img src="./images/training-eS-43.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-43.png" width="100%"><br/>
 
 Exit the pop-up by clicking on the **"x"** in the top right corner.
 
 Click on a text line in the transcription view to open the editor pop-up and click on the **"Toggle transcription comparison"** link.
 
-<img src="./images/training-eS-44.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-44.png" width="100%"><br/>
 
 A comparison of the two selected transcriptions for the currently displayed text line is now shown in the lower part of the pop-up. Highlighted characters show transcription differences between the two versions so that the transcription result of the fine-tuned model can be checked quickly, in order to assess if the fine-tuning produced better results than the base model.
 
@@ -455,11 +457,11 @@ Create 5 to 10 pages of training data by correcting the automatically generated 
 2. Select **all pages with your corrected training data** (select one page, hold the `shift` key and then select the other pages with your training data).
 3. Click on the blue **"Train"** button and choose **"Segmenter"**.
 
-<img src="./images/training-eS-51.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-51.png" width="100%"><br/>
 
 A pop-up should open, that looks like this:
 
-<img src="./images/training-eS-52.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-52.png" width="100%"><br/>
 
 - **Field `New model`**: Choose a name for your fine-tuned model
    - *We recommend using descriptive names, that should capture the following information (as this helps later when identifying a model in a large number of other models)*:
@@ -472,11 +474,11 @@ Finally, click on the blue **"Train"** button and start the fine-tuning.
 
 A running training is shown as below:
 
-<img src="./images/training-eS-37.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37.png" width="100%"><br/>
 
 If you want to view the training progress, click on **"My models"**:
 
-<img src="./images/training-eS-54.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-54.png" width="100%"><br/>
 
 The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified once the training has finished.
 
@@ -490,7 +492,7 @@ After the training has finished your fine-tuned layout segmentaton model becomes
 
 A pop-up should appear that lets you choose a layout segmentation model:
 
-<img src="./images/training-eS-60.png" width="100%">
+<img src="./images/legacy/training-eS-60.png" width="100%">
 
 - **Select a model**: Choose the model you have fine-tuned in `step 2`
 - Click on the blue **"Segment"** button to start the layout segmentation.
@@ -515,11 +517,11 @@ After you created or imported your training data, follow these steps to start to
 3. Click on the blue **"Train"** button.
 4. Choose either **"Recognizer"** or **"Segmenter"**, depending on what kind of model you want to train.
 
-<img src="./images/training-eS-55.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-55.png" width="100%"><br/>
 
 5. A pop-up should appear in which the settings for the training can be made as follows:
 
-<img src="./images/training-eS-56.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-56.png" width="100%"><br/>
 
 - **1st drop down**: Select the **transcriptions** you want to use for training 
    - *this option is only available if you chose to train a **"Recognizer"** model*
@@ -529,11 +531,11 @@ Finally, click on the blue **"Train"** button to start training from scratch.
 
 A running training is shown as below:
 
-<img src="./images/training-eS-37.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37.png" width="100%"><br/>
 
 If you want to view the training progress, click on **"My models"**:
 
-<img src="./images/training-eS-58.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-58.png" width="100%"><br/>
 
 The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified once the training has finished.
 
@@ -545,11 +547,11 @@ After the training has finished your model becomes available for testing. Depend
    - *Select a page that was not part of the training itself, in order to assure optimal evaluation results*.
 3. Click on the blue **"Segment"** button if you have trained a **Segmenter** model or click on the blue **"Transcribe"** button if you have trained a **Recognizer** model.
 
-<img src="./images/training-eS-57.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-57.png" width="100%"><br/>
 
 4. A pop-up should appear that lets you choose your model:
 
-<img src="./images/training-eS-59.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-59.png" width="100%"><br/>
 
 Once the **Layout segmentation** / **Text recognition** has finished for the selected page, check the results for quality.
 
@@ -560,7 +562,7 @@ Virtual keyboards are especially helpful when transcribing historical documents,
 
 Consider this example:
 
-<img src="./images/training-eS-47.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-47.png" width="100%"><br/>
 
 The original text line shows a historical glyph, namely the `long s` which is a common character in German documents printed in Fraktur (*Blackletter*). You won't find the `long s` on a modern day keyboard, hence it is not possible to use the `long s` without major detours. 
 
@@ -571,11 +573,11 @@ Whenever you are editing text lines in the transcriptrion view, you able to togg
 1. With the text line editor open, click on the blue **keyboard icon** in the top left corner.
 2. Next, click inside the editor.
 
-<img src="./images/training-eS-45.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-45.png" width="100%"><br/>
 
 The virtual keyboard should now be displayed. You can switch between different virtual keyboards by clicking on the **dropdown menu.** If you have not imported a virtual keyboard yet, click on the **"Manage keyboards"** button.
 
-<img src="./images/training-eS-46.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-46.png" width="100%"><br/>
 
 With the **Keyboards manager** you are able to import existing keyboards or create new keyboard layouts from scratch.
 
@@ -583,21 +585,21 @@ With the **Keyboards manager** you are able to import existing keyboards or crea
 1. Click on the blue **"Import a keyboard"** icon.
 2. A new pop up should appear. Click on the grey **"Choose a file"** button.
 
-<img src="./images/training-eS-48.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-48.png" width="100%"><br/>
 
 3. Download the `escriptorium-keyboard-German-Fraktur.json` from the `virtual-keyboards` folder of this repository to your computer.
 4. In eScriptorium, choose the file you just downloaded in your file browser and open it.
 5. Next, click on the blue **"Import"** button. A message should appear, if you successfully imported the keyboard.
 
-<img src="./images/training-eS-49.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-49.png" width="100%"><br/>
 
 6. Lastly, click on the **"Use"** button to activate the virtual keyboard you just importet.
 
-<img src="./images/training-eS-53.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-53.png" width="100%"><br/>
 
 You are now able to choose the imported virtual keyboard in the drop down menu. Clicking on one of the glyphs inside the virtual keyboard will paste it into the transcription.
 
-<img src="./images/training-eS-50.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-50.png" width="100%"><br/>
 
 > **Note:** More information about virtual keyboards can be found in the eScriptorium documentation: [escriptorium-tutorial.readthedocs.io/en/latest/virtual_keyboard/](https://escriptorium-tutorial.readthedocs.io/en/latest/virtual_keyboard/)
 
@@ -618,7 +620,7 @@ To illustrate this concept, consider the following example:
 
 | Image | Level 1 | Level 2 | Level 3 |
 |-------|---------|---------|---------|
-<img src="./images/training-eS-39.png" width="90"><br/>|`dass`|`daſs`|`daſs`|
+<img src="./images/legacy/training-eS-39.png" width="90"><br/>|`dass`|`daſs`|`daſs`|
 
 As you can see, a transcription of the image produces different results when transcribing according to level 1 or level 2 / 3 of the OCR-D GT guidelines. In other words: transcriptions are *standardized* by using one of the three different levels.
 

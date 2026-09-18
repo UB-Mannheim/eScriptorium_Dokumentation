@@ -7,11 +7,11 @@
 ### 1.1. Einloggen in eScriptorium
 Sie loggen sich bei eScriptorium mit einem individuellen Konto ein, das aus einem Login, einem Passwort und einer E-Mail-Adresse besteht. Ein Konto wird vom Benutzer nach Erhalt einer Einladung oder vom Administrator der Website erstellt:
 
-<img src="./images_new_interface/01.png" style="width:60%; height:auto;">
+<img src="./images/current/01.png" style="width:60%; height:auto;">
 
 Sobald Sie eingeloggt sind, sehen Sie das Dashboard, welches Ihnen alle Dokumente, die Sie selbst erstellt haben und die mit ihnen geteilt wurden, anzeigt. Beim ersten Login ist das Dashboard leer.
 
-![grafik](./images_new_interface/02.png)
+![grafik](./images/current/02.png)
 
 ### 1.2. Ein neues Projekt anlegen
 #### 1.2.1. Terminologie
@@ -20,7 +20,7 @@ Sobald Sie eingeloggt sind, sehen Sie das Dashboard, welches Ihnen alle Dokument
 #### 1.2.2. Instruktionen
 Um ein neues Projekt zu erstellen, klicken Sie auf den Button „Create New“, dadurch öffnet sich eine neue Seite auf der Sie den Namen des Projektes angeben müssen. Anschließend öffnet sich Ihr neues Projekt automatisch.
 
-![grafik](./images_new_interface/03.png)
+![grafik](./images/current/03.png)
 
 ### 1.3. Ein neues Dokument anlegen
 #### 1.3.1. Terminologie
@@ -30,7 +30,7 @@ Um ein neues Projekt zu erstellen, klicken Sie auf den Button „Create New“, 
 #### 1.3.2. Instruktionen
 Um ein Dokument zu erstellen, klicken Sie innerhalb eines Projektes bei "Documents" auf den Button „Create New“, dadurch öffnet sich ein Eingabeformular:
 
-![grafik](./images_new_interface/04.png)
+![grafik](./images/current/04.png)
 
 Die Felder „Name“, "Script", "Read Direction" und "Line Position" müssen ausgefüllt werden. Die übrigen Felder sind optional und können später ergänzt werden.
 
@@ -38,21 +38,21 @@ Nach der Eingabe der Informationen, klicken Sie auf "Create", um das Dokument zu
 
 Um vom Dashboard wieder auf das Eingabeformular bzw. das zuletzt bearbeitete Element zu kommen, müssen Sie auf das Dokument klicken, um es zu öffnen. Wählen Sie anschließend "Edit" aus, um die Daten anzupassen.
 
-<img src="./images_new_interface/05.png" style="width:80%; height:auto;">
+<img src="./images/current/05.png" style="width:80%; height:auto;">
 
 ### 1.4. Bilder hochladen
 #### 1.4.1. Zugriff auf das Interface
 Unter der Schnittstelle „Bilder“ werden alle Anwendungen hinsichtlich der automatischen Bildverarbeitung sowie der Importe und Exporte verwaltet.
 Um auf diese Schnittstelle zuzugreifen, klicken Sie innerhalb eines Dokumentes einfach bei "Your Recent Images" auf "View All".
 
-<img src="./images_new_interface/06.png" style="width:60%; height:auto;">
+<img src="./images/current/06.png" style="width:60%; height:auto;">
 
 Es gibt mehrere Möglichkeiten Bilder auf die Plattform hochzuladen, die im Folgenden erläutert werden.
 
 #### 1.4.2. Lokale Dateien importieren
 Die Bilder können einfach per „Drag and Drop“ hochgeladen werden oder durch Auswählen der Bilder im File Explorer, mittels eines Klicks in die Box.
 
-<img src="./images_new_interface/07.png" style="width:70%; height:auto;">
+<img src="./images/current/07.png" style="width:70%; height:auto;">
 
 **Hinweis**: Bevor die Seite neugeladen werden kann, muss der Import aller Bilder abgeschlossen sein. eScriptorium bietet momentan keine Möglichkeit Bilder automatisch zu sortieren, daher sollte beim Upload darauf geachtet werden, alle Bilder in der richtigen Reihenfolge auszuwählen sowie auf eine entsprechende Benennung zu achten ansonsten müssen die Bilder händisch sortiert werden.
 
@@ -70,7 +70,7 @@ Klicken Sie auf den "Import"-Button, dann auf die Option "XML/ZIP" und laden ein
 
 Unter "Tasks" wird der Fortschritt des Upload-Prozesses angezeigt.
 
-<img src="./images_new_interface/08.png" style="width:65%; height:auto;">
+<img src="./images/current/08.png" style="width:65%; height:auto;">
 
 ### 1.5. Dokumente manuell mit Annotationen versehen
 #### 1.5.1. Zugriff auf das Interface
@@ -79,8 +79,8 @@ Manuelle Annotationen sind nötig, um Ground-Truth-Daten zu generieren und damit
 Um Annotationen manuell zu erstellen und zu modifizieren, klicken Sie innerhalb Ihres Dokuments bei "Your Recent Images" auf "View All". Wählen Sie die "Edit"-Optionen auf den jeweiligen Bildern aus, um mehrere Bearbeitungsbereiche passend zu den möglichen Editierungsoptionen auswählen (v.l.n.r.).
 
 <p style="display:flex; gap:1em; align-items:center;">
- <img src="./images_new_interface/09.png" style="width:22.2%; height:auto;">
- <img src="./images_new_interface/10.png" style="width:60%; height:auto;">
+ <img src="./images/current/09.png" style="width:22.2%; height:auto;">
+ <img src="./images/current/10.png" style="width:60%; height:auto;">
 </p>
 
 - **„Segment“** zeigt den Segmentationsbearbeitungsbereich an
@@ -91,7 +91,7 @@ Um Annotationen manuell zu erstellen und zu modifizieren, klicken Sie innerhalb 
 #### 1.5.2. Segmente und Bereiche auf dem Bild mit Annotationen versehen
 Im Segmentbearbeitungsfenster können Sie mehrere wesentliche Operationen durchführen:
 
-![grafik](./images_new_interface/10.2.png)
+![grafik](./images/current/10.2.png)
 
 **Baselines:** (Lines mode)
 - Das Zeichnen von „Baselines“, die den Positionen des Textes auf dem Bild entsprechen, kann auf **zwei unterschiedliche Arten erfolgen**:
@@ -135,7 +135,7 @@ Nur wenn Baselines und Masken auf dem Bild festgelegt sind, gibt es die Möglich
 Um eine einer Zeile zugeordnete Transkription hinzuzufügen oder zu ändern, klicken Sie im Bereich "Transcription" auf die entsprechende Zeile. Ein Eingabefenster wird angezeigt. Um eine Transkription aufzunehmen, drücken Sie „Enter“: es wird automatisch das Eingabefeld für die nächste Zeile angezeigt.
 Während Sie im Fenster "Transcription" tippen, werden die mit Zeilen versehenen Bereiche durch Text ersetzt und der Inhalt des Fensters "Text" ändert sich. Es ist also möglich den Text im Textfenster zu modifizieren, zu kopieren und mehrere Zeilen auf einmal einzufügen.
 
-![grafik](./images_new_interface/11.png)
+![grafik](./images/current/11.png)
 
 #### 1.5.4. Eine Anmerkung zur Gliederung von Baselines, Polygonen und Transkriptionen
 Die „Baseline“ ist ein zentrales Element, um Informationen in der eScriptorium Database zu speichern. Also:
@@ -154,14 +154,14 @@ Es ist möglich die Reihenfolge im „Text/Line Ordering“-Fenster durch das Kl
 
 **Hinweis:** Es ist empfehlenswert, die Qualität der Segmentierung sicherzustellen, bevor die Reihenfolge der Zeilen geändert wird, weil das Hinzufügen und Entfernen von Zeilen die Berechnung dieser Reihenfolge systematisch neustartet und dabei manuelle Modifikationen überschreibt.
 
-<img src="./images_new_interface/12.png" style="width:95%; height:auto;">
+<img src="./images/current/12.png" style="width:95%; height:auto;">
 
 #### 1.5.6. Semantische Annotationen
 Es ist möglich, den Zeilen und Bereichen Etiketten (oder Tags) zuzuordnen, indem man einer vom User vordefinierten Ontologie folgt. Es gibt Standard-Tags, aber es ist auch möglich, diese über das Eingabefeld hinzuzufügen (Klicken Sie rechts oben auf das Symbol mit dem Viereck, dem Kreis, dem Dreieck und dem Pluszeichen, dann „Add New“ und anschließend fügen Sie den neuen Tag zur Liste hinzu und bestätigen Sie mit "Save") oder zu löschen (entfernen Sie die Haken von den Boxen vor dem Tag und klicken Sie anschließend auf „Save“).
 
 Wählen Sie im Bereich „Segmentation“ einen Bereich oder eine Zeile aus, klicken Sie auf „Set the type of selected lines (T)” (Das Symbol mit dem Viereck, dem Kreis und dem Dreieck) und wählen Sie das entsprechende Tag aus. Die Farben des Bereichs oder Zeile ändern sich. Es ist möglich ein Tag auf mehrere Bereiche oder Zeilen auf einmal anzuwenden: dafür wählen Sie alle gewünschten Bereiche aus (STRG+ Klick und Ziehen oder STRG gedrückt halten und die gewünschten Zeilen/Bereiche anklicken).
 
-![grafik](./images_new_interface/13.png)
+![grafik](./images/current/13.png)
 
 ### 1.6. Annotationen Importieren
 #### 1.6.1. Strukturierte Annotationen als XML importieren
@@ -169,7 +169,7 @@ Es gibt die Möglichkeit Segmentierungen oder Transkriptionen, die außerhalb vo
 Nun können Sie einen Namen für die importierte Version festlegen, und eine Datei für den Import hochladen. Dies kann eine ALTO XML Datei, eine PAGE XML Datei oder eine ZIP-Datei, die ALTO oder PAGE Dateien beinhaltet, sein.
 Es ist nicht notwendig vorher auszuwählen, welche Teile des Dokuments vom Import betroffen sind: die Verbindung wird automatisch hergestellt durch die Informationen aus den XML Dateien.
 
-<img src="./images_new_interface/14.png" style="width:50%; height:auto;">
+<img src="./images/current/14.png" style="width:50%; height:auto;">
 
 Bitte beachten Sie, dass es, nachdem Segmentierungen importiert wurden, die nicht mit Kraken/eScriptorium erzeugt wurden, wichtig ist, die Polygone (Masken) zurückzusetzen bevor mit diesen Dokumenten Modelle trainiert werden.
 
@@ -190,7 +190,7 @@ Automatische Dokumentannotationen werden über den Tab „Images“ verwaltet.
 - **„Regions“** ermöglichen es, Baselines und Polygone, die schon auf den Bildern existieren, zu erhalten und nur neue Bereiche zu generieren
 - **„Text Direction“** indiziert die Leserichtung der Zeilen
 
-<img src="./images_new_interface/15.png" style="width:40%; height:auto;">
+<img src="./images/current/15.png" style="width:40%; height:auto;">
 
 #### 1.7.3. Vergleich verschiedener Transkriptionen
 - Laden Sie das Bild eines Dokumentes in eScriptorium hoch
@@ -199,7 +199,7 @@ Automatische Dokumentannotationen werden über den Tab „Images“ verwaltet.
 - Anschließend klicken Sie auf “Transcription comparison” und wählen im drop-down menu die Transkriptionen aus, die Sie vergleichen möchten
 - Sie sehen nun markierten Text in rot und grün: Grüne Zeichen sind in der aktuellen (bearbeitbaren) Transkription nicht vorhanden, rote Zeichen sind in der verglichenen Transkription nicht vorhanden
 
-<img src="./images_new_interface/16.png" style="width:80%; height:auto;">
+<img src="./images/current/16.png" style="width:80%; height:auto;">
 
 ### 1.8. Modelle trainieren
 #### 1.8.1. Ein Training starten
@@ -227,21 +227,21 @@ Das Exportieren von Annotationen funktioniert über den Tab „Images“.
   - Setzen Sie einen Haken bei „Include Images“, wenn Sie zusätzlich die **Bilder exportieren** möchten
   - Klicken Sie auf „Export“ und speichern sie die **generierte ZIP-Datei**
 
-<img src="./images_new_interface/17.png" style="width:40%; height:auto;">
+<img src="./images/current/17.png" style="width:40%; height:auto;">
 
 ## 2. Verwalten einer kollaborativen Annotation Campaign
 ### 2.1. Erstellen einer Usergruppe (Admin)
 Es ist möglich eine Nutzergruppe (Vorausgesetzt Sie haben die erforderlichen Rechte) zu erstellen. Diese Gruppen dienen dazu Arbeitsgruppen zu definieren oder um ausgewählten Usern bestimmte Rechte zu erteilen.
 Klicken Sie hierfür innerhalb eines Projekts rechts oben auf "Groups & Users", hier können Gruppen erstellt werden. Zudem werden hier auch die eigenen Gruppenzugehörigkeiten aufgelistet.
 
-![grafik](./images_new_interface/18.png)
+![grafik](./images/current/18.png)
 
 ### 2.2. Teilen eines Dokumentes mit einem anderen User oder einer Gruppe
 Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenigen, die nicht Teil der Gruppe sind, welcher das Dokument angehört. Dies ist innerhalb eines Dokuments über den Button "Groups & Users" und über den Tab „Beschreibung“ möglich:
 - Geben Sie den Namen des Users ein, mit dem Sie Ihr Dokument teilen möchten oder setzen Sie einen Haken bei seinem Namen in der Liste
 - Um zu bestätigen, klicken Sie auf „Submit“
 
-<img src="./images_new_interface/19.png" style="width:35%; height:auto;">
+<img src="./images/current/19.png" style="width:35%; height:auto;">
 
 ### 2.3. Ein Modell mit einem anderen User oder einer Gruppe teilen
 Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Modell mit anderen Usern zu teilen, gibt es zwei Möglichkeiten:

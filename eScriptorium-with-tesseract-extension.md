@@ -1,6 +1,8 @@
 # eScriptorium with Tesseract extension (*a step-by-step guide*)
 **version 1.0 | January 2024**
 
+> **Note:** This guide describes the **legacy interface** of eScriptorium (versions before 1.0). The current interface (1.0 and later) is covered in the [Nutzung von eScriptorium – neues Interface](./Nutzungsanleitung_neues_Interface_eScriptorium.md) guide.
+
 "Tesseract is an open source text recognition (OCR) Engine, available under the Apache 2.0 license. [..] Tesseract can be used directly via command line, or (for programmers) by using an API to extract printed text from images. It supports a wide variety of languages. Tesseract doesn’t have a built-in GUI, but there are several available from the 3rdParty page. External tools, wrappers and training projects for Tesseract are listed under AddOns."[[Tesseract-OCR](https://tesseract-ocr.github.io/tessdoc/)]
 
 Tesseract serves as an important OCR-engine within the OCR-D project. Although it is supported by various third-party GUI extensions, there currently isn't a transcription platform offering training options that support it.
@@ -156,7 +158,7 @@ Here are some points for orientation that can help with the assessment of a mode
 
 All downloaded models can be uploaded to eScriptorium by clicking on **"My Models"** on the upper right corner of the screen. Click on **"Upload a model"** in the next screen and choose the model you want to upload.
 
-<img src="./images/training-eS-10.png" width="80%" height="80%">
+<img src="./images/legacy/training-eS-10.png" width="80%" height="80%">
 
 
 ## 4. How to apply a tesseract transcription model to your dataset
@@ -168,11 +170,11 @@ To apply a the `tesseract` transcription model:
 3. Click on the blue **"Transcribe"** button.
 4. Select a **"Model"** with the first dropdown menu .<br/>
 
-<img src="./images/training-eS-23.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/training-eS-23.png" width="80%" height="80%"><br/>
 
 A pop-up should open, that looks like this:
 
-<img src="./images/tesseract-extension-00.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/tesseract-extension-00.png" width="80%" height="80%"><br/>
 
 
 ## 5. How to train a tesseract transcription model
@@ -239,11 +241,11 @@ If you have created a sufficient amount of training data (refer to section [How 
 3. Click on the blue **"Train"** button.
 4. Click on **"Recognizer" button.
 
-<img src="./images/training-eS-35.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/training-eS-35.png" width="80%" height="80%"><br/>
 
 A pop-up should open, that looks like this:
 
-<img src="./images/tesseract-extension-01.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/tesseract-extension-01.png" width="80%" height="80%"><br/>
 
 - **1st drop-down**: Choose the "manual" transcription where you saved the corrected ground truth
 - **Field `New model`**: Choose a name for your fine-tuned model
@@ -255,22 +257,22 @@ A pop-up should open, that looks like this:
 
 The model selection can be filtered by:
 1. OCR-Engine<br/>
-<img src="./images/tesseract-extension-02.png" width="80%" height="80%"><br/>
-<img src="./images/tesseract-extension-03.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/tesseract-extension-02.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/tesseract-extension-03.png" width="80%" height="80%"><br/>
 
 2. Modelname<br/>
-<img src="./images/tesseract-extension-04.png" width="80%" height="80%"><br/>
-<img src="./images/tesseract-extension-05.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/tesseract-extension-04.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/tesseract-extension-05.png" width="80%" height="80%"><br/>
 
 Lastly, click on the blue **"Train"** button to start the fine-tuning. 
 
 A running training is shown as below:
 
-<img src="./images/training-eS-37.png" width="100%" height="100%"><br/>
+<img src="./images/legacy/training-eS-37.png" width="100%" height="100%"><br/>
 
 If you want to view the training progress, click on **"My models"**:
 
-<img src="./images/training-eS-38.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/training-eS-38.png" width="80%" height="80%"><br/>
 
 The model you are currently training will appear in this overview. 
 By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. 

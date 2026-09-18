@@ -1,6 +1,8 @@
 # Training mit eScriptorium (*eine Schritt-für-Schritt-Anleitung*)
 **version 1.0 | Februar 2024**
 
+> **Hinweis:** Diese Anleitung beschreibt die **Legacy-Oberfläche** von eScriptorium (Versionen vor 1.0). Die aktuelle Oberfläche (ab Version 1.0) wird in der [Nutzung von eScriptorium – neues Interface](./Nutzungsanleitung_neues_Interface_eScriptorium.md) beschrieben.
+
 "eScriptorium ist eine Plattform zur manuellen oder automatisierten Segmentierung und Texterkennung von historischen Handschriften und Drucken" [[Wikipedia](https://de.wikipedia.org/wiki/EScriptorium)]. Darüber hinaus ermöglicht die Plattform das benutzerfreundliche Training und das (werkspezifische) Nachtraining eigener Layoutsegmentierungs- und Texterkennungsmodelle direkt im Browser. eScriptorium ist open source und kostenlos. Die trainierten Modelle können ohne Einschränkungen heruntergeladen und verwendet werden.
 
 Die folgende Schritt-für-Schritt-Anleitung gibt eine Einführung in die Nutzung von eScriptorium zum Training eigener OCR- oder HTR-Modelle.
@@ -51,7 +53,7 @@ Um ein Modell `from scratch` zu trainieren oder ein bestehendes Modell `nachzutr
 
 Wie der Name sagt, werden Texterkennungsmodelle verwendet, um den Textinhalt eines Bildes automatisch zu erkennen. Wenn Sie ein Texterkennungsmodell trainieren oder finetunen möchten, benötigen Sie **Bilder** und **Transkriptionen**. Hier ist ein Beispiel in eScriptorium mit dem Digitalisat einer Buchseite (links) und der entsprechenden Transkription (rechts):
 
-<img src="./images/training-eS-03_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-03_de.png" width="100%"><br/>
 
 Die Transkriptionen versuchen, den Textinhalt der Bilder so genau wie möglich zu erfassen. Wenn Sie keine existierende Ground Truth haben, mit der Sie trainieren können, können Sie diese direkt in eScriptorium erstellen.
 
@@ -59,7 +61,7 @@ Die Transkriptionen versuchen, den Textinhalt der Bilder so genau wie möglich z
 
 Layoutsegmentierungsmodelle werden zur automatischen Erkennung aller Textbereiche und Textzeilen auf einem Bild verwendet und sind eine Vorstufe zur eigentlichen Texterkennung. Wenn Sie ein Layoutsegmentierungsmodell trainieren oder finetunen wollen, benötigen Sie **Bilder** und **Layoutsegmentierungsdaten**. Hier ist ein Beispiel in eScriptorium mit dem Digitalisat einer Buchseite (links) und der entsprechenden Layoutsegmentierung (rechts):
 
-<img src="./images/training-eS-24_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-24_de.png" width="100%"><br/>
 
 > **Hinweis:** Die Kapitel [Finetuning eines Texterkennungsmodells](#31-finetuning-eines-texterkennungsmodells) und [Finetuning eines Layoutsegmentierungsmodells](#32-finetuning-eines-layoutsegmentierungsmodells) bieten eine detaillierte Einführung in die Erstellung von Ground Truth für das Training von Texterkennungs- und Layoutsegmentierungsmodellen.
 
@@ -71,7 +73,7 @@ Vor allem für das Nachtraining bereits vorhandener Layoutsegmentierungs- oder T
 
 Alle `kraken`-Modelle können in eScriptorium hochgeladen werden, indem Sie auf **"Meine Modelle"** in der oberen rechten Ecke des Bildschirms klicken. Klicken Sie auf der nächsten Seite auf **"Modell hochladen"** und wählen Sie das Modell aus, das Sie hochladen möchten.
 
-<img src="./images/training-eS-10_de.png" width="80%" height="80%">
+<img src="./images/legacy/training-eS-10_de.png" width="80%" height="80%">
 
 ### 2.3. Wie wähle ich ein Modell für einen bestimmten Nutzungszweck aus?
 Die Genauigkeit eines Modells hängt von verschiedenen Faktoren ab und muss für jeden Anwendungsfall getestet werden. Ein Modell, das bspw. auf traditionelle chinesische Schriftzeichen trainiert wurde, wird aller Voraussicht nach bei deutschen Dokumenten, die in Fraktur gedruckt sind, nicht gut abschneiden.
@@ -100,27 +102,27 @@ Die folgenden Abschnitte beschreiben diesen Workflow im Detail.
 #### Schritt 1: Neues Projekt und Dokument erstellen
 Beginnen Sie mit dem Anlegen eines neuen eScriptorium-Projekts, indem Sie zur eScriptorium-Startseite gehen und auf **"Meine Projekte"** in der oberen rechten Ecke des Bildschirms klicken.
 
-<img src="./images/training-eS-00_de.png" width="40%" height="40%">
+<img src="./images/legacy/training-eS-00_de.png" width="40%" height="40%">
 
 Klicken Sie anschließend auf die grüne Schaltfläche **"Erzeuge neues Projekt"**.
 
-<img src="./images/training-eS-01_de.png" width="40%" height="40%">
+<img src="./images/legacy/training-eS-01_de.png" width="40%" height="40%">
 
 Geben Sie Ihrem Projekt auf der nächsten Seite einen Namen und klicken Sie auf **"Erzeugen"**.
 
-<img src="./images/training-eS-04_de.png" width="100%">
+<img src="./images/legacy/training-eS-04_de.png" width="100%">
 
 Nachdem das Projekt erstellt wurde, wird die Projektübersicht angezeigt. Hier sollte das Projekt, das Sie gerade angelegt haben, angezeigt werden. Klicken Sie auf den entsprechenden Link.
 
-<img src="./images/training-eS-05_de.png" width="100%">
+<img src="./images/legacy/training-eS-05_de.png" width="100%">
 
 Erstellen Sie ein neues Dokument in Ihrem Projekt, indem Sie auf die grüne Schaltfläche **"Neues Dokument anlegen"** klicken.
 
-<img src="./images/training-eS-06_de.png" width="100%">
+<img src="./images/legacy/training-eS-06_de.png" width="100%">
 
 Geben Sie auf der nächsten Seite einen Namen für das Dokument ein und klicken Sie auf **"Erzeugen"** (bzw. **"Aktualisieren"**). In der oberen rechten Ecke sollte eine Meldung erscheinen, dass das Dokument erfolgreich erstellt worden ist.
 
-<img src="./images/training-eS-07_de.png" width="100%">
+<img src="./images/legacy/training-eS-07_de.png" width="100%">
 
 #### Schritt 2: Bilder importieren
 
@@ -130,11 +132,11 @@ Hier sind die Unterschiede zwischen den beiden Optionen:
 - **"Bilder hier ablegen oder zum Hochladen anklicken"**: Lädt Bilder von Ihrer Festplatte in verschiedenen Dateiformaten hoch (`PNG`, `JPG`, `TIFF` usw.)
 - Schaltfläche **"Import"**: Importieren von Bildern über das `IIIF`-Protokoll oder Upload von `PDF`-Dokumenten.
 
-<img src="./images/training-eS-08_de.png" width="100%">
+<img src="./images/legacy/training-eS-08_de.png" width="100%">
 
 Sobald alle Bilder hochgeladen wurden, erscheinen sie als Vorschau am unteren Rand des Bildschirms.
 
-<img src="./images/training-eS-09_de.png" width="100%">
+<img src="./images/legacy/training-eS-09_de.png" width="100%">
 
 #### Schritt 3: Automatische Layoutsegmentierung durchführen
 
@@ -145,11 +147,11 @@ Wählen Sie alle Bilder aus, indem Sie auf die Schaltfläche **"Alles auswählen
 
 Klicken Sie anschließend auf die Schaltfläche **"Segmentieren"**.
 
-<img src="./images/training-eS-11_de.png" width="100%">
+<img src="./images/legacy/training-eS-11_de.png" width="100%">
 
 Es sollte ein Pop-up-Fenster (*"Wählen Sie ein Modell aus"*) erscheinen, in dem die Layoutsegmentierung festgelegt werden kann:
 
-<img src="./images/training-eS-12_de.png" width="100%">
+<img src="./images/legacy/training-eS-12_de.png" width="100%">
 
 - **1. Dropdown**: Wählen Sie ein Layoutsegmentierungsmodell aus
 - **2. Dropdown**: Wählen Sie die Layoutbereiche, die Sie segmentieren möchten (*wenn noch keine Layoutsegmentierung durchgeführt wurde, sollte die Einstellung "Linien und Regionen" gewählt werden.*)
@@ -159,20 +161,20 @@ Klicken Sie anschließend auf die blaue Schaltfläche **"Segmentieren"**, um die
 
 Eine orangefarbene Schaltfläche in der Bildvorschau zeigt die laufende Layoutsegmentierung an. Sobald die Segmentierung für eine Seite abgeschlossen ist, erscheint in der oberen rechten Ecke des Bildschirms eine Meldung (*"Segmentation done!"*).
 
-<img src="./images/training-eS-13_de.png" width="100%">
+<img src="./images/legacy/training-eS-13_de.png" width="100%">
 
 #### Schritt 4: Überprüfung der Layoutsegmentierung
 Nachdem die Segmentierung des Layouts abgeschlossen ist, müssen die Seiten überprüft werden. Klicken Sie auf die **seegrüne Schaltfläche** des ersten Bildes, um die Bearbeitungsansicht von eScriptorium zu aktivieren.
 
-<img src="./images/training-eS-14_de.png" width="100%">
+<img src="./images/legacy/training-eS-14_de.png" width="100%">
 
 Die folgende Seite sollte so aussehen:
 
-<img src="./images/training-eS-15_de.png" width="100%">
+<img src="./images/legacy/training-eS-15_de.png" width="100%">
 
 Auf der linken Seite der Bearbeitungsansicht finden Sie eine Vorschau des jeweiligen Dokuments mit der automatisch erzeugten Layoutsegmentierung in verschiedenen Farben. eScriptorium unterscheidet 3 *Layoutregionen* oder *Segmente*:
 
-<img src="./images/training-eS-16_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-16_de.png" width="100%"><br/>
 
 1. **Textregionen**: Eine Textregion enthält in der Regel mehrere Textzeilen. Beispiele für eine Textregion sind: ein Absatz, eine Textspalte oder, je nach Strukturierung, auch eine ganze Textseite. Die Textbereiche sollten der Lesereihenfolge und dem Layout der jeweiligen Seite entsprechen.
 2. **Zeilenmasken** (oder *text lines*, *line masks*): Eine Polygonmaske, die eine einzelne Textzeile repräsentiert und alle Zeichen der Textzeile umfasst. eScriptorium erzeugt Zeilenmasken automatisch aus *Baselines*. Deshalb: Konzentrieren Sie sich bei der Korrektur der automatischen Layoutsegmentierung zuerst auf Textregionen und Baselines, da Zeilenmasken automatisch neu berechnet werden, sobald Sie eine Baseline anpassen.
@@ -183,20 +185,20 @@ Auf der linken Seite der Bearbeitungsansicht finden Sie eine Vorschau des jeweil
 #### Schritt 5: Korrektur der Textregionen
 Korrigieren Sie zunächst die Textregionen. Klicken Sie auf das **blaue Regionensymbol**, um den "Bereichsmodus" umzuschalten:
 
-<img src="./images/training-eS-17_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-17_de.png" width="100%"><br/>
 
 Achten Sie darauf, dass die Textregionen den gesamten Textinhalt sinnvoll einschließen. Passen Sie die Textregionen entsprechend an. 
 
 **Beispiel:** Auf der folgenden Seite wurden zwei Textspalten als eine einzige Textregion segmentiert. Die vorgenommene Anpassung im zweiten Screenshot spiegelt das tatsächliche Seitenlayout wider.
 
-<img src="./images/training-eS-18_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-18_de.png" width="100%"><br/>
 
-<img src="./images/training-eS-19_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-19_de.png" width="100%"><br/>
 
 #### Schritt 6: Korrektur von Baselines und Zeilenmasken
 Fahren Sie mit der Korrektur der Baselines fort. Deaktivieren Sie den Regionenmodus, indem Sie erneut auf das **grüne Regionensymbol** klicken. Schalten Sie den Baselinemodus um, indem Sie auf das **Maskensymbol** klicken, bis Ihre Vorschau wie folgt aussieht:
 
-<img src="./images/training-eS-20_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-20_de.png" width="100%"><br/>
 
 Passen Sie die Baseline so an, dass:
 - eine einzelne Baseline einer einzelnen Textzeile entspricht
@@ -205,8 +207,8 @@ Passen Sie die Baseline so an, dass:
 
 **Beispiel:** Die folgenden Screenshots zeigen fehlerhafte Baselines und deren Korrektur. Zum Beispiel reichen einzelne Baselines über die Textregionen hinaus, so dass zwei separate Textzeilen als eine segmentiert werden. Darüber hinaus verlaufen einzelne Grundlinien nicht entlang der Grundlinie der Textzeile.
 
-<img src="./images/training-eS-21_de.png" width="100%"><br/>
-<img src="./images/training-eS-22_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-21_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-22_de.png" width="100%"><br/>
 
 > **Hinweis:** Nach der Anpassung einer Baseline berechnet eScriptorium automatisch die entsprechenden Zeilenmaske neu. Aktivieren sie die Zeilenmasken, indem Sie erneut auf das **blaue Maskensymbol** klicken. Sollte eine Zeilenmaske falsch berechnet sein, können Sie diese durch Anklicken und Ändern des Polygons korrigieren.
 
@@ -222,11 +224,11 @@ Nachdem Sie die Schritte 3 - 6 ausgeführt haben, wechseln Sie zurück zum **Rei
 
 Klicken Sie anschließend auf die blaue Schaltfläche **"Transkribieren"**.
 
-<img src="./images/training-eS-23_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-23_de.png" width="100%"><br/>
 
 Es sollte ein Pop-up-Fenster erscheinen, in dem Sie ein Texterkennungsmodell auswählen können:
 
-<img src="./images/training-eS-25_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-25_de.png" width="100%"><br/>
 
 - **Wählen Sie ein Modell aus**: Wählen Sie ein Texterkennungsmodell aus
 - **Wähle eine Transkription aus**: Wählen Sie **-- Neu --**
@@ -235,7 +237,7 @@ Klicken Sie auf die blaue Schaltfläche **"Transkribieren"**, um die automatisch
 
 Ein orangefarbener Button in der Bildvorschau zeigt eine laufende Texterkennung an. Sobald die Texterkennung für eine Seite abgeschlossen ist, erscheint eine Meldung (*"Transcription done!"*) in der rechten oberen Ecke des Bildschirms.
 
-<img src="./images/training-eS-26_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-26_de.png" width="100%"><br/>
 
 #### Schritt 9: Überprüfung der Transkriptionen
 Sobald die Texterkennung abgeschlossen ist, müssen die automatisch erstellten Transkriptionen überprüft werden.
@@ -245,15 +247,15 @@ Sobald die Texterkennung abgeschlossen ist, müssen die automatisch erstellten T
 3. Klicken Sie anschließend auf die Schaltfläche **"Transkriptionsansicht"**, um die Transkriptionsansicht zu aktivieren.
 4. Wählen Sie die Transkription, die Sie in Schritt 8 erstellt haben, im Dropdown-Menü aus. Der Name der Transkription folgt dieser Struktur: `OCR-Engine-Name:OCR-Modell-Name`. Beispiel: In "Schritt 8" haben wir das Modell `german_print` für die Engine `kraken` ausgewählt. Der entsprechende Name der Transkription lautet daher: `kraken:german_print`.
 
-<img src="./images/training-eS-33_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-33_de.png" width="100%"><br/>
 
 Wenn Sie mit dem Mauszeiger über eine der Textzeilen in der Transkriptionsansicht auf der rechten Seite Ihres Bildschirms fahren, wird die entsprechende Textzeile des Bildes hervorgehoben.
 
-<img src="./images/training-eS-28_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-28_de.png" width="100%"><br/>
 
 Wenn Sie auf eine Textzeile in der Transkriptionsansicht klicken, öffnet sich ein Pop-up-Fenster:
 
-<img src="./images/training-eS-29_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-29_de.png" width="100%"><br/>
 
 In diesem Fenster können die automatisch erstellten Transkriptionen auf Fehler überprüft werden. Im oberen Teil des Pop-up-Fensters wird die originale Textzeile angezeigt. Im unteren Teil ist die Transkription dieser Textzeile zu finden. Mit den Cursortasten (`↑` und `↓`) können Sie durch alle verfügbaren Textzeilen blättern.
 
@@ -268,29 +270,29 @@ In Schritt 10 werden Transkriptionsfehler korrigiert, um Trainingsdaten (*Ground
 3. Klicken Sie nun auf die Schaltfläche **"Textansicht"**, um die reine Textansicht zu aktivieren.
 4. Wählen Sie die Transkription, die Sie in Schritt 8 erstellt haben, im Dropdown-Menü aus.
 
-<img src="./images/training-eS-27_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-27_de.png" width="100%"><br/>
 
 Markieren Sie **alle Textzeilen** (`STRG + A` unter Windows oder `⌘ + A` auf Mac) in der Textansicht und **kopieren** Sie diese (`STRG + C` unter Windows oder `⌘ + C` auf Mac):
 
-<img src="./images/training-eS-31_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-31_de.png" width="100%"><br/>
 
 Wählen Sie **"manual"** in der Dropdown-Liste für die Transkription und fügen Sie die soeben kopierte Transkription in die Textansicht ein (`STRG + V` unter Windows oder `⌘ + V` auf dem Mac):
 
-<img src="./images/training-eS-32_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-32_de.png" width="100%"><br/>
 
 > **Hinweis:** Dieser Kopiervorgang hat folgenden Zweck: In der "manual" Transkription halten wir die **korrekte Transkription** (= *Ground Truth*) des Textinhalts der jeweiligen Seite fest, die später zum Training verwendet wird. Die noch fehlerhafte automatisch generierte Transkription (erstellt in Schritt 8) dient als Grundlage für die Korrektur. Die Korrekturen werden in der "manual" Transkription vorgenommen, da so sichergestellt ist, dass es in unserem Dokument nur eine einzige Transkription gibt, in der geprüfte und korrigierte Trainingsdaten zu finden sind, nämlich die "manual" Transkription.
 
 Deaktivieren Sie nun die **"Textansicht"** und aktivieren Sie die **"Transkriptionsansicht"**:
 
-<img src="./images/training-eS-34_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-34_de.png" width="100%"><br/>
 
 Klicken Sie auf die erste Textzeile in der **"Transkriptionsansicht"**. Das folgende Beispiel zeigt einen Fehler in der generierten Transkription:
 
-<img src="./images/training-eS-30a.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-30a.png" width="100%"><br/>
 
 Wir korrigieren ihn, so dass die Transkription mit der Textzeile übereinstimmt:
 
-<img src="./images/training-eS-30.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-30.png" width="100%"><br/>
 
 Nachdem die erste Textzeile korrigiert wurde, drücken Sie die `Enter ↲` Taste, um die nächste Textzeile zu überprüfen. Die Cursortasten (`↑` und `↓`) können ebenfalls verwendet werden, um durch alle verfügbaren Textzeilen der aktuellen Seite zu blättern. 
 
@@ -325,11 +327,11 @@ Wenn Sie eine ausreichende Menge an Trainingsdaten erstellt haben (siehe [Exkurs
 3. Klicken Sie auf die blaue Schaltfläche **"Trainieren"**.
 4. Klicken Sie auf **"Recognizer"**.
 
-<img src="./images/training-eS-35_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-35_de.png" width="100%"><br/>
 
 Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
 
-<img src="./images/training-eS-36_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-36_de.png" width="100%"><br/>
 
 - **Erstes Dropdown**: Wählen Sie die "manual" Transkription, in der Sie die korrigierten Transkriptionen gespeichert haben.
 - **Feld `Neues Modell`**: Wählen Sie einen Namen für Ihr nachtrainiertes Modell
@@ -343,11 +345,11 @@ Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um die F
 
 Ein laufendes Training wird wie folgt gezeigt:
 
-<img src="./images/training-eS-37_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37_de.png" width="100%"><br/>
 
 Wenn Sie den Trainingsfortschritt sehen möchten, klicken Sie auf **"Meine Modelle"**:
 
-<img src="./images/training-eS-38_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-38_de.png" width="100%"><br/>
 
 Das Modell, das Sie gerade trainieren, wird in dieser Übersicht angezeigt. Mit einem Klick auf die Schaltfläche **"Versionen wechseln"** können Sie alle bereits abgeschlossenen Trainingsepochen anzeigen. Eine Benachrichtigung erscheint, sobald das Training beendet ist.
 
@@ -363,11 +365,11 @@ Nachdem Sie eine ausreichende Menge an Trainingsdaten erstellt haben (siehe [Exk
 3. Klicken Sie auf die blaue Schaltfläche **"Trainieren"**.
 4. Klicken Sie auf **"Recognizer"**.
 
-<img src="./images/training-eS-35_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-35_de.png" width="100%"><br/>
 
 Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
 
-<img src="./images/tesseract-extension-01.png" width="100%"><br/>
+<img src="./images/legacy/tesseract-extension-01.png" width="100%"><br/>
 
 - **Erstes Dropdown**: Wählen Sie die "manual" Transkription, in der Sie die korrigierten Transkriptionen gespeichert haben.
 - **Feld `Neues Modell`**: Wählen Sie einen Namen für Ihr nachtrainiertes Modell
@@ -381,7 +383,7 @@ Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um das N
 
 Ein laufendes Training wird wie folgt angezeigt:
 
-<img src="./images/training-eS-37_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37_de.png" width="100%"><br/>
 
 #### Schritt 12: Wiederholung der automatischen Texterkennung und Evaluation des nachtrainierten Modells
 Nachdem das Training abgeschlossen ist, steht das nachtrainierte Texterkennungsmodell für Tests zur Verfügung. Dieser Schritt hilft zu erkennen, ob das neue Modell bessere Ergebnisse liefert als das zuvor in Schritt 8 verwendete Basismodell.
@@ -391,11 +393,11 @@ Nachdem das Training abgeschlossen ist, steht das nachtrainierte Texterkennungsm
    - *Wählen Sie eine oder mehrere Seiten aus, die nicht Teil des Trainings waren, um optimale Bewertungsergebnisse zu gewährleisten*.
 3. Klicken Sie auf die blaue Schaltfläche **"Transkribieren"**.
 
-<img src="./images/training-eS-23_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-23_de.png" width="100%"><br/>
 
 Es sollte ein Pop-up-Fenster erscheinen, in dem Sie ein Texterkennungsmodell auswählen können:
 
-<img src="./images/training-eS-40_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-40_de.png" width="100%"><br/>
 
 - **Wählen Sie ein Modell aus**: Wählen Sie das Modell, das Sie in `Schritt 11` nachtrainiert haben.
 - **Wählen Sie eine Transkription**: Wählen Sie `-- Neu --`.
@@ -404,7 +406,7 @@ Klicken Sie auf die blaue Schaltfläche **"Transkribieren"**, um die automatisch
 
 Ein orangefarbener Button in der Bildvorschau zeigt die laufende Texterkennung an. Sobald die Texterkennung für eine Seite abgeschlossen ist, erscheint eine Meldung (*"Transkription fertig!"*) in der rechten oberen Ecke des Bildschirms.
 
-<img src="./images/training-eS-26_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-26_de.png" width="100%"><br/>
 
 Sobald die Texterkennung abgeschlossen ist, können die generierten Transkriptionen überprüft werden.
 
@@ -413,23 +415,23 @@ Sobald die Texterkennung abgeschlossen ist, können die generierten Transkriptio
 3. Klicken Sie nun auf die Schaltfläche **"Transkriptionsansicht"**, um die Transkriptionsansicht zu aktivieren.
 4. Wählen Sie im Dropdown-Menü die Transkription aus, die Sie mit Ihrem nachtrainierten Modell erstellt haben.
 
-<img src="./images/training-eS-41_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-41_de.png" width="100%"><br/>
 
 Bewerten Sie die Erkennungsgenauigkeit des nachtrainierten Modells, indem Sie die Transkriptionen des Basismodells, das Sie in `Schritt 8` verwendet haben, mit den Transkriptionen vergleichen, die Sie gerade mit dem neu trainierten Modell erstellt haben.
 
 Klicken Sie dazu auf das blaue **"Zahnradsymbol"** neben dem Dropdown-Menü für die Transkriptionsauswahl:
 
-<img src="./images/training-eS-42_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-42_de.png" width="100%"><br/>
 
 Wählen Sie die Transkription aus, die Sie in `Schritt 8` erstellt haben (die Transkription Ihres Basismodells), und die Transkription, die Sie soeben mit Ihrem neu trainierten Modell erstellt haben:
 
-<img src="./images/training-eS-43_de.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/training-eS-43_de.png" width="80%" height="80%"><br/>
 
 Verlassen Sie das Pop-up, indem Sie auf das **"x"** in der oberen rechten Ecke klicken.
 
 Klicken Sie auf eine Textzeile in der Transkriptionsansicht, um das Editor-Pop-up zu öffnen, und klicken Sie anschließend auf den Link **"Transkriptionsvergleich umschalten"**:
 
-<img src="./images/training-eS-44_de.png" width="80%" height="80%"><br/>
+<img src="./images/legacy/training-eS-44_de.png" width="80%" height="80%"><br/>
 
 Ein Vergleich der beiden ausgewählten Transkriptionen für die aktuelle Textzeile wird nun im unteren Teil des Pop-ups angezeigt. Farblich hervorgehobene Buchstaben zeigen Unterschiede zwischen den beiden Transkriptionen an, so dass die Genauigkeit des nachtrainierten Modells schnell überprüft werden kann.
 
@@ -451,11 +453,11 @@ Erstellen Sie 5 bis 10 Seiten Trainingsdaten, indem Sie die automatisch generier
 2. Wählen Sie **alle Seiten** mit Ihren korrigierten Trainingsdaten aus (wählen Sie eine Seite aus, halten Sie die `Umschalt`-Taste gedrückt und wählen Sie anschließend weitere Seite aus).
 3. Klicken Sie auf die blaue Schaltfläche **"Trainieren"** und wählen Sie **"Segmenter"**.
 
-<img src="./images/training-eS-51_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-51_de.png" width="100%"><br/>
 
 Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
 
-<img src="./images/training-eS-52_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-52_de.png" width="100%"><br/>
 
 - **Feld `Neues Modell`**: Wählen Sie einen Namen für Ihr Modell
    - Wir empfehlen, sprechende Namen zu verwenden, die die folgenden Informationen enthalten:
@@ -468,11 +470,11 @@ Klicken Sie schließlich auf die blaue Schaltfläche **"Trainieren"** und starte
 
 Ein laufendes Training wird wie folgt dargestellt:
 
-<img src="./images/training-eS-37_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37_de.png" width="100%"><br/>
 
 Wenn Sie den Trainingsfortschritt sehen möchten, klicken Sie auf **"Meine Modelle"**:
 
-<img src="./images/training-eS-54_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-54_de.png" width="100%"><br/>
 
 Das Modell, das Sie gerade trainieren, wird in dieser Übersicht angezeigt. Mit einem Klick auf die Schaltfläche **"Versionen wechseln"** können Sie alle bereits abgeschlossenen Trainingsepochen anzeigen. Eine Benachrichtigung erscheint, sobald das Training beendet ist.
 
@@ -484,11 +486,11 @@ Nachdem das Training abgeschlossen ist, steht Ihr nachtrainiertes Layoutsegmenti
    - *Wählen Sie eine oder mehrere Seiten, die nicht Teil des Trainings waren, um optimale Bewertungsergebnisse zu erzielen.*
 3. Klicken Sie auf die blaue Schaltfläche **"Segmentieren"**.
 
-<img src="./images/training-eS-61_de.png" width="100%">
+<img src="./images/legacy/training-eS-61_de.png" width="100%">
 
 Es sollte ein Pop-up-Fenster erscheinen, in dem Sie ein Layoutsegmentierungsmodell auswählen können:
 
-<img src="./images/training-eS-60_de.png" width="100%">
+<img src="./images/legacy/training-eS-60_de.png" width="100%">
 
 - **Wählen Sie ein Modell aus**: Wählen Sie das Modell, das Sie in "Schritt 2" nachtrainiert haben.
 - Klicken Sie auf die blaue Schaltfläche **"Segmentieren"**, um die Layoutsegmentierung zu starten.
@@ -513,11 +515,11 @@ Nachdem Sie Ihre Trainingsdaten erstellt oder importiert haben, führen Sie die 
 3. Klicken Sie auf die blaue Schaltfläche **"Trainieren"**.
 4. Wählen Sie entweder **"Recognizer"** oder **"Segmenter"**, je nachdem, welche Art von Modell Sie trainieren möchten.
 
-<img src="./images/training-eS-55_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-55_de.png" width="100%"><br/>
 
 5. Es sollte ein Pop-up-Fenster erscheinen, in dem die Einstellungen für das Training wie folgt vorgenommen werden können:
 
-<img src="./images/training-eS-56_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-56_de.png" width="100%"><br/>
 
 - **1. Dropdown**: Wählen Sie die **Transkriptionen** aus, die Sie für das Training verwenden möchten. 
    - *Diese Option ist nur verfügbar, wenn Sie ein **"Recognizer"**-Modell trainieren.*
@@ -527,7 +529,7 @@ Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um das T
 
 Ein laufendes Training wird wie unten dargestellt:
 
-<img src="./images/training-eS-37_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-37_de.png" width="100%"><br/>
 
 Sie werden benachrichtigt, sobald das Training abgeschlossen ist.
 
@@ -539,11 +541,11 @@ Nachdem das Training abgeschlossen ist, steht Ihr Modell zum Test zur Verfügung
    - *Wählen Sie eine Seite aus, die nicht Teil des Trainings selbst war, um optimale Bewertungsergebnisse zu gewährleisten.*
 3. Klicken Sie auf die blaue Schaltfläche **"Segmentieren"**, wenn Sie ein **Layoutsegmentierungsmodell** trainiert haben, oder klicken Sie auf die blaue Schaltfläche **"Transkribieren"**, wenn Sie ein **Texterkennungsmodell** trainiert haben.
 
-<img src="./images/training-eS-57_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-57_de.png" width="100%"><br/>
 
 4. Es sollte ein Pop-up-Fenster erscheinen, in dem Sie Ihr Modell auswählen können:
 
-<img src="./images/training-eS-59_de.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-59_de.png" width="100%"><br/>
 
 Sobald die **Layoutsegmentierung** / **Texterkennung** für die ausgewählte Seite abgeschlossen ist, überprüfen Sie die Ergebnisse auf ihre Qualität.
 
@@ -554,7 +556,7 @@ Virtuelle Tastaturen sind besonders hilfreich bei der Transkription historischer
 
 Hier ein Beispiel:
 
-<img src="./images/training-eS-47.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-47.png" width="100%"><br/>
 
 Die ursprüngliche Textzeile zeigt eine historische Glyphe, nämlich das "lange s", das in deutschsprachigen Dokumenten, die in Fraktur gedruckt wurden, ein gängiges Zeichen ist. Auf einer modernen Tastatur ist das "lange s" nicht zu finden, daher ist es nicht möglich, diesen Buchstaben ohne größere Umwege zu transkribieren. 
 
@@ -565,11 +567,11 @@ Sobald Sie in der Transkriptionsansicht Textzeilen bearbeiten, können Sie die *
 1. Klicken Sie bei geöffnetem Textzeileneditor auf das blaue **Tastatursymbol** in der oberen linken Ecke.
 2. Klicken Sie dann in den Editor.
 
-<img src="./images/training-eS-45.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-45.png" width="100%"><br/>
 
 Die virtuelle Tastatur sollte nun angezeigt werden. Sie können zwischen verschiedenen virtuellen Tastaturen wechseln, indem Sie auf das **Dropdown-Menü** klicken. Wenn Sie noch keine virtuelle Tastatur importiert haben, klicken Sie auf die Schaltfläche **"Manage keyboards"**.
 
-<img src="./images/training-eS-46.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-46.png" width="100%"><br/>
 
 Mit dem **Keyboards manager** können Sie Tastaturen importieren oder neue Tastaturlayouts erstellen.
 
@@ -577,21 +579,21 @@ Mit dem **Keyboards manager** können Sie Tastaturen importieren oder neue Tasta
 1. Klicken Sie auf die blaue Schaltfläche **"Import a keyboard"**.
 2. Ein neues Popup-Fenster sollte erscheinen. Klicken Sie auf die graue Schaltfläche **"Choose a file..."**.
 
-<img src="./images/training-eS-48.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-48.png" width="100%"><br/>
 
 3. Laden Sie die Datei `escriptorium-keyboard-German-Fraktur.json` aus dem Ordner `virtual-keyboards` dieses[ GitHub-Repositorys](https://github.com/UB-Mannheim/eScriptorium_Dokumentation/tree/main/virtual-keyboards) auf Ihren Computer herunter.
 4. Wählen Sie in eScriptorium die soeben heruntergeladene Datei in Ihrem Dateibrowser und öffnen Sie sie.
 5. Klicken Sie dann auf die blaue Schaltfläche **"Import"**. Eine Meldung sollte erscheinen, wenn Sie die Tastatur erfolgreich importiert haben.
 
-<img src="./images/training-eS-49.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-49.png" width="100%"><br/>
 
 6. Klicken Sie abschließend auf die Schaltfläche **"Use"**, um die soeben importierte virtuelle Tastatur zu aktivieren.
 
-<img src="./images/training-eS-53.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-53.png" width="100%"><br/>
 
 Sie können nun die importierte virtuelle Tastatur im Dropdown-Menü auswählen. Wenn Sie auf eine der Glyphen in der virtuellen Tastatur klicken, wird sie in die Transkription eingefügt.
 
-<img src="./images/training-eS-50.png" width="100%"><br/>
+<img src="./images/legacy/training-eS-50.png" width="100%"><br/>
 
 > **Hinweis:** Weitere Informationen über virtuelle Tastaturen finden Sie in der eScriptorium-Dokumentation: [escriptorium-tutorial.readthedocs.io/de/latest/virtual_keyboard/](https://escriptorium-tutorial.readthedocs.io/en/latest/virtual_keyboard/)
 
@@ -612,7 +614,7 @@ Zur Veranschaulichung dieses Konzepts kann das folgende Beispiel dienen:
 
 | Image | Level 1 | Level 2 | Level 3 |
 |-------|---------|---------|---------|
-<img src="./images/training-eS-39.png" width="90"><br/>|`dass`|`daſs`|`daſs`|
+<img src="./images/legacy/training-eS-39.png" width="90"><br/>|`dass`|`daſs`|`daſs`|
 
 Die Transkription variiert je nachdem, ob sich die Transkriptionen nach Stufe 1 oder Stufe 2 / 3 der OCR-D GT-Richtlinien richten. Mit anderen Worten: Transkriptionen werden durch die Verwendung eines der drei verschiedenen Level *standardisiert*.
 

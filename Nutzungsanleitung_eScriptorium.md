@@ -1,4 +1,6 @@
 # Nutzung von eScriptorium
+
+> **Hinweis:** Diese Anleitung beschreibt die **Legacy-Oberfläche** von eScriptorium (Versionen vor 1.0). Die aktuelle Oberfläche (ab Version 1.0) wird in der [Nutzung von eScriptorium – neues Interface](./Nutzungsanleitung_neues_Interface_eScriptorium.md) beschrieben.
 >Die Anleitung basiert auf dem Blogbeitrag von Lectaurep: https://lectaurep.hypotheses.org/documentation/escriptorium-tutorial-en
 
 >Eine ausführlichere und aktualisierte Dokumentation zu eScriptorium in englischer Sprache finden Sie unter: https://escriptorium.readthedocs.io/
