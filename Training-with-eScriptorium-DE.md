@@ -25,7 +25,7 @@ Die folgende Schritt-für-Schritt-Anleitung gibt eine Einführung in die Nutzung
 6. [Lizenz](#6-lizenz)
 
 ## 0. Für wen ist dieser Guide gedacht?
-Dieser Leitfaden richtet sich an *fortgeschrittene* eScriptorium-Benutzer*innen mit einem grundlegenden Verständnis der grafischen Oberfläche und Funktionalität der Plattform. Hier sind einige Ressourcen, die Ihnen den Einstieg erleichtern:
+Dieser Leitfaden richtet sich an eScriptorium-Benutzer*innen mit mittleren Vorkenntnissen, die ein grundlegendes Verständnis der grafischen Oberfläche und Funktionalität der Plattform mitbringen. Hier sind einige Ressourcen, die Ihnen den Einstieg erleichtern:
 - [eScriptorium Quick Start Guide](https://escriptorium.readthedocs.io/en/latest/quick-start/)
 - Ein **Videotutorial**, das die wichtigsten Funktionen und Werkzeuge vorstellt, finden Sie auf YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) 
 
@@ -164,7 +164,7 @@ Eine orangefarbene Schaltfläche in der Bildvorschau zeigt die laufende Layoutse
 <img src="./images/legacy/training-eS-13_de.png" width="100%">
 
 #### Schritt 4: Überprüfung der Layoutsegmentierung
-Nachdem die Segmentierung des Layouts abgeschlossen ist, müssen die Seiten überprüft werden. Klicken Sie auf die **seegrüne Schaltfläche** des ersten Bildes, um die Bearbeitungsansicht von eScriptorium zu aktivieren.
+Nachdem die Segmentierung des Layouts abgeschlossen ist, müssen die Seiten überprüft werden. Klicken Sie auf die **grüne Schaltfläche** des ersten Bildes, um die Bearbeitungsansicht von eScriptorium zu aktivieren.
 
 <img src="./images/legacy/training-eS-14_de.png" width="100%">
 
@@ -210,12 +210,12 @@ Passen Sie die Baseline so an, dass:
 <img src="./images/legacy/training-eS-21_de.png" width="100%"><br/>
 <img src="./images/legacy/training-eS-22_de.png" width="100%"><br/>
 
-> **Hinweis:** Nach der Anpassung einer Baseline berechnet eScriptorium automatisch die entsprechenden Zeilenmaske neu. Aktivieren sie die Zeilenmasken, indem Sie erneut auf das **blaue Maskensymbol** klicken. Sollte eine Zeilenmaske falsch berechnet sein, können Sie diese durch Anklicken und Ändern des Polygons korrigieren.
+> **Hinweis:** Nach der Anpassung einer Baseline berechnet eScriptorium automatisch die entsprechende Zeilenmaske neu. Aktivieren Sie die Zeilenmasken, indem Sie erneut auf das **blaue Maskensymbol** klicken. Sollte eine Zeilenmaske falsch berechnet sein, können Sie diese durch Anklicken und Ändern des Polygons korrigieren.
 
 #### Schritt 7: Korrektur der Layoutsegmentierung für alle weiteren Seiten
 Wiederholen Sie die Schritte 5 und 6 für alle verfügbaren Seiten. Die Sicherstellung einer korrekten Layoutsegmentierung auf allen Seiten trägt zur Verbesserung der Texterkennungsqualität bei.
 
-> **Hinweis:** Falls eine große Anzahl von Seiten korrigiert werden muss, ist es möglich, ein  Layoutsegmentierungsmodells nachzutrainieren, indem Sie die Schritte 5 und 6 für eine kleine Menge von Seiten wiederholen und so einen Satz von Trainingsdaten (*Ground Truth*) erstellen. Nach der Erstellung der Trainingsdaten können Sie ein Layoutsegmentierungsmodell finetunen und die automatische Layoutsegmentierung mit diesem nachtrainierten Modell erneut durchführen (d.h. Wiederholung von [Schritt 3: Automatische Layoutsegmentierung durchführen](#schritt-3-automatische-layoutsegmentierung-durchführen)), um die Segmentierungsergebnisse zu verbessern. Weitere Einzelheiten finden Sie in [Kapitel 3.2: Finetuning eines Layoutsegmentierungsmodells](#32-finetuning-eines-layoutsegmentierungsmodells).
+> **Hinweis:** Falls eine große Anzahl von Seiten korrigiert werden muss, ist es möglich, ein Layoutsegmentierungsmodell nachzutrainieren, indem Sie die Schritte 5 und 6 für eine kleine Menge von Seiten wiederholen und so einen Satz von Trainingsdaten (*Ground Truth*) erstellen. Nach der Erstellung der Trainingsdaten können Sie ein Layoutsegmentierungsmodell finetunen und die automatische Layoutsegmentierung mit diesem nachtrainierten Modell erneut durchführen (d.h. Wiederholung von [Schritt 3: Automatische Layoutsegmentierung durchführen](#schritt-3-automatische-layoutsegmentierung-durchführen)), um die Segmentierungsergebnisse zu verbessern. Weitere Einzelheiten finden Sie in [Kapitel 3.2: Finetuning eines Layoutsegmentierungsmodells](#32-finetuning-eines-layoutsegmentierungsmodells).
 
 #### Schritt 8: Automatische Texterkennung durchführen
 > **Hinweis:** Schritt 8 beinhaltet die automatische Texterkennung. Das Ziel ist es, ein Modell zu finden, das bereits gut für Ihre Daten funktioniert, um dieses Modell durch ein Nachtraining zu verbessern. Lesen Sie [Kapitel 2.2: Wo finde ich Modelle?](#22-wo-finde-ich-modelle), wenn Sie nach Modellen für Layout-Segmentierung und Texterkennung suchen.
@@ -231,7 +231,7 @@ Es sollte ein Pop-up-Fenster erscheinen, in dem Sie ein Texterkennungsmodell aus
 <img src="./images/legacy/training-eS-25_de.png" width="100%"><br/>
 
 - **Wählen Sie ein Modell aus**: Wählen Sie ein Texterkennungsmodell aus
-- **Wähle eine Transkription aus**: Wählen Sie **-- Neu --**
+- **Wählen Sie eine Transkription aus**: Wählen Sie **-- Neu --**
 
 Klicken Sie auf die blaue Schaltfläche **"Transkribieren"**, um die automatische Texterkennung zu starten.
 
@@ -257,7 +257,7 @@ Wenn Sie auf eine Textzeile in der Transkriptionsansicht klicken, öffnet sich e
 
 <img src="./images/legacy/training-eS-29_de.png" width="100%"><br/>
 
-In diesem Fenster können die automatisch erstellten Transkriptionen auf Fehler überprüft werden. Im oberen Teil des Pop-up-Fensters wird die originale Textzeile angezeigt. Im unteren Teil ist die Transkription dieser Textzeile zu finden. Mit den Cursortasten (`↑` und `↓`) können Sie durch alle verfügbaren Textzeilen blättern.
+In diesem Fenster können die automatisch erstellten Transkriptionen auf Fehler überprüft werden. Im oberen Teil des Pop-up-Fensters wird die originale Textzeile angezeigt. Im unteren Teil ist die Transkription dieser Textzeile zu finden. Mit den Pfeiltasten (`↑` und `↓`) können Sie durch alle verfügbaren Textzeilen blättern.
 
 > **Hinweis:** Anstatt die Transkriptionsfehler jetzt zu verbessern, sollten Sie zunächst die ungefähre Anzahl der Fehler auf jeder Seite überprüfen. Wenn die Mehrheit der Transkriptionen fehlerhaft ist, empfiehlt es sich, ein anderes Texterkennungsmodell zu testen, um bessere Ergebnisse zu erzielen (d.h. es sollte [Schritt 8: Automatische Texterkennung durchführen](#schritt-8-automatische-texterkennung-durchführen) mit einem neuen Modell wiederholt werden). Wenn jedoch nur wenige Fehler auf den Seiten vorhanden sind (Faustregel: 1 bis 2 Fehler alle 2 bis 3 Textzeilen), können Sie mit der Verbesserung der Transkriptionen in [Schritt 10: Korrektur der Transkriptionen (Erstellen von Ground Truth)](#schritt-10-korrektur-der-transkriptionen-erstellen-von-ground-truth) fortfahren.
 
@@ -294,14 +294,14 @@ Wir korrigieren ihn, so dass die Transkription mit der Textzeile übereinstimmt:
 
 <img src="./images/legacy/training-eS-30.png" width="100%"><br/>
 
-Nachdem die erste Textzeile korrigiert wurde, drücken Sie die `Enter ↲` Taste, um die nächste Textzeile zu überprüfen. Die Cursortasten (`↑` und `↓`) können ebenfalls verwendet werden, um durch alle verfügbaren Textzeilen der aktuellen Seite zu blättern. 
+Nachdem die erste Textzeile korrigiert wurde, drücken Sie die `Enter ↲` Taste, um die nächste Textzeile zu überprüfen. Die Pfeiltasten (`↑` und `↓`) können ebenfalls verwendet werden, um durch alle verfügbaren Textzeilen der aktuellen Seite zu blättern. 
 
-Nachdem Sie die Korrektur für die aktuelle Seite abgeschlossen haben, fahren Sie mit der nächsten Seite fort. *Achten Sie darauf, dass Sie alle Anweisungen von Schritt 10 befolgen (d.h. in der "manual" Transkription arbeiten).
+Nachdem Sie die Korrektur für die aktuelle Seite abgeschlossen haben, fahren Sie mit der nächsten Seite fort. *Achten Sie darauf, dass Sie alle Anweisungen von Schritt 10 befolgen (d.h. in der "manual" Transkription arbeiten).*
 
 #### Exkurs 1: Wie viele Trainingsdaten (Ground Truth) brauche ich?
 > Erfahrungswerte zeigen, dass bereits eine **geringe Menge an Trainingsdaten** ausreicht, um mit dem Finetuning eines bestehenden Texterkennungsmodells zu beginnen, das bereits hinreichend gut auf den vorliegenden Daten funktioniert. Beim Nachtraining sollte ein **iterativer Ansatz** verfolgt werden: 
 > 1. Erstellen Sie 2 bis 3 Seiten mit Trainingsdaten, indem Sie die automatisch generierten Transkriptionen wie in Schritt 10 korrigieren. 
-> 2. Folgen Sie [Schritt 11: Nachtraining (Finetuning) enes Texterkennungsmodells](#schritt-11-nachtraining-finetuning-eines-texterkennungsmodells) und trainieren Sie das Modell, das Sie in Schritt 8 zur automatischen Erzeugung der Transkriptionen verwendet haben, mit der korrigierten Ground Truth (Schritt 10) nach. 
+> 2. Folgen Sie [Schritt 11: Nachtraining (Finetuning) eines Texterkennungsmodells](#schritt-11-nachtraining-finetuning-eines-texterkennungsmodells) und trainieren Sie das Modell, das Sie in Schritt 8 zur automatischen Erzeugung der Transkriptionen verwendet haben, mit der korrigierten Ground Truth (Schritt 10) nach. 
 > 3. [Testen und evaluieren Sie](#schritt-12-wiederholung-der-automatischen-texterkennung-und-evaluation-des-nachtrainierten-modells), ob das nachtrainierte Modell bessere Transkriptionen für Ihre Daten liefert.
 > 4. Falls dies nicht zutrifft, wiederholen Sie die Punkt 1 bis 3, um weitere Trainingsdaten zu erzeugen. Führen Sie ein weiteres Nachtraining mit allen Trainingsdaten durch und evaluieren Sie die Ergebnisse.
 > 
@@ -338,7 +338,7 @@ Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
    - Wir empfehlen, sprechende Namen zu verwenden, die die folgenden Informationen enthalten:
       - `Name des Basismodells`: Name des Modells, das Sie nachtrainieren. In unserem Beispiel `german_print`.
       - `Name der Dokumente`, mit denen Sie trainieren: ein beschreibender Name zur Identifizierung der Daten, die Sie für das Nachtraining verwenden. In unserem Beispiel verwenden wir die Abkürzung `CharlAmtsschriftum`, da wir mit Seiten aus dieser Sammlung trainieren.
-      - `Modellnummer`: Geben Sie eine Nummer für das neue Modells an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
+      - `Modellnummer`: Geben Sie eine Nummer für das neue Modell an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
 - **Zweites Dropdown**: Wählen Sie das Texterkennungsmodell aus, das Sie nachtrainieren möchten. Dies sollte das Modell sein, mit dem Sie in [Schritt 8](#schritt-8-automatische-texterkennung-durchführen) gearbeitet haben, d.h. das Basismodell, das bereits recht gut mit Ihren Daten funktioniert hat.  In unserem Beispiel ist dieses Modell `german_print`.
 
 Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um die Feinabstimmung zu starten. 
@@ -376,7 +376,7 @@ Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
    - Wir empfehlen, sprechende Namen zu verwenden, die die folgenden Informationen enthalten:
       - `Name des Basismodells`: Name des Modells, das Sie nachtrainieren.
       - `Name der Dokumente`, mit denen Sie trainieren: ein beschreibender Name zur Identifizierung der Daten, die Sie für das Nachtraining verwenden. In unserem Beispiel verwenden wir die Abkürzung `CharlAmtsschriftum`, da wir mit Seiten aus dieser Sammlung trainieren.
-      - `Modellnummer`: Geben Sie eine Nummer für das neue Modells an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
+      - `Modellnummer`: Geben Sie eine Nummer für das neue Modell an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
 - **Zweites Auswahlfeld**: Wählen Sie das Tesseract-Modell aus, das Sie nachtrainieren möchten.
 
 Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um das Nachtraining zu starten. 
@@ -450,7 +450,7 @@ Erstellen Sie 5 bis 10 Seiten Trainingsdaten, indem Sie die automatisch generier
 
 #### Schritt 2: Finetuning eines Layoutsegmentierungsmodells
 1. Klicken Sie auf Reiter **"Bilder"**.
-2. Wählen Sie **alle Seiten** mit Ihren korrigierten Trainingsdaten aus (wählen Sie eine Seite aus, halten Sie die `Umschalt`-Taste gedrückt und wählen Sie anschließend weitere Seite aus).
+2. Wählen Sie **alle Seiten** mit Ihren korrigierten Trainingsdaten aus (wählen Sie eine Seite aus, halten Sie die `Umschalt`-Taste gedrückt und wählen Sie anschließend weitere Seiten aus).
 3. Klicken Sie auf die blaue Schaltfläche **"Trainieren"** und wählen Sie **"Segmenter"**.
 
 <img src="./images/legacy/training-eS-51_de.png" width="100%"><br/>
@@ -463,7 +463,7 @@ Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
    - Wir empfehlen, sprechende Namen zu verwenden, die die folgenden Informationen enthalten:
       - `Name des Basismodells`: Name des Modells, das Sie nachtrainieren. In unserem Beispiel `ubma_segmentation`.
       - `Name der Dokumente`, mit denen Sie trainieren: ein beschreibender Name zur Identifizierung der Daten, die Sie für das Nachtraining verwenden. In unserem Beispiel verwenden wir die Abkürzung `Maschinenindustrie`, da wir mit Seiten aus dieser Sammlung trainieren.
-      - `Modellnummer`: Geben Sie eine Nummer für das neue Modells an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
+      - `Modellnummer`: Geben Sie eine Nummer für das neue Modell an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
 - **Drop-down "Oder wählen Sie ein bestehendes aus"**: Wählen Sie das Layoutsegmentierungsmodell aus, das Sie nachtrainieren möchten. Dies sollte das Modell sein, mit dem Sie anfangs gearbeitet haben, d.h. das Layout-Segmentierungsmodell, das bei Ihren Daten bereits recht gut funktioniert hat.
 
 Klicken Sie schließlich auf die blaue Schaltfläche **"Trainieren"** und starten Sie die Feinabstimmung.
@@ -498,7 +498,7 @@ Es sollte ein Pop-up-Fenster erscheinen, in dem Sie ein Layoutsegmentierungsmode
 Prüfen Sie nach Abschluss die Ergebnisse
 
 #### Schritt 4: Wiederholung
-Wenn die Evaluation von `Schritt 3` zu unbefriedigenden Ergebnissen führt, wiederholen Sie die `Schritte 1-3`, d.h. erzeugen Sie weitere Trainingsdaten und trainieren Sie neues Segmentierungsmodell.
+Wenn die Evaluation von `Schritt 3` zu unbefriedigenden Ergebnissen führt, wiederholen Sie die `Schritte 1-3`, d.h. erzeugen Sie weitere Trainingsdaten und trainieren Sie ein neues Segmentierungsmodell.
 
 ## 4. Training from scratch in eScriptorium
 > **Hinweis:** Wenn Sie ein *Training from scratch* durchführen möchten, benötigen Sie normalerweise eine größere Menge an Trainingsdaten, um ein gut funktionierendes Modell zu trainieren. Je vielfältiger die Trainingsdaten sind, desto besser lässt sich Ihr Modell auf eine Vielzahl heterogener Dokumente anwenden. Allerdings kann eScriptorium bei einem solchen Training an seine Grenzen stoßen, da  Benutzerfreundlichkeit und Geschwindigkeit der Transkriptionsplattform leiden, sobald mehrere tausend Seiten Trainingsdaten in ein einziges Dokument geladen werden müssen. Für ein *Training from scratch* mit einer großen Datenmenge sollte das Training daher außerhalb von eScriptorium über das CLI durchgeführt werden (ein Beispiel finden Sie hier: [Training German Handwriting](https://github.com/UB-Mannheim/kraken/wiki/Training-German-Handwriting#training-2023-05-12)). 
