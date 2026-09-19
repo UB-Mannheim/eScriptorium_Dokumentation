@@ -234,21 +234,30 @@ Das Formular für die Trainingskonfiguration ermöglicht Ihnen folgende Auswahl:
 - **ob Sie von Grund auf neu beginnen möchten** (geben Sie hierfür einfach einen Namen für das zu erstellende Modell an)
 - **oder ob Sie ein Modell verfeinern möchten** (es kann über den File Manager hochgeladen werden oder sich schon in der Modellliste des zugehörigen Dokuments befinden)
 **Achtung:** In Version 0.6.9 ist das Bearbeiten der Namen von Modellen nur möglich, wenn man ein ganz neues Modell trainiert. Um zu vermeiden, dass ein bereits existierendes Modell überschrieben wird, sollten Sie das Modell lokal auf Ihrem Rechner downloaden und in den gewünschten Namen umbenennen, dann können Sie es über das Formular erneut in eScriptorium hochladen.
+- Modelle, die außerhalb von eScriptorium trainiert wurden, lassen sich auch ohne Training aufnehmen: im Tab „Modelle“ gibt es den Button „Modell hochladen“.
 
 ### 1.9. Annotationen exportieren
 Das Exportieren von Annotationen funktioniert über den Tab „Images“.
 - Wählen Sie die relevanten Bilder aus
 - Klicken Sie auf „Export“, dann füllen Sie das Formular aus:
   - Spezifizieren Sie die **Version der Transkription (Transcription)**, die Sie exportieren möchten
-  - Spezifizieren Sie das **Export-Format (File Format)**: „ALTO“ für XML ALTO, „PageXML“ für XML PAGE oder „Text“ für einfachen Text
+  - Spezifizieren Sie das **Export-Format (File Format)**: „ALTO“ für XML ALTO, „PageXML“ für XML PAGE oder „Text“ für einfachen Text. Sind die Exportformate OpenITI Markdown und TEI XML auf der Instanz aktiviert (siehe [Lokale Installation, Abschnitt 18](./Lokale_Installation_eScriptorium.md#18-optionale-einstellungen)), stehen zusätzlich „OpenITI mARkdown“ und „OpenITI TEI XML“ zur Auswahl
   - Setzen Sie einen Haken bei „Include Images“, wenn Sie zusätzlich die **Bilder exportieren** möchten
   - Klicken Sie auf „Export“ und speichern Sie die **generierte ZIP-Datei**
 
 <img src="./images/current/17.png" style="width:40%; height:auto;">
 
-### 1.10. Volltextsuche und Suchen & Ersetzen
+### 1.10. Ein Dokument in ein anderes Projekt migrieren
+Ein Dokument gehört immer zu genau einem Projekt. Öffnen Sie das Dokumentformular (Menü rechts neben dem Dokumenttitel, Option „Bearbeiten“): Für die Besitzer:innen des Dokuments befindet sich in der Kopfzeile neben dem „Teilen“-Button ein Button „Migriere zu einem anderen Projekt“ (Symbol mit Pfeil nach außen). Er öffnet ein Fenster mit zwei Angaben:
+- **Projekt:** das Zielprojekt, in das das Dokument überführt werden soll (nur Projekte, in denen Sie Schreibrechte haben)
+- **Mit zugehörigen Tags migrieren:** optionaler Haken. Ist er gesetzt, werden die Projekt-Tags des Dokuments ins Zielprojekt mitgenommen (nicht vorhandene Tags werden dort angelegt); ist er nicht gesetzt, werden die Tags entfernt.
+
+Mit „Migrate“ wird das Dokument inkl. aller Bilder, Annotationen und Transkriptionen ins Zielprojekt verschoben; eine Erfolgsmeldung bestätigt den Vorgang.
+
+### 1.11. Volltextsuche und Suchen & Ersetzen
 Über die globale Suchleiste in der oberen Navigation (rechts, neben dem Benutzermenü) lässt sich in allen eigenen Transkriptionen nach Text suchen. Die Suchleiste ist in beiden Oberflächen verfügbar und wird in der Dokument- bzw. Projektansicht auf das jeweilige Dokument bzw. Projekt voreingestellt.
 - Geben Sie den Suchbegriff ein und klicken Sie auf „Suchen“ (bzw. drücken Sie Enter). Umgeben Sie einzelne Begriffe mit Anführungszeichen, um die Fuzzy-Suche für diese Begriffe auszuschalten.
+- In der Dokumentansicht lässt sich über das Dropdown links neben der Suchleiste (voreingestellt auf „Alle Ebenen“) auswählen, in welcher **Transkriptionsebene** gesucht werden soll.
 - Die Ergebnisse zeigen den Treffer mit Kontextzeilen, die Zeilennummer, den Teil (Seite) und das Dokument; ein Klick auf Teil oder Dokument grenzt die Ergebnisliste ein. Der Button „Bearbeiten“ öffnet den entsprechenden Teil direkt in der Bearbeitungsansicht.
 
 Mit **Suchen & Ersetzen** (Button neben der Suchleiste) lässt sich gefundener Text zusätzlich ersetzen:
@@ -258,7 +267,7 @@ Mit **Suchen & Ersetzen** (Button neben der Suchleiste) lässt sich gefundener T
 
 Beide Funktionen basieren auf einer Volltextindexierung und sind in der Standardinstallation deaktiviert; sie werden durch die Instanz aktiviert (siehe [Lokale Installation, Abschnitt 18](./Lokale_Installation_eScriptorium.md#18-optionale-einstellungen)).
 
-### 1.11. Schriftart für die Transkription wählen
+### 1.12. Schriftart für die Transkription wählen
 Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden, kann auf Dokument-, Projekt- oder Benutzerebene gewählt werden.
 Über das Menü rechts neben dem Dokumenttitel (Symbol mit dem Bleistift) und die Option „Bearbeiten“ öffnen Sie das Dokumentformular. Neben den üblichen Feldern (Name, Sprache, Leserichtung, Position der Zeilen) gibt es dort das Feld **„Transkriptionsschriftart“**:
 
@@ -268,7 +277,7 @@ Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeig
 - Verfügbare Schriftarten richtet der Administrator der Instanz ein (siehe [Administration](./administration.md#1-transkriptionsschriftarten-einrichten)).
 - Dieselbe Einstellung existiert auch auf Projektebene (Projekt bearbeiten) und pro Benutzer, sodass Dokumente eine projektspezifische oder persönliche Schrift verwenden können, ohne sie an jedem Dokument neu zu wählen.
 
-### 1.12. Die Legacy-Oberfläche aktivieren oder deaktivieren
+### 1.13. Die Legacy-Oberfläche aktivieren oder deaktivieren
 Die aktuelle Version von eScriptorium bietet die neue und die Legacy-Oberfläche an; zwischen beiden kann in den Profileinstellungen gewechselt werden.
 Öffnen Sie das Benutzermenü oben rechts (Name des angemeldeten Nutzers) und wählen Sie „Profileinstellungen“; im Tab „Informationen“ kann die Option **„Legacy-Modus“** gesetzt oder entfernt und mit „Speichern“ übernommen werden. Danach wird das gewählte Interface angezeigt:
 - Ist „Legacy-Modus“ **nicht** gesetzt, wird die neue Oberfläche (die Basis dieser Anleitung) angezeigt.
@@ -294,6 +303,13 @@ Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenige
 Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Modell mit anderen Usern zu teilen, gibt es zwei Möglichkeiten:
 - Downloaden Sie das Modell im Tab „Modelle“ und versenden Sie es über einen anderen Kanal (z.&nbsp;B. per E-Mail)
 - Teilen Sie mit dem User das Dokument, dem das Modell zugeordnet ist. Nun kann der andere User es herunterladen und es in das Dokument laden, in dem er es anwenden möchte.
+
+### 2.4. Projekt-Tags verwalten
+Projekte können mit Tags (Bezeichnungen mit einer Farbe) versehen werden, um Dokumente zu gruppieren und in der Dokumentliste zu filtern. In der Dokumentliste eines Projekts (Tab „Dokumente“) öffnen Sie das Fenster „Tags verwalten“ über den Button mit dem Tag-Symbol (neben „Neues Dokument anlegen“):
+- **Tag anlegen:** Geben Sie einen Namen ein und wählen Sie eine Farbe; das Tag wird mit dem nächsten Fokuswechsel gespeichert.
+- **Tag ändern oder löschen:** Name und Farbe jedes Tags lassen sich direkt bearbeiten; das Papierkorb-Symbol entfernt das Tag (auch von allen Dokumenten, die es tragen).
+- **Tag Dokumenten zuweisen:** Setzen Sie den Haken vor einem Tag, um es den markierten Dokumenten zuzuordnen. Alternativ öffnen Sie pro Dokument das Fenster über den Button mit dem Tag-Symbol in der Spalte „Tags“ der Dokumentliste; dort lassen sich Tags auswählen oder neue anlegen (Name + Farbe) und mit „Save“ übernehmen.
+- **Filtern:** Sind Tags vorhanden, erscheint links neben der Dokumentliste eine Filterliste; ein Klick auf ein Tag zeigt nur die Dokumente, die es tragen.
 
 ## 3. Sonstiges
 - **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten, bevor transkribiert wurde, da diese sonst an dieser Stelle gelöscht werden können.

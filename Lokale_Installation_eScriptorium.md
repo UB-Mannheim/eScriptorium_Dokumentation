@@ -186,7 +186,15 @@ Die Exportformate OpenITI Markdown und TEI XML lassen sich mit `EXPORT_OPENITI_M
 
 Mit `TEXT_ALIGNMENT_ENABLED = True` kann die Textalignierung als zusätzliche Funktionalität aktiviert werden.
 
-Mit `DISABLE_ES_SEARCH = False` werden die Volltextsuche und „Suchen & Ersetzen“ (siehe [neues Interface, Abschnitt 1.10](./Nutzungsanleitung_neues_Interface_eScriptorium.md#110-volltextsuche-und-suchen--ersetzen)) aktiviert. Dafür sind zusätzliche Einstellungen und die Installation von Elasticsearch/OpenSearch erforderlich.
+Mit `DISABLE_ES_SEARCH = False` werden die Volltextsuche und „Suchen & Ersetzen“ (siehe [neues Interface, Abschnitt 1.11](./Nutzungsanleitung_neues_Interface_eScriptorium.md#111-volltextsuche-und-suchen--ersetzen)) aktiviert. Dafür sind zusätzliche Einstellungen und die Installation von Elasticsearch/OpenSearch erforderlich.
+
+### 18.1. Kontingente (Quotas)
+
+eScriptorium kann pro Benutzer Kontingente festlegen: `QUOTA_DISK_STORAGE` (Speicherplatz in MB), `QUOTA_CPU_MINUTES` und `QUOTA_GPU_MINUTES` (Minuten für CPU-/GPU-Bearbeitung). Sind sie gesetzt, werden die betroffenen Funktionen (z.&nbsp;B. Upload, Segmentierung, Transkription, Training) gesperrt, sobald das Kontingent erschöpft ist (Hinweis: „Sie haben keinen Speicherplatz mehr übrig“ bzw. „…keine CPU-/GPU-Minuten mehr übrig“). `DISABLE_QUOTAS = True` (Standard) deaktiviert die Kontrolle; `GPU_COST` gewichtet den GPU-Verbrauch relativ zum CPU-Verbrauch.
+
+### 18.2. Cookie-Consent
+
+`ENABLE_COOKIE_CONSENT = True` (Standard) blendet beim ersten Besuch einen Hinweis ein, dass Cookies für die Sitzung und lokale Speicherung von Oberflächeneinstellungen verwendet werden; das Hakenfeld „Akzeptieren“ merkt die Einwilligung. Wird der Wert entfernt (falsy), erscheint kein Banner.
 
 ### 19. Erneute Nutzung
 Sobald Sie Ihren PC bzw. die virtuelle Maschine neugestartet haben, müssen Sie eScriptorium erneut aktivieren über das Terminal.

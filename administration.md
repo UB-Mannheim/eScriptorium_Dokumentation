@@ -8,7 +8,7 @@ Diese Seite beschreibt Funktionen, die von einem Administrator von eScriptorium 
 
 ## 1. Transkriptionsschriftarten einrichten
 
-Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden, ist in eScriptorium ein Standardmerkmal, das auf Dokument-, Projekt- oder Benutzerebene gewählt wird (siehe [neues Interface, Abschnitt 1.11](./Nutzungsanleitung_neues_Interface_eScriptorium.md#111-schriftart-für-die-transkription-wählen)). Welche Schriftarten dabei zur Auswahl stehen, richtet der Administrator der Instanz ein.
+Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden, ist in eScriptorium ein Standardmerkmal, das auf Dokument-, Projekt- oder Benutzerebene gewählt wird (siehe [neues Interface, Abschnitt 1.12](./Nutzungsanleitung_neues_Interface_eScriptorium.md#112-schriftart-für-die-transkription-wählen)). Welche Schriftarten dabei zur Auswahl stehen, richtet der Administrator der Instanz ein.
 
 ### 1.1. Übersicht der Schriftarten
 
@@ -48,7 +48,15 @@ Im Modus „Massenversand“ können mehrere Einladungen auf einmal versendet we
 
 Versendete Einladungen (mit Empfänger, Team und Status) können über das Benutzermenü unter „Profileinstellungen“ → „Einladungen“ eingesehen werden.
 
-## 3. Web-Statistik (Matomo)
+## 3. API-Token und REST-API
+
+eScriptorium stellt eine REST-API (DRF) bereit, mit der sich Projekte, Dokumente, Transkriptionen, Bilder, Annotationen, Modelle, Schriftarten und mehr per HTTP verwalten lassen. Jeder Benutzer besitzt einen persönlichen **API-Token**:
+- Den Token finden Sie unter „Profileinstellungen“ → „API-Schlüssel“; die Buttons daneben kopieren ihn in die Zwischenablage bzw. erzeugen einen neuen Token (der alte wird dabei ungültig).
+- Autorisiert wird mit dem Header `Authorization: Token <token>`; die Seite zeigt ein `curl`-Beispiel.
+
+Die API ist selbst dokumentiert (OpenAPI): Unter `/api/schema/` liegt das Schema, `/api/swagger/` die interaktive Swagger-UI und `/api/redoc/` eine ReDoc-Darstellung.
+
+## 4. Web-Statistik (Matomo)
 
 Die Instanz der UB Mannheim bietet – als Erweiterung gegenüber dem Standard-Release, die derzeit als Pull Request für die Standardversion vorgeschlagen ist – eine optionale Web-Statistik auf Basis von [Matomo](https://matomo.org/). Die Auswertung wird auf Instanzebene konfiguriert und betrifft die gesamte Oberfläche (also auch Seiten ohne Login); die Einbindung respektiert dabei die ortsbezogene Datenschutzkonfiguration.
 
