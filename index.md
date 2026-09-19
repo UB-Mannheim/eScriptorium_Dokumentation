@@ -16,7 +16,7 @@ Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur
 ## Legacy-Oberfläche (Versionen vor eScriptorium 1.0)
 - [Nutzungsanleitung eScriptorium (Legacy-Oberfläche)](./Nutzungsanleitung_eScriptorium.md)
 - [Anleitung zur Installation von eScriptorium mit Tesseract (englisch)](eScriptorium-with-tesseract-extension.md)
-- [Modellübertragung von Transkribus nach eScriptorium](Modellübertragung_Transkribus_nach_eScriptorium.md)
+- [Modellübertragung von Transkribus nach eScriptorium](Modelluebertragung_Transkribus_nach_eScriptorium.md)
 - [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (deutsch)](Training-with-eScriptorium-DE.md)
 - [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (englisch)](Training-with-eScriptorium-EN.md)
 
