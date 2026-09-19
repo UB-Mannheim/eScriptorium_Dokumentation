@@ -212,11 +212,16 @@ Automatische Dokumentannotationen werden über den Tab „Images“ verwaltet.
 
 #### 1.7.4. Textalignment (Abgleich mit einem Referenztext)
 Mit der Textalignment wird eine bestehende Transkription mit einem externen Referenztext (einem *textuellen Zeugen*) abgeglichen; das Ergebnis ist eine **neue Transkriptionsebene**. Die Funktion ist in der Standardinstallation deaktiviert und wird durch die Instanz aktiviert (siehe [Lokale Installation, Abschnitt 18](./Lokale_Installation_eScriptorium.md#18-optionale-einstellungen)).
-- Im Tab „Bilder“ des Dokuments markieren Sie die zu verwendenden Bilder und klicken Sie auf „Abgleich“.
-- Wählen Sie die **Transkription**, auf die der Abgleich aufsetzen soll, sowie den **Referenztext**: entweder laden Sie eine `.txt`-Datei hoch oder Sie wählen einen zuvor hochgeladenen Referenztext wieder.
-- Unter **Einstellungen** geben Sie den **Namen der Ebene** an, in der das Ergebnis abgelegt wird (nicht identisch mit der Quelldurchschrift), wählen die zu einbeziehenden **Bereichstypen** und entscheiden, ob das **vollständige transkribierte Dokument** (Standard) oder nur einzelne Seiten abgeglichen werden sowie ob der abgeglichene Text mit der vorhandenen Transkription **gemischt** wird (sonst bleiben nicht abgeglichene Zeilen leer).
-- Über „Show/hide advanced settings“ lassen sich weitere Parameter einstellen: **N-Gramm** (Länge der zu vergleichenden Zeichenfolgen, 2–25, Standard 25), **Lücke** (Abstand zwischen übereinstimmenden N-Grammen, Standard 600), **Schwellenwert für Zeilenlängenabgleich** (0,0–1,0, Standard 0,8) sowie **Beam-Größe** oder **Maximaler Offset** (jeweils nur einer davon; ohne Angabe ist Beam-Search mit Größe 20 aktiv).
-- Mit „Abgleich“ wird der Vorgang gestartet; das Ergebnis liegt anschließend als neue Transkriptionsebene im Dokument vor.
+- Im Tab „Bilder“ des Dokuments markieren Sie die zu verwendenden Bilder und klicken Sie auf „Ausrichten“. Der Abgleich kann auf das gesamte Dokument oder auf die markierten Bilder bezogen werden.
+- **Transkription:** Wählen Sie die Transkriptionsebene, auf die der Abgleich aufsetzen soll.
+- **Textzeugen:** Wählen Sie, ob Sie einen vorhandenen Textzeugen aus der Liste auswählen („Vorhandene auswählen“) oder eine neue `.txt`-Datei hochladen („Neu hochladen“).
+- **Ebenenname:** Der Name der neuen Transkriptionsebene, in der das Ergebnis abgelegt wird. Wird ein bereits vorhandener Ebenenname verwendet, wird diese Ebene überschrieben (Warnhinweis im Formular).
+- **Regionstypen:** Die Bereichstypen, die in den Abgleich einbezogen werden.
+- **Vollständiges transkribiertes Dokument verwenden** (Standard): Der Aligner verwendet alle transkribierten Seiten des Dokuments, um Übereinstimmungen zu finden; ist der Haken entfernt, wird jede Seite einzeln mit dem Text verglichen.
+- **Ausgerichteten Text mit vorhandener Transkription zusammenführen:** Ist der Haken gesetzt, übernimmt der Aligner den Text der ursprünglichen Transkription, wo keine Ausrichtung möglich war; ist er entfernt, bleiben diese Zeilen leer.
+- **Bindestriche zu Wörtern hinzufügen, die über Zeilen gebrochen sind:** Der Aligner fügt Bindestriche ein, wenn ein Wort in der Ground Truth über zwei Zeilen geteilt ist.
+- Über „Erweiterte Einstellungen“ lassen sich weitere Parameter einstellen: **Schwellwert für Zeilengröße** (0,0–1,0, Standard 0,8), **N-Gramm** (2–25, Standard 25), **Beam-Größe** (1–100) oder **Maximale Verschiebung** (20–80; jeweils nur einer davon, ohne Angabe ist Beam-Search mit Größe 20 aktiv) sowie **Abstand** (Standard 600).
+- Mit „Ausrichten“ wird der Vorgang gestartet; das Ergebnis liegt anschließend als neue Transkriptionsebene im Dokument vor.
 
 ### 1.8. Modelle trainieren
 #### 1.8.1. Ein Training starten
