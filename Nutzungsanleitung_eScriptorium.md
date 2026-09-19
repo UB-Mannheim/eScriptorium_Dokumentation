@@ -12,6 +12,24 @@ nav_order: 1
 
 >Eine ausführlichere und aktualisierte Dokumentation zu eScriptorium in englischer Sprache finden Sie unter: https://escriptorium.readthedocs.io/
 
+## Inhalt
+
+- [1. Schritt für Schritt](#1-schritt-für-schritt)
+  - [1.1. Einloggen in eScriptorium](#11-einloggen-in-escriptorium)
+  - [1.2. Ein neues Projekt anlegen](#12-ein-neues-projekt-anlegen)
+  - [1.3. Ein neues Dokument anlegen](#13-ein-neues-dokument-anlegen)
+  - [1.4. Bilder hochladen](#14-bilder-hochladen)
+  - [1.5. Dokumente manuell mit Annotationen versehen](#15-dokumente-manuell-mit-annotationen-versehen)
+  - [1.6. Annotationen Importieren](#16-annotationen-importieren)
+  - [1.7. Dokumente automatisch mit Annotationen versehen](#17-dokumente-automatisch-mit-annotationen-versehen)
+  - [1.8. Modelle trainieren](#18-modelle-trainieren)
+  - [1.9. Annotationen exportieren](#19-annotationen-exportieren)
+- [2. Verwalten einer kollaborativen Annotation Campaign](#2-verwalten-einer-kollaborativen-annotation-campaign)
+  - [2.1. Erstellen einer Usergruppe (Admin)](#21-erstellen-einer-usergruppe-admin)
+  - [2.2. Teilen eines Dokumentes mit einem anderen User oder einer Gruppe](#22-teilen-eines-dokumentes-mit-einem-anderen-user-oder-einer-gruppe)
+  - [2.3. Ein Modell mit einem anderen User oder einer Gruppe teilen](#23-ein-modell-mit-einem-anderen-user-oder-einer-gruppe-teilen)
+- [3. Sonstiges](#3-sonstiges)
+
 ## 1. Schritt für Schritt
 ### 1.1. Einloggen in eScriptorium
 Sie loggen sich bei eScriptorium mit einem individuellen Konto ein, das aus einem Login, einem Passwort und einer E-Mail-Adresse besteht. Ein Konto wird vom Benutzer nach Erhalt einer Einladung (siehe [Administration, Abschnitt 2](./administration.md#2-benutzer-einladen)) oder vom Administrator der Website erstellt:

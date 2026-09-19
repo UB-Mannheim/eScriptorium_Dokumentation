@@ -19,6 +19,30 @@ Nachdem VirtualBox bzw. die Debian- oder Ubuntu-Umgebung auf dem PC installiert 
 öffnen Sie mittels eines Rechtsklicks auf den Desktop das **Terminal**.
 Wenn Sie WSL nutzen, dann öffnen Sie einfach die installierte Distribution.
 
+## Inhalt
+
+- [1. Installation relevanter Programme](#1-installation-relevanter-programme)
+- [2. Start der Server für Postgresql und Redis](#2-start-der-server-für-postgresql-und-redis)
+- [3. Benutzernamen anlegen](#3-benutzernamen-anlegen)
+- [4. Datenbank für eScriptorium anlegen](#4-datenbank-für-escriptorium-anlegen)
+- [5. Repository klonen](#5-repository-klonen)
+- [6. Verzeichnis wechseln](#6-verzeichnis-wechseln)
+- [7. Virtuelle Umgebung](#7-virtuelle-umgebung)
+- [8. Lokale Einstellungen anlegen](#8-lokale-einstellungen-anlegen)
+- [9. NPM installieren](#9-npm-installieren)
+- [10. Produktive Nutzung](#10-produktive-nutzung)
+- [11. Installation überprüfen](#11-installation-überprüfen)
+- [12. SQL-Tabellen](#12-sql-tabellen)
+- [13. Übersetzungen aktualisieren](#13-übersetzungen-aktualisieren)
+- [14. OPTIONAL](#14-optional)
+- [15. Celery Worker](#15-celery-worker)
+- [16. Start des Servers](#16-start-des-servers)
+- [17. Nutzung von eScriptorium](#17-nutzung-von-escriptorium)
+- [18. Optionale Einstellungen](#18-optionale-einstellungen)
+  - [18.1. Kontingente (Quotas)](#181-kontingente-quotas)
+  - [18.2. Cookie-Consent](#182-cookie-consent)
+- [19. Erneute Nutzung](#19-erneute-nutzung)
+
 Aktualisieren Sie zunächst Ihr Linux mit folgenden Befehlen:
 ```
 sudo apt-get update

@@ -9,6 +9,14 @@ nav_order: 3
 
 Die Modellübertragung ist an sich nicht direkt möglich. Es ist jedoch möglich, die Ground Truth, also die in Transkribus erstellte Transkription und die dazugehörigen Bilder, in eScriptorium zu importieren. Anschließend kann das Modell in eScriptorium erneut trainiert werden.
 
+## Inhalt
+
+- [Daten aus Transkribus exportieren und in eScriptorium importieren](#daten-aus-transkribus-exportieren-und-in-escriptorium-importieren)
+  - [Daten aus Transkribus exportieren](#daten-aus-transkribus-exportieren)
+  - [Daten in eScriptorium importieren](#daten-in-escriptorium-importieren)
+  - [Neuberechnung der Linienmasken](#neuberechnung-der-linienmasken)
+- [Bekannte Probleme](#bekannte-probleme)
+
 ## Daten aus Transkribus exportieren und in eScriptorium importieren
 
 ### Daten aus Transkribus exportieren

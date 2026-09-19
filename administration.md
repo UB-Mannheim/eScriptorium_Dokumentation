@@ -6,6 +6,18 @@ nav_order: 3
 
 Diese Seite beschreibt Funktionen, die von einem Administrator von eScriptorium eingerichtet werden: Standardmerkmale, die pro Instanz konfiguriert werden, sowie eine Erweiterung, die die Instanz der UB Mannheim über das Standard-Release hinaus bietet.
 
+## Inhalt
+
+- [1. Transkriptionsschriftarten einrichten](#1-transkriptionsschriftarten-einrichten)
+  - [1.1. Übersicht der Schriftarten](#11-übersicht-der-schriftarten)
+  - [1.2. Eine neue Schriftart hinterlegen](#12-eine-neue-schriftart-hinterlegen)
+  - [1.3. Standard-Schriftarten der Instanz](#13-standard-schriftarten-der-instanz)
+- [2. Benutzer einladen](#2-benutzer-einladen)
+  - [2.1. Einzelne Einladung](#21-einzelne-einladung)
+  - [2.2. Massenversand](#22-massenversand)
+- [3. API-Token und REST-API](#3-api-token-und-rest-api)
+- [4. Web-Statistik (Matomo)](#4-web-statistik-matomo)
+
 ## 1. Transkriptionsschriftarten einrichten
 
 Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden, ist in eScriptorium ein Standardmerkmal, das auf Dokument-, Projekt- oder Benutzerebene gewählt wird (siehe [neues Interface, Abschnitt 1.12](./Nutzungsanleitung_neues_Interface_eScriptorium.md#112-schriftart-für-die-transkription-wählen)). Welche Schriftarten dabei zur Auswahl stehen, richtet der Administrator der Instanz ein.
