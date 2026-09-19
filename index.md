@@ -21,4 +21,4 @@ Auf dieser Seite finden Sie detaillierte Nutzungs- und Installationshinweise zur
 - [Training mit eScriptorium (eine Schritt-für-Schritt-Anleitung) (englisch)](Training-with-eScriptorium-EN.md)
 
 ## Administration
-- [Administration (Schriftarten, Web-Statistik)](./administration.md)
+- [Administration (Schriftarten, Benutzer einladen, Web-Statistik)](./administration.md)

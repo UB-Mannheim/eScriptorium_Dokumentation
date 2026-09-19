@@ -14,7 +14,7 @@ nav_order: 1
 
 ## 1. Schritt für Schritt
 ### 1.1. Einloggen in eScriptorium
-Sie loggen sich bei eScriptorium mit einem individuellen Konto ein, das aus einem Login, einem Passwort und einer E-Mail-Adresse besteht. Ein Konto wird vom Benutzer nach Erhalt einer Einladung oder vom Administrator der Website erstellt:
+Sie loggen sich bei eScriptorium mit einem individuellen Konto ein, das aus einem Login, einem Passwort und einer E-Mail-Adresse besteht. Ein Konto wird vom Benutzer nach Erhalt einer Einladung (siehe [Administration, Abschnitt 2](./administration.md#2-benutzer-einladen)) oder vom Administrator der Website erstellt:
 
 <img src="./images/current/01.png" style="width:60%; height:auto;">
 
@@ -85,7 +85,7 @@ Unter "Tasks" wird der Fortschritt des Upload-Prozesses angezeigt.
 #### 1.5.1. Zugriff auf das Interface
 Manuelle Annotationen sind nötig, um Ground-Truth-Daten zu generieren und damit Modelle zu trainieren oder um Ergebnisse dieser Operationen zu korrigieren. Es kann auch als Teil einer Annotation Campaign (gemeinsames Bearbeiten eines Dokumentes innerhalb einer Gruppe) verwendet werden, die nicht auf Kraken-Modelle zurückgreift (eScriptorium ist nur eine Input-Umgebung).
 
-Um Annotationen manuell zu erstellen und zu modifizieren, klicken Sie innerhalb Ihres Dokuments bei "Your Recent Images" auf "View All". Wählen Sie die "Edit"-Optionen auf den jeweiligen Bildern aus, um mehrere Bearbeitungsbereiche passend zu den möglichen Bearbeitungsoptionen auszuwählen (v.l.n.r.).
+Um Annotationen manuell zu erstellen und zu modifizieren, klicken Sie innerhalb Ihres Dokuments bei "Your Recent Images" auf "View All". Wählen Sie die "Edit"-Optionen auf den jeweiligen Bildern aus, um mehrere Bearbeitungsbereiche passend zu den möglichen Bearbeitungsoptionen auszuwählen (v.&nbsp;l.&nbsp;n.&nbsp;r.).
 
 <p style="display:flex; gap:1em; align-items:center;">
  <img src="./images/current/09.png" style="width:22.2%; height:auto;">
@@ -210,6 +210,14 @@ Automatische Dokumentannotationen werden über den Tab „Images“ verwaltet.
 
 <img src="./images/current/16.png" style="width:80%; height:auto;">
 
+#### 1.7.4. Textalignment (Abgleich mit einem Referenztext)
+Mit der Textalignment wird eine bestehende Transkription mit einem externen Referenztext (einem *textuellen Zeugen*) abgeglichen; das Ergebnis ist eine **neue Transkriptionsebene**. Die Funktion ist in der Standardinstallation deaktiviert und wird durch die Instanz aktiviert (siehe [Lokale Installation, Abschnitt 18](./Lokale_Installation_eScriptorium.md#18-optionale-einstellungen)).
+- Im Tab „Bilder“ des Dokuments markieren Sie die zu verwendenden Bilder und klicken Sie auf „Abgleich“.
+- Wählen Sie die **Transkription**, auf die der Abgleich aufsetzen soll, sowie den **Referenztext**: entweder laden Sie eine `.txt`-Datei hoch oder Sie wählen einen zuvor hochgeladenen Referenztext wieder.
+- Unter **Einstellungen** geben Sie den **Namen der Ebene** an, in der das Ergebnis abgelegt wird (nicht identisch mit der Quelldurchschrift), wählen die zu einbeziehenden **Bereichstypen** und entscheiden, ob das **vollständige transkribierte Dokument** (Standard) oder nur einzelne Seiten abgeglichen werden sowie ob der abgeglichene Text mit der vorhandenen Transkription **gemischt** wird (sonst bleiben nicht abgeglichene Zeilen leer).
+- Über „Show/hide advanced settings“ lassen sich weitere Parameter einstellen: **N-Gramm** (Länge der zu vergleichenden Zeichenfolgen, 2–25, Standard 25), **Lücke** (Abstand zwischen übereinstimmenden N-Grammen, Standard 600), **Schwellenwert für Zeilenlängenabgleich** (0,0–1,0, Standard 0,8) sowie **Beam-Größe** oder **Maximaler Offset** (jeweils nur einer davon; ohne Angabe ist Beam-Search mit Größe 20 aktiv).
+- Mit „Abgleich“ wird der Vorgang gestartet; das Ergebnis liegt anschließend als neue Transkriptionsebene im Dokument vor.
+
 ### 1.8. Modelle trainieren
 #### 1.8.1. Ein Training starten
 Das Training von Kraken-Modellen startet man innerhalb des Tabs „Bilder“. Es wird über den Tab „Modelle“ verfolgt (inaktiv solange noch kein anderes Modell als das Standardmodell mit dem Dokument verknüpft ist).
@@ -238,6 +246,36 @@ Das Exportieren von Annotationen funktioniert über den Tab „Images“.
 
 <img src="./images/current/17.png" style="width:40%; height:auto;">
 
+### 1.10. Volltextsuche und Suchen & Ersetzen
+Über die globale Suchleiste in der oberen Navigation (rechts, neben dem Benutzermenü) lässt sich in allen eigenen Transkriptionen nach Text suchen. Die Suchleiste ist in beiden Oberflächen verfügbar und wird in der Dokument- bzw. Projektansicht auf das jeweilige Dokument bzw. Projekt voreingestellt.
+- Geben Sie den Suchbegriff ein und klicken Sie auf „Suchen“ (bzw. drücken Sie Enter). Umgeben Sie einzelne Begriffe mit Anführungszeichen, um die Fuzzy-Suche für diese Begriffe auszuschalten.
+- Die Ergebnisse zeigen den Treffer mit Kontextzeilen, die Zeilennummer, den Teil (Seite) und das Dokument; ein Klick auf Teil oder Dokument grenzt die Ergebnisliste ein. Der Button „Bearbeiten“ öffnet den entsprechenden Teil direkt in der Bearbeitungsansicht.
+
+Mit **Suchen & Ersetzen** (Button neben der Suchleiste) lässt sich gefundener Text zusätzlich ersetzen:
+- Geben Sie Suchbegriff und **Text zum Ersetzen** ein und wählen Sie den Modus **„Wort für Wort“** oder **„Regulärer Ausdruck“**.
+- Wählen Sie **ein** Projekt aus (Ersetzungen sind nur pro einzelnes Projekt möglich), und klicken Sie auf „Suchen“.
+- Die Treffer erhalten eine **Ersetzungsvorschau**; mit **„Alle ersetzen“** werden alle Treffer im gewählten Projekt durch den Ersatztext ersetzt.
+
+Beide Funktionen basieren auf einer Volltextindexierung und sind in der Standardinstallation deaktiviert; sie werden durch die Instanz aktiviert (siehe [Lokale Installation, Abschnitt 18](./Lokale_Installation_eScriptorium.md#18-optionale-einstellungen)).
+
+### 1.11. Schriftart für die Transkription wählen
+Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden, kann auf Dokument-, Projekt- oder Benutzerebene gewählt werden.
+Über das Menü rechts neben dem Dokumenttitel (Symbol mit dem Bleistift) und die Option „Bearbeiten“ öffnen Sie das Dokumentformular. Neben den üblichen Feldern (Name, Sprache, Leserichtung, Position der Zeilen) gibt es dort das Feld **„Transkriptionsschriftart“**:
+
+<img src="./images/current/transcription-font.png" style="width:70%; height:auto;">
+
+- Hier wählen Sie aus, in welcher Schrift die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden. Die Auswahl „Standard“ bedeutet, dass die Schrift des Projekts bzw. des Benutzerkontos bzw. die eingebaute Standardschrift (Noto Sans) verwendet wird.
+- Verfügbare Schriftarten richtet der Administrator der Instanz ein (siehe [Administration](./administration.md#1-transkriptionsschriftarten-einrichten)).
+- Dieselbe Einstellung existiert auch auf Projektebene (Projekt bearbeiten) und pro Benutzer, sodass Dokumente eine projektspezifische oder persönliche Schrift verwenden können, ohne sie an jedem Dokument neu zu wählen.
+
+### 1.12. Die Legacy-Oberfläche aktivieren oder deaktivieren
+Die aktuelle Version von eScriptorium bietet die neue und die Legacy-Oberfläche an; zwischen beiden kann in den Profileinstellungen gewechselt werden.
+Öffnen Sie das Benutzermenü oben rechts (Name des angemeldeten Nutzers) und wählen Sie „Profileinstellungen“; im Tab „Informationen“ kann die Option **„Legacy-Modus“** gesetzt oder entfernt und mit „Speichern“ übernommen werden. Danach wird das gewählte Interface angezeigt:
+- Ist „Legacy-Modus“ **nicht** gesetzt, wird die neue Oberfläche (die Basis dieser Anleitung) angezeigt.
+- Ist „Legacy-Modus“ gesetzt, wird die Legacy-Oberfläche angezeigt, die in der [Nutzungsanleitung für die Legacy-Oberfläche](./Nutzungsanleitung_eScriptorium.md) beschrieben wird.
+
+Nicht alle Funktionen stehen in beiden Oberflächen zur Verfügung: Funktionen, die noch nicht auf die neue Oberfläche übertragen wurden, sind dort nicht verfügbar (und umgekehrt).
+
 ## 2. Verwalten einer kollaborativen Annotation Campaign
 ### 2.1. Erstellen einer Usergruppe (Admin)
 Es ist möglich, eine Nutzergruppe zu erstellen (vorausgesetzt, Sie haben die erforderlichen Rechte). Diese Gruppen dienen dazu, Arbeitsgruppen zu definieren oder ausgewählten Usern bestimmte Rechte zu erteilen.
@@ -254,12 +292,12 @@ Ein User kann ein Dokument mit mehreren anderen Usern teilen, auch mit denjenige
 
 ### 2.3. Ein Modell mit einem anderen User oder einer Gruppe teilen
 Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Modell mit anderen Usern zu teilen, gibt es zwei Möglichkeiten:
-- Downloaden Sie das Modell im Tab „Modelle“ und versenden Sie es über einen anderen Kanal (z.B. per E-Mail)
+- Downloaden Sie das Modell im Tab „Modelle“ und versenden Sie es über einen anderen Kanal (z.&nbsp;B. per E-Mail)
 - Teilen Sie mit dem User das Dokument, dem das Modell zugeordnet ist. Nun kann der andere User es herunterladen und es in das Dokument laden, in dem er es anwenden möchte.
 
 ## 3. Sonstiges
 - **Wichtig**: Zeilen, Bereiche und Masken immer bearbeiten, bevor transkribiert wurde, da diese sonst an dieser Stelle gelöscht werden können.
-- **Binarisierung**: Dies ist meist nicht nötig, nach dem Hochladen der Bilder können diese i.d.R. direkt segmentiert werden. In den meisten Fällen verschlechtert die Binarisierung das Ergebnis.
+- **Binarisierung**: Dies ist meist nicht nötig, nach dem Hochladen der Bilder können diese i.&nbsp;d.&nbsp;R. direkt segmentiert werden. In den meisten Fällen verschlechtert die Binarisierung das Ergebnis.
 - **Keine Reaktion mehr bei der Bearbeitung des Dokuments**: Seite erneut laden (tauchte bei Firefox bisher öfters auf, ist aber noch unklar wann genau es vorkommt und woran es liegt)
 - **Kein Warten im Fenster auf Segmentierung, Binarisierung und Transkription**: Während dieser Prozesse, die mitunter länger dauern können, kann das Fenster verlassen werden. Der Prozess wird nicht abgebrochen.
 - **Kein Speichern nötig**: Alle Vorgänge werden automatisch gespeichert. Wird das Bearbeitungsfenster einmal verlassen, kann man Aktionen nicht mehr rückgängig machen.
@@ -268,8 +306,7 @@ Ein Modell ist mit einem Dokument verknüpft und nicht mit einem User. Um ein Mo
 ## 4. Zusätzliche Funktionen der Mannheim-Instanz
 Neben den Standardfunktionen bietet die von der Universitätsbibliothek Mannheim betriebene Instanz einige zusätzliche Funktionen, die in den vorangehenden Abschnitten nicht beschrieben sind:
 - [Zeilenbasislinien in der Transkriptionsansicht bearbeiten](#41-zeilenbasislinien-in-der-transkriptionsansicht-bearbeiten)
-- [Schriftart für die Transkription wählen](#42-schriftart-für-die-transkription-wählen)
-- [Anzeigesprache wechseln](#43-anzeigesprache-wechseln)
+- [Anzeigesprache wechseln](#42-anzeigesprache-wechseln)
 
 ### 4.1. Zeilenbasislinien in der Transkriptionsansicht bearbeiten
 Neben der Segmentierungsansicht (siehe Abschnitt 1.5.2) können die Baselines einer Zeile auch direkt im Eingabefenster der Transkription korrigiert werden. Öffnen Sie dafür im Bearbeitungsbereich „Transcribe“ eine Zeile. In der Kopfzeile des Fensters befindet sich rechts neben dem Button für die virtuelle Tastatur ein Button mit einem Bleistift-Symbol:
@@ -283,17 +320,8 @@ Neben der Segmentierungsansicht (siehe Abschnitt 1.5.2) können die Baselines ei
 
 Dieses Verfahren eignet sich gut für gezielte Korrekturen einzelner Zeilen, während größere Eingriffe (viele Zeilen, neue Baselines) weiterhin in der Segmentierungsansicht erfolgen.
 
-### 4.2. Schriftart für die Transkription wählen
-Über das Menü rechts neben dem Dokumenttitel (Symbol mit dem Bleistift) und die Option „Bearbeiten“ öffnen Sie das Dokumentformular. Neben den üblichen Feldern (Name, Sprache, Leserichtung, Position der Zeilen) gibt es dort das Feld **„Transkriptionsschriftart“**:
-
-<img src="./images/current/transcription-font.png" style="width:70%; height:auto;">
-
-- Hier wählen Sie aus, in welcher Schrift die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden. Die Auswahl „Standard“ bedeutet, dass die Schrift des Projekts bzw. des Benutzerkontos bzw. die eingebaute Standardschrift (Noto Sans) verwendet wird.
-- Verfügbare Schriftarten richtet der Administrator der Instanz ein (siehe [Administration](./administration.md#1-transkriptionsschriftarten-einrichten)); die Instanz der UB Mannheim stellt unter anderem *Gentium Plus*, *Noto Sans*, *Noto Sans Hebrew*, *OpenDyslexic* und *Abyssinica* (für äthiopische Schriften) bereit.
-- Dieselbe Einstellung existiert auch auf Projektebene (Projekt bearbeiten) und pro Benutzer, sodass Dokumente eine projektspezifische oder persönliche Schrift verwenden können, ohne sie an jedem Dokument neu zu wählen.
-
-### 4.3. Anzeigesprache wechseln
-Die Benutzeroberfläche von eScriptorium kann in mehreren Sprachen angezeigt werden. In der globalen Navigation (oben rechts) befindet sich ein Button mit einem Globus-Symbol und dem Code der aktuellen Sprache (z. B. „DE“). Ein Klick öffnet die Liste der verfügbaren Sprachen:
+### 4.2. Anzeigesprache wechseln
+Die Benutzeroberfläche von eScriptorium kann in mehreren Sprachen angezeigt werden. In der globalen Navigation (oben rechts) befindet sich ein Button mit einem Globus-Symbol und dem Code der aktuellen Sprache (z.&nbsp;B. „DE“). Ein Klick öffnet die Liste der verfügbaren Sprachen:
 
 <img src="./images/current/language-selector.png" style="width:50%; height:auto;">
 

@@ -34,9 +34,9 @@ Die folgende Schritt-für-Schritt-Anleitung gibt eine Einführung in die Nutzung
 ## 0. Für wen ist dieser Guide gedacht?
 Dieser Leitfaden richtet sich an eScriptorium-Benutzer*innen mit mittleren Vorkenntnissen, die ein grundlegendes Verständnis der grafischen Oberfläche und Funktionalität der Plattform mitbringen. Hier sind einige Ressourcen, die Ihnen den Einstieg erleichtern:
 - [eScriptorium Quick Start Guide](https://escriptorium.readthedocs.io/en/latest/quick-start/)
-- Ein **Videotutorial**, das die wichtigsten Funktionen und Werkzeuge vorstellt, finden Sie auf YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) 
+- Ein **Videotutorial**, das die wichtigsten Funktionen und Werkzeuge vorstellt, finden Sie auf YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg)
 
-Obwohl versucht wurde, den Leitfaden so zugänglich wie möglich zu halten, ließen sich bestimmte Fachbegriffe nicht vermeiden. Wo diese im Leitfaden vorkommen, versuchen wir, sie so klar wie möglich zu erklären. 
+Obwohl versucht wurde, den Leitfaden so zugänglich wie möglich zu halten, ließen sich bestimmte Fachbegriffe nicht vermeiden. Wo diese im Leitfaden vorkommen, versuchen wir, sie so klar wie möglich zu erklären.
 
 Dieser Guide wurde im Rahmen der 3. [OCR-D](https://ocr-d.de/) Förderphase im Modulprojekt [*Workflow für werk­spezifisches Training auf Basis generischer Modelle mit OCR-D sowie Ground-Truth-Aufwertung*](https://www.bib.uni-mannheim.de/ihre-ub/projekte-der-ub/ocr-d-modelltraining/) (2021-2023) an der [Universitätsbibliothek Mannheim](https://www.bib.uni-mannheim.de/) erstellt. Das Modulprojekt wurde von der Deutschen Forschungsgemeinschaft (DFG) gefördert.
 
@@ -45,12 +45,12 @@ Dieser Guide wurde im Rahmen der 3. [OCR-D](https://ocr-d.de/) Förderphase im M
 - [Thomas Schmidt](https://orcid.org/0000-0003-3620-3355): `thomas.schmidt[at]uni-mannheim[dot]de`
 
 ## 1. Wie funktioniert das Modelltraining?
-Für alle automatisierten Layoutsegmentierungs- und Texterkennungsaufgaben verwendet eScriptorium die Open-Source OCR/HTR-Engine [kraken](https://kraken.re/main/index.html). Die für die Layoutsegmentierung und Texterkennung verwendeten Modelle können mit wenigen Klicks direkt in eScriptorium (nach-)trainiert werden. Es können sowohl komplett neue Modelle trainiert werden (`training from scratch`) als auch bestehende Modelle für bestimmte Anwendungsfälle oder Domänen nachtrainiert werden (`Nachtraining` bzw. `Finetuning`). Das Training von OCR-Modellen wird oft über die Kommandozeile durchgeführt und erfordert entsprechende IT-Kenntnisse. Da eScriptorium eine grafische Benutzeroberfläche bietet, können auch Benutzer*innen ohne Kommandozeilen-Kenntnisse Trainings durchführen. 
+Für alle automatisierten Layoutsegmentierungs- und Texterkennungsaufgaben verwendet eScriptorium die Open-Source OCR/HTR-Engine [kraken](https://kraken.re/main/index.html). Die für die Layoutsegmentierung und Texterkennung verwendeten Modelle können mit wenigen Klicks direkt in eScriptorium (nach-)trainiert werden. Es können sowohl komplett neue Modelle trainiert werden (`training from scratch`) als auch bestehende Modelle für bestimmte Anwendungsfälle oder Domänen nachtrainiert werden (`Nachtraining` bzw. `Finetuning`). Das Training von OCR-Modellen wird oft über die Kommandozeile durchgeführt und erfordert entsprechende IT-Kenntnisse. Da eScriptorium eine grafische Benutzeroberfläche bietet, können auch Benutzer*innen ohne Kommandozeilen-Kenntnisse Trainings durchführen.
 
 Allerdings ist es notwendig, den Anwendungsbereich der beiden genannten Trainingsvarianten zu verstehen:
 
-- **`Training from scratch`**: Das Training eines völlig neuen Modells (das nicht auf einem bereits existierenden Modell basiert) wird als *Training from scratch* bezeichnet. Für das Training wird  so genannte *Ground Truth* verwendet, z. B. Digitalisate von Buchseiten mit zugehörigen Transkriptionen, die den Textinhalt der Seiten erfassen. Um robuste OCR-Modelle mit einem Training from scratch zu trainieren, ist in der Regel eine große Menge an Ground Truth erforderlich (manchmal mehrere hunderttausend Textzeilen). Eine solche Datenmenge kann bei eScriptorium zu Problemen führen. Beispielsweise kann ein eScriptorium-Dokument, das für ein Training from scratch mit mehreren tausend digitalisierten Dokumenten und Transkriptionen verwendet werden soll, an Speicher- und Usabilitygrenzen stoßen. In solchen Fällen empfiehlt sich ein [Training außerhalb von eScriptorium über die Kommandozeile](https://kraken.re/main/ketos.html). 
-- **`Nachtraining` bzw. `Finetuning`**: Beim (werksspezifischen) Finetuning oder Nachtraining wird ein bestehendes Modell an einen neuen Anwendungsfall oder eine neue Domäne angepasst (*werksspezifisch* bedeutet in diesem Zusammenhang, dass das Finetuning mit Blick auf ein bestimmtes Werk (z. B. ein historisches Dokument, Manuskript oder Buch) oder eine Gruppe ähnlicher Werke vorgenommen wird). Ein einfaches OCR-Modell, das für die Erkennung alphanumerischer lateinischer Standardzeichen trainiert wurde, ist beispielsweise nicht immer in der Lage, Währungssymbole wie den Euro (€), das Pfund (£) oder den Yen (¥) zu erkennen. Um derartige Sonderzeichen zu erkennen, wird ein Nachtraining mit einem Datensatz durchgeführt, der diese speziellen Währungssymbole enthält. Dabei werden die Parameter des Modells so angepasst, dass es diese neuen Symbole besser erkennen und interpretieren kann.
+- **`Training from scratch`**: Das Training eines völlig neuen Modells (das nicht auf einem bereits existierenden Modell basiert) wird als *Training from scratch* bezeichnet. Für das Training wird  so genannte *Ground Truth* verwendet, z.&nbsp;B. Digitalisate von Buchseiten mit zugehörigen Transkriptionen, die den Textinhalt der Seiten erfassen. Um robuste OCR-Modelle mit einem Training from scratch zu trainieren, ist in der Regel eine große Menge an Ground Truth erforderlich (manchmal mehrere hunderttausend Textzeilen). Eine solche Datenmenge kann bei eScriptorium zu Problemen führen. Beispielsweise kann ein eScriptorium-Dokument, das für ein Training from scratch mit mehreren tausend digitalisierten Dokumenten und Transkriptionen verwendet werden soll, an Speicher- und Usabilitygrenzen stoßen. In solchen Fällen empfiehlt sich ein [Training außerhalb von eScriptorium über die Kommandozeile](https://kraken.re/main/ketos.html).
+- **`Nachtraining` bzw. `Finetuning`**: Beim (werksspezifischen) Finetuning oder Nachtraining wird ein bestehendes Modell an einen neuen Anwendungsfall oder eine neue Domäne angepasst (*werksspezifisch* bedeutet in diesem Zusammenhang, dass das Finetuning mit Blick auf ein bestimmtes Werk (z.&nbsp;B. ein historisches Dokument, Manuskript oder Buch) oder eine Gruppe ähnlicher Werke vorgenommen wird). Ein einfaches OCR-Modell, das für die Erkennung alphanumerischer lateinischer Standardzeichen trainiert wurde, ist beispielsweise nicht immer in der Lage, Währungssymbole wie den Euro (€), das Pfund (£) oder den Yen (¥) zu erkennen. Um derartige Sonderzeichen zu erkennen, wird ein Nachtraining mit einem Datensatz durchgeführt, der diese speziellen Währungssymbole enthält. Dabei werden die Parameter des Modells so angepasst, dass es diese neuen Symbole besser erkennen und interpretieren kann.
 
 ## 2. Wie funktioniert das Training in eScriptorium?
 ### 2.1. Trainingsdaten (Ground Truth) bereitstellen oder erstellen
@@ -87,13 +87,13 @@ Die Genauigkeit eines Modells hängt von verschiedenen Faktoren ab und muss für
 
 Hier sind einige Orientierungspunkte, die bei der Beurteilung eines Modells helfen können:
 - Wurde das Modell für **gedruckte** oder **handschriftliche** Dokumente trainiert?
-- Welche **Sprachen** (z.B. Englisch, Deutsch, Hebräisch ...) und **Schriftsysteme** (z.B. Latein, Arabisch, Chinesisch ...) deckt das Modell ab?
-- Welchen **historischen Zeitraum** und welche **historischen Schriften** deckt das Modell ab? (d.h. ist das Modell z. B. geeignet, Frakturschriften zu erkennen?)
+- Welche **Sprachen** (z.&nbsp;B. Englisch, Deutsch, Hebräisch ...) und **Schriftsysteme** (z.&nbsp;B. Latein, Arabisch, Chinesisch ...) deckt das Modell ab?
+- Welchen **historischen Zeitraum** und welche **historischen Schriften** deckt das Modell ab? (d.&nbsp;h. ist das Modell z.&nbsp;B. geeignet, Frakturschriften zu erkennen?)
 
-> **Hinweis:** Als Faustregel gilt, dass Sie zunächst **generische Modelle** für Ihren Anwendungsfall testen sollten. *Generische Modelle* werden in der Regel auf einer Vielzahl von Daten (verschiedene Dokumente, Schriftarten usw.) einer bestimmten Domäne (z. B. gedruckte Dokumente in französischer Sprache des 18. Jahrhunderts) trainiert. Häufig bietet der Name eines Modells einen Anhaltspunkt für die trainierte Domäne: `german_newspapers.mlmodel` steht beispielsweise für ein Modell, das mit deutschsprachiger Zeitungs-Ground-Truth trainiert worden ist. Weitere Details und Metadaten, die der Bewertung dienen, können häufig der Modellbeschreibung entnommen werden.
+> **Hinweis:** Als Faustregel gilt, dass Sie zunächst **generische Modelle** für Ihren Anwendungsfall testen sollten. *Generische Modelle* werden in der Regel auf einer Vielzahl von Daten (verschiedene Dokumente, Schriftarten usw.) einer bestimmten Domäne (z.&nbsp;B. gedruckte Dokumente in französischer Sprache des 18. Jahrhunderts) trainiert. Häufig bietet der Name eines Modells einen Anhaltspunkt für die trainierte Domäne: `german_newspapers.mlmodel` steht beispielsweise für ein Modell, das mit deutschsprachiger Zeitungs-Ground-Truth trainiert worden ist. Weitere Details und Metadaten, die der Bewertung dienen, können häufig der Modellbeschreibung entnommen werden.
 
 ## 3. Nachtraining / Finetuning in eScriptorium
-In vielen Fällen kann das Nachtraining eine zeit- und ressourceneffiziente Methode sein, um ein bestehendes Layoutsegmentierungs- oder Texterkennungsmodell auf einen neuen Anwendungsfall anzupassen. Für die Durchführung eines Finetunings wird ein bestehendes Modell benötigt, das während des Nachtrainings an den neuen Anwendungsfall angepasst wird. 
+In vielen Fällen kann das Nachtraining eine zeit- und ressourceneffiziente Methode sein, um ein bestehendes Layoutsegmentierungs- oder Texterkennungsmodell auf einen neuen Anwendungsfall anzupassen. Für die Durchführung eines Finetunings wird ein bestehendes Modell benötigt, das während des Nachtrainings an den neuen Anwendungsfall angepasst wird.
 
 Für das Finetuning eines Modells in eScriptorium empfehlen wir folgenden Workflow:
 
@@ -150,7 +150,7 @@ Sobald alle Bilder hochgeladen wurden, erscheinen sie als Vorschau am unteren Ra
 > **Anmerkung 1:** Schritt 3 umfasst die automatische Layoutsegmentierung. Ziel ist es, ein Modell zu finden, das für die hochgeladenen Bilder bereits gut funktioniert, um dieses Modell anschließend im Nachtraining zu verbessern (und es für die verfügbaren Daten noch leistungsfähiger zu machen). Wenn Sie nach Layoutsegmentierungsmodellen suchen, ist Kapitel [2.2 Wo finde ich Modelle?](#22-wo-finde-ich-modelle) hilfreich.
 > **Anmerkung 2:** Wir empfehlen, entweder mit *RGB*- oder *Graustufen*-Bildern zu arbeiten, da die Binarisierung zu einem Verlust an Bilddetails führen kann. Deshalb verzichten wir in den folgenden Schritten auf die **Binarisieren**-Funktion von eScriptorium.
 
-Wählen Sie alle Bilder aus, indem Sie auf die Schaltfläche **"Alles auswählen"** klicken. Alle Bilder im aktuellen Dokument sollten nun hervorgehoben sein. 
+Wählen Sie alle Bilder aus, indem Sie auf die Schaltfläche **"Alles auswählen"** klicken. Alle Bilder im aktuellen Dokument sollten nun hervorgehoben sein.
 
 Klicken Sie anschließend auf die Schaltfläche **"Segmentieren"**.
 
@@ -162,9 +162,9 @@ Es sollte ein Pop-up-Fenster (*"Wählen Sie ein Modell aus"*) erscheinen, in dem
 
 - **1. Dropdown**: Wählen Sie ein Layoutsegmentierungsmodell aus
 - **2. Dropdown**: Wählen Sie die Layoutbereiche, die Sie segmentieren möchten (*wenn noch keine Layoutsegmentierung durchgeführt wurde, sollte die Einstellung "Linien und Regionen" gewählt werden.*)
-- **3. Dropdown**: Definiert die Leserichtung des Textes (z. B. horizontal von links nach rechts = *Horizontal v.l.n.r.*)
+- **3. Dropdown**: Definiert die Leserichtung des Textes (z.&nbsp;B. horizontal von links nach rechts = *Horizontal v.&nbsp;l.&nbsp;n.&nbsp;r.*)
 
-Klicken Sie anschließend auf die blaue Schaltfläche **"Segmentieren"**, um die Layoutsegmentierung zu starten. 
+Klicken Sie anschließend auf die blaue Schaltfläche **"Segmentieren"**, um die Layoutsegmentierung zu starten.
 
 Eine orangefarbene Schaltfläche in der Bildvorschau zeigt die laufende Layoutsegmentierung an. Sobald die Segmentierung für eine Seite abgeschlossen ist, erscheint in der oberen rechten Ecke des Bildschirms eine Meldung (*"Segmentation done!"*).
 
@@ -194,7 +194,7 @@ Korrigieren Sie zunächst die Textregionen. Klicken Sie auf das **blaue Regionen
 
 <img src="./images/legacy/training-eS-17_de.png" width="100%"><br/>
 
-Achten Sie darauf, dass die Textregionen den gesamten Textinhalt sinnvoll einschließen. Passen Sie die Textregionen entsprechend an. 
+Achten Sie darauf, dass die Textregionen den gesamten Textinhalt sinnvoll einschließen. Passen Sie die Textregionen entsprechend an.
 
 **Beispiel:** Auf der folgenden Seite wurden zwei Textspalten als eine einzige Textregion segmentiert. Die vorgenommene Anpassung im zweiten Screenshot spiegelt das tatsächliche Seitenlayout wider.
 
@@ -222,12 +222,12 @@ Passen Sie die Baseline so an, dass:
 #### Schritt 7: Korrektur der Layoutsegmentierung für alle weiteren Seiten
 Wiederholen Sie die Schritte 5 und 6 für alle verfügbaren Seiten. Die Sicherstellung einer korrekten Layoutsegmentierung auf allen Seiten trägt zur Verbesserung der Texterkennungsqualität bei.
 
-> **Hinweis:** Falls eine große Anzahl von Seiten korrigiert werden muss, ist es möglich, ein Layoutsegmentierungsmodell nachzutrainieren, indem Sie die Schritte 5 und 6 für eine kleine Menge von Seiten wiederholen und so einen Satz von Trainingsdaten (*Ground Truth*) erstellen. Nach der Erstellung der Trainingsdaten können Sie ein Layoutsegmentierungsmodell finetunen und die automatische Layoutsegmentierung mit diesem nachtrainierten Modell erneut durchführen (d.h. Wiederholung von [Schritt 3: Automatische Layoutsegmentierung durchführen](#schritt-3-automatische-layoutsegmentierung-durchführen)), um die Segmentierungsergebnisse zu verbessern. Weitere Einzelheiten finden Sie in [Kapitel 3.2: Finetuning eines Layoutsegmentierungsmodells](#32-finetuning-eines-layoutsegmentierungsmodells).
+> **Hinweis:** Falls eine große Anzahl von Seiten korrigiert werden muss, ist es möglich, ein Layoutsegmentierungsmodell nachzutrainieren, indem Sie die Schritte 5 und 6 für eine kleine Menge von Seiten wiederholen und so einen Satz von Trainingsdaten (*Ground Truth*) erstellen. Nach der Erstellung der Trainingsdaten können Sie ein Layoutsegmentierungsmodell finetunen und die automatische Layoutsegmentierung mit diesem nachtrainierten Modell erneut durchführen (d.&nbsp;h. Wiederholung von [Schritt 3: Automatische Layoutsegmentierung durchführen](#schritt-3-automatische-layoutsegmentierung-durchführen)), um die Segmentierungsergebnisse zu verbessern. Weitere Einzelheiten finden Sie in [Kapitel 3.2: Finetuning eines Layoutsegmentierungsmodells](#32-finetuning-eines-layoutsegmentierungsmodells).
 
 #### Schritt 8: Automatische Texterkennung durchführen
 > **Hinweis:** Schritt 8 beinhaltet die automatische Texterkennung. Das Ziel ist es, ein Modell zu finden, das bereits gut für Ihre Daten funktioniert, um dieses Modell durch ein Nachtraining zu verbessern. Lesen Sie [Kapitel 2.2: Wo finde ich Modelle?](#22-wo-finde-ich-modelle), wenn Sie nach Modellen für Layout-Segmentierung und Texterkennung suchen.
 
-Nachdem Sie die Schritte 3 - 6 ausgeführt haben, wechseln Sie zurück zum **Reiter "Bilder"** und klicken Sie auf die Schaltfläche **"Alles auswählen"**. 
+Nachdem Sie die Schritte 3 - 6 ausgeführt haben, wechseln Sie zurück zum **Reiter "Bilder"** und klicken Sie auf die Schaltfläche **"Alles auswählen"**.
 
 Klicken Sie anschließend auf die blaue Schaltfläche **"Transkribieren"**.
 
@@ -250,7 +250,7 @@ Ein orangefarbener Button in der Bildvorschau zeigt eine laufende Texterkennung 
 Sobald die Texterkennung abgeschlossen ist, müssen die automatisch erstellten Transkriptionen überprüft werden.
 
 1. Klicken Sie auf den Reiter **Bearbeiten**.
-2. Klicken Sie anschließend auf die Schaltfläche **"Segmentierungsansicht"**, um die Layoutsegmentierungsansicht zu deaktivieren. 
+2. Klicken Sie anschließend auf die Schaltfläche **"Segmentierungsansicht"**, um die Layoutsegmentierungsansicht zu deaktivieren.
 3. Klicken Sie anschließend auf die Schaltfläche **"Transkriptionsansicht"**, um die Transkriptionsansicht zu aktivieren.
 4. Wählen Sie die Transkription, die Sie in Schritt 8 erstellt haben, im Dropdown-Menü aus. Der Name der Transkription folgt dieser Struktur: `OCR-Engine-Name:OCR-Modell-Name`. Beispiel: In "Schritt 8" haben wir das Modell `german_print` für die Engine `kraken` ausgewählt. Der entsprechende Name der Transkription lautet daher: `kraken:german_print`.
 
@@ -266,14 +266,14 @@ Wenn Sie auf eine Textzeile in der Transkriptionsansicht klicken, öffnet sich e
 
 In diesem Fenster können die automatisch erstellten Transkriptionen auf Fehler überprüft werden. Im oberen Teil des Pop-up-Fensters wird die originale Textzeile angezeigt. Im unteren Teil ist die Transkription dieser Textzeile zu finden. Mit den Pfeiltasten (`↑` und `↓`) können Sie durch alle verfügbaren Textzeilen blättern.
 
-> **Hinweis:** Anstatt die Transkriptionsfehler jetzt zu verbessern, sollten Sie zunächst die ungefähre Anzahl der Fehler auf jeder Seite überprüfen. Wenn die Mehrheit der Transkriptionen fehlerhaft ist, empfiehlt es sich, ein anderes Texterkennungsmodell zu testen, um bessere Ergebnisse zu erzielen (d.h. es sollte [Schritt 8: Automatische Texterkennung durchführen](#schritt-8-automatische-texterkennung-durchführen) mit einem neuen Modell wiederholt werden). Wenn jedoch nur wenige Fehler auf den Seiten vorhanden sind (Faustregel: 1 bis 2 Fehler alle 2 bis 3 Textzeilen), können Sie mit der Verbesserung der Transkriptionen in [Schritt 10: Korrektur der Transkriptionen (Erstellen von Ground Truth)](#schritt-10-korrektur-der-transkriptionen-erstellen-von-ground-truth) fortfahren.
+> **Hinweis:** Anstatt die Transkriptionsfehler jetzt zu verbessern, sollten Sie zunächst die ungefähre Anzahl der Fehler auf jeder Seite überprüfen. Wenn die Mehrheit der Transkriptionen fehlerhaft ist, empfiehlt es sich, ein anderes Texterkennungsmodell zu testen, um bessere Ergebnisse zu erzielen (d.&nbsp;h. es sollte [Schritt 8: Automatische Texterkennung durchführen](#schritt-8-automatische-texterkennung-durchführen) mit einem neuen Modell wiederholt werden). Wenn jedoch nur wenige Fehler auf den Seiten vorhanden sind (Faustregel: 1 bis 2 Fehler alle 2 bis 3 Textzeilen), können Sie mit der Verbesserung der Transkriptionen in [Schritt 10: Korrektur der Transkriptionen (Erstellen von Ground Truth)](#schritt-10-korrektur-der-transkriptionen-erstellen-von-ground-truth) fortfahren.
 
 #### Schritt 10: Korrektur der Transkriptionen (Erstellen von Ground Truth)
 
-In Schritt 10 werden Transkriptionsfehler korrigiert, um Trainingsdaten (*Ground Truth*) für das Nachtraining eines Texterkennungsmodells zu erzeugen. 
+In Schritt 10 werden Transkriptionsfehler korrigiert, um Trainingsdaten (*Ground Truth*) für das Nachtraining eines Texterkennungsmodells zu erzeugen.
 
 1. Klicken Sie auf den Reiter **Bearbeiten**.
-2. Klicken Sie anschließend auf die Schaltfläche **"Segmentierungsansicht"**, um sie zu deaktivieren. 
+2. Klicken Sie anschließend auf die Schaltfläche **"Segmentierungsansicht"**, um sie zu deaktivieren.
 3. Klicken Sie nun auf die Schaltfläche **"Textansicht"**, um die reine Textansicht zu aktivieren.
 4. Wählen Sie die Transkription, die Sie in Schritt 8 erstellt haben, im Dropdown-Menü aus.
 
@@ -301,22 +301,22 @@ Wir korrigieren ihn, so dass die Transkription mit der Textzeile übereinstimmt:
 
 <img src="./images/legacy/training-eS-30.png" width="100%"><br/>
 
-Nachdem die erste Textzeile korrigiert wurde, drücken Sie die `Enter ↲` Taste, um die nächste Textzeile zu überprüfen. Die Pfeiltasten (`↑` und `↓`) können ebenfalls verwendet werden, um durch alle verfügbaren Textzeilen der aktuellen Seite zu blättern. 
+Nachdem die erste Textzeile korrigiert wurde, drücken Sie die `Enter ↲` Taste, um die nächste Textzeile zu überprüfen. Die Pfeiltasten (`↑` und `↓`) können ebenfalls verwendet werden, um durch alle verfügbaren Textzeilen der aktuellen Seite zu blättern.
 
-Nachdem Sie die Korrektur für die aktuelle Seite abgeschlossen haben, fahren Sie mit der nächsten Seite fort. *Achten Sie darauf, dass Sie alle Anweisungen von Schritt 10 befolgen (d.h. in der "manual" Transkription arbeiten).*
+Nachdem Sie die Korrektur für die aktuelle Seite abgeschlossen haben, fahren Sie mit der nächsten Seite fort. *Achten Sie darauf, dass Sie alle Anweisungen von Schritt 10 befolgen (d.&nbsp;h. in der "manual" Transkription arbeiten).*
 
 #### Exkurs 1: Wie viele Trainingsdaten (Ground Truth) brauche ich?
-> Erfahrungswerte zeigen, dass bereits eine **geringe Menge an Trainingsdaten** ausreicht, um mit dem Finetuning eines bestehenden Texterkennungsmodells zu beginnen, das bereits hinreichend gut auf den vorliegenden Daten funktioniert. Beim Nachtraining sollte ein **iterativer Ansatz** verfolgt werden: 
-> 1. Erstellen Sie 2 bis 3 Seiten mit Trainingsdaten, indem Sie die automatisch generierten Transkriptionen wie in Schritt 10 korrigieren. 
-> 2. Folgen Sie [Schritt 11: Nachtraining (Finetuning) eines Texterkennungsmodells](#schritt-11-nachtraining-finetuning-eines-texterkennungsmodells) und trainieren Sie das Modell, das Sie in Schritt 8 zur automatischen Erzeugung der Transkriptionen verwendet haben, mit der korrigierten Ground Truth (Schritt 10) nach. 
+> Erfahrungswerte zeigen, dass bereits eine **geringe Menge an Trainingsdaten** ausreicht, um mit dem Finetuning eines bestehenden Texterkennungsmodells zu beginnen, das bereits hinreichend gut auf den vorliegenden Daten funktioniert. Beim Nachtraining sollte ein **iterativer Ansatz** verfolgt werden:
+> 1. Erstellen Sie 2 bis 3 Seiten mit Trainingsdaten, indem Sie die automatisch generierten Transkriptionen wie in Schritt 10 korrigieren.
+> 2. Folgen Sie [Schritt 11: Nachtraining (Finetuning) eines Texterkennungsmodells](#schritt-11-nachtraining-finetuning-eines-texterkennungsmodells) und trainieren Sie das Modell, das Sie in Schritt 8 zur automatischen Erzeugung der Transkriptionen verwendet haben, mit der korrigierten Ground Truth (Schritt 10) nach.
 > 3. [Testen und evaluieren Sie](#schritt-12-wiederholung-der-automatischen-texterkennung-und-evaluation-des-nachtrainierten-modells), ob das nachtrainierte Modell bessere Transkriptionen für Ihre Daten liefert.
 > 4. Falls dies nicht zutrifft, wiederholen Sie die Punkt 1 bis 3, um weitere Trainingsdaten zu erzeugen. Führen Sie ein weiteres Nachtraining mit allen Trainingsdaten durch und evaluieren Sie die Ergebnisse.
-> 
+>
 > Ein **Beispielworkflow** kann wie folgt aussehen:
 > 1. Korrektur von 2 Transkriptionen, die von einem Texterkennungsmodell erzeugt wurden, um Trainingsdaten (*Ground Truth*) zu erstellen
 > 2. Nachtraining (*Finetuning*) des Texterkennungsmodells, das verwendet wurde, um die Ausgangstranskriptionen zu erzeugen
 > 3. Evaluation, ob das nachtrainierte Modell bessere Transkriptionen liefert
-> 4. Sollten die Ergebnisse zwar besser sein, aber noch weiterer Optimierungen bedürfen, erstellen Sie zusätzliche Trainingsdaten, z. B. 4 weitere Seiten 
+> 4. Sollten die Ergebnisse zwar besser sein, aber noch weiterer Optimierungen bedürfen, erstellen Sie zusätzliche Trainingsdaten, z.&nbsp;B. 4 weitere Seiten
 > 5. Führen Sie ein Nachtraining für das zuerst verwendete Modell mit den kompletten 6 Seiten Ground Truth noch einmal durch
 > 6. Prüfen Sie, ob das zweite nachtrainierte Modell bessere Transkriptionen liefert
 > 7. Wiederholen Sie diese Schritte ...
@@ -346,9 +346,9 @@ Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
       - `Name des Basismodells`: Name des Modells, das Sie nachtrainieren. In unserem Beispiel `german_print`.
       - `Name der Dokumente`, mit denen Sie trainieren: ein beschreibender Name zur Identifizierung der Daten, die Sie für das Nachtraining verwenden. In unserem Beispiel verwenden wir die Abkürzung `CharlAmtsschriftum`, da wir mit Seiten aus dieser Sammlung trainieren.
       - `Modellnummer`: Geben Sie eine Nummer für das neue Modell an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
-- **Zweites Dropdown**: Wählen Sie das Texterkennungsmodell aus, das Sie nachtrainieren möchten. Dies sollte das Modell sein, mit dem Sie in [Schritt 8](#schritt-8-automatische-texterkennung-durchführen) gearbeitet haben, d.h. das Basismodell, das bereits recht gut mit Ihren Daten funktioniert hat.  In unserem Beispiel ist dieses Modell `german_print`.
+- **Zweites Dropdown**: Wählen Sie das Texterkennungsmodell aus, das Sie nachtrainieren möchten. Dies sollte das Modell sein, mit dem Sie in [Schritt 8](#schritt-8-automatische-texterkennung-durchführen) gearbeitet haben, d.&nbsp;h. das Basismodell, das bereits recht gut mit Ihren Daten funktioniert hat.  In unserem Beispiel ist dieses Modell `german_print`.
 
-Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um die Feinabstimmung zu starten. 
+Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um die Feinabstimmung zu starten.
 
 Ein laufendes Training wird wie folgt gezeigt:
 
@@ -386,7 +386,7 @@ Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
       - `Modellnummer`: Geben Sie eine Nummer für das neue Modell an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
 - **Zweites Auswahlfeld**: Wählen Sie das Tesseract-Modell aus, das Sie nachtrainieren möchten.
 
-Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um das Nachtraining zu starten. 
+Klicken Sie abschließend auf die blaue Schaltfläche **"Trainieren"**, um das Nachtraining zu starten.
 
 Ein laufendes Training wird wie folgt angezeigt:
 
@@ -418,7 +418,7 @@ Ein orangefarbener Button in der Bildvorschau zeigt die laufende Texterkennung a
 Sobald die Texterkennung abgeschlossen ist, können die generierten Transkriptionen überprüft werden.
 
 1. Klicken Sie auf den Reiter **"Bearbeiten"**.
-2. Klicken Sie anschließend auf die Schaltfläche **"Segmentierungsansicht"**, um die Layoutsegmentierungsansicht zu deaktivieren. 
+2. Klicken Sie anschließend auf die Schaltfläche **"Segmentierungsansicht"**, um die Layoutsegmentierungsansicht zu deaktivieren.
 3. Klicken Sie nun auf die Schaltfläche **"Transkriptionsansicht"**, um die Transkriptionsansicht zu aktivieren.
 4. Wählen Sie im Dropdown-Menü die Transkription aus, die Sie mit Ihrem nachtrainierten Modell erstellt haben.
 
@@ -442,13 +442,13 @@ Klicken Sie auf eine Textzeile in der Transkriptionsansicht, um das Editor-Pop-u
 
 Ein Vergleich der beiden ausgewählten Transkriptionen für die aktuelle Textzeile wird nun im unteren Teil des Pop-ups angezeigt. Farblich hervorgehobene Buchstaben zeigen Unterschiede zwischen den beiden Transkriptionen an, so dass die Genauigkeit des nachtrainierten Modells schnell überprüft werden kann.
 
-#### Schritt 13: Wiederholung 
+#### Schritt 13: Wiederholung
 Sollte die Evaluation in `Schritt 12` zu unbefriedigenden Ergebnissen geführt haben, wiederholen Sie die `Schritte 10 bis 12`, um weitere Trainingsdaten zu erzeugen und ein neues Modell mit diesen Daten nachzutrainieren. Im [Exkurs 1: Wie viele Trainingsdaten (Ground Truth) brauche ich?](#exkurs-1-wie-viele-trainingsdaten-ground-truth-brauche-ich) finden Sie weitere Informationen.
 
 ### 3.2. Finetuning eines Layoutsegmentierungsmodells
-> **Hinweis:** Das Ziel des Finetunings eines Layoutsegmentierungsmodells ist die Verbesserung der automatischen Segmentierung von Textregionen, Grundlinien und Zeilenmasken. Um ein bestehendes Layoutsegmentierungsmodell nachzutrainieren, sollte das bestehende Modell (*Basismodell*) bereits hinreichend gut für Ihre Daten funktionieren. 
+> **Hinweis:** Das Ziel des Finetunings eines Layoutsegmentierungsmodells ist die Verbesserung der automatischen Segmentierung von Textregionen, Grundlinien und Zeilenmasken. Um ein bestehendes Layoutsegmentierungsmodell nachzutrainieren, sollte das bestehende Modell (*Basismodell*) bereits hinreichend gut für Ihre Daten funktionieren.
 >
-> **Beispiele**: Ein Basismodell, das auf einem Schriftsystem wie Arabisch (Leserichtung von rechts nach links) trainiert wurde, wird höchstwahrscheinlich durch ein Finetuning mit Trainingsdaten, die eine Leserichtung von links nach rechts aufweisen, nicht verbessert werden. Ebenso wird ein Basismodell, das primär auf eher gleichförmigen Buchseiten (z.B. englische Romane aus dem 18. Jahrhundert mit einem homogenen Layout) trainiert wurde, Probleme bei der Segmentierung komplexer Tabellen haben, da diese Layoutstrukturen in den Trainingsdaten unterrepräsentiert waren oder gar keine Rolle spielten. Die Erfahrung hat gezeigt, dass das Nachtraining eines solchen Basismodells mit einigen wenigen Seiten Trainingsdaten nicht zu brauchbaren Ergebnissen führt. Wir empfehlen daher, zunächst ein Layoutsegmentierungsmodell zu finden, das auf Ihren Daten einigermaßen gut funktioniert.
+> **Beispiele**: Ein Basismodell, das auf einem Schriftsystem wie Arabisch (Leserichtung von rechts nach links) trainiert wurde, wird höchstwahrscheinlich durch ein Finetuning mit Trainingsdaten, die eine Leserichtung von links nach rechts aufweisen, nicht verbessert werden. Ebenso wird ein Basismodell, das primär auf eher gleichförmigen Buchseiten (z.&nbsp;B. englische Romane aus dem 18. Jahrhundert mit einem homogenen Layout) trainiert wurde, Probleme bei der Segmentierung komplexer Tabellen haben, da diese Layoutstrukturen in den Trainingsdaten unterrepräsentiert waren oder gar keine Rolle spielten. Die Erfahrung hat gezeigt, dass das Nachtraining eines solchen Basismodells mit einigen wenigen Seiten Trainingsdaten nicht zu brauchbaren Ergebnissen führt. Wir empfehlen daher, zunächst ein Layoutsegmentierungsmodell zu finden, das auf Ihren Daten einigermaßen gut funktioniert.
 
 Wie bei dem Nachtraining eines Texterkennungsmodells empfehlen wir auch bei der Erstellung von Trainingsdaten für ein Layoutsegmentierungsmodell einen **iterativen Ansatz**:
 
@@ -471,7 +471,7 @@ Es sollte sich ein Pop-up-Fenster öffnen, das wie folgt aussieht:
       - `Name des Basismodells`: Name des Modells, das Sie nachtrainieren. In unserem Beispiel `ubma_segmentation`.
       - `Name der Dokumente`, mit denen Sie trainieren: ein beschreibender Name zur Identifizierung der Daten, die Sie für das Nachtraining verwenden. In unserem Beispiel verwenden wir die Abkürzung `Maschinenindustrie`, da wir mit Seiten aus dieser Sammlung trainieren.
       - `Modellnummer`: Geben Sie eine Nummer für das neue Modell an. `M1`, wie im Beispiel, bedeutet: das erste nachtrainierte Modell.
-- **Drop-down "Oder wählen Sie ein bestehendes aus"**: Wählen Sie das Layoutsegmentierungsmodell aus, das Sie nachtrainieren möchten. Dies sollte das Modell sein, mit dem Sie anfangs gearbeitet haben, d.h. das Layout-Segmentierungsmodell, das bei Ihren Daten bereits recht gut funktioniert hat.
+- **Drop-down "Oder wählen Sie ein bestehendes aus"**: Wählen Sie das Layoutsegmentierungsmodell aus, das Sie nachtrainieren möchten. Dies sollte das Modell sein, mit dem Sie anfangs gearbeitet haben, d.&nbsp;h. das Layout-Segmentierungsmodell, das bei Ihren Daten bereits recht gut funktioniert hat.
 
 Klicken Sie schließlich auf die blaue Schaltfläche **"Trainieren"** und starten Sie die Feinabstimmung.
 
@@ -505,16 +505,16 @@ Es sollte ein Pop-up-Fenster erscheinen, in dem Sie ein Layoutsegmentierungsmode
 Prüfen Sie nach Abschluss die Ergebnisse
 
 #### Schritt 4: Wiederholung
-Wenn die Evaluation von `Schritt 3` zu unbefriedigenden Ergebnissen führt, wiederholen Sie die `Schritte 1-3`, d.h. erzeugen Sie weitere Trainingsdaten und trainieren Sie ein neues Segmentierungsmodell.
+Wenn die Evaluation von `Schritt 3` zu unbefriedigenden Ergebnissen führt, wiederholen Sie die `Schritte 1-3`, d.&nbsp;h. erzeugen Sie weitere Trainingsdaten und trainieren Sie ein neues Segmentierungsmodell.
 
 ## 4. Training from scratch in eScriptorium
-> **Hinweis:** Wenn Sie ein *Training from scratch* durchführen möchten, benötigen Sie normalerweise eine größere Menge an Trainingsdaten, um ein gut funktionierendes Modell zu trainieren. Je vielfältiger die Trainingsdaten sind, desto besser lässt sich Ihr Modell auf eine Vielzahl heterogener Dokumente anwenden. Allerdings kann eScriptorium bei einem solchen Training an seine Grenzen stoßen, da  Benutzerfreundlichkeit und Geschwindigkeit der Transkriptionsplattform leiden, sobald mehrere tausend Seiten Trainingsdaten in ein einziges Dokument geladen werden müssen. Für ein *Training from scratch* mit einer großen Datenmenge sollte das Training daher außerhalb von eScriptorium über das CLI durchgeführt werden (ein Beispiel finden Sie hier: [Training German Handwriting](https://github.com/UB-Mannheim/kraken/wiki/Training-German-Handwriting#training-2023-05-12)). 
+> **Hinweis:** Wenn Sie ein *Training from scratch* durchführen möchten, benötigen Sie normalerweise eine größere Menge an Trainingsdaten, um ein gut funktionierendes Modell zu trainieren. Je vielfältiger die Trainingsdaten sind, desto besser lässt sich Ihr Modell auf eine Vielzahl heterogener Dokumente anwenden. Allerdings kann eScriptorium bei einem solchen Training an seine Grenzen stoßen, da  Benutzerfreundlichkeit und Geschwindigkeit der Transkriptionsplattform leiden, sobald mehrere tausend Seiten Trainingsdaten in ein einziges Dokument geladen werden müssen. Für ein *Training from scratch* mit einer großen Datenmenge sollte das Training daher außerhalb von eScriptorium über das CLI durchgeführt werden (ein Beispiel finden Sie hier: [Training German Handwriting](https://github.com/UB-Mannheim/kraken/wiki/Training-German-Handwriting#training-2023-05-12)).
 > Im Folgenden wird ein *Training from scratch* für einen weniger umfangreichen Datensatz gezeigt, um das Prinzip und die Vorgehensweise zu erläutern.
 
 #### Schritt 1: Erstellen oder Importieren von Trainingsdaten (*Ground Truth*)
 Erstellen Sie ein neues Projekt und Dokument und folgen Sie den Schritten 1 bis 10 des Kapitels [3.1. Finetuning eines Texterkennungsmodells](#31-finetuning-eines-texterkennungsmodells).
 
-#### Schritt 2: Das Training starten 
+#### Schritt 2: Das Training starten
 Nachdem Sie Ihre Trainingsdaten erstellt oder importiert haben, führen Sie die folgenden Schritte aus, um ein `Training from scratch` zu starten:
 
 1. Klicken Sie auf den Reiter **"Bilder"**.
@@ -528,7 +528,7 @@ Nachdem Sie Ihre Trainingsdaten erstellt oder importiert haben, führen Sie die 
 
 <img src="./images/legacy/training-eS-56_de.png" width="100%"><br/>
 
-- **1. Dropdown**: Wählen Sie die **Transkriptionen** aus, die Sie für das Training verwenden möchten. 
+- **1. Dropdown**: Wählen Sie die **Transkriptionen** aus, die Sie für das Training verwenden möchten.
    - *Diese Option ist nur verfügbar, wenn Sie ein **"Recognizer"**-Modell trainieren.*
 - **Feld `Neues Modell`**: Wählen Sie einen Namen für Ihr Modell.
 
@@ -565,7 +565,7 @@ Hier ein Beispiel:
 
 <img src="./images/legacy/training-eS-47.png" width="100%"><br/>
 
-Die ursprüngliche Textzeile zeigt eine historische Glyphe, nämlich das "lange s", das in deutschsprachigen Dokumenten, die in Fraktur gedruckt wurden, ein gängiges Zeichen ist. Auf einer modernen Tastatur ist das "lange s" nicht zu finden, daher ist es nicht möglich, diesen Buchstaben ohne größere Umwege zu transkribieren. 
+Die ursprüngliche Textzeile zeigt eine historische Glyphe, nämlich das "lange s", das in deutschsprachigen Dokumenten, die in Fraktur gedruckt wurden, ein gängiges Zeichen ist. Auf einer modernen Tastatur ist das "lange s" nicht zu finden, daher ist es nicht möglich, diesen Buchstaben ohne größere Umwege zu transkribieren.
 
 In solchen Fällen unterstützt die **virtuelle Tastatur** bei der Transkription. Jede/r eScriptorium-Nutzer*in kann eigene virtuelle Tastaturen erstellen oder bestehende importieren. Die in der jeweiligen virtuellen Tastatur gespeicherten Unicode-Symbole können frei zugewiesen werden.
 
@@ -615,7 +615,7 @@ Transkriptionsrichtlinien sind eine Sammlung von Regeln, um Texte verschiedener 
 - **Bessere Validierung**: Wenn Sie über gut dokumentierte Transkriptionsrichtlinien verfügen, wird es einfacher, die Leistung Ihres OCR-Modells zu bewerten. Sie können die OCR-Ergebnisse anhand der Richtlinien bewerten und so feststellen, wie gut die trainierten Modelle funktionieren.
 
 #### Best practices
-Die [OCR-D Ground Truth Guidelines](https://ocr-d.de/de/gt-guidelines/trans/) sind ein guter Ausgangspunkt zur Entwicklung eigener projektspezifischer Transkriptionsrichtlinien. Die Richtlinien sind in drei verschiedene Level unterteilt, um die von Fall zu Fall verschiedenen Merkmale gedruckter oder handschriftlicher Texte in einer Transkription zu reproduzieren. Diese Merkmale können mit unterschiedlichem Grad an Komplexität wiedergegeben werden, was durch die drei OCR-D-Ground-Truth-Level dargestellt wird. 
+Die [OCR-D Ground Truth Guidelines](https://ocr-d.de/de/gt-guidelines/trans/) sind ein guter Ausgangspunkt zur Entwicklung eigener projektspezifischer Transkriptionsrichtlinien. Die Richtlinien sind in drei verschiedene Level unterteilt, um die von Fall zu Fall verschiedenen Merkmale gedruckter oder handschriftlicher Texte in einer Transkription zu reproduzieren. Diese Merkmale können mit unterschiedlichem Grad an Komplexität wiedergegeben werden, was durch die drei OCR-D-Ground-Truth-Level dargestellt wird.
 
 Zur Veranschaulichung dieses Konzepts kann das folgende Beispiel dienen:
 

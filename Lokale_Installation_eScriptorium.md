@@ -32,7 +32,7 @@ Dazu gehören Git, NPM, Postgresql-Installationen, der Redis-Server, Werkzeuge v
 sudo apt install git postgresql postgresql-contrib libpq-dev redis-server gettext netcat-traditional jpegoptim pngcrush libvips build-essential python3 python3-dev python3-venv npm
 ```
 
-**Hinweis:** Nach dem ersten sudo-Befehl (sudo wird benutzt, um Prozesse mit den Rechten eines anderen Benutzers (z. B. des Superusers root) zu starten, fordert Sie die Linux-Distribution immer dazu auf, Ihr Passwort einzugeben. Es fragt Sie dann, ob Sie den entsprechenden Speicherplatz für die Installation freigeben möchten.
+**Hinweis:** Nach dem ersten sudo-Befehl (sudo wird benutzt, um Prozesse mit den Rechten eines anderen Benutzers (z.&nbsp;B. des Superusers root) zu starten, fordert Sie die Linux-Distribution immer dazu auf, Ihr Passwort einzugeben. Es fragt Sie dann, ob Sie den entsprechenden Speicherplatz für die Installation freigeben möchten.
 Im Terminal erscheint dann die Auswahlmöglichkeit: [Y/n]. Durch Betätigung der Enter-Taste wird automatisch die großgeschriebene Auswahl bestätigt, alternativ kann der entsprechende Buchstabe eingegeben und mit Enter bestätigt werden. Dies kann während der Installation öfter auftreten.
 
 OPTIONAL: Falls Fehlermeldungen bei der Postgresql Installation auftauchen:
@@ -186,7 +186,7 @@ Die Exportformate OpenITI Markdown und TEI XML lassen sich mit `EXPORT_OPENITI_M
 
 Mit `TEXT_ALIGNMENT_ENABLED = True` kann die Textalignierung als zusätzliche Funktionalität aktiviert werden.
 
-`DISABLE_ELASTICSEARCH = False` schaltet die Volltextsuche ein. Dafür sind zusätzliche Einstellungen und die Installation von Elasticsearch erforderlich.
+Mit `DISABLE_ES_SEARCH = False` werden die Volltextsuche und „Suchen & Ersetzen“ (siehe [neues Interface, Abschnitt 1.10](./Nutzungsanleitung_neues_Interface_eScriptorium.md#110-volltextsuche-und-suchen--ersetzen)) aktiviert. Dafür sind zusätzliche Einstellungen und die Installation von Elasticsearch/OpenSearch erforderlich.
 
 ### 19. Erneute Nutzung
 Sobald Sie Ihren PC bzw. die virtuelle Maschine neugestartet haben, müssen Sie eScriptorium erneut aktivieren über das Terminal.

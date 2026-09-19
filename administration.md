@@ -8,7 +8,7 @@ Diese Seite beschreibt Funktionen, die von einem Administrator von eScriptorium 
 
 ## 1. Transkriptionsschriftarten einrichten
 
-Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden, ist in eScriptorium ein Standardmerkmal, das auf Dokument-, Projekt- oder Benutzerebene gewählt wird (siehe [neues Interface, Abschnitt 4.2](./Nutzungsanleitung_neues_Interface_eScriptorium.md#42-schriftart-für-die-transkription-wählen)). Welche Schriftarten dabei zur Auswahl stehen, richtet der Administrator der Instanz ein.
+Die Schriftart, mit der die Transkriptionszeilen im Bearbeitungsfenster angezeigt werden, ist in eScriptorium ein Standardmerkmal, das auf Dokument-, Projekt- oder Benutzerebene gewählt wird (siehe [neues Interface, Abschnitt 1.11](./Nutzungsanleitung_neues_Interface_eScriptorium.md#111-schriftart-für-die-transkription-wählen)). Welche Schriftarten dabei zur Auswahl stehen, richtet der Administrator der Instanz ein.
 
 ### 1.1. Übersicht der Schriftarten
 
@@ -22,7 +22,7 @@ Eine neue Schriftart wird über „Fonts“ → „Add“ angelegt:
 
 <img src="./images/current/admin-font-add.png" style="width:80%; height:auto;">
 
-- **Name:** Der in den Auswahllisten der Benutzer angezeigte Name (z. B. „Noto Sans“).
+- **Name:** Der in den Auswahllisten der Benutzer angezeigte Name (z.&nbsp;B. „Noto Sans“).
 - **File:** Die Schriftdatei im Format `ttf`, `otf`, `woff` oder `woff2`.
 - **Preview:** Zeigt nach dem Speichern die gewählte Schrift in einer Beispielzeile an.
 - **Metrik (metrics):** Steuert, wie die Schrift selbst auf der Zeile sitzt und überall dort wirkt, wo Transkriptionen angezeigt werden. *Size* ist ein Skalierungsfaktor (1.0 belässt die Schrift unverändert), *Ascent* den Abstand über der Grundlinie (erhöhen, wenn hohe Zeichen abgeschnitten werden), *Descent* den Abstand unter der Grundlinie (erhöhen, wenn tiefe Zeichen abgeschnitten werden) und *Line height* den Zeilenabstand in em (leer lässt den Standard).
@@ -34,10 +34,24 @@ Nach dem Speichern steht die Schriftart allen Benutzern in den Auswahllisten zur
 
 Die Instanz der UB Mannheim stellt die Transkriptionsschriftarten **Gentium Plus**, **Noto Sans**, **Noto Sans Hebrew**, **OpenDyslexic** und **Abyssinica** (Schrift für äthiopische Schriften) vor. Die Schriftdateien können über die oben beschriebene Funktion im Django-Admin nachinstalliert oder aktualisiert werden; eine vorhandene Schriftart (erkannt am Namen) wird nicht doppelt angelegt, sondern übersprungen.
 
-## 2. Web-Statistik (Matomo)
+## 2. Benutzer einladen
+
+Neue Benutzer werden über Einladungen per E-Mail registriert: Der Empfänger erhält eine E-Mail mit einem Link, über den er sein Konto anlegt (Login, E-Mail-Adresse, Vor- und Nachname, Passwort). Die Einladeseite ist für alle Benutzer sichtbar, die die Berechtigung „Benutzer einladen“ (*can_invite*) haben – dazu zählen in der Regel Administrator:innen; sie kann über das Benutzermenü oben rechts unter „Einladen“ geöffnet werden.
+
+### 2.1. Einzelne Einladung
+
+Im Modus „Einzeln“ geben Sie die Angaben zum Empfänger ein: E-Mail-Adresse, optional Vor- und Nachname sowie optional das **Team** (Gruppe), in das der Benutzer nach der Registrierung aufgenommen werden soll, und ein optionales **Ablaufdatum** für das Konto. Mit „Absenden“ wird die Einladungsmail verschickt.
+
+### 2.2. Massenversand
+
+Im Modus „Massenversand“ können mehrere Einladungen auf einmal versendet werden: Entweder wird eine CSV-Datei mit einer E-Mail-Adresse pro Zeile hochgeladen oder die Adressen werden direkt eingegeben (eine pro Zeile, optional in der Form „Vorname Nachname <adresse>"). Auch hier können optional Team und Ablaufdatum festgelegt werden; ungültige Adressen werden übersprungen.
+
+Versendete Einladungen (mit Empfänger, Team und Status) können über das Benutzermenü unter „Profileinstellungen“ → „Einladungen“ eingesehen werden.
+
+## 3. Web-Statistik (Matomo)
 
 Die Instanz der UB Mannheim bietet – als Erweiterung gegenüber dem Standard-Release, die derzeit als Pull Request für die Standardversion vorgeschlagen ist – eine optionale Web-Statistik auf Basis von [Matomo](https://matomo.org/). Die Auswertung wird auf Instanzebene konfiguriert und betrifft die gesamte Oberfläche (also auch Seiten ohne Login); die Einbindung respektiert dabei die ortsbezogene Datenschutzkonfiguration.
 
-- Die Statistik wird durch die Variablen `MATOMO_URL` (URL der Matomo-Instanz, z. B. `https://ub-monitor.bib.uni-mannheim.de/matomo/`) und `MATOMO_SITE_ID` (die Kennung des betroffenen Matomo-Projekts) aktiviert.
+- Die Statistik wird durch die Variablen `MATOMO_URL` (URL der Matomo-Instanz, z.&nbsp;B. `https://ub-monitor.bib.uni-mannheim.de/matomo/`) und `MATOMO_SITE_ID` (die Kennung des betroffenen Matomo-Projekts) aktiviert.
 - Sind beide Werte gesetzt, fügt eScriptorium das Matomo-Skript in jede Seite ein; bleiben sie leer, wird keine Statistik geladen.
 - So lässt sich die Nutzung der Instanz (Seitenaufrufe, Klicks) anonymisiert auswerten, ohne dass eine Analyse-Drittanbieterdatenbank kontaktiert wird.
