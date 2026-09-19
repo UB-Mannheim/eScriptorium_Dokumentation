@@ -199,7 +199,7 @@ Automatische Dokumentannotationen werden über den Tab „Bilder“ verwaltet.
 ![grafik](https://user-images.githubusercontent.com/91966243/161737872-96676bdc-8089-47c8-89b4-3499d4ba9dbc.png)
 
 ### 1.8. Modelle trainieren
-#### 1.8.1. Ein Training starten  
+#### 1.8.1. Ein Training starten
 Das Training von Kraken-Modellen startet man innerhalb des Tabs „Bilder“. Es wird über den Tab „Modelle“ verfolgt (inaktiv solange noch kein anderes Modell als das Standardmodell mit dem Dokument verknüpft ist).  
 Der Zugang zu den Trainingsfunktionen hängt von der Autorisierung ab. Dies kann über die Administrationsschnittstelle verwaltet werden.  
 Um ein Modell zu trainieren müssen sich alle Bilder/Annotationen im gleichen Dokument befinden.
@@ -227,7 +227,7 @@ Das Exportieren von Annotationen funktioniert über den Tab „Bilder“.
   ![grafik](https://user-images.githubusercontent.com/91966243/161738455-cb5660e2-e820-41eb-8bd3-ce76d6bb2aa7.png)
 
 ## 2. Verwalten einer kollaborativen Annotation Campaign
-### 2.1. Erstellen einer Usergruppe (Admin)  
+### 2.1. Erstellen einer Usergruppe (Admin)
 Es ist möglich eine Nutzergruppe im Administrator-Dashboard zu erstellen (vorausgesetzt, Sie haben die erforderlichen Rechte). Diese Gruppen dienen dazu, Arbeitsgruppen zu definieren oder ausgewählten Usern bestimmte Rechte zu erteilen.  
 Auch unter „Profil“ -> „Teams“ können Gruppen erstellt werden. Zudem werden hier auch die eigenen Gruppenzugehörigkeiten aufgelistet.
 

@@ -39,9 +39,9 @@ This guide is for eScriptorium users who want to set up, use and train Tesseract
 
 > **Note:** This guide does not provide a basic understanding of the graphical interface and functionality of the platform; it assumes that you are already familiar with eScriptorium. Here are some resources to get you started:
 > - [eScriptorium Quick Start Guide](https://escriptorium.readthedocs.io/en/latest/quick-start/)
-> - **Video tutorial** that introduces the main functions and tools can be found on YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) (automatically generated subtitles in English are available). 
+> - **Video tutorial** that introduces the main functions and tools can be found on YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) (automatically generated subtitles in English are available).
 
-Although an attempt was made to keep the guide as accessible as possible, certain technical terms could not be avoided. Where these are to be found in the guide, we try to explain them as clearly as possible. 
+Although an attempt was made to keep the guide as accessible as possible, certain technical terms could not be avoided. Where these are to be found in the guide, we try to explain them as clearly as possible.
 
 This extension and the guide was created during the 3rd [OCR-D](https://ocr-d.de/en/) funding phase in the module project [*Workflow for work-specific training based on generic models with OCR-D as well as ground truth enhancement*](https://www.bib.uni-mannheim.de/en/about/projects-of-the-university-library/ocr-d-modelltraining/) (2021–2023) at [Mannheim University Library](https://www.bib.uni-mannheim.de/en/).
 The module project was funded by the German Research Foundation (DFG).
@@ -52,10 +52,10 @@ The module project was funded by the German Research Foundation (DFG).
 
 ## 1. How to install and set up eScriptorium and the Tesseract extension
 
-There are only a few deviations from the installation process of the pure eScriptorium software. 
+There are only a few deviations from the installation process of the pure eScriptorium software.
 Before you can start the eScriptorium installation, you need to first install the Tesseract software, and then initiate the installation of eScriptorium.
 
-> **Note:** For now, only the full install path is available. 
+> **Note:** For now, only the full install path is available.
 > A docker image is planned once it is merged.
 
 ### 1.1. Installation of Tesseract
@@ -82,7 +82,7 @@ sudo apt-get install libleptonica-dev
 
 Clone the modified Tesseract version
 ```
-git clone https://github.com/JKamlah/tesseract/ -b lstmf-writer --single-branch 
+git clone https://github.com/JKamlah/tesseract/ -b lstmf-writer --single-branch
 ```
 
 Installation (for the make command you can use -j to use multiple jobs)
@@ -98,7 +98,7 @@ make training
 sudo make training-install
 ```
 
-If you have any problems in the installation process, 
+If you have any problems in the installation process,
 you can find help in the [official Tesseract compiling documentation](https://tesseract-ocr.github.io/tessdoc/Compiling).
 
 ### 1.2. Installation of eScriptorium with Tesseract extensions
@@ -112,32 +112,32 @@ Since further improvements are still being made to these installation instructio
 it is recommended to use one of the above guides for the installation and, instead of cloning the current eScriptorium repository,
 simply run the following command:
 ```
-git clone https://github.com/JKamlah/eScriptorium/ -b extension-tesseract --single-branch 
+git clone https://github.com/JKamlah/eScriptorium/ -b extension-tesseract --single-branch
 ```
 
 ## 2. How to use eScriptorium with Tesseract extension
-The application of eScriptorium does not change fundamentally. 
-All functions are still available, but the user is now able to upload, apply, train, and export Tesseract models. 
+The application of eScriptorium does not change fundamentally.
+All functions are still available, but the user is now able to upload, apply, train, and export Tesseract models.
 The uploading of images, the initiation of processes, and the transcription functionality remain the same.
 The Tesseract extension does not add additional functionality for layout recognition.
 
 ### 2.1. What to consider applying Tesseract models to Kraken segmented data?
-Since Tesseract's text recognition models heavily rely on the appropriate text line masks, 
+Since Tesseract's text recognition models heavily rely on the appropriate text line masks,
 it is sometimes necessary to modify the corresponding text lines.
 This can be done manually, by training a new layout recognition model
 or by applying an external program.
 
-A possible solution would be [PagePlus](https://github.com/JKamlah/pageplus). 
-It assists users in optimizing their documents for training, recognition and information extraction. 
+A possible solution would be [PagePlus](https://github.com/JKamlah/pageplus).
+It assists users in optimizing their documents for training, recognition and information extraction.
 However, these optimizations of the documents are not only advantageous or necessary for recognition with Tesseract, but also often with Kraken.
 
 ## 3. How to fetch and upload a Tesseract transcription model
 
-### 3.1. Where to find Tesseract models 
-Especially for fine-tuning, already existing text recognition models are needed. 
+### 3.1. Where to find Tesseract models
+Especially for fine-tuning, already existing text recognition models are needed.
 
 > **Note:** Tesseract provides two kinds of text recognition models: **best** and **fast**.
-> While only the best models can be fine-tuned, 
+> While only the best models can be fine-tuned,
 > the fast models are smaller and faster.
 >
 > TL;DR: **Only best models can be fine-tuned!**
@@ -158,7 +158,7 @@ Here are some points for orientation that can help with the assessment of a mode
 
 > **Note:** As a rule of thumb try testing **generic models** first for your use case. *Generic* or *base models* are usually trained on a wide variety of data (different documents, typefaces etc.) of a specific domain (e.g. printed documents in French of the 18th century). If the model name and description somewhat fits the use case at hand, try testing that generic model first.
 
-### 3.3. How to upload Tesseract models to eScriptorium 
+### 3.3. How to upload Tesseract models to eScriptorium
 
 All downloaded models can be uploaded to eScriptorium by clicking on **"My Models"** on the upper right corner of the screen. Click on **"Upload a model"** in the next screen and choose the model you want to upload.
 
@@ -184,16 +184,16 @@ A pop-up should open, that looks like this:
 ## 5. How to train a tesseract transcription model
 
 Tesseract only allows training models for the OCR / transcribing tasks.
-With eScriptorium the Tesseract OCR models can be trained in just a few clicks. 
+With eScriptorium the Tesseract OCR models can be trained in just a few clicks.
 
 New models can be trained (`training from scratch`) and existing models can be fine-tuned (`fine-tuning`) for specific use cases or domains. The training of OCR models is often carried out via the command line and requires appropriate knowledge. Since eScriptorium provides a graphical user interface, users without command line knowledge can also carry out trainings.
 It is necessary to understand the area of application of the two training variants mentioned:
 
-- **`Training from scratch`**: The training of a completely new model (that is not based on an already existing model) is called *training from scratch*. So-called *ground truth* is used for training, e.g. images of book pages with corresponding transcriptions that capture the text content of the pages. In order to generate robust OCR models with a training from scratch, a large amount of data is usually required (sometimes several hundred thousand lines of text). This amount can lead to problems with eScriptorium. For example, an eScriptorium project that is to be used for training from scratch with several thousand digitised documents and transcriptions can reach memory and usability limits. In such cases, training from scratch outside of eScriptorium via command line is recommended. 
+- **`Training from scratch`**: The training of a completely new model (that is not based on an already existing model) is called *training from scratch*. So-called *ground truth* is used for training, e.g. images of book pages with corresponding transcriptions that capture the text content of the pages. In order to generate robust OCR models with a training from scratch, a large amount of data is usually required (sometimes several hundred thousand lines of text). This amount can lead to problems with eScriptorium. For example, an eScriptorium project that is to be used for training from scratch with several thousand digitised documents and transcriptions can reach memory and usability limits. In such cases, training from scratch outside of eScriptorium via command line is recommended.
 - **`Fine-tuning`**: Fine-tuning, or work-specific fine-tuning, involves taking an existing model and specifically adapting it to a new use case or domain (*work-specific* in this context means that the fine-tuning is undertaken with a specific work (e.g. a historical document, manuscript or book) or group of similar works in mind). For example, a basic OCR model trained to recognize standard alphanumeric Latin characters can be unable to identify currency symbols like the Euro (€), Pound (£), or Yen (¥). To fine-tune this model for a financial domain, additional training is done using a dataset that includes these specific currency symbols. This process adjusts the model's parameters to become more sensitive to these new symbols, enabling it to accurately recognize and interpret them in financial documents where they frequently appear.
 
-In many cases, `fine-tuning` can be a time- and resource-efficient method for improving an existing 
-text recognition model for a new use case. In order to carry out fine-tuning, an existing model is required, 
+In many cases, `fine-tuning` can be a time- and resource-efficient method for improving an existing
+text recognition model for a new use case. In order to carry out fine-tuning, an existing model is required,
 which is adapted to the new use case during the fine-tuning training process.
 
 The first steps in the training process are the same as by the `kraken` models:
@@ -202,31 +202,31 @@ The first steps in the training process are the same as by the `kraken` models:
 These steps are the same as for the [kraken](Training-with-eScriptorium-EN.md#3-fine-tuning-in-escriptorium) models:
 
 1. [Create a new project and document](Training-with-eScriptorium-EN.md#step-1-create-a-new-project-and-document)
-2. [Import your images](Training-with-eScriptorium-EN.md#step-2-import-your-images) 
-3. [Run layout segmentation on your data](Training-with-eScriptorium-EN.md#step-3-run-layout-segmentation-on-your-data) 
-4. [Check the layout segmentation](Training-with-eScriptorium-EN.md#step-4-check-the-layout-segmentation) 
-5. [Correct the text regions](Training-with-eScriptorium-EN.md#step-5-correct-the-text-regions) 
+2. [Import your images](Training-with-eScriptorium-EN.md#step-2-import-your-images)
+3. [Run layout segmentation on your data](Training-with-eScriptorium-EN.md#step-3-run-layout-segmentation-on-your-data)
+4. [Check the layout segmentation](Training-with-eScriptorium-EN.md#step-4-check-the-layout-segmentation)
+5. [Correct the text regions](Training-with-eScriptorium-EN.md#step-5-correct-the-text-regions)
 6. [Correct the baselines and line masks](Training-with-eScriptorium-EN.md#step-6-correct-the-baselines-and-line-masks)
 7. [Correct the layout segmentation for all pages](Training-with-eScriptorium-EN.md#step-7-correct-the-layout-segmentation-for-all-pages)
 8. [Run text recognition on your data](Training-with-eScriptorium-EN.md#step-8-run-text-recognition-on-your-data)
 9. [Check the transcriptions](Training-with-eScriptorium-EN.md#step-9-check-the-transcriptions)
-10. [Improve the transcriptions and create ground truths](Training-with-eScriptorium-EN.md#step-10-improve-the-transcriptions-and-create-ground-truth) 
+10. [Improve the transcriptions and create ground truths](Training-with-eScriptorium-EN.md#step-10-improve-the-transcriptions-and-create-ground-truth)
 
 > **Note:**
 > If no base model is available for steps 3 and 8, these steps can also be carried out manually. However, experience shows that working with a model is usually much quicker.
 
 #### Addendum 1: How much training data (ground truth) do I need?
-> Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model that already works somewhat well on your data. With regard to fine-tuning, an **iterative approach** should be followed: 
-> 1. Create 2 to 3 pages of training data by correcting the automatically generated transcriptions as shown in step 10. 
-> 2. [Fine-tune the text recognition model](#52-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth. 
+> Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model that already works somewhat well on your data. With regard to fine-tuning, an **iterative approach** should be followed:
+> 1. Create 2 to 3 pages of training data by correcting the automatically generated transcriptions as shown in step 10.
+> 2. [Fine-tune the text recognition model](#52-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth.
 > 3. Test and evaluate if the fine-tuned model yields better transcriptions on your data than before.
-> 4. If not, repeat 1 to 3 to create more training data. Fine-tune new models and evaluate them on your data until the results are satisfactory. 
+> 4. If not, repeat 1 to 3 to create more training data. Fine-tune new models and evaluate them on your data until the results are satisfactory.
 >
 > An **example workflow** with iterations can look like this:
 > 1. Create 2 pages of training data by correcting transcriptions generated by a text recognition model
 > 2. Fine-tune the text recognition model you have already used with those 2 pages of training data
 > 3. Evaluate if the fine-tuned model produces better transcriptions
-> 4. If the results are better but still need improvement, create additional training data, e.g. another 4 pages 
+> 4. If the results are better but still need improvement, create additional training data, e.g. another 4 pages
 > 5. Fine-tune the first model again with your 6 pages of ground truth
 > 6. Evaluate if the second fine-tuned model produces better transcriptions
 > 7. Continue by iterating ...
@@ -268,7 +268,7 @@ The model selection can be filtered by:
 <img src="./images/legacy/tesseract-extension-04.png" width="80%" height="80%"><br/>
 <img src="./images/legacy/tesseract-extension-05.png" width="80%" height="80%"><br/>
 
-Lastly, click on the blue **"Train"** button to start the fine-tuning. 
+Lastly, click on the blue **"Train"** button to start the fine-tuning.
 
 A running training is shown as below:
 
@@ -278,8 +278,8 @@ If you want to view the training progress, click on **"My models"**:
 
 <img src="./images/legacy/training-eS-38.png" width="80%" height="80%"><br/>
 
-The model you are currently training will appear in this overview. 
-By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. 
+The model you are currently training will appear in this overview.
+By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well.
 You will be notified as soon as the training has finished.
 
 ## 6. License

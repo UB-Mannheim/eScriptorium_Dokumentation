@@ -8,8 +8,8 @@ nav_order: 3
 # Modellübertragung von Transkribus nach eScriptorium
 
 Die Modellübertragung ist an sich nicht direkt möglich. Es ist jedoch möglich, die Ground Truth, also die in Transkribus erstellte Transkription und die dazugehörigen Bilder, in eScriptorium zu importieren. Anschließend kann das Modell in eScriptorium erneut trainiert werden.
- 
-## Daten aus Transkribus exportieren und in eScriptorium importieren 
+
+## Daten aus Transkribus exportieren und in eScriptorium importieren
 
 ### Daten aus Transkribus exportieren
 
@@ -24,17 +24,17 @@ Die Modellübertragung ist an sich nicht direkt möglich. Es ist jedoch möglich
 
 **Hinweis:** wenn die Seitenbenennung in Transkribus nicht fortlaufend ist, dann „Filename pattern“ wählen: „docId+pageNr+pageID“ → Seiten werden dann in eScriptorium gleich nummeriert wie in Transkribus (funktioniert nicht, wenn man Einstellung pageNr.+filename auswählt, dann werden Seiten willkürlich geordnet)
 
-### Daten in eScriptorium importieren  
+### Daten in eScriptorium importieren
 
 - Zunächst ein neues „Dokument“ in eScriptorium erstellen
 - In der Zwischenzeit entpacken des von Transkribus erzeugten „Archivs“ und extrahieren der Bilder auf dem Rechner
-- Unter dem Reiter „Bilder“ im Dokument, müssen nun die Dateien hochgeladen werden 
+- Unter dem Reiter „Bilder“ im Dokument, müssen nun die Dateien hochgeladen werden
 - Die Bilder können einfach per Drag-and-Drop hochgeladen werden bzw. über einen Links-Klick in das entsprechende Feld öffnet sich der Explorer
 - Sobald der Upload abgeschlossen ist: „Import“ (ebenfalls Reiter „Bilder“) → die Option „Transcription (XML)“; hier einfach von Transkribus erstelltes „Archiv“ unverändert hochladen (falls dies zu lange dauert, können auch Bilder zuerst entfernt werden)
 - Mögliche Dateiarten für die Transkriptionen sind: **ALTO XML**, **PAGE XML** oder **ZIP-Datei**, die **ALTO** oder **PAGE XML** enthält
 - **Wichtig:** Qualität der importierten Abschrift überprüfen, durch Kontrolle jeder einzelnen Seite (manchmal muss manuell XML-Quelldatei bearbeitet werden)
 
-### Neuberechnung der Linienmasken  
+### Neuberechnung der Linienmasken
 - Bevor Modell trainiert werden kann, müssen mit Grundlinien verbundene Masken an Kraken angepasst werden
 - dafür im Reiter „Bilder“ einfach alle Bilder des Dokuments markieren →  „Segmentieren“ → „Nur Zeilenmasken“
 - Aktivierung der Option „override“
@@ -48,7 +48,7 @@ Die Modellübertragung ist an sich nicht direkt möglich. Es ist jedoch möglich
 Weitere Informationen zum Training von Modellen in eScriptorium finden Sie [hier](./Nutzungsanleitung_eScriptorium.md#18-modelle-trainieren).
 
 ## Bekannte Probleme
-	
+
 - Es ist nicht möglich, ein Transkript zu importieren, dessen Segmentierung auf der Verwendung von Tabellen in Transkribus basiert
 - Die Segmentierung mit eScriptorium schlägt bei einigen Bildern fehl, weil die Basislinien-/Maskenpaare beim Import schlecht erzeugt werden.
 **Ad-hoc-Lösungen:**

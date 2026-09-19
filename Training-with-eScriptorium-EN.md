@@ -29,14 +29,14 @@ The following step-by-step guide provides an introduction to the use of eScripto
 5. [Additional tips](#5-additional-tips)<br/>
 5.1. [Using the virtual keyboard in eScriptorium](#51-using-the-virtual-keyboard-in-escriptorium) <br/>
 5.2. [Ground truth guidelines for transcriptions](#52-ground-truth-guidelines-for-transcriptions) <br/>
-6. [License](#6-license) 
+6. [License](#6-license)
 
 ## 0. Who is this guide for?
 This guide is for *intermediate* eScriptorium users with a basic understanding of the graphical interface and functionality of the platform. Here are some resources to get you started:
 - [eScriptorium Quick Start Guide](https://escriptorium.readthedocs.io/en/latest/quick-start/)
-- **Video tutorial** that introduces the main functions and tools can be found on YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) (automatically generated subtitles in English are available). 
+- **Video tutorial** that introduces the main functions and tools can be found on YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) (automatically generated subtitles in English are available).
 
-Although an attempt was made to keep the guide as accessible as possible, certain technical terms could not be avoided. Where these are to be found in the guide, we try to explain them as clearly as possible. 
+Although an attempt was made to keep the guide as accessible as possible, certain technical terms could not be avoided. Where these are to be found in the guide, we try to explain them as clearly as possible.
 
 This guide was created during the 3rd [OCR-D](https://ocr-d.de/en/) funding phase in the module project [*Workflow for work-specific training based on generic models with OCR-D as well as ground truth enhancement*](https://www.bib.uni-mannheim.de/en/about/projects-of-the-university-library/ocr-d-modelltraining/) (2021–2023) at [Mannheim University Library](https://www.bib.uni-mannheim.de/en/).
 The module project was funded by the German Research Foundation (DFG).
@@ -46,16 +46,16 @@ The module project was funded by the German Research Foundation (DFG).
 - [Thomas Schmidt](https://orcid.org/0000-0003-3620-3355): `thomas.schmidt[at]uni-mannheim[dot]de`
 
 ## 1. How does training work?
-For all automated layout segmentation and text recognition tasks, eScriptorium uses the open-source OCR/HTR engine [kraken](https://kraken.re/main/index.html). The models used for layout segmentation and text recognition can be trained directly in eScriptorium with just a few clicks. Both completely new models can be trained (`training from scratch`) and existing models can be fine-tuned (`fine-tuning`) for specific use cases or domains. The training of OCR models is often carried out via the command line and requires appropriate knowledge. Since eScriptorium provides a graphical user interface, users without command line knowledge can also carry out trainings. 
+For all automated layout segmentation and text recognition tasks, eScriptorium uses the open-source OCR/HTR engine [kraken](https://kraken.re/main/index.html). The models used for layout segmentation and text recognition can be trained directly in eScriptorium with just a few clicks. Both completely new models can be trained (`training from scratch`) and existing models can be fine-tuned (`fine-tuning`) for specific use cases or domains. The training of OCR models is often carried out via the command line and requires appropriate knowledge. Since eScriptorium provides a graphical user interface, users without command line knowledge can also carry out trainings.
 
-It is necessary to understand the area of application of the two training variants mentioned: 
+It is necessary to understand the area of application of the two training variants mentioned:
 
-- **`Training from scratch`**: The training of a completely new model (that is not based on an already existing model) is called *training from scratch*. So-called *ground truth* is used for training, e.g. images of book pages with corresponding transcriptions that capture the text content of the pages. In order to generate robust OCR models with a training from scratch, a large amount of data is usually required (sometimes several hundred thousand lines of text). This amount can lead to problems with eScriptorium. For example, an eScriptorium document that is to be used for training from scratch with several thousand digitised documents and transcriptions can reach memory and usability limits. In such cases, training from scratch outside of eScriptorium via command line is recommended. 
+- **`Training from scratch`**: The training of a completely new model (that is not based on an already existing model) is called *training from scratch*. So-called *ground truth* is used for training, e.g. images of book pages with corresponding transcriptions that capture the text content of the pages. In order to generate robust OCR models with a training from scratch, a large amount of data is usually required (sometimes several hundred thousand lines of text). This amount can lead to problems with eScriptorium. For example, an eScriptorium document that is to be used for training from scratch with several thousand digitised documents and transcriptions can reach memory and usability limits. In such cases, training from scratch outside of eScriptorium via command line is recommended.
 - **`Fine-tuning`**: Fine-tuning, or work-specific fine-tuning, involves taking an existing model and specifically adapting it to a new use case or domain (*work-specific* in this context means that the fine-tuning is undertaken with a specific work (e.g. a historical document, manuscript or book) or group of similar works in mind). For example, a basic OCR model trained to recognize standard alphanumeric Latin characters can be unable to identify currency symbols like the Euro (€), Pound (£), or Yen (¥). To fine-tune this model for a financial domain, additional training is done using a dataset that includes these specific currency symbols. This process adjusts the model's parameters to become more sensitive to these new symbols, enabling it to accurately recognize and interpret them in financial documents where they frequently appear.
 
 ## 2. How to train in eScriptorium
 ### 2.1. Provide or create training data (ground truth)
-In order to `train from scratch` or to `fine-tune` an existing model you must provide training data (*ground truth*). In eScriptorium this training data is provided inside a document. Training data consists of **images** (digitised pages of books, manuscripts, documents etc.) and corresponding **transcriptions** or **layout segmentations**. 
+In order to `train from scratch` or to `fine-tune` an existing model you must provide training data (*ground truth*). In eScriptorium this training data is provided inside a document. Training data consists of **images** (digitised pages of books, manuscripts, documents etc.) and corresponding **transcriptions** or **layout segmentations**.
 
 #### Ground truth for text recognition models
 
@@ -63,7 +63,7 @@ As the name suggests, text recognition models are used to automatically recognis
 
 <img src="./images/legacy/training-eS-03.png" width="100%"><br/>
 
-The transcriptions attempt to capture the text content of the images as accurately as possible. If you don't have any ground truth to train with you can create it inside eScriptorium (i.e. create transcriptions for images you upload to an eScriptorium document). 
+The transcriptions attempt to capture the text content of the images as accurately as possible. If you don't have any ground truth to train with you can create it inside eScriptorium (i.e. create transcriptions for images you upload to an eScriptorium document).
 
 #### Ground truth for layout segmentation models
 
@@ -73,7 +73,7 @@ Layout segmentation models are used to automatically recognise all text regions 
 
 > **Note:** Chapters [3.1. How to fine-tune a text recognition model](#31-how-to-fine-tune-a-text-recognition-model) and [3.2. How to fine-tune a layout segmentation model](#32-how-to-fine-tune-a-layout-segmentation-model) provide a detailed introduction to the creation of ground truth for text recognition and layout segmentation training.
 
-### 2.2. Where to find models 
+### 2.2. Where to find models
 Especially for fine-tuning, already existing layout segmentation or text recognition models are needed. Here is a list of places where `kraken` models (the OCR/HTR engine eScriptorium uses in the background) can be found:
 
 - **Zenodo**: [zenodo.org/communities/ocr_models](https://zenodo.org/communities/ocr_models)
@@ -93,7 +93,7 @@ Here are some points for orientation that can help with the assessment of a mode
 > **Note:** As a rule of thumb try testing **generic models** first for your use case. *Generic* or *base models* are usually trained on a wide variety of data (different documents, typefaces etc.) of a specific domain (e.g. printed documents in French of the 18th century). If the model name and description somewhat fits the use case at hand, try testing that generic model first.
 
 ## 3. Fine-tuning in eScriptorium
-In many cases, `fine-tuning` can be a time- and resource-efficient method for improving an existing layout segmentation or text recognition model for a new use case. In order to carry out fine-tuning, an existing model is required, which is adapted to the new use case during the fine-tuning training process. 
+In many cases, `fine-tuning` can be a time- and resource-efficient method for improving an existing layout segmentation or text recognition model for a new use case. In order to carry out fine-tuning, an existing model is required, which is adapted to the new use case during the fine-tuning training process.
 
 To fine-tune a model in eScriptorium, we recommend the following workflow:
 
@@ -105,7 +105,7 @@ To fine-tune a model in eScriptorium, we recommend the following workflow:
 
 The following steps describe this workflow in detail.
 
-### 3.1. How to fine-tune a text recognition model 
+### 3.1. How to fine-tune a text recognition model
 #### Step 1: Create a new project and document
 Start with creating a new eScriptorium project by browsing to the eScriptorium start page and clicking on **"My Projects"** in the upper right corner of the screen.
 
@@ -150,7 +150,7 @@ As soon as all images have been uploaded, they will appear as a preview at the b
 > **Note 1:** Step 3 involves automatic layout segmentation. The aim here is to find a model that already works well for the uploaded images in order to improve this model afterwards in the fine-tuning step (and make it perform even better on the available data). Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching models.
 > **Note 2:** We recommend working with either *RGB* or *grayscale* images as binarization can lead to losses in image detail. That's why we omit the **binarize** feature of eScriptorium in the following steps.
 
-Select all images by clicking on the **"Select all"** button. All images in the current document should now be highlighted. 
+Select all images by clicking on the **"Select all"** button. All images in the current document should now be highlighted.
 
 Next, click on the **"Segment"** button.
 
@@ -164,7 +164,7 @@ A pop-up (*"Select a model"*) should appear in which the layout segmentation can
 - **2nd drop-down**: Choose the layout parts that you want to segment (*If no layout segmentation has been carried out so far, the "Lines and regions" setting should be selected.*)
 - **3rd drop-down**: Defines the reading direction of the text (e.g. Horizontal from left to right = *Horizontal l2r*)
 
-Next, click on the blue **"Segment"** button to start the layout segmentation. 
+Next, click on the blue **"Segment"** button to start the layout segmentation.
 
 An orange-coloured button in the image preview shows the running layout segmentation. As soon as the segmentation for a page is complete, a message (*"Segmentation done!"*) appears in the top right-hand corner of the screen.
 
@@ -194,9 +194,9 @@ Start by correcting the text regions first. Click on the **blue region icon** to
 
 <img src="./images/legacy/training-eS-17.png" width="100%"><br/>
 
-Make sure that the text regions include all text content in a meaningful way. Adjust the text regions accordingly. 
+Make sure that the text regions include all text content in a meaningful way. Adjust the text regions accordingly.
 
-**Example:** On the following page two text columns were segmented as one single text region. The adjustment reflects the actual page layout. 
+**Example:** On the following page two text columns were segmented as one single text region. The adjustment reflects the actual page layout.
 
 <img src="./images/legacy/training-eS-18.png" width="100%"><br/>
 
@@ -228,7 +228,7 @@ Repeat steps 5 and 6 for all available pages. Ensuring correct layout segmentati
 #### Step 8: Run text recognition on your data
 > **Note:** Step 8 involves automatic text recognition. The aim here is to find a model that already works well for your data in order to improve this model further through fine-tuning it. Refer to [chapter 2.2 Where to find models](#22-where-to-find-models) if you are searching for layout segmentation and text recognition models.
 
-After completing steps 3 - 6, switch back to **"Images"** tab and click on the **"Select all"** button. 
+After completing steps 3 - 6, switch back to **"Images"** tab and click on the **"Select all"** button.
 
 Next, click on the blue **"Transcribe"** button.
 
@@ -251,13 +251,13 @@ An orange-coloured button in the image preview shows the running text recognitio
 Once text recognition has been completed, the automatically generated transcriptions must be checked.
 
 1. Click on the **Edit** tab.
-2. Next, click on the **"Segmentation view"** button in order to deactivate the layout segmentation view. 
+2. Next, click on the **"Segmentation view"** button in order to deactivate the layout segmentation view.
 3. Click on the **"Transcription view"** button afterwards to activate the transcription view.
 4. Choose the transcription you created during `step 8` in the drop-down menu. The name of the transcription follows this structure: `OCR-engine-name:OCR-model-name`. Example: In `step 8` we chose the model `german_print` for the engine `kraken`. Hence the corresponding name of the transcription is: `kraken:german_print`.
 
 <img src="./images/legacy/training-eS-33.png" width="100%"><br/>
 
-If you hover your mouse cursor over one of the text lines in the transcription view on the right side of your screen, the corresponding text line of the image will be highlighted. 
+If you hover your mouse cursor over one of the text lines in the transcription view on the right side of your screen, the corresponding text line of the image will be highlighted.
 
 <img src="./images/legacy/training-eS-28.png" width="100%"><br/>
 
@@ -271,10 +271,10 @@ The automatically generated transcriptions can be checked for errors in this win
 
 #### Step 10: Improve the transcriptions and create ground truth
 
-`Step 10` corrects transcription errors in order to generate training data (*ground truth*) for fine-tuning a text-recognition model. 
+`Step 10` corrects transcription errors in order to generate training data (*ground truth*) for fine-tuning a text-recognition model.
 
 1. Click on the **Edit** tab.
-2. Next, click on the **"Segmentation view"** button in order to deactivate it. 
+2. Next, click on the **"Segmentation view"** button in order to deactivate it.
 3. Click on the **"Text view"** button afterwards to enable the plain text view.
 4. Choose the transcription you created during `step 8` in the drop-down menu.
 
@@ -294,7 +294,7 @@ Next, deactivate the **"text view"** and activate the **"transcription view"**:
 
 <img src="./images/legacy/training-eS-34.png" width="100%"><br/>
 
-Click on the first text line in the **"transcription view"**. The example below shows an error in the generated transcription: 
+Click on the first text line in the **"transcription view"**. The example below shows an error in the generated transcription:
 
 <img src="./images/legacy/training-eS-30a.png" width="100%"><br/>
 
@@ -302,22 +302,22 @@ We fix it so that the transcription matches the original text line:
 
 <img src="./images/legacy/training-eS-30.png" width="100%"><br/>
 
-After the first text line has been corrected, press the `Enter ↲` key to check and correct the next text line. The cursor keys on the keyboard (`↑` and `↓`) can also be used to scroll through all available text lines of the current page. 
+After the first text line has been corrected, press the `Enter ↲` key to check and correct the next text line. The cursor keys on the keyboard (`↑` and `↓`) can also be used to scroll through all available text lines of the current page.
 
 After you have finished correcting the current page, proceed with the next one. *Be sure to follow all instructions of `step 10` (i.e. using the "manual" transcription workflow).*
 
 #### Addendum 1: How much training data (ground truth) do I need?
-> Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model that already works somewhat well on your data. With regard to fine-tuning, an **iterative approach** should be followed: 
-> 1. Create 2 to 3 pages of training data by correcting the automatically generated transcriptions as shown in step 10. 
-> 2. [Fine-tune the text recognition model](#step-11-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth. 
+> Experience has shown that even a **small amount of training data** is enough to start fine-tuning an existing text recognition model that already works somewhat well on your data. With regard to fine-tuning, an **iterative approach** should be followed:
+> 1. Create 2 to 3 pages of training data by correcting the automatically generated transcriptions as shown in step 10.
+> 2. [Fine-tune the text recognition model](#step-11-fine-tune-a-text-recognition-model) you have used in step 8 with the corrected ground truth.
 > 3. [Test and evaluate](#step-12-re-run-text-recognition-and-evaluate-your-fine-tuned-model) if the fine-tuned model yields better transcriptions on your data than before.
-> 4. If not, repeat 1 to 3 to create more training data. Fine-tune new models and evaluate them on your data until the results are satisfactory. 
+> 4. If not, repeat 1 to 3 to create more training data. Fine-tune new models and evaluate them on your data until the results are satisfactory.
 >
 > An **example workflow** with iterations can look like this:
 > 1. Create 2 pages of training data by correcting transcriptions generated by a text recognition model
 > 2. Fine-tune the text recognition model you have already used with those 2 pages of training data
 > 3. Evaluate if the fine-tuned model produces better transcriptions
-> 4. If the results are better but still need improvement, create additional training data, e.g. another 4 pages 
+> 4. If the results are better but still need improvement, create additional training data, e.g. another 4 pages
 > 5. Fine-tune the first model again with your 6 pages of ground truth
 > 6. Evaluate if the second fine-tuned model produces better transcriptions
 > 7. Continue by iterating ...
@@ -350,7 +350,7 @@ A pop-up should open, which looks like this:
       - `Model number`: Record the number or generation of the new model. `M1`, as in the example, means: the first fine-tuned model.
 - **2nd drop-down**: Select the text recognition model you want to fine-tune. This should be the model you worked with in [step 8](#step-8-run-text-recognition-on-your-data), i.e. the text recognition model that already worked quite well on your data.  In our example this model is `german_print`.
 
-Lastly, click on the blue **"Train"** button to start the fine-tuning. 
+Lastly, click on the blue **"Train"** button to start the fine-tuning.
 
 A running training is shown as below:
 
@@ -360,7 +360,7 @@ If you want to view the training progress, click on **"My models"**:
 
 <img src="./images/legacy/training-eS-38.png" width="100%"><br/>
 
-The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified as soon as the training has finished. 
+The model you are currently training will appear in this overview. By clicking on the button **"Toggle versions"** you can view all currently finished training epochs as well. You will be notified as soon as the training has finished.
 
 #### Fine-tuning Tesseract models in eScriptorium
 > **Note:** This section is only relevant for versions of eScriptorium in which the training environment has been extended for the OCR engine **Tesseract**. A step-by-step guide to install the corresponding eScriptorium version can be found here: [How to install and set up eScriptorium with Tesseract](./eScriptorium-with-tesseract-extension.md#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension).
@@ -388,7 +388,7 @@ A pop-up should open, which looks like this:
       - `Model number`: Record the number or generation of the new model. `M1`, as in the example, means: the first fine-tuned model.
 - **2nd drop-down**: Select the `Tesseract` model you want to fine-tune.
 
-Lastly, click on the blue **"Train"** button to start the fine-tuning. 
+Lastly, click on the blue **"Train"** button to start the fine-tuning.
 
 A running training is shown as below:
 
@@ -420,9 +420,9 @@ An orange-coloured button in the image preview shows the running text recognitio
 Once text recognition has been completed, check the generated transcriptions.
 
 1. Click on the **Edit** tab.
-2. Next, click on the **"Segmentation view"** button in order to deactivate the layout segmentation view. 
+2. Next, click on the **"Segmentation view"** button in order to deactivate the layout segmentation view.
 3. Click on the **"Transcription view"** button afterwards to activate the transcription view.
-4. Choose the transcription you created with your fine-tuned model in the drop-down menu. 
+4. Choose the transcription you created with your fine-tuned model in the drop-down menu.
 
 <img src="./images/legacy/training-eS-41.png" width="100%"><br/>
 
@@ -444,13 +444,13 @@ Click on a text line in the transcription view to open the editor pop-up and cli
 
 A comparison of the two selected transcriptions for the currently displayed text line is now shown in the lower part of the pop-up. Highlighted characters show transcription differences between the two versions so that the transcription result of the fine-tuned model can be checked quickly, in order to assess if the fine-tuning produced better results than the base model.
 
-#### Step 13: Iterate 
+#### Step 13: Iterate
 If the evaluation of `step 12` produced unsatisfactory results, try iterating `steps 10-12`, i.e. create more training data by correcting the transcriptions of additional pages and fine-tune another model with this data.
 
 Check [Addendum 1: How much training data (ground truth) do I need?](#addendum-1-how-much-training-data-ground-truth-do-i-need) for more details.
 
-### 3.2. How to fine-tune a layout segmentation model 
-> **Note:** The aim of fine-tuning a layout segmentation model is to improve the automatic segmentation of text regions, baselines and line masks. In order to fine-tune an existing layout segmentation model, the existing model (*base model*) should already work *reasonably* well on your data. 
+### 3.2. How to fine-tune a layout segmentation model
+> **Note:** The aim of fine-tuning a layout segmentation model is to improve the automatic segmentation of text regions, baselines and line masks. In order to fine-tune an existing layout segmentation model, the existing model (*base model*) should already work *reasonably* well on your data.
 >
 > **Examples**: A base model that has been trained on a writing system such as Arabic (reading direction right to left) will most likely not be improved by fine-tuning with training data that has a reading direction from left to right. Similarly, a base model that has been trained primarily on rather uniform book pages (e.g. English novels from the 18th century with a homogeneous paragraph-by-paragraph layout) will have problems with the segmentation of complex tables, as these layout structures were underrepresented in the training data or played no role at all. Experience has shown that fine-tuning such a base model with a few pages of training data does not lead to useful results. Hence we recommend finding a layout segmentation model that works reasonably well on your data in the first place.
 
@@ -510,13 +510,13 @@ Once the layout segmentation has finished, check the results.
 If the evaluation of `step 3` produced unsatisfactory results, try iterating `steps 1-3`, i.e. create more training data and fine-tune another segmentation model with this data.
 
 ## 4. Training from scratch in eScriptorium
-> **Note:** When training from scratch, you typically need a substantial amount of  training data to achieve acceptable accuracy. The more diverse the training data is, the better your model will generalize to a wide range of documents and typefonts. eScriptorium can reach its limits with such training, as usability and speed can suffer greatly when several thousand pages of training data have to be loaded into a single document. For training from scratch with a large amount of data, the training should therefore be carried out outside of eScriptorium via the CLI (an example can be found here: [Training German Handwriting](https://github.com/UB-Mannheim/kraken/wiki/Training-German-Handwriting#training-2023-05-12)). 
+> **Note:** When training from scratch, you typically need a substantial amount of  training data to achieve acceptable accuracy. The more diverse the training data is, the better your model will generalize to a wide range of documents and typefonts. eScriptorium can reach its limits with such training, as usability and speed can suffer greatly when several thousand pages of training data have to be loaded into a single document. For training from scratch with a large amount of data, the training should therefore be carried out outside of eScriptorium via the CLI (an example can be found here: [Training German Handwriting](https://github.com/UB-Mannheim/kraken/wiki/Training-German-Handwriting#training-2023-05-12)).
 > In the following, a training from scratch for a less extensive data set is shown to explain the principle and procedure.
 
 #### Step 1: Create or import training data (*ground truth*)
 Create a new project and document and follow `steps 1 to 10` of chapter [3.1. How to fine-tune a text recognition model](#31-how-to-fine-tune-a-text-recognition-model).
 
-#### Step 2: Train from scratch 
+#### Step 2: Train from scratch
 After you created or imported your training data, follow these steps to start to train from scratch:
 
 1. Click on the **"Images"** tab inside the document view.
@@ -530,7 +530,7 @@ After you created or imported your training data, follow these steps to start to
 
 <img src="./images/legacy/training-eS-56.png" width="100%"><br/>
 
-- **1st drop down**: Select the **transcriptions** you want to use for training 
+- **1st drop down**: Select the **transcriptions** you want to use for training
    - *this option is only available if you chose to train a **"Recognizer"** model*
 - **Field `New model`**: Choose a name for your model.
 
@@ -571,7 +571,7 @@ Consider this example:
 
 <img src="./images/legacy/training-eS-47.png" width="100%"><br/>
 
-The original text line shows a historical glyph, namely the `long s` which is a common character in German documents printed in Fraktur (*Blackletter*). You won't find the `long s` on a modern day keyboard, hence it is not possible to use the `long s` without major detours. 
+The original text line shows a historical glyph, namely the `long s` which is a common character in German documents printed in Fraktur (*Blackletter*). You won't find the `long s` on a modern day keyboard, hence it is not possible to use the `long s` without major detours.
 
 The **virtual keyboard** is a helpful aid in such cases. Every eScriptorium user can create their own virtual keyboards or import existing ones. The Unicode symbols stored in the respective virtual keyboard can be freely assigned.
 
@@ -612,7 +612,7 @@ You are now able to choose the imported virtual keyboard in the drop down menu. 
 
 ### 5.2. Ground truth guidelines for transcriptions
 #### What are transcription guidelines?
-Transcription guidelines are a set of rules and instructions provided to individuals who are manually transcribing or annotating text from various sources. These guidelines serve to standardize the transcription process, ensuring consistency, accuracy, and clarity in the resulting transcribed data. 
+Transcription guidelines are a set of rules and instructions provided to individuals who are manually transcribing or annotating text from various sources. These guidelines serve to standardize the transcription process, ensuring consistency, accuracy, and clarity in the resulting transcribed data.
 
 #### Why should you use transcription guidelines?
 - **Improved text recognition accuracy**: Transcription guidelines help maintain consistency and standardization in how text is transcribed. This consistency reduces errors and discrepancies in the ground truth data, which in turn leads to higher OCR accuracy.
@@ -621,7 +621,7 @@ Transcription guidelines are a set of rules and instructions provided to individ
 - **Better validation and evaluation**: When you have well-documented transcription guidelines, it becomes easier to validate and evaluate the performance of your OCR model. You can compare the OCR output to the ground truth data using established criteria, making it clear whether the system is meeting your accuracy requirements.
 
 #### Best practices
-The [OCR-D Ground Truth Guidelines](https://ocr-d.de/en/gt-guidelines/trans/) are a good starting point for developing project specific transcription guidelines. The guidelines are organized into three distinct levels to help replicate the unique characteristics of printed text in a transcription. These characteristics can be reproduced with varying degrees of complexity, which is represented by the three OCR-D ground truth levels. 
+The [OCR-D Ground Truth Guidelines](https://ocr-d.de/en/gt-guidelines/trans/) are a good starting point for developing project specific transcription guidelines. The guidelines are organized into three distinct levels to help replicate the unique characteristics of printed text in a transcription. These characteristics can be reproduced with varying degrees of complexity, which is represented by the three OCR-D ground truth levels.
 
 To illustrate this concept, consider the following example:
 
