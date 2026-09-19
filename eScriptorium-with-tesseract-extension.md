@@ -17,7 +17,7 @@ Tesseract serves as an important OCR-engine within the OCR-D project. Although i
 The following step-by-step guide provides an introduction to the installation and the use of eScriptorium with tesseract.
 
 # Contents
-0. [Who is this guide for?](#0-who-is-this-guide-for)<br/>
+- [Who is this guide for?](#who-is-this-guide-for)<br/>
 1. [How to install and set up eScriptorium and the Tesseract extension?](#1-how-to-install-and-set-up-escriptorium-and-the-tesseract-extension)<br/>
    1.1 [Installation of Tesseract](#11-installation-of-tesseract)<br/>
    1.2 [Installation of eScriptorium with Tesseract extensions](#12-installation-of-escriptorium-with-tesseract-extensions)<br/>
@@ -34,7 +34,7 @@ The following step-by-step guide provides an introduction to the installation an
        - [Addendum 2: Always follow transcription guidelines!](#addendum-2-always-follow-transcription-guidelines)<br/>
    5.2 [Fine-tune a text recognition model](#52-fine-tune-a-text-recognition-model)<br/>
 6. [License](#6-license)<br/>
-## 0. Who is this guide for?
+## Who is this guide for?
 This guide is for eScriptorium users who want to set up, use and train Tesseract models in eScriptorium.
 
 > **Note:** This guide does not provide a basic understanding of the graphical interface and functionality of the platform; it assumes that you are already familiar with eScriptorium. Here are some resources to get you started:

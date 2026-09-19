@@ -16,7 +16,7 @@ The following step-by-step guide provides an introduction to the use of eScripto
 
 # Contents
 
-0. [Who is this guide for?](#0-who-is-this-guide-for)<br/>
+- [Who is this guide for?](#who-is-this-guide-for)<br/>
 1. [How does training work?](#1-how-does-training-work)<br/>
 2. [How to train in eScriptorium?](#2-how-to-train-in-escriptorium)<br/>
 2.1. [Provide or create training data (ground truth)](#21-provide-or-create-training-data-ground-truth)<br/>
@@ -31,7 +31,7 @@ The following step-by-step guide provides an introduction to the use of eScripto
 5.2. [Ground truth guidelines for transcriptions](#52-ground-truth-guidelines-for-transcriptions) <br/>
 6. [License](#6-license)
 
-## 0. Who is this guide for?
+## Who is this guide for?
 This guide is for *intermediate* eScriptorium users with a basic understanding of the graphical interface and functionality of the platform. Here are some resources to get you started:
 - [eScriptorium Quick Start Guide](https://escriptorium.readthedocs.io/en/latest/quick-start/)
 - **Video tutorial** that introduces the main functions and tools can be found on YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg) (automatically generated subtitles in English are available).

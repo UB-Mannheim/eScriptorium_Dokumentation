@@ -16,7 +16,7 @@ Die folgende Schritt-für-Schritt-Anleitung gibt eine Einführung in die Nutzung
 
 # Inhalt
 
-0. [Für wen ist dieser Guide gedacht?](#0-für-wen-ist-dieser-guide-gedacht)<br/>
+- [Für wen ist dieser Guide gedacht?](#für-wen-ist-dieser-guide-gedacht)<br/>
 1. [Wie funktioniert das Modelltraining?](#1-wie-funktioniert-das-modelltraining)<br/>
 2. [Wie funktioniert das Training in eScriptorium?](#2-wie-funktioniert-das-training-in-escriptorium)<br/>
 2.1. [Trainingsdaten (Ground Truth) bereitstellen oder erstellen](#21-trainingsdaten-ground-truth-bereitstellen-oder-erstellen)<br/>
@@ -31,7 +31,7 @@ Die folgende Schritt-für-Schritt-Anleitung gibt eine Einführung in die Nutzung
 5.2. [Ground Truth Empfehlungen für Transkriptionen](#52-ground-truth-empfehlungen-für-transkriptionen)<br/>
 6. [Lizenz](#6-lizenz)
 
-## 0. Für wen ist dieser Guide gedacht?
+## Für wen ist dieser Guide gedacht?
 Dieser Leitfaden richtet sich an eScriptorium-Benutzer*innen mit mittleren Vorkenntnissen, die ein grundlegendes Verständnis der grafischen Oberfläche und Funktionalität der Plattform mitbringen. Hier sind einige Ressourcen, die Ihnen den Einstieg erleichtern:
 - [eScriptorium Quick Start Guide](https://escriptorium.readthedocs.io/en/latest/quick-start/)
 - Ein **Videotutorial**, das die wichtigsten Funktionen und Werkzeuge vorstellt, finden Sie auf YouTube: [youtube.com/watch?v=aQuwh3OaKqg](https://www.youtube.com/watch?v=aQuwh3OaKqg)
