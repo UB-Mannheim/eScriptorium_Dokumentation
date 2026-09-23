@@ -20,9 +20,15 @@
 
 // Content block: the theme's base font size is 16px on <html>; the whole
 // theme is rem-based, so raising the root font size scales the content text
-// and headings proportionally (16px -> 18px, i.e. a 12.5% zoom).
-html {
-  font-size: 1.125rem !important;
+// and headings proportionally (16px -> 18px, i.e. a 12.5% zoom). The theme's
+// own breakpoints are rem-based too, so the zoom must not apply on phones:
+// there, 18px would inflate every rem-based dimension (sidebar, header,
+// search) until the content column collapses. The mobile override below
+// restores the 16px base for narrow viewports.
+@media (min-width: 50rem) {
+  html {
+    font-size: 18px !important;
+  }
 }
 
 // Nav links: 12px -> 16px (base text size), category headers: 11px -> 14px
@@ -44,6 +50,12 @@ html {
 // sidebar/hamburger below 50rem, but the content itself needs a few
 // adjustments because the docs use wide inline styles and long inline code.
 @media (max-width: 50rem) {
+  // The 18px root font size above is comfortable on a desktop but makes the
+  // text too large for a phone; fall back to the theme's 16px base there.
+  html {
+    font-size: 1rem !important;
+  }
+
   // Inline `style="width:NN%"` on <img> would render screenshots too small
   // on a narrow phone; let them fill the content width instead.
   .main-content img {
