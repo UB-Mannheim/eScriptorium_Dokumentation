@@ -50,10 +50,21 @@
 // sidebar/hamburger below 50rem, but the content itself needs a few
 // adjustments because the docs use wide inline styles and long inline code.
 @media (max-width: 50rem) {
-  // The 18px root font size above is comfortable on a desktop but makes the
-  // text too large for a phone; fall back to the theme's 16px base there.
+  // The theme's 18px root zoom must not apply on phones (it inflates every
+  // rem-based dimension until the column collapses); fall back to the theme's
+  // 16px base there.
   html {
     font-size: 1rem !important;
+  }
+
+  // The theme's `.side-bar + .main { margin-left: 15.5rem }` is applied at
+  // every viewport width, including mobile, where the side-bar is a stacked
+  // (non-floated) block above the content. Left alone it pushes the content
+  // column right by the full sidebar width, squeezing the text to a sliver.
+  // The side-bar is position: static on mobile, so there is nothing to offset.
+  .side-bar + .main {
+    margin-left: 0 !important;
+    margin-right: 0;
   }
 
   // Inline `style="width:NN%"` on <img> would render screenshots too small
