@@ -39,3 +39,49 @@ html {
 .site-footer a {
   white-space: nowrap;
 }
+
+// Mobile / small-viewport fixes. The Just the Docs theme handles the
+// sidebar/hamburger below 50rem, but the content itself needs a few
+// adjustments because the docs use wide inline styles and long inline code.
+@media (max-width: 50rem) {
+  // Inline `style="width:NN%"` on <img> would render screenshots too small
+  // on a narrow phone; let them fill the content width instead.
+  .main-content img {
+    width: 100% !important;
+    height: auto;
+  }
+
+  // Two-image rows (e.g. the annotation-tool overview) must stack instead of
+  // side by side on narrow screens.
+  .main-content p[style*="display:flex"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  .main-content p[style*="display:flex"] img {
+    flex: 1 1 100%;
+  }
+
+  // Inline code with long unbreakable tokens (URLs, file paths) would
+  // overflow the content column; allow it to wrap.
+  .main-content :not(pre) > code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  // Reduce the content side padding so more of the narrow screen is usable.
+  .main-content-wrap {
+    padding-right: 0.75rem !important;
+    padding-left: 0.75rem !important;
+  }
+
+  // Code blocks: cap the pre padding and shrink the monospace font a touch
+  // so long command lines wrap more often.
+  .main-content pre {
+    font-size: 0.75rem;
+  }
+
+  // Tables: the theme already scrolls horizontally; just tighten the padding.
+  .table-wrapper {
+    padding: 0.5rem 0;
+  }
+}
