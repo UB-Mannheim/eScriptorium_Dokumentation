@@ -17,6 +17,7 @@ Diese Seite beschreibt Funktionen, die von einem Administrator von eScriptorium 
   - [2.2. Massenversand](#22-massenversand)
 - [3. API-Token und REST-API](#3-api-token-und-rest-api)
 - [4. Web-Statistik (Matomo)](#4-web-statistik-matomo)
+- [5. Wartungsbefehle (manage.py)](#5-wartungsbefehle-managepy)
 
 ## 1. Transkriptionsschriftarten einrichten
 
@@ -75,3 +76,65 @@ Die Instanz der UB Mannheim bietet – als Erweiterung gegenüber dem Standard-R
 - Die Statistik wird durch die Variablen `MATOMO_URL` (URL der Matomo-Instanz, z.&nbsp;B. `https://ub-monitor.bib.uni-mannheim.de/matomo/`) und `MATOMO_SITE_ID` (die Kennung des betroffenen Matomo-Projekts) aktiviert.
 - Sind beide Werte gesetzt, fügt eScriptorium das Matomo-Skript in jede Seite ein; bleiben sie leer, wird keine Statistik geladen.
 - So lässt sich die Nutzung der Instanz (Seitenaufrufe, Klicks) anonymisiert auswerten, ohne dass eine Analyse-Drittanbieterdatenbank kontaktiert wird.
+
+## 5. Wartungsbefehle (manage.py)
+
+Für den Betrieb stellt eScriptorium eine Reihe von Django-Verwaltungsbefehlen zur Verfügung, die als **`manage.py <Befehl> [Optionen]`** ausgeführt werden. In der Container-Installation (docker-compose) werden sie in den App-Containern (z.&nbsp;B. `web`) mit `docker compose exec web python manage.py <Befehl> [Optionen]` ausgeführt. Befehle, die eine geplante, regelmäßige Ausführung voraussetzen, sind im Folgenden entsprechend markiert.
+
+### 5.1. cleanup_expired_downloads
+
+Entfernt abgelaufene Download-Dateien: Zuerst die Datei auf der Platte, dann die Datenbankzeile. Downloads ohne Ablaufdatum werden nicht berührt. Der Befehl ist idempotent und sicher wiederholt ausführbar.
+
+- `--dry-run` – zeigt nur an, was gelöscht würde, ohne etwas zu ändern.
+- Geplante Ausführung (z.&nbsp;B. täglich um 03:15 Uhr): `15 3 * * * cd /srv/app && python manage.py cleanup_expired_downloads`
+
+### 5.2. cleanup_ghost_tasks
+
+Markiert TaskReports als abgestürzt, deren Celery-Aufgabe nicht mehr existiert: „Laufende“ Berichte, deren Prozess nicht mehr läuft, sowie „In der Warteschlange“-Berichte, deren Aufgabe weder in einer Queue noch bei einem Worker zu finden ist (z.&nbsp;B. weil die Nachricht konsumiert, aber verloren ging).
+
+- `--min-age SEKUNDEN` – räumt nur „In der Warteschlange“-Berichte aus, die mindestens so alt sind (Standard: 60 Sekunden).
+- `--verbosity {1,2,3,4}` – Steuerung der Protokollierung (ERROR/WARNING/INFO/DEBUG).
+- Funktioniert nur, wenn die Worker und der Redis-Broker erreichbar sind; ist das nicht der Fall, wird nichts gelöscht (um laufende Aufgaben nicht fälschlich als abgestürzt zu markieren).
+- Geplante Ausführung, z.&nbsp;B. stündlich.
+
+### 5.3. check_quotas
+
+Schickt Benutzern, die ihre Kontingente (Speicherplatz, CPU-Minuten oder GPU-Minuten) erschöpft haben, eine E-Mail. Pro Benutzer und Kontingent wird innerhalb von `QUOTA_NOTIFICATIONS_TIMEOUT` Tagen (Standard: 3) nicht erneut geschrieben. Läuft auf Instanzen, bei denen Kontingente deaktiviert sind (`DISABLE_QUOTAS`), leer.
+
+- Geplante Ausführung, z.&nbsp;B. täglich.
+
+### 5.4. index
+
+Erzeugt die Volltextsuche (Elasticsearch/OpenSearch): Es wird je Transkriptionszeile ein Suchdokument angelegt. Damit lässt sich nach dem Anlegen neuer Inhalte, nach Berechtigungsänderungen oder nach Problemen mit der Suche neu indizieren.
+
+- `--project-pks PK [PK ...]` – nur die angegebenen Projekte indizieren (Standard: alle).
+- `--document-pks PK [PK ...]` – nur die angegebenen Dokumente indizieren.
+- `--part-pks PK [PK ...]` – nur die angegebenen Dokumentteile indizieren.
+- `--drop` – vorhandenen Index vor dem Neuanlegen löschen (z.&nbsp;B. bei Konflikt des Index-Mappings).
+- Voraussetzungen: `DISABLE_ES_SEARCH` muss auf `False` gesetzt sein und der als `ES_SEARCH_URL` definierte Host muss erreichbar sein.
+
+### 5.5. qualify_models
+
+Stellt Architekturqualifikations-Aufgaben für OCR-Modelle in die Celery-Warteschlange; damit lassen sich Modelle (neu)qualifizieren, falls die dafür vorgesehene Datenmigration den Broker nicht erreicht hat.
+
+- `--all` – auch Modelle, die bereits eine Architektur besitzen, erneut qualifizieren (Standard: nur Modelle ohne Architektur).
+
+### 5.6. cleanup_models_versioning
+
+Entfernt aus der Modellversionierung (Versionshistorie) alles, was älter als `MODELS_VERSION_RETENTION` Tage (Standard: 30) ist. Ist `MODELS_VERSION_RETENTION` auf 0 gesetzt, wird nichts gelöscht.
+
+- `--dry-run` – gibt nur die Anzahl betroffener Modelle aus, ohne Datei- oder Datenbankänderungen.
+- Geplante Ausführung, z.&nbsp;B. täglich.
+
+### 5.7. cleanup_orphan_models
+
+Räumt Modellreste auf: Es werden `OcrModel`-Zeilen ohne zugehörige Datei sowie Modellverzeichnisse unter `MEDIA_ROOT/models` gelöscht, auf die kein `OcrModel` mehr verweist. Modelle, bei denen das Training-Flag gesetzt ist, werden trotz fehlender Datei behalten (möglicherweise ein steckendes Training). Zum Schluss werden Modelle gemeldet, die auf eine nicht vorhandene Datei verweisen (Warnung, keine Löschung).
+
+- `--dry-run` – gibt nur aus, was aufgeräumt würde, ohne Datei- oder Datenbankänderungen.
+- Geplante Ausführung, z.&nbsp;B. wöchentlich.
+
+### 5.8. calculate_avg_confidences
+
+Berechnet die durchschnittliche Zeichen-Confidence für alle vorhandenen OCR-/HTR-Zeilen (mit Confidence-Werten), die durchschnittliche Zeilen-Confidence für Transkriptionen und – auf Dokumentteil-Ebene – die jeweils höchste Durchschnittsconfidence der zugehörigen Transkriptionen. Für neue Transkriptionen erfolgt das automatisch; der Befehl dient dazu, die Felder für bereits existierende Datensätze zu befüllen.
+
+- `--batch-size N` – Batch-Größe für die Verarbeitung (Standard: 1000).
