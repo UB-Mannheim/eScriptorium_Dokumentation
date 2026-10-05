@@ -18,6 +18,7 @@ Diese Seite beschreibt Funktionen, die von einem Administrator von eScriptorium 
 - [3. API-Token und REST-API](#3-api-token-und-rest-api)
 - [4. Web-Statistik (Matomo)](#4-web-statistik-matomo)
 - [5. Wartungsbefehle (manage.py)](#5-wartungsbefehle-managepy)
+- [6. Celery-Queues und Worker](#6-celery-queues-und-worker)
 
 ## 1. Transkriptionsschriftarten einrichten
 
@@ -145,6 +146,53 @@ Neben den eScriptorium-spezifischen Befehlen sind für den Betrieb und vor allem
 
 - **`migrate`** – wendet Änderungen am Datenbankschema an (neue oder geänderte Tabellen). Nach einem eScriptorium-Update erforderlich; bei der Container-Installation führt das Startskript (`entrypoint.sh`) den Befehl bei jedem Start des Web-Containers automatisch aus.
 - **`makemessages --all`** und **`compilemessages`** – aktualisieren bzw. kompilieren die Übersetzungen der Benutzeroberfläche (siehe [Installationsanleitung, Abschnitt 13](./Lokale_Installation_eScriptorium.md#13-übersetzungen-aktualisieren)). Bei der Container-Installation sind die Kataloge bereits beim Bau des Images kompiliert, so dass im Normalfall nichts zu tun ist.
-- **`collectstatic --no-input`** – sammelt die statischen Dateien (CSS, JavaScript, Bilder) zusammen; wird vom Web-Container ebenfalls automatisch beim Start ausgeführt. Nach einem Update, bei dem sich Frontend-Dateien geändert haben, empfiehlt sich `collectstatic --no-input --clear`, damit keine veralteten Dateien zurückbleiben (das eScriptorium-Repository stellt dafür das Skript `scripts/refresh-frontend.sh` bereit, der zusätzlich das Image neu baut und die Container neu startet).
+- **`collectstatic --no-input`** – sammelt die statischen Dateien (CSS, JavaScript, Bilder) zusammen; wird vom Web-Container ebenfalls automatisch beim Start ausgeführt. Nach einem Update, bei dem sich Frontend-Dateien geändert haben, empfiehlt sich `collectstatic --no-input --clear`, damit keine veralteten Dateien zurückbleiben (das eScriptorium-Repository stellt dafür das Skript `scripts/refresh-frontend.sh` bereit, das zusätzlich das Image neu baut und die Container neu startet).
 - **`check`** – führt Konfigurations- und Installationsprüfungen durch (sinnvoll vor und nach einem Update).
 - **`createsuperuser`** – legt ein weiteres Administrator-Konto an.
+
+## 6. Celery-Queues und Worker
+
+Die asynchronen Aufgaben (Segmentierung, Transkription, Training, Thumbnails, E-Mails usw.) werden über [Celery](https://docs.celeryq.dev/) mit Redis als Broker ausgeführt. Die Aufgaben sind auf mehrere **Queues** verteilt, damit kurzlaufende, für die Oberfläche wichtige Vorgänge nicht durch lange Berechnungen blockiert werden und unterschiedliche Anforderungen (CPU, GPU, Java) jeweils eigene Worker nutzen können.
+
+### 6.1. Die Queues
+
+| Queue | Verwendung | Typische Aufgaben |
+|-------|------------|-------------------|
+| `default` | Standard-Queue (alle Aufgaben ohne eigene Zuordnung) | Segmentierung, Transkription, Konvertierung, Komprimierung |
+| `live` | Aufgaben, die für die Oberfläche sofort erledigt sein sollen | Neuberechnung von Masken |
+| `low-priority` | Weniger zeitkritische Aufgaben | Thumbnails, Modellqualifizierung, Importe, asynchrone E-Mails |
+| `gpu` | Aufgaben, die eine (oder am besten eine) GPU nutzen | Training, SegTrain |
+| `jvm` | Aufgaben, die eine Java-Laufzeitumgebung benötigen (außer Elasticsearch) | Textalignierung |
+| `intensive-inference` | Inferenz, die rechenintensiv genug ist, um auf eine eigene Worker zu gehören (z.&nbsp;B. D-FINE-Modelle) | Segmentierung/Transkription mit entsprechend qualifizierten Modellen |
+
+Die Zuordnung der Aufgaben zu Queues ist in `settings.py` (`CELERY_TASK_ROUTES`) festgelegt; die Queue `intensive-inference` wird dynamisch pro Aufruf vergeben, sobald das verwendete Modell zur in `INTENSIVE_INFERENCE_MODEL_ARCHITECTURES` aufgeführten Architektur zählt (Standard: `DFINEModel`).
+
+### 6.2. Worker in der Container-Installation
+
+Die mitgelieferte `docker-compose.yml` startet für die meisten Queues je einen eigenen Worker-Service:
+
+| docker-compose-Service | Queue | Standard-Parallelität |
+|------------------------|-------|------------------------|
+| `celery-main` | `default` | `CELERY_MAIN_CONC` (Standard: 10) |
+| `celery-live` | `live` | `CELERY_LIVE_CONC` (Standard: 10) |
+| `celery-low-priority` | `low-priority` | `CELERY_LOW_CONC` (Standard: 10) |
+| `celery-gpu` | `gpu` | 1 |
+| `celery-intensive-inference` | `intensive-inference` | 1 |
+
+Die Parallelität lässt sich über die genannten Umgebungsvariablen (bzw. die Option `-c` der Worker) einstellen. Der GPU-Worker läuft standardmäßig auf CPU (`KRAKEN_TRAINING_DEVICE=cpu`); `celery-intensive-inference` ebenfalls (`KRAKEN_INFERENCE_DEVICE=cpu`) – die Variable kann auf eine vorhandene GPU umgestellt werden.
+
+**Hinweis zur Queue `jvm`:** Die `docker-compose.yml` enthält keinen Worker für die Queue `jvm`, sodass dort geroutete Aufgaben (derzeit: Textalignierung) nicht ausgeführt werden, solange kein eigener Worker hinzugefügt wird. Für die Textalignierung ist entsprechend ein Worker (bzw. ein Java-Umgebung tragender Container) vorzusehen.
+
+### 6.3. Kontingente und Queues
+
+Ob eine Aufgabe gegen die GPU-Kontingente angerechnet wird, richtet sich nach ihrer Queue: Aufgaben aus `gpu` *und* `intensive-inference` zählen als GPU-Nutzung, alles andere als CPU-Nutzung. Wer also Queues umkonfiguriert oder neue hinzufügt, sollte die GPU-Kontrollen in den betroffenen Aufgaben (`reporting/tasks.py`) entsprechend mit anpassen.
+
+### 6.4. Lokale (nicht containerisierte) Installation
+
+Die [Installationsanleitung](./Lokale_Installation_eScriptorium.md#15-celery-worker) startet nur einen einfachen Worker, der standardmäßig die Queue `default` bedient:
+
+```
+DJANGO_SETTINGS_MODULE=escriptorium.local_settings celery -A escriptorium worker -l INFO &
+```
+
+Damit reicht es für Testzwecke (Segmentierung, Transkription); Training, Alignierung und die übrigen Queues werden nicht bedient. Für eine vollständige lokale Umgebung müssten für die weiteren Queues eigene Worker (z.&nbsp;B. mit `-Q live`, `-Q low-priority`, `-Q gpu`, `-Q jvm`, `-Q intensive-inference`) gestartet werden.
