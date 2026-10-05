@@ -138,3 +138,13 @@ Räumt Modellreste auf: Es werden `OcrModel`-Zeilen ohne zugehörige Datei sowie
 Berechnet die durchschnittliche Zeichen-Confidence für alle vorhandenen OCR-/HTR-Zeilen (mit Confidence-Werten), die durchschnittliche Zeilen-Confidence für Transkriptionen und – auf Dokumentteil-Ebene – die jeweils höchste Durchschnittsconfidence der zugehörigen Transkriptionen. Für neue Transkriptionen erfolgt das automatisch; der Befehl dient dazu, die Felder für bereits existierende Datensätze zu befüllen.
 
 - `--batch-size N` – Batch-Größe für die Verarbeitung (Standard: 1000).
+
+### 5.9. Standard-Django-Befehle
+
+Neben den eScriptorium-spezifischen Befehlen sind für den Betrieb und vor allem für **Updates** einige allgemeine Django-Befehle erforderlich. Für lokale Installationen (ohne Container) sind sie mit der Option `--settings escriptorium.local_settings` zu ergänzen, wie in der [Installationsanleitung](./Lokale_Installation_eScriptorium.md) gezeigt.
+
+- **`migrate`** – wendet Änderungen am Datenbankschema an (neue oder geänderte Tabellen). Nach einem eScriptorium-Update erforderlich; bei der Container-Installation führt das Startskript (`entrypoint.sh`) den Befehl bei jedem Start des Web-Containers automatisch aus.
+- **`makemessages --all`** und **`compilemessages`** – aktualisieren bzw. kompilieren die Übersetzungen der Benutzeroberfläche (siehe [Installationsanleitung, Abschnitt 13](./Lokale_Installation_eScriptorium.md#13-übersetzungen-aktualisieren)). Bei der Container-Installation sind die Kataloge bereits beim Bau des Images kompiliert, so dass im Normalfall nichts zu tun ist.
+- **`collectstatic --no-input`** – sammelt die statischen Dateien (CSS, JavaScript, Bilder) zusammen; wird vom Web-Container ebenfalls automatisch beim Start ausgeführt. Nach einem Update, bei dem sich Frontend-Dateien geändert haben, empfiehlt sich `collectstatic --no-input --clear`, damit keine veralteten Dateien zurückbleiben (das eScriptorium-Repository stellt dafür das Skript `scripts/refresh-frontend.sh` bereit, der zusätzlich das Image neu baut und die Container neu startet).
+- **`check`** – führt Konfigurations- und Installationsprüfungen durch (sinnvoll vor und nach einem Update).
+- **`createsuperuser`** – legt ein weiteres Administrator-Konto an.
